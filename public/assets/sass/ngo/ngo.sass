@@ -1,0 +1,1602 @@
+@import '../_var'
+
+%icon-base
+  display: inline-flex
+  align-items: center
+  justify-content: center
+
+  svg
+    width: 100%
+    height: 100%
+    fill: none
+    stroke: currentColor
+    stroke-width: 1.6
+    stroke-linecap: round
+    stroke-linejoin: round
+
+.banner
+  .bg
+    position: relative
+    @include media(540)
+      height: 60vh
+    &::before
+      content: ''
+      position: absolute
+      inset: 0
+      background: linear-gradient(360deg, rgb(0 0 0 / 84%) 12%, rgb(0 0 0 / 30%) 55%, rgb(0 0 0 / 80%) 100%)
+      z-index: 1
+      pointer-events: none
+      border-radius: 20px
+
+    .content
+      width: 100%
+      max-width: 730px
+      text-align: center
+
+      @include media(768)
+        max-width: 100%
+
+      .btn-flex
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 12px
+
+      h1
+        width: 100%
+        max-width: 100%
+        font-size: 45px
+
+        @include media(1024)
+          font-size: 42px
+        @include media(768)
+          font-size: 36px
+        @include media(540)
+          font-size: 30px
+        @include media(420)
+          font-size: 28px
+
+      .eyebrow
+        color: var(--white)
+
+      .banner-price
+        display: inline-flex
+        align-items: center
+        gap: 8px
+        margin: 18px 0 22px
+        padding: 8px 18px
+        border-radius: 999px
+        border: 1px solid color-mix(in srgb, var(--white) 30%, transparent)
+        background: color-mix(in srgb, var(--white) 10%, transparent)
+        backdrop-filter: blur(6px)
+
+        @include media(540)
+          padding: 8px 14px
+
+        span
+          font-family: $Poppins
+          font-size: 13px
+          font-weight: 700
+          letter-spacing: .04em
+          color: var(--white)
+
+.ngoIntro
+  padding: 110px 0
+  background: var(--white)
+
+  @include media(1280)
+    padding: 95px 0
+  @include media(1024)
+    padding: 80px 0
+  @include media(991)
+    padding: 70px 0
+  @include media(768)
+    padding: 60px 0
+  @include media(540)
+    padding: 45px 0
+
+  &-wrapper
+    display: grid
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, .75fr)
+    gap: 65px
+    align-items: center
+
+    @include media(1280)
+      gap: 50px
+    @include media(1024)
+      gap: 40px
+    @include media(991)
+      grid-template-columns: 1fr
+    @include media(768)
+      gap: 35px
+
+  &-content
+    h3
+      max-width: 600px
+      margin: 0 0 17px
+      font-family: $Poppins
+      font-size: 36px
+      font-weight: 600
+      color: var(--black)
+
+      @include media(768)
+        font-size: 32px
+      @include media(540)
+        font-size: 27px
+      @include media(420)
+        font-size: 25px
+
+      span
+        color: var(--primary)
+        font-size: inherit
+        font-weight: inherit
+
+    > p
+      max-width: 650px
+      margin: 0 0 28px
+      font-size: 16px
+      color: var(--text)
+
+      @include media(540)
+        margin-bottom: 24px
+
+  &-points
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 20px
+    padding-top: 25px
+    border-top: 1px solid rgba(0, 0, 0, .1)
+
+    @include media(1024)
+      gap: 16px
+    @include media(991)
+      gap: 20px
+    @include media(768)
+      grid-template-columns: 1fr
+      gap: 18px
+      padding-top: 22px
+
+  &-point
+    display: flex
+    align-items: flex-start
+    gap: 11px
+
+    @include media(1024)
+      flex-direction: column
+      gap: 10px
+    @include media(991)
+      flex-direction: row
+      gap: 11px
+
+    h4
+      margin: 0 0 4px
+      font-family: $Poppins
+      font-size: 16px
+      font-weight: 600
+      color: var(--black)
+
+    p
+      margin: 0
+      font-size: 14px
+      color: var(--text)
+
+  &-icon
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 36px
+    height: 36px
+    flex: 0 0 36px
+    border-radius: 9px
+    background: var(--yellow)
+    color: var(--primary)
+
+    svg
+      width: 18px
+      height: 18px
+
+  &-media
+    position: relative
+    height: 350px
+    overflow: hidden
+    border-radius: 20px
+
+    @include media(1024)
+      height: 400px
+    @include media(991)
+      width: 100%
+      max-width: none
+      height: 340px
+    @include media(768)
+      height: 320px
+    @include media(540)
+      height: 270px
+      border-radius: 16px
+    @include media(420)
+      height: 240px
+
+    img
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+    &::after
+      content: ""
+      position: absolute
+      inset: 0
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, .6) 100%)
+
+  &-media-tag
+    position: absolute
+    z-index: 1
+    left: 24px
+    right: 24px
+    bottom: 22px
+
+    @include media(540)
+      left: 18px
+      right: 18px
+      bottom: 18px
+
+    span
+      display: block
+      margin-bottom: 5px
+      font-family: $Poppins
+      font-size: 10px
+      font-weight: 600
+      letter-spacing: 1.3px
+      color: var(--white)
+
+    strong
+      display: block
+      font-family: $Poppins
+      font-size: 19px
+      font-weight: 600
+      color: var(--white)
+
+.ngoWhy
+  padding: 70px 0
+  background: var(--yellow)
+  overflow: hidden
+
+  @include media(991)
+    padding: 65px 0
+  @include media(768)
+    padding: 60px 0
+  @include media(540)
+    padding: 45px 0
+
+  .heading
+    max-width: 620px
+    margin: 0 auto 48px
+    text-align: center
+
+    @include media(768)
+      margin-bottom: 40px
+    @include media(540)
+      margin-bottom: 32px
+
+    h3
+      margin: 0 0 18px
+
+    p
+      width: 100%
+      max-width: 507px
+      margin: 0 auto
+
+  &-main
+    display: grid
+    grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr)
+    gap: 28px
+    align-items: stretch
+
+    @include media(1024)
+      grid-template-columns: 1fr
+      gap: 24px
+
+  &-image
+    position: relative
+    height: 325px
+    overflow: hidden
+    border-radius: 22px
+
+    @include media(1024)
+      height: 340px
+    @include media(768)
+      height: 320px
+    @include media(540)
+      height: 260px
+      border-radius: 17px
+    @include media(420)
+      height: 240px
+
+    img
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: cover
+      transition: transform .5s ease
+
+    &:hover
+      img
+        transform: scale(1.03)
+
+    &::after
+      content: ""
+      position: absolute
+      inset: 0
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, .72) 100%)
+
+  &-image-caption
+    position: absolute
+    z-index: 2
+    left: 27px
+    right: 27px
+    bottom: 25px
+
+    @include media(540)
+      left: 20px
+      right: 20px
+      bottom: 20px
+
+    span
+      display: block
+      margin-bottom: 7px
+      font-family: $Poppins
+      font-size: 10px
+      font-weight: 600
+      letter-spacing: 1.4px
+      color: var(--white)
+
+    strong
+      display: block
+      max-width: 330px
+      font-family: $Poppins
+      font-size: 20px
+      font-weight: 600
+      color: var(--white)
+
+  &-benefits
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 14px
+
+    @include media(540)
+      grid-template-columns: 1fr
+      gap: 12px
+
+  &-benefit
+    display: flex
+    align-items: flex-start
+    gap: 16px
+    padding: 27px 25px
+    border: 1px solid rgba(0, 0, 0, .08)
+    border-radius: 18px
+    background: var(--white)
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease
+
+    @include media(1024)
+      padding: 24px 22px
+    @include media(768)
+      gap: 14px
+      flex-direction: column
+      padding: 22px 20px
+    @include media(420)
+      gap: 12px
+      padding: 20px 18px
+
+    &:hover
+      transform: translateY(-3px)
+      border-color: rgba(69, 124, 16, .2)
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .06)
+
+    &-icon
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 42px
+      height: 42px
+      flex: 0 0 42px
+      border-radius: 11px
+      background: var(--yellow)
+      color: var(--primary)
+
+      svg
+        width: 19px
+        height: 19px
+        fill: none
+        stroke: currentColor
+        stroke-linecap: round
+        stroke-linejoin: round
+
+    h4
+      margin: 0 0 6px
+      font-family: $Poppins
+      font-size: 20px
+      font-weight: 600
+      color: var(--black)
+
+      @include media(768)
+        font-size: 18px
+
+    p
+      margin: 0
+      font-size: 14px
+      color: var(--text)
+
+  &-bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 40px
+    width: 100%
+    margin-top: 30px
+    padding: 30px 35px
+    border-radius: 20px
+    background: var(--white)
+    border: 1px solid rgba(0, 0, 0, .08)
+
+    @include media(768)
+      flex-direction: column
+      align-items: flex-start
+      gap: 25px
+      margin-top: 26px
+      padding: 28px
+    @include media(540)
+      margin-top: 22px
+      padding: 23px 20px
+      border-radius: 16px
+
+    &-content
+      max-width: 720px
+
+      > span
+        display: block
+        margin-bottom: 8px
+        font-family: $Poppins
+        font-size: 10px
+        font-weight: 600
+        letter-spacing: 1.4px
+        color: var(--primary)
+
+      h4
+        margin: 0 0 8px
+        font-family: $Poppins
+        font-size: 24px
+        font-weight: 600
+        color: var(--black)
+
+    
+
+        strong
+          color: var(--primary)
+          font-weight: 600
+
+      p
+        max-width: 650px
+        margin: 0
+        font-size: 14px
+        color: var(--text)
+
+    &-action
+      flex: 0 0 auto
+
+      @include media(540)
+        width: 100%
+
+      .btn
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        gap: 12px
+        min-width: 150px
+        white-space: nowrap
+
+        @include media(540)
+          width: 100%
+
+        svg
+          width: 18px
+          height: 18px
+
+          path
+            stroke: currentColor
+
+.ngoGet
+  padding: 70px 0
+  background: var(--white)
+  overflow: hidden
+
+  @include media(991)
+    padding: 65px 0
+  @include media(768)
+    padding: 60px 0
+  @include media(540)
+    padding: 45px 0
+
+  .heading
+    max-width: 710px
+    margin: 0 auto 70px
+    text-align: center
+
+    @include media(1024)
+      margin-bottom: 55px
+    @include media(768)
+      margin-bottom: 45px
+    @include media(540)
+      margin-bottom: 35px
+
+    h3
+      margin: 0 0 10px
+
+  &-wrapper
+    display: grid
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr)
+    gap: 55px
+    align-items: stretch
+
+    @include media(1280)
+      gap: 45px
+    @include media(1024)
+      gap: 40px
+    @include media(991)
+      grid-template-columns: 1fr
+      gap: 35px
+
+  &-media
+    position: relative
+    min-height: 570px
+    overflow: hidden
+    border-radius: 22px
+    background: var(--gray-sec)
+
+    @include media(1024)
+      min-height: 540px
+    @include media(991)
+      min-height: 380px
+    @include media(768)
+      min-height: 360px
+    @include media(540)
+      min-height: 300px
+      border-radius: 16px
+    @include media(420)
+      min-height: 270px
+
+    img
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: cover
+      transition: transform .6s ease
+
+    &:hover
+      img
+        transform: scale(1.04)
+
+    &::after
+      content: ''
+      position: absolute
+      inset: 0
+      background: linear-gradient(179deg, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 22%) 49%, rgb(0, 0, 0) 100%)
+
+  &-media-content
+    position: absolute
+    z-index: 2
+    left: 25px
+    right: 25px
+    bottom: 25px
+
+    @include media(540)
+      left: 20px
+      right: 20px
+      bottom: 20px
+
+    span
+      display: block
+      margin-bottom: 8px
+      font-family: $Poppins
+      font-size: 10px
+      font-weight: 600
+      letter-spacing: 1.3px
+      color: rgba(255, 255, 255, .75)
+
+    strong
+      display: block
+      max-width: 330px
+      font-family: $Poppins
+      font-size: 21px
+      font-weight: 500
+      line-height: 1.4
+      color: var(--white)
+
+      b
+        font-weight: 600
+        color: var(--white)
+
+  &-content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    min-width: 0
+
+  &-intro
+    max-width: 590px
+    margin-bottom: 28px
+    padding-bottom: 24px
+    border-bottom: 1px solid rgba(0, 0, 0, .09)
+
+    @include media(540)
+      margin-bottom: 22px
+      padding-bottom: 20px
+
+    p
+      margin: 0
+      font-family: $Poppins
+      font-size: 15px
+      font-weight: 400
+      line-height: 1.8
+      color: var(--text)
+
+  &-list
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 0 35px
+
+    @include media(1024)
+      gap: 0 25px
+    @include media(991)
+      gap: 0 35px
+    @include media(768)
+      gap: 0 30px
+    @include media(540)
+      grid-template-columns: 1fr
+
+  &-item
+    display: flex
+    align-items: flex-start
+    gap: 15px
+    padding: 20px 0
+    border-bottom: 1px solid rgba(0, 0, 0, .08)
+
+    @include media(540)
+      padding: 18px 0
+    @include media(420)
+      gap: 12px
+
+    &:nth-child(1),
+    &:nth-child(2)
+      padding-top: 5px
+
+    @include media(540)
+      &:nth-child(2)
+        padding-top: 18px
+
+    &-icon
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 42px
+      height: 42px
+      flex: 0 0 42px
+      border-radius: 11px
+      background: var(--yellow)
+      color: var(--primary)
+      transition: all .3s ease
+
+      @include media(420)
+        width: 38px
+        height: 38px
+        flex-basis: 38px
+
+      svg
+        width: 19px
+        height: 19px
+
+        path,
+        circle
+          stroke: currentColor
+          stroke-linecap: round
+          stroke-linejoin: round
+
+    &:hover
+      .ngoGet-item-icon
+        background: var(--primary)
+        color: var(--white)
+
+    &-text
+      min-width: 0
+
+      h4
+        margin: 1px 0 5px
+        font-family: $Poppins
+        font-size: 16px
+        font-weight: 600
+        line-height: 1.4
+        color: var(--black)
+
+      p
+        margin: 0
+        font-size: 14px
+        line-height: 1.6
+        color: var(--text)
+
+  &-action
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 25px
+    margin-top: 28px
+    padding: 20px 22px
+    border-radius: 15px
+    background: var(--gradient-c)
+
+    @include media(1024)
+      gap: 20px
+      padding: 20px
+    @include media(540)
+      align-items: flex-start
+      flex-direction: column
+      gap: 15px
+      margin-top: 24px
+      padding: 18px
+
+    > div
+      span
+        display: block
+        margin-bottom: 4px
+        font-family: $Poppins
+        font-size: 12px
+        font-weight: 600
+        color: var(--primary)
+
+      p
+        margin: 0
+        font-family: $Poppins
+        font-size: 18px
+        font-weight: 600
+        color: var(--black)
+
+    .btn
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      gap: 8px
+      min-width: 120px
+      flex-shrink: 0
+
+      @include media(540)
+        width: 100%
+
+      svg
+        width: 17px
+        height: 17px
+
+.ecomPackage
+  padding: 20px 0 70px
+  overflow: hidden
+
+  @include media(991)
+    padding: 20px 0 55px
+  @include media(768)
+    padding: 15px 0 48px
+  @include media(540)
+    padding: 10px 0 40px
+
+  &-inner
+    position: relative
+    display: grid
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr)
+    overflow: hidden
+    border-radius: 24px
+    background: var(--black)
+
+    @include media(991)
+      grid-template-columns: minmax(0, 1fr)
+    @include media(540)
+      border-radius: 18px
+
+    &::before
+      content: ''
+      position: absolute
+      inset: 0
+      width: 100%
+      height: 100%
+      background: url(../../icon/bg.jpg) no-repeat
+      background-position: right center
+      background-size: 60%
+      pointer-events: none
+
+      @include media(991)
+        background-size: cover
+        opacity: .5
+
+    > *
+      position: relative
+      z-index: 2
+
+  &-content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    min-width: 0
+    padding: 48px
+
+    @include media(1280)
+      padding: 42px
+    @include media(1024)
+      padding: 36px 32px
+    @include media(991)
+      padding: 42px 36px
+    @include media(768)
+      padding: 36px 30px 28px
+      text-align: center
+      margin: 0 auto
+      justify-content: center
+      align-items: center
+    @include media(540)
+      padding: 32px 22px
+    @include media(420)
+      padding: 28px 18px
+
+    h3
+      max-width: 650px
+      margin: 10px 0 13px
+      font-family: $Poppins
+      font-size: 36px
+      font-weight: 700
+      line-height: 1.25
+      color: var(--white)
+
+      @include media(1024)
+        font-size: 32px
+      @include media(768)
+        font-size: 28px
+      @include media(540)
+        font-size: 24px
+      @include media(420)
+        font-size: 22px
+
+      span
+        display: block
+        color: #e2ffc5
+        font-size: inherit
+        font-weight: inherit
+
+  &-label
+    width: fit-content
+    max-width: 100%
+    display: inline-flex
+    align-items: center
+    padding: 6px 13px
+    border: 1px solid color-mix(in srgb, var(--white) 22%, transparent)
+    border-radius: 999px
+    background: color-mix(in srgb, var(--white) 8%, transparent)
+    font-family: $Poppins
+    font-size: 10px
+    font-weight: 700
+    letter-spacing: .1em
+    line-height: 1.2
+    color: var(--white)
+
+  &-intro
+    max-width: 620px
+    margin: 0
+    font-size: 16px
+    color: color-mix(in srgb, var(--white) 72%, transparent)
+
+  &-form
+    display: flex
+    flex-direction: column
+    justify-content: center
+    min-width: 0
+    padding: 46px 42px
+    border-left: 1px solid color-mix(in srgb, var(--white) 14%, transparent)
+    background: color-mix(in srgb, var(--white) 5%, transparent)
+    backdrop-filter: blur(10px)
+
+    @include media(1280)
+      padding: 40px 32px
+    @include media(1024)
+      padding: 32px 26px
+    @include media(991)
+      padding: 42px 36px
+      border-top: 1px solid color-mix(in srgb, var(--white) 14%, transparent)
+      border-left: 0
+    @include media(768)
+      padding: 36px 30px
+    @include media(540)
+      padding: 32px 22px
+    @include media(420)
+      padding: 28px 18px
+
+  &-form-group
+    margin-bottom: 17px
+
+    @include media(540)
+      margin-bottom: 15px
+
+    label
+      display: block
+      margin-bottom: 7px
+      font-family: $Poppins
+      font-size: 13px
+      font-weight: 600
+      line-height: 1.4
+      color: var(--white)
+
+    input,
+    select,
+    .nice-select,
+    .custom-select
+      width: 100%
+      height: 48px
+      padding: 0 14px
+      border: 1px solid transparent
+      border-radius: 9px
+      outline: none
+      background: var(--white)
+      font-family: $Poppins
+      font-size: 13px
+      font-weight: 400
+      color: var(--black)
+      transition: .25s ease
+
+      @include media(540)
+        height: 46px
+
+      &::placeholder
+        color: var(--text)
+        opacity: .65
+
+      &:focus
+        border-color: var(--primary)
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 30%, transparent)
+
+    .custom-select,
+    .nice-select
+      display: flex
+      align-items: center
+      float: none
+      line-height: normal
+
+    select
+      padding-right: 14px
+      appearance: auto
+      cursor: pointer
+      background-image: none
+
+  &-form-action
+    margin-top: 24px
+
+    .btn
+      width: 100%
+
+  &-form-privacy
+    margin: 10px 0 0
+    text-align: center
+    font-size: 11px
+    line-height: 1.5
+    color: color-mix(in srgb, var(--white) 60%, transparent)
+
+.ngoValue
+  padding: 70px 0
+  background: var(--yellow)
+  overflow: hidden
+
+  @include media(991)
+    padding: 65px 0
+  @include media(768)
+    padding: 60px 0
+  @include media(540)
+    padding: 45px 0
+
+  .heading
+    max-width: 720px
+    margin: 0 auto 42px
+    text-align: center
+
+    @include media(540)
+      margin-bottom: 32px
+
+    h3
+      margin: 0 0 14px
+
+  &-intro
+    display: grid
+    grid-template-columns: 145px minmax(0, 1fr) 46px
+    align-items: center
+    gap: 28px
+    margin-bottom: 18px
+    padding: 25px 28px
+    border: 1px solid rgba(0, 0, 0, .08)
+    border-radius: 18px
+    background: var(--white)
+
+    @include media(1024)
+      grid-template-columns: 120px minmax(0, 1fr) 46px
+      gap: 22px
+      padding: 24px
+    @include media(768)
+      grid-template-columns: minmax(0, 1fr) 42px
+      gap: 15px
+      padding: 22px
+    @include media(540)
+      grid-template-columns: 1fr
+      gap: 14px
+      padding: 20px
+      border-radius: 15px
+
+    &-label
+      @include media(768)
+        grid-column: 1 / -1
+
+      span
+        display: inline-block
+        font-family: $Poppins
+        font-size: 10px
+        font-weight: 600
+        letter-spacing: 1.3px
+        line-height: 1.4
+        color: var(--primary)
+
+    &-content
+      display: flex
+      align-items: center
+      gap: 35px
+
+      @include media(1024)
+        gap: 24px
+      @include media(768)
+        display: block
+
+      h4
+        flex: 0 0 245px
+        margin: 0
+        font-family: $Poppins
+        font-size: 20px
+        font-weight: 600
+        line-height: 1.35
+        color: var(--black)
+
+        @include media(1024)
+          flex-basis: 210px
+        @include media(768)
+          margin-bottom: 8px
+        @include media(540)
+          font-size: 18px
+
+        strong
+          color: var(--primary)
+          font-weight: 600
+
+      p
+        max-width: 550px
+        margin: 0
+        font-size: 14px
+        line-height: 1.7
+        color: var(--text)
+
+    &-mark
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 42px
+      height: 42px
+      border-radius: 50%
+      background: var(--yellow)
+      color: var(--primary)
+
+      @include media(540)
+        display: none
+
+      svg
+        width: 18px
+        height: 18px
+
+  &-grid
+    display: grid
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+    gap: 12px
+
+    @include media(768)
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    @include media(540)
+      grid-template-columns: 1fr
+      gap: 10px
+
+  &-item
+    min-height: 190px
+    padding: 21px 21px 23px
+    border: 1px solid rgba(0, 0, 0, .08)
+    border-radius: 16px
+    background: var(--white)
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease
+
+    @include media(1024)
+      padding: 20px 18px 22px
+    @include media(768)
+      min-height: 175px
+      padding: 21px
+    @include media(540)
+      min-height: auto
+      padding: 19px
+
+    &:hover
+      transform: translateY(-3px)
+      border-color: rgba(69, 124, 16, .22)
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .05)
+
+    h4
+      margin: 0 0 6px
+      font-family: $Poppins
+      font-size: 20px
+      font-weight: 600
+      color: var(--black)
+
+      @include media(540)
+        font-size: 18px
+
+    p
+      margin: 0
+      font-size: 14px
+      color: var(--text)
+
+  &-item-top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 18px
+
+    @include media(540)
+      margin-bottom: 14px
+
+  &-item-icon
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 40px
+    border-radius: 10px
+    background: var(--yellow)
+    color: var(--primary)
+
+    svg
+      width: 18px
+      height: 18px
+      fill: none
+      stroke: currentColor
+      stroke-linecap: round
+      stroke-linejoin: round
+
+  &-item-number
+    font-family: $Poppins
+    font-size: 11px
+    display: none
+    font-weight: 600
+    letter-spacing: 1px
+    color: rgba(0, 0, 0, .25)
+
+  &-bottom
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 13px
+    margin-top: 18px
+    padding: 20px 25px
+    border-radius: 15px
+    background: var(--gradient-c)
+    text-align: center
+
+    @include media(540)
+      align-items: flex-start
+      padding: 18px
+      text-align: left
+
+    &-icon
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 30px
+      height: 30px
+      flex: 0 0 30px
+      border-radius: 50%
+      background: var(--white)
+      color: var(--primary)
+
+      svg
+        width: 15px
+        height: 15px
+
+    p
+      margin: 0
+      font-family: $Poppins
+      font-size: 14px
+      font-weight: 500
+      line-height: 1.6
+      color: var(--black)
+
+.ngoTypes
+  padding: 70px 0
+  overflow: hidden
+
+  @include media(991)
+    padding: 65px 0
+  @include media(768)
+    padding: 60px 0
+  @include media(540)
+    padding: 45px 0
+
+  .heading
+    max-width: 738px
+    margin: 0 auto 45px
+    text-align: center
+
+    @include media(540)
+      margin-bottom: 32px
+
+    h3
+      margin: 10px 0 14px
+
+  &-grid
+    display: grid
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+    grid-template-rows: 275px 275px
+    gap: 18px
+
+    @include media(1024)
+      grid-template-rows: minmax(300px, auto) minmax(300px, auto)
+      gap: 16px
+    @include media(991)
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+      grid-template-rows: auto
+    @include media(540)
+      grid-template-columns: 1fr
+      grid-template-rows: auto
+      gap: 14px
+
+  &-card
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    min-width: 0
+    min-height: 275px
+    overflow: hidden
+    border-radius: 20px
+    background: #e5e5e0
+    text-decoration: none
+    isolation: isolate
+
+    @include media(1024)
+      min-height: 300px
+    @include media(540)
+      border-radius: 16px
+
+    &--featured
+      grid-row: span 2
+      min-height: 568px
+
+      @include media(1024)
+        min-height: 0
+      @include media(991)
+        grid-column: span 2
+        grid-row: auto
+        min-height: 400px
+      @include media(768)
+        min-height: 380px
+      @include media(540)
+        grid-column: span 1
+        min-height: 330px
+      @include media(420)
+        min-height: 310px
+
+    &--medium
+      min-height: 275px
+
+      @include media(1024)
+        min-height: 300px
+      @include media(540)
+        min-height: 290px
+
+    img
+      position: absolute
+      inset: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      transition: transform .6s ease
+
+    &:hover
+      img
+        transform: scale(1.05)
+
+      .ngoTypes-arrow
+        background: var(--white)
+        border-color: var(--white)
+        color: var(--black)
+        transform: translate(2px, -2px)
+
+  &-overlay
+    position: absolute
+    inset: 0
+    z-index: 1
+    background: linear-gradient(179deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 49%, rgb(0, 0, 0) 100%)
+
+  &-content
+    position: relative
+    z-index: 2
+    padding: 25px
+    padding-right: 65px
+
+    @include media(1024)
+      padding: 24px
+      padding-right: 60px
+    @include media(768)
+      padding: 22px
+      padding-right: 58px
+    @include media(540)
+      padding: 20px
+      padding-right: 52px
+
+    span
+      display: block
+      margin-bottom: 7px
+      font-family: $Poppins
+      font-size: 10px
+      font-weight: 600
+      letter-spacing: 1.2px
+      line-height: 1.4
+      color: rgba(255, 255, 255, .78)
+
+    h4
+      margin: 0 0 8px
+      font-family: $Poppins
+      font-size: 24px
+      font-weight: 600
+      color: var(--white)
+
+      @include media(1024)
+        font-size: 22px
+      @include media(540)
+        font-size: 20px
+    
+
+      strong
+        color: var(--white)
+        font-weight: 600
+
+    p
+      max-width: 350px
+      margin: 0
+      font-size: 14px
+      line-height: 1.6
+      color: rgba(255, 255, 255, .82)
+
+  &-arrow
+    position: absolute
+    z-index: 3
+    right: 18px
+    bottom: 18px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 37px
+    height: 37px
+    border: 1px solid rgba(255, 255, 255, .42)
+    border-radius: 50%
+    color: var(--white)
+    font-size: 17px
+    transition: all .3s ease
+
+    @include media(540)
+      right: 15px
+      bottom: 15px
+      width: 34px
+      height: 34px
+
+  &-card--cta
+    justify-content: space-between
+    min-height: 275px
+    padding: 28px
+    background: var(--gradient-c)
+    border: 1px solid rgba(0, 0, 0, .04)
+
+    @include media(1024)
+      min-height: 300px
+      padding: 24px
+    @include media(540)
+      min-height: 260px
+      padding: 23px
+
+    .btn
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      gap: 9px
+      align-self: flex-start
+      min-width: 130px
+      white-space: nowrap
+
+      @include media(540)
+        width: 100%
+
+      svg
+        width: 17px
+        height: 17px
+
+        path
+          stroke: currentColor
+
+  &-cta-content
+    > span
+      display: block
+      margin-bottom: 11px
+      font-family: $Poppins
+      font-size: 10px
+      font-weight: 600
+      letter-spacing: 1.25px
+      line-height: 1.4
+      color: var(--primary)
+
+    h4
+      max-width: 310px
+      margin: 0 0 11px
+      font-family: $Poppins
+      font-size: 24px
+      font-weight: 600
+      color: var(--black)
+
+      @include media(1024)
+        font-size: 22px
+      @include media(540)
+        font-size: 20px
+
+      strong
+        display: block
+        color: var(--primary)
+        font-weight: 600
+
+    p
+      max-width: 300px
+      margin: 0
+      font-size: 14px
+      color: var(--text)
+
+.secN
+  padding: 70px 0
+  background: var(--yellow)
+
+  @include media(991)
+    padding: 55px 0
+  @include media(768)
+    padding: 50px 0
+  @include media(540)
+    padding: 40px 0
+
+  .heading
+    width: 100%
+    max-width: 633px
+    margin: 0 auto 60px
+    text-align: center
+
+    @include media(768)
+      margin-bottom: 40px
+    @include media(540)
+      margin-bottom: 30px
+
+    h3
+      color: var(--black)
+      margin-bottom: 10px
+
+    p
+      color: rgba(0, 0, 0, .55)
+
+  .accordion-wrapper
+    max-width: 800px
+    margin: 0 auto
+
+  .accordion-item
+    background: transparent
+    border: 1px solid rgba(0, 0, 0, .10)
+    border-radius: 10px
+    margin-bottom: 12px
+    overflow: hidden
+    transition: all .3s ease
+
+    @include media(540)
+      margin-bottom: 10px
+
+    &:hover
+      border-color: var(--black)
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .05)
+
+    &.active
+      border-color: var(--black)
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .06)
+
+      .accordion-icon
+        color: var(--white)
+        background: var(--black)
+        border-color: var(--black)
+
+      .accordion-header
+        h4
+          color: var(--black)
+
+  .accordion-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px 24px
+    cursor: pointer
+    transition: all .3s ease
+
+    @include media(768)
+      padding: 18px 20px
+    @include media(540)
+      padding: 17px 18px
+    @include media(420)
+      padding: 15px 16px
+
+    h4
+      font-size: 16px
+      font-weight: 600
+      color: rgba(0, 0, 0, .72)
+      margin: 0
+      flex: 1
+      font-family: $Poppins
+      padding-right: 20px
+      transition: color .3s ease
+
+      @include media(540)
+        font-size: 15px
+        padding-right: 14px
+      @include media(420)
+        font-size: 14px
+        padding-right: 12px
+
+  .accordion-icon
+    font-size: 20px
+    font-weight: 400
+    color: var(--black)
+    border: 1px solid rgba(0, 0, 0, .12)
+    border-radius: 50%
+    transition: all .3s ease
+    width: 34px
+    height: 34px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-shrink: 0
+
+    @include media(540)
+      width: 30px
+      height: 30px
+    @include media(420)
+      width: 28px
+      height: 28px
+
+  .accordion-content
+    padding: 0 24px 22px
+    padding-right: 65px
+    display: none
+    background: transparent
+
+    @include media(768)
+      padding: 0 20px 20px
+      padding-right: 56px
+    @include media(540)
+      padding: 0 18px 17px
+      padding-right: 48px
+    @include media(420)
+      padding: 0 16px 16px
+      padding-right: 40px
+
+    p
+      padding: 5px 0 0
+      margin: 0
+      font-size: 14px
+      color: var(--text)
+      font-weight: 400
+      line-height: 1.55

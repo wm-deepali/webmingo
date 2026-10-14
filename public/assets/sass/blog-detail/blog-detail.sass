@@ -1,0 +1,414 @@
+@import "../_common"
+
+// =========================
+// Banner
+// =========================
+.banner
+    .bg
+        position: relative
+        @include media(991)
+            height: 300px
+        @include media(540)
+            height: 235px
+        &::before
+            content: ''
+            position: absolute
+            inset: 0
+            background: linear-gradient(360deg, rgba(0, 0, 0, 0.74) 12%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.74) 100%)
+            z-index: 1
+            pointer-events: none
+            border-radius: 20px
+
+        .content
+            width: 100%
+            max-width: 635px
+            text-align: center
+
+            @include media(768)
+                max-width: 100%
+            @include media(540)
+                max-width: 100%
+
+            h1
+                width: 100%
+                max-width: 100%
+                font-size: 45px
+
+                @include media(1024)
+                    font-size: 40px
+                @include media(991)
+                    font-size: 30px
+                @include media(540)
+                    font-size: 24px
+         
+
+            .eyebrow
+                color: var(--white)
+
+
+// =========================================================
+// BLOG DETAIL
+// =========================================================
+
+.blog-dtl-secA
+    padding: 90px 0 70px
+    overflow: hidden
+    background: $white
+
+    @include media(1024)
+        padding: 70px 0 70px
+
+    @include media(767)
+        padding: 60px 0 70px
+
+    @include media(540)
+        padding: 50px 0 60px
+
+    .para-parent
+        width: 100%
+        max-width: 850px
+        margin: 0 auto
+        text-align: left
+        overflow-x: hidden
+
+        p
+            margin: 0 0 22px
+            color: var(--text)
+            font-size: 16px
+            line-height: 1.8
+            word-wrap: break-word
+            overflow-wrap: break-word
+
+            @include media(768)
+                font-size: 15px
+
+            @include media(540)
+                margin-bottom: 18px
+                font-size: 14px
+                line-height: 1.7
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6
+            margin: 42px 0 16px
+            color: var(--black)
+            font-family: $Poppins
+            font-weight: 600 !important
+            font-size: 25px
+            line-height: 1.4
+
+            @include media(768)
+                margin: 34px 0 14px
+                font-size: 22px
+
+            @include media(540)
+                margin: 28px 0 12px
+                font-size: 20px
+
+
+        ul,
+        ol
+            margin: 15px 0 32px
+            padding-left: 0
+            list-style: none
+            font-size: 16px
+
+            @include media(768)
+                margin: 14px 0 26px
+                font-size: 15px
+
+            @include media(540)
+                margin: 12px 0 22px
+                font-size: 14px
+
+
+        ul li,
+        ol li
+            position: relative
+            padding-left: 25px
+            margin-bottom: 10px
+            color: var(--text)
+            line-height: 1.7
+
+            @include media(540)
+                padding-left: 21px
+                margin-bottom: 8px
+                line-height: 1.6
+
+
+        ul li::before
+            content: ""
+            position: absolute
+            top: 10px
+            left: 0
+            width: 6px
+            height: 6px
+            background: var(--black)
+            border-radius: 50%
+
+            @include media(540)
+                top: 8px
+                width: 5px
+                height: 5px
+
+
+        ol
+            counter-reset: item
+
+            li::before
+                content: counter(item) "."
+                counter-increment: item
+                position: absolute
+                left: 0
+                color: var(--primary)
+                font-weight: 600
+
+
+        img
+            display: block
+            max-width: 100%
+            height: auto
+            margin: 50px 0 40px
+            border-radius: 14px
+
+            @include media(768)
+                margin: 40px 0 32px
+
+            @include media(540)
+                margin: 30px 0 24px
+                border-radius: 10px
+
+
+        strong
+            color: var(--black)
+            font-weight: 600
+
+
+        span
+            color: inherit
+
+
+
+// =========================================================
+// MORE BLOGS
+// =========================================================
+
+.more-blogs
+    position: relative
+    padding: 70px 0
+    background: var(--gray-sec)
+    overflow: hidden
+
+    @include media(1024)
+        padding: 76px 0 
+
+    @include media(768)
+        padding: 60px 0 
+
+    @include media(540)
+        padding: 50px 0 
+
+
+    .heading
+        width: 100%
+        max-width: 620px
+        margin: 0 auto 55px
+        text-align: center
+
+        @include media(768)
+            margin-bottom: 45px
+
+        @include media(540)
+            margin-bottom: 32px
+
+        h3
+            margin: 0 0 12px
+
+        p
+            max-width: 520px
+            margin: 0 auto
+            color: var(--text)
+
+         
+
+
+    .swiper-wrap
+        position: relative
+        padding: 0 70px
+
+        @include media(1024)
+            padding: 0 55px
+
+        @include media(768)
+            padding: 0
+
+        .swiper
+            width: 100%
+            overflow: hidden
+
+        .swiper-wrapper
+            align-items: stretch
+
+        .swiper-slide
+            height: auto
+
+
+    // =====================================================
+    // BLOG CARD
+    // =====================================================
+
+    .blog-card
+
+        &__image
+            position: relative
+            display: block
+            width: 100%
+            aspect-ratio: 1.35 / 1
+            overflow: hidden
+            margin-bottom: 22px
+            border-radius: 18px
+
+            @include media(600)
+                border-radius: 15px
+
+            img
+                width: 100%
+                height: 100%
+                display: block
+                object-fit: cover
+                transition: transform .6s ease
+
+            &:hover
+                img
+                    transform: scale(1.05)
+
+        &__info
+            padding: 0 4px
+
+        &__meta
+            display: flex
+            align-items: center
+            justify-content: space-between
+            gap: 15px
+            margin-bottom: 13px
+            font-family: $Poppins
+            font-size: 10px
+            line-height: 1.3
+            font-weight: 600
+            letter-spacing: .08em
+            color: var(--text)
+
+            span
+                color: var(--black)
+                font-size: 14px
+
+        h4
+            margin: 0 0 12px
+            max-width: 400px
+            font-size: 21px
+            line-height: 1.3
+            font-weight: 600
+            color: var(--black)
+
+            @include media(991)
+                font-size: 19px
+
+            @include media(600)
+                font-size: 21px
+
+        p
+            margin: 0 0 22px
+            max-width: 400px
+            font-size: 14px
+            color: var(--text)
+
+        .btn
+            display: inline-flex
+            align-items: center
+            gap: 9px
+
+            i
+                font-size: 15px
+                font-style: normal
+                line-height: 1
+                transition: transform .3s ease
+
+            &:hover
+                i
+                    transform: translate(3px, -3px)
+
+
+
+    // =====================================================
+    // SWIPER NAVIGATION
+    // =====================================================
+
+    .swiper-group
+        position: absolute
+        top: 50%
+        left: 0
+        z-index: 3
+        display: flex
+        width: 100%
+        justify-content: space-between
+        align-items: center
+        transform: translateY(-50%)
+        pointer-events: none
+
+        @include media(768)
+            display: none
+
+
+        button
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 45px
+            height: 45px
+            padding: 0
+            border: 1px solid rgba(0, 0, 0, .15)
+            border-radius: 50%
+            background: $white
+            box-shadow: 0 7px 25px rgba(0, 0, 0, .10)
+            pointer-events: auto
+            cursor: pointer
+            transition: all .25s ease
+
+            svg
+                width: 18px
+                height: 18px
+
+                path
+                    fill: var(--black)
+                    transition: fill .25s ease
+
+            &:hover
+                background: var(--black)
+                border-color: var(--black)
+
+                svg path
+                    fill: $white
+
+
+            &:disabled
+                opacity: .35
+                cursor: not-allowed
+
+                &:hover
+                    background: $white
+                    border-color: rgba(0, 0, 0, .15)
+
+                    svg path
+                        fill: var(--black)
+
+
+        .btn-prev
+            transform: rotate(0deg)
+
+
+        .btn-next
+            transform: rotate(0deg)

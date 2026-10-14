@@ -1,0 +1,590 @@
+@import '../_var'
+
+.site-footer
+  position: relative
+  z-index: 1
+  overflow: hidden
+  color: rgba(255, 255, 255, .8)
+  background: #0e120f
+
+  a
+    text-decoration: none
+    color: inherit
+
+  svg
+    display: block
+    flex-shrink: 0
+
+  &::before
+    content: ''
+    position: absolute
+    inset: 0
+    width: 100%
+    height: 100%
+    background: url(../../icon/bg.jpg) no-repeat
+    background-position: right center
+    background-size: cover
+    pointer-events: none
+    z-index: 0
+
+  &::after
+    content: ''
+    position: absolute
+    inset: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(179deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 49%, rgb(0, 0, 0) 100%)
+    background-position: right center
+    background-size: cover
+    pointer-events: none
+    z-index: 0
+    opacity: 0
+    @include media(991)
+      opacity: 1
+
+
+
+  > *
+    position: relative
+    z-index: 1
+
+  .footer-cta-strip
+    background: #232323
+
+    .container
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex-wrap: wrap
+      gap: 20px
+      padding: 20px 0
+
+      @include media(1024)
+        justify-content: center
+        gap: 16px
+        text-align: center
+
+      @include media(768)
+        padding: 24px 0
+
+      @include media(540)
+        gap: 20px
+
+    &__group
+      display: flex
+      align-items: center
+      gap: 22px
+      flex-wrap: wrap
+      min-width: 0
+
+      @include media(1024)
+        justify-content: center
+        gap: 18px
+
+      @include media(768)
+        gap: 16px
+
+      @include media(540)
+        flex-direction: column
+        align-items: flex-start
+        width: 100%
+        text-align: left
+        gap: 14px
+
+      @include media(420)
+        gap: 12px
+
+    &__item
+      display: flex
+      align-items: center
+      gap: 12px
+      min-width: 0
+
+      @include media(420)
+        gap: 10px
+
+    &__divider
+      display: block
+      width: 1px
+      height: 32px
+      background: rgba(255, 255, 255, .3)
+      flex-shrink: 0
+
+      @include media(540)
+        display: none
+
+    &__icon
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 40px
+      height: 40px
+      flex-shrink: 0
+      border-radius: 50%
+      border: 1.5px solid rgba(255, 255, 255, .4)
+      color: #ffffff
+
+      @include media(420)
+        width: 38px
+        height: 38px
+
+      svg
+        width: 18px
+        height: 18px
+
+    &__text
+      min-width: 0
+
+      p
+        margin: 0
+        font-size: 13.5px
+        font-weight: 700
+        color: #ffffff
+        white-space: nowrap
+
+        @include media(540)
+          white-space: normal
+
+      span
+        display: block
+        font-size: 12px
+        color: rgba(255, 255, 255, .85)
+        white-space: nowrap
+
+        @include media(540)
+          white-space: normal
+          word-break: break-word
+
+    &__actions
+      display: flex
+      align-items: center
+      gap: 12px
+      flex-shrink: 0
+
+      @include media(1024)
+        justify-content: center
+
+      @include media(768)
+        flex-wrap: wrap
+
+      @include media(540)
+        width: 100%
+        flex-direction: column
+        align-items: stretch
+        gap: 10px
+
+      .btn
+        display: inline-flex
+        align-items: center
+        justify-content: center
+
+        @include media(540)
+          width: 100%
+          text-align: center
+
+      .btn-outline-white
+        background: transparent
+        border: 1.5px solid rgba(255, 255, 255, .6)
+        color: #ffffff
+
+        &:hover
+          background: var(--white) !important
+          border-color: var(--white) !important
+          color: var(--black) !important
+
+      .btn-white
+        background: #ffffff
+        color: var(--black) !important
+        border: 1.5px solid #ffffff
+
+        &:hover
+          color: var(--black) !important
+
+  .footer-main
+    position: relative
+    padding: 64px 0 48px
+
+    @include media(768)
+      padding: 44px 0 32px
+
+    @include media(540)
+      padding: 40px 0 32px
+
+    &::after
+      content: ''
+      position: absolute
+      inset: 0
+      width: 100%
+      height: 100%
+      background: #0000009c
+      pointer-events: none
+      z-index: 1
+
+    .container
+      position: relative
+      z-index: 3
+      display: grid
+      grid-template-columns: minmax(0, 24fr) minmax(0, 12fr) minmax(0, 12fr) minmax(0, 14fr) minmax(0, 30fr)
+      gap: 32px
+      max-width: var(--container)
+      margin: 0 auto
+
+      @include media(1280)
+        grid-template-columns: minmax(0, 24fr) minmax(0, 16fr) minmax(0, 18fr) minmax(0, 16fr) minmax(0, 26fr)
+        gap: 28px
+
+      @include media(1024)
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+        column-gap: 24px
+        row-gap: 40px
+
+      @include media(768)
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+        row-gap: 36px
+
+      @include media(540)
+        grid-template-columns: minmax(0, 1fr)
+        row-gap: 32px
+
+  .footer-col
+    min-width: 0
+
+    h5
+      position: relative
+      margin-bottom: 22px
+      padding-bottom: 12px
+      text-transform: uppercase
+      font-size: 16px
+      font-weight: 700
+      letter-spacing: .06em
+      color: #ffffff
+
+      @include media(540)
+        margin-bottom: 16px
+        padding-bottom: 10px
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        margin-bottom: 12px
+        @include media(540)
+         margin-bottom: 5px
+
+
+        &:last-child
+          margin-bottom: 0
+
+      a
+        display: inline-flex
+        align-items: center
+        gap: 6px
+        font-size: 14px
+        color: rgba(255, 255, 255, .68)
+        transition: all .25s ease
+
+        &:hover
+          color: #ffffff
+          padding-left: 2px
+
+    &--brand
+      grid-column: span 1
+
+      @include media(1024)
+        grid-column: span 3
+
+      @include media(768)
+        grid-column: span 2
+
+      @include media(540)
+        grid-column: span 1
+
+      .footer-logo
+        display: inline-block
+        width: 170px
+        margin-bottom: 20px
+
+        @include media(420)
+          width: 150px
+          margin-bottom: 16px
+
+        img
+          width: 100%
+          height: auto
+          display: block
+          filter: brightness(0) invert(1)
+
+      .footer-tagline
+        max-width: 340px
+        margin-bottom: 22px
+        font-size: 14px
+        line-height: 1.65
+        color: rgba(255, 255, 255, .6)
+
+        @include media(1024)
+          max-width: 560px
+
+        @include media(540)
+          max-width: 100%
+
+      .footer-contact
+        margin-bottom: 22px
+
+        @include media(1024)
+          max-width: 560px
+
+        @include media(540)
+          max-width: 100%
+
+        li
+          display: flex
+          align-items: flex-start
+          gap: 10px
+          margin-bottom: 14px
+          font-size: 14px
+          line-height: 1.5
+          color: rgba(255, 255, 255, .7)
+
+          &:last-child
+            margin-bottom: 0
+
+          svg
+            width: 17px
+            height: 17px
+            margin-top: 2px
+            color: var(--white)
+
+          a,
+          span
+            min-width: 0
+            font-size: 14px
+            color: rgba(255, 255, 255, .7)
+            word-break: break-word
+
+            &::before
+              display: none
+
+            &:hover
+              color: var(--white)
+              padding-left: 0
+
+      .footer-social
+        display: flex
+        flex-wrap: wrap
+        gap: 10px
+
+        li
+          margin-bottom: 0
+
+        a
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 38px
+          height: 38px
+          border-radius: 50%
+          border: 1px solid rgba(255, 255, 255, .18)
+          color: #ffffff
+
+          &::before
+            display: none
+
+          svg
+            width: 16px
+            height: 16px
+
+          &:hover
+            background: var(--primary)
+            border-color: var(--primary)
+            padding-left: 0
+
+    &--newsletter
+      grid-column: span 1
+
+      @include media(1024)
+        grid-column: span 3
+
+      @include media(768)
+        grid-column: span 2
+
+      @include media(540)
+        grid-column: span 1
+
+      .desc
+        max-width: 320px
+        margin-bottom: 18px
+        font-size: 13.5px
+        line-height: 1.6
+        color: rgba(255, 255, 255, .6)
+
+        @include media(1024)
+          max-width: 520px
+
+        @include media(540)
+          max-width: 100%
+
+  .footer-newsletter-form
+    --inputsize: 38px
+    display: flex
+    align-items: center
+    gap: 8px
+    margin-bottom: 22px
+    padding: 5px 5px 5px 18px
+    background: rgba(255, 255, 255, .06)
+    border: 1px solid rgba(255, 255, 255, .15)
+    border-radius: 50px
+
+    @include media(1024)
+      max-width: 520px
+
+    @include media(540)
+      flex-direction: column
+      align-items: stretch
+      max-width: 100%
+      gap: 14px
+      padding: 14px
+      border-radius: 16px
+
+    .form-group
+      flex: 1
+      position: relative
+      min-width: 0
+
+      @include media(540)
+        width: 100%
+        flex: none
+        padding-top: 12px
+        border-bottom: 1px solid rgba(255, 255, 255, .15)
+
+      .form-control
+        width: 100%
+        background: transparent
+        border: 0
+        outline: none
+        color: #ffffff
+        font-size: 14px
+        height: var(--inputsize)
+
+        &:focus + label,
+        &:not(:placeholder-shown) + label
+          top: -14px
+          font-size: 10.5px
+          color: var(--primary)
+
+          @include media(540)
+            top: -2px
+
+      label
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        font-size: 13.5px
+        color: rgba(255, 255, 255, .5)
+        pointer-events: none
+        transition: all .2s ease
+
+    button
+      display: flex
+      align-items: center
+      gap: 8px
+      flex-shrink: 0
+
+      @include media(540)
+        width: 100%
+        justify-content: center
+
+    .footer-badge
+      display: flex
+      align-items: center
+      gap: 10px
+      padding: 12px 16px
+      border-radius: 12px
+      background: rgba(255, 255, 255, .05)
+      border: 1px solid rgba(255, 255, 255, .1)
+
+      &__icon
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 22px
+        height: 22px
+        flex-shrink: 0
+
+        svg
+          width: 20px
+          height: 20px
+          color: #e8b84b
+
+      &__text
+        font-size: 12.5px
+        color: rgba(255, 255, 255, .7)
+        line-height: 1.4
+
+        strong
+          color: #ffffff
+
+  .footer-bottom
+    border-top: 1px solid rgba(255, 255, 255, .08)
+    background: #0a0d0b
+
+    .container
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 10px
+      max-width: var(--container)
+      margin: 0 auto
+      padding: 18px 0
+
+      @include media(540)
+        flex-direction: column
+        gap: 12px
+        text-align: center
+
+      @include media(540)
+        padding: 16px 0
+
+    .copyright
+      margin: 0
+      font-size: 12.5px
+      color: rgba(255, 255, 255, .5)
+
+    .footer-legal
+      display: flex
+      align-items: center
+      gap: 22px
+      list-style: none
+      margin: 0
+      padding: 0
+
+      @include media(768)
+        justify-content: center
+        gap: 10px
+
+      @include media(540)
+        flex-wrap: wrap
+        gap: 10px 16px
+
+      @include media(420)
+        gap: 8px 14px
+
+      a
+        font-size: 12.5px
+        color: rgba(255, 255, 255, .6)
+        transition: color .2s ease
+
+        &:hover
+          color: var(--primary)
+
+.footer-badge
+  display: flex
+  align-items: center
+  gap: 10px
+
+  span
+    color: var(--white)
+    font-size: 14px
+    opacity: .85

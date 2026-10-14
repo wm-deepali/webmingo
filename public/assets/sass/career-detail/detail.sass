@@ -1,0 +1,552 @@
+@import "../_common"
+
+.banner
+  .bg
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      inset: 0
+      background: linear-gradient(360deg, rgba(0, 0, 0, 0.74) 12%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.74) 100%)
+      z-index: 1
+      pointer-events: none
+      border-radius: 20px
+    .content
+      width: 100%
+      max-width: 650px
+      text-align: center
+      @include media(768)
+        max-width: 100%
+      h1
+        width: 100%
+        max-width: 100%
+        font-size: 45px
+
+        @include media(1024)
+            font-size: 40px
+        @include media(540)
+            font-size: 30px
+      p
+        max-width: 570px
+        margin: 0 auto 28px
+        font-size: 14px
+      .eyebrow
+        color: var(--white)
+
+.career-detail
+  padding: 110px 0 70px
+  @include media(1024)
+    padding: 90px 0 60px
+  @include media(991)
+    padding: 80px 0 60px
+  @include media(768)
+    padding: 70px 0 50px
+  @include media(540)
+    padding: 55px 0 40px
+
+.career-detail__layout
+  display: grid
+  grid-template-columns: minmax(0, 1fr) 520px
+  gap: 60px
+  align-items: start
+  @include media(1280)
+    grid-template-columns: minmax(0, 1fr) 410px
+    gap: 50px
+  @include media(1024)
+    grid-template-columns: minmax(0, 1fr) 380px
+    gap: 40px
+  @include media(991)
+    grid-template-columns: minmax(0, 1fr)
+    gap: 70px
+  @include media(768)
+    gap: 60px
+  @include media(540)
+    gap: 50px
+
+.career-detail__content
+  min-width: 0
+
+.career-detail__intro
+  margin-bottom: 55px
+  @include media(768)
+    margin-bottom: 45px
+  @include media(540)
+    margin-bottom: 40px
+  h2
+    max-width: 780px
+    margin: 0 0 25px
+    font-size: 30px
+    @include media(1024)
+      font-size: 42px
+    @include media(768)
+      font-size: 36px
+    @include media(540)
+      font-size: 24px
+      margin-bottom: 20px
+  p
+    max-width: 760px
+    margin: 0 0 15px
+    font-size: 15px
+    line-height: 1.8
+    color: rgba(0, 0, 0, .66)
+    &:last-child
+      margin-bottom: 0
+
+.career-meta
+  display: grid
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+  margin-bottom: 95px
+  border-top: 1px solid rgba(0, 0, 0, .12)
+  border-left: 1px solid rgba(0, 0, 0, .12)
+  @include media(1024)
+    margin-bottom: 80px
+  @include media(768)
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    margin-bottom: 70px
+  @include media(540)
+    margin-bottom: 55px
+
+.career-meta__item
+  min-width: 0
+  min-height: 105px
+  padding: 23px 20px
+  border-right: 1px solid rgba(0, 0, 0, .12)
+  border-bottom: 1px solid rgba(0, 0, 0, .12)
+  @include media(540)
+    min-height: auto
+    padding: 20px 18px
+  span
+    display: block
+    margin-bottom: 9px
+    color: rgba(0, 0, 0, .42)
+    font-size: 10px
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: 1.2px
+  strong
+    display: block
+    font-size: 14px
+    font-weight: 600
+    line-height: 1.4
+
+.career-content-block
+  padding: 0 0 80px
+  margin-bottom: 80px
+  border-bottom: 1px solid rgba(0, 0, 0, .12)
+  @include media(1024)
+    padding-bottom: 70px
+    margin-bottom: 70px
+  @include media(768)
+    padding-bottom: 60px
+    margin-bottom: 60px
+  @include media(540)
+    padding-bottom: 50px
+    margin-bottom: 50px
+  &:last-of-type
+    margin-bottom: 0
+
+.career-content-block__heading
+  display: flex
+  align-items: flex-start
+  gap: 22px
+  margin-bottom: 38px
+  @include media(768)
+    margin-bottom: 32px
+  @include media(540)
+    gap: 16px
+    margin-bottom: 28px
+  > div
+    min-width: 0
+  > span
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    width: 38px
+    height: 38px
+    flex: 0 0 38px
+    border: 1px solid rgba(0, 0, 0, .15)
+    border-radius: 50%
+    color: var(--primary)
+    font-size: 10px
+    font-weight: 700
+  h3
+    margin: 0
+    font-size: 30px
+    line-height: 1.15
+    letter-spacing: -.6px
+    @include media(768)
+      font-size: 26px
+    @include media(540)
+      font-size: 22px
+
+.career-list
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 20px 45px
+  margin: 0
+  padding: 0
+  list-style: none
+  @include media(1280)
+    gap: 20px 35px
+  @include media(1024)
+    gap: 18px 30px
+  @include media(768)
+    grid-template-columns: minmax(0, 1fr)
+    gap: 17px
+  li
+    position: relative
+    padding-left: 22px
+    font-size: 14px
+    line-height: 1.75
+    color: rgba(0, 0, 0, .66)
+    &::before
+      content: ''
+      position: absolute
+      top: 9px
+      left: 0
+      width: 6px
+      height: 6px
+      border-radius: 50%
+      background: var(--primary)
+
+.career-benefits
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  border-top: 1px solid rgba(0, 0, 0, .12)
+  border-left: 1px solid rgba(0, 0, 0, .12)
+  @include media(540)
+    grid-template-columns: minmax(0, 1fr)
+
+.career-benefit
+  min-width: 0
+  padding: 28px 25px
+  border-right: 1px solid rgba(0, 0, 0, .12)
+  border-bottom: 1px solid rgba(0, 0, 0, .12)
+  @include media(540)
+    padding: 22px 20px
+  h4
+    margin: 0 0 9px
+    font-size: 16px
+    font-weight: 600
+  p
+    margin: 0
+    font-size: 13px
+    line-height: 1.65
+    color: rgba(0, 0, 0, .58)
+
+.career-process
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 0
+  border-top: 1px solid rgba(0, 0, 0, .12)
+  border-left: 1px solid rgba(0, 0, 0, .12)
+  @include media(540)
+    grid-template-columns: minmax(0, 1fr)
+
+.career-process__item
+  display: flex
+  gap: 18px
+  min-width: 0
+  padding: 28px 22px
+  border-right: 1px solid rgba(0, 0, 0, .12)
+  border-bottom: 1px solid rgba(0, 0, 0, .12)
+  @include media(540)
+    gap: 14px
+    padding: 22px 20px
+  > div
+    min-width: 0
+  > span
+    color: var(--primary)
+    font-size: 10px
+    font-weight: 700
+  h4
+    margin: 0 0 8px
+    font-size: 15px
+    font-weight: 600
+  p
+    margin: 0
+    font-size: 12px
+    line-height: 1.65
+    color: rgba(0, 0, 0, .58)
+
+.career-detail__note
+  display: flex
+  gap: 18px
+  padding: 30px 0
+  @include media(540)
+    gap: 14px
+    padding: 24px 0 0
+  > div
+    min-width: 0
+  > span
+    color: var(--primary)
+    font-size: 16px
+  h4
+    margin: 0 0 8px
+    font-size: 17px
+    font-weight: 600
+  p
+    max-width: 650px
+    margin: 0
+    font-size: 13px
+    line-height: 1.7
+    color: rgba(0, 0, 0, .58)
+
+.career-apply
+  position: sticky
+  top: 100px
+  min-width: 0
+  @include media(991)
+    position: relative
+    top: auto
+
+.career-apply__inner
+  position: sticky
+  top: 100px
+  @include media(991)
+    position: relative
+    top: auto
+  .heading
+    margin-bottom: 30px
+    @include media(540)
+      margin-bottom: 24px
+
+.career-apply__head
+  margin-bottom: 25px
+  h3
+    margin: 0 0 15px
+    font-size: 34px
+    line-height: 1.1
+    letter-spacing: -.8px
+    span
+      color: var(--primary)
+    @include media(540)
+      font-size: 29px
+  p
+    margin: 0
+    font-size: 13px
+    line-height: 1.7
+    color: rgba(0, 0, 0, .58)
+
+.career-form
+  padding: 32px
+  border: 1px solid rgba(0, 0, 0, .12)
+  border-radius: 14px
+  background: var(--gradient-c)
+  @include media(1280)
+    padding: 28px
+  @include media(1024)
+    padding: 26px
+  @include media(540)
+    padding: 22px 18px
+    border-radius: 10px
+  @include media(420)
+    padding: 20px 16px
+
+.career-form__section
+  padding-bottom: 27px
+  margin-bottom: 27px
+  border-bottom: 1px solid rgba(0, 0, 0, .1)
+  @include media(540)
+    padding-bottom: 22px
+    margin-bottom: 22px
+  &:last-of-type
+    padding-bottom: 0
+    margin-bottom: 0
+    border-bottom: 0
+
+.career-form__label
+  display: block
+  margin-bottom: 18px
+  color: var(--text)
+  font-size: 12px
+  font-weight: 700
+  opacity: .7
+  text-transform: capitalize
+  @include media(540)
+    margin-bottom: 14px
+
+.career-form__grid
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 18px
+  @include media(1280)
+    grid-template-columns: minmax(0, 1fr)
+    gap: 16px
+  @include media(991)
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 18px
+  @include media(540)
+    grid-template-columns: minmax(0, 1fr)
+    gap: 16px
+
+.form-group
+  min-width: 0
+  label
+    display: block
+    margin-bottom: 7px
+    color: var(--black)
+    font-size: 12px
+    font-weight: 500
+    sup
+      color: var(--primary)
+  input,
+  select,
+  .current,
+  textarea
+    display: block
+    width: 100%
+    border: 1px solid rgba(0, 0, 0, .14)
+    border-radius: 5px
+    outline: none
+    background: var(--white)
+    color: var(--black)
+    font-family: inherit
+    font-size: 12px
+    transition: border-color .2s ease
+    &:focus
+      border-color: var(--primary)
+  input,
+  .current,
+  select
+    height: 47px
+    padding: 0 13px
+  textarea
+    min-height: 120px
+    padding: 13px
+    resize: vertical
+    @include media(540)
+      min-height: 100px
+    &::placeholder
+      color: var(--text)
+  input::placeholder
+    color: var(--text)
+  .current
+    padding: 10px 12px !important
+
+.form-group--file
+  margin-bottom: 20px
+
+.file-upload
+  position: relative
+  min-height: 88px
+  overflow: hidden
+  border: 1px dashed rgba(0, 0, 0, .2)
+  border-radius: 6px
+  background: #fafafa
+  @include media(420)
+    min-height: 96px
+  input
+    position: absolute
+    inset: 0
+    z-index: 2
+    width: 100%
+    height: 100%
+    opacity: 0
+    cursor: pointer
+
+.file-upload__content
+  position: absolute
+  inset: 0
+  display: flex
+  align-items: center
+  gap: 13px
+  padding: 15px
+  @include media(420)
+    gap: 10px
+    padding: 12px
+  .file-upload__icon
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    width: 38px
+    height: 38px
+    flex: 0 0 38px
+    border-radius: 50%
+    background: rgba(0, 0, 0, .06)
+    color: var(--black)
+    font-size: 14px
+    @include media(420)
+      width: 34px
+      height: 34px
+      flex: 0 0 34px
+  strong
+    display: block
+    margin-bottom: 4px
+    font-size: 12px
+    font-weight: 600
+  span
+    display: block
+    color: rgba(0, 0, 0, .4)
+    font-size: 10px
+
+.career-form__footer
+  padding-top: 5px
+  .btn
+    width: 100%
+    justify-content: center
+
+.career-checkbox
+  display: flex
+  align-items: flex-start
+  gap: 9px
+  margin-bottom: 20px
+  cursor: pointer
+  input
+    position: absolute
+    opacity: 0
+    pointer-events: none
+  > span
+    position: relative
+    width: 16px
+    height: 16px
+    flex: 0 0 16px
+    margin-top: 1px
+    border: 1px solid rgba(0, 0, 0, .22)
+    border-radius: 3px
+  input:checked + span
+    background: var(--black)
+    border-color: var(--black)
+    &::after
+      content: '✓'
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      color: var(--white)
+      font-size: 9px
+  p
+    margin: 0
+    font-size: 10px
+    line-height: 1.5
+    color: rgba(0, 0, 0, .5)
+
+.career-bottom
+  padding: 110px 0
+  background: #f6f6f4
+  @include media(1024)
+    padding: 90px 0
+  @include media(768)
+    padding: 80px 0
+  @include media(540)
+    padding: 60px 0
+
+.career-bottom__inner
+  max-width: 720px
+  margin: 0 auto
+  text-align: center
+  h3
+    margin: 0 0 18px
+    font-size: 44px
+    line-height: 1.1
+    letter-spacing: -1.2px
+    @include media(768)
+      font-size: 36px
+    @include media(540)
+      font-size: 29px
+  p
+    max-width: 570px
+    margin: 0 auto 28px
+    font-size: 14px
+    line-height: 1.7
+    color: rgba(0, 0, 0, .58)

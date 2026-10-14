@@ -1,0 +1,553 @@
+@import "../_common"
+.banner
+  .bg
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      inset: 0
+      background: linear-gradient(360deg, rgba(0, 0, 0, 0.74) 12%, rgb(0 0 0 / 44%) 55%, rgba(0, 0, 0, 0.74) 100%)
+      z-index: 1
+      pointer-events: none
+      border-radius: 20px
+    .content
+      width: 100%
+      max-width: 810px
+      text-align: center
+      @include media(768)
+        max-width: 100%
+      h1
+        width: 100%
+        max-width: 100%
+        font-size: 45px
+
+        @include media(1024)
+            font-size: 40px
+        @include media(991)
+            font-size: 30px
+        @include media(540)
+            font-size: 24px
+      .eyebrow
+        color: var(--white)
+      p
+        width: 100%
+        max-width: 750px
+        margin: 0 auto 30px
+      .banner-actions
+        @include media(768)
+          display: flex
+          flex-wrap: wrap
+          align-items: center
+          justify-content: center
+          gap: 12px
+        @include media(540)
+          flex-direction: column
+          align-items: stretch
+          width: 100%
+          .btn
+            width: 100%
+            justify-content: center
+    .btn-flex
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 12px
+      @include media(540)
+        flex-direction: column
+        align-items: stretch
+        .btn
+          width: 100%
+          justify-content: center
+.kb-intro
+  padding: 90px 0 55px
+  background: var(--white)
+  @include media(991)
+    padding: 75px 0 45px
+  @include media(768)
+    padding: 60px 0 35px
+  @include media(540)
+    padding: 50px 0 30px
+  .heading
+    max-width: 780px
+    margin: 0 auto
+    text-align: center
+    p
+      max-width: 700px
+      margin: 18px auto 0
+.kb-tabs
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  gap: 24px
+  margin: 42px 0 0
+  padding: 0
+  border-bottom: 1px solid var(--border)
+  @include media(991)
+    gap: 22px
+  @include media(768)
+    justify-content: flex-start
+    flex-wrap: nowrap
+    gap: 22px
+    margin-top: 34px
+    overflow-x: auto
+    scrollbar-width: none
+    &::-webkit-scrollbar
+      display: none
+  @include media(540)
+    gap: 18px
+    margin-top: 28px
+  li
+    position: relative
+    flex: 0 0 auto
+    padding: 8px 0 14px
+    margin-bottom: -1px
+    border-bottom: 1px solid transparent
+    font-family: $Poppins
+    font-size: 14px
+    font-weight: 600
+    line-height: 1.4
+    color: var(--text)
+    cursor: pointer
+    transition: all .25s ease
+    white-space: nowrap
+    &:hover
+      color: var(--primary)
+    &.active
+      color: var(--primary)
+      border-bottom-color: var(--primary)
+.kb-main
+  padding: 70px 0 100px
+  background: var(--white)
+  @include media(991)
+    padding: 60px 0 80px
+  @include media(768)
+    padding: 50px 0 65px
+  @include media(540)
+    padding: 40px 0 55px
+.kb-grid
+  display: grid
+  grid-template-columns: minmax(0, 1fr) 420px
+  gap: 70px
+  align-items: start
+  @include media(1280)
+    grid-template-columns: minmax(0, 1fr) 380px
+    gap: 55px
+  @include media(1024)
+    grid-template-columns: minmax(0, 1fr) 330px
+    gap: 45px
+  @include media(991)
+    grid-template-columns: minmax(0, 1fr)
+    gap: 55px
+  @include media(540)
+    gap: 45px
+.kb-articles
+  min-width: 0
+.kb-category-content
+  > .tabs
+    display: none
+    &.active
+      display: block
+.kb-article
+  padding: 0 0 36px
+  margin: 0 0 36px
+  border-bottom: 1px solid var(--border)
+  @include media(540)
+    padding: 0 0 30px
+    margin: 0 0 30px
+  &:last-child
+    padding-bottom: 0
+    margin-bottom: 0
+    border-bottom: 0
+  &.is-active
+    .kb-article__toggle
+      .txt-more
+        display: none
+      .txt-less
+        display: inline
+      i
+        transform: rotate(45deg)
+.kb-article__tag
+  display: inline-flex
+  margin: 0 0 12px
+  font-family: $Poppins
+  font-size: 14px
+  font-weight: 600
+  line-height: 1.4
+  color: var(--primary)
+  background: var(--light-yellow)
+  padding: 4px 12px
+  @include media(540)
+    max-width: 100%
+.kb-article__title
+  max-width: 850px
+  margin: 0 0 14px
+  font-family: $Poppins
+  font-size: 28px
+  font-weight: 600
+  line-height: 1.3
+  color: var(--black)
+  @include media(768)
+    font-size: 24px
+  @include media(540)
+    font-size: 21px
+.kb-article__desc
+  max-width: 850px
+  margin: 0 0 22px
+  font-family: $Poppins
+  font-size: 15px
+  font-weight: 400
+  line-height: 1.8
+  color: var(--text)
+  @include media(540)
+    margin-bottom: 18px
+    font-size: 14px
+    line-height: 1.75
+.kb-article__toggle
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: 9px
+  border-bottom: 1px solid var(--black)
+  padding-bottom: 4px
+  color: var(--black)
+  span
+    color: var(--black)
+  .txt-more
+    display: inline
+  .txt-less
+    display: none
+  i
+    display: inline-flex
+    font-size: 16px
+    line-height: 1
+    transition: transform .25s ease
+.kb-article__answer
+  display: none
+  max-width: 860px
+  padding: 0
+  margin: 0
+  border: 0
+.kb-answer-section
+  margin: 0 0 28px
+  @include media(540)
+    margin-bottom: 22px
+  &:last-child
+    margin-bottom: 0
+  h5
+    margin: 0 0 10px
+    font-family: $Poppins
+    font-size: 16px
+    font-weight: 600
+    line-height: 1.5
+    color: var(--black)
+  p
+    margin: 0
+    font-family: $Poppins
+    font-size: 14px
+    font-weight: 400
+    line-height: 1.8
+    color: var(--text)
+  ul
+    margin: 0
+    padding-left: 20px
+    li
+      margin: 0 0 9px
+      font-family: $Poppins
+      font-size: 14px
+      font-weight: 400
+      line-height: 1.75
+      color: var(--text)
+      &:last-child
+        margin-bottom: 0
+.kb-article__cta
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 25px
+  margin-top: 30px
+  padding: 20px 22px
+  background: var(--gray-sec)
+  border: 1px solid var(--border)
+  border-radius: 12px
+  @include media(768)
+    align-items: flex-start
+    flex-direction: column
+    gap: 18px
+  @include media(540)
+    margin-top: 24px
+    padding: 18px 16px
+  @include media(420)
+    padding: 16px 14px
+  p
+    margin: 0
+    font-family: $Poppins
+    font-size: 14px
+    line-height: 1.7
+    color: var(--text)
+  .btn
+    flex: 0 0 auto
+    @include media(540)
+      width: 100%
+      justify-content: center
+.kb-sidebar
+  position: sticky
+  top: 110px
+  min-width: 0
+  @include media(991)
+    position: static
+.kb-form
+  padding: 30px
+  background: var(--gray-sec)
+  border: 1px solid var(--border)
+  border-radius: 18px
+  @include media(1024)
+    padding: 24px 22px
+  @include media(991)
+    padding: 30px
+  @include media(540)
+    padding: 22px 20px
+  @include media(420)
+    padding: 20px 16px
+  .sec-label
+    display: block
+    margin: 0 0 12px
+    font-family: $Poppins
+    font-size: 14px
+    font-weight: 600
+    line-height: 1.4
+    color: var(--primary)
+  h3
+    margin: 0 0 24px
+    font-family: $Poppins
+    font-size: 26px
+    font-weight: 600
+    line-height: 1.3
+    color: var(--black)
+    @include media(540)
+      margin-bottom: 20px
+      font-size: 23px
+.kb-form__fields
+  .field
+    margin-bottom: 12px
+    input,
+    .custom-select,
+    select,
+    textarea
+      display: block
+      width: 100%
+      padding: 13px 14px
+      border: 1px solid var(--border)
+      border-radius: 8px
+      outline: none
+      background: var(--white)
+      font-family: $Poppins
+      font-size: 14px
+      font-weight: 400
+      line-height: 1.5
+      color: var(--black)
+      transition: border-color .25s ease, box-shadow .25s ease
+      &::placeholder
+        color: var(--text)
+      &:focus
+        border-color: var(--primary)
+        box-shadow: 0 0 0 3px var(--yellow)
+    textarea
+      min-height: 120px
+      resize: vertical
+      @include media(540)
+        min-height: 100px
+    select
+      cursor: pointer
+.kb-form__submit
+  width: 100%
+  justify-content: center
+  margin-top: 6px
+.kb-form__note
+  display: block
+  margin-top: 14px
+  font-family: $Poppins
+  font-size: 14px
+  line-height: 1.65
+  color: var(--text)
+.kb-help
+  padding: 80px 0
+  background: var(--gray-sec)
+  @include media(991)
+    padding: 65px 0
+  @include media(768)
+    padding: 55px 0
+  @include media(540)
+    padding: 45px 0
+.kb-help__inner
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 45px
+  @include media(991)
+    gap: 30px
+  @include media(768)
+    align-items: flex-start
+    flex-direction: column
+    gap: 25px
+.kb-help__text
+  max-width: 720px
+  min-width: 0
+  h3
+    margin: 0 0 12px
+  p
+    max-width: 650px
+    margin: 0
+    font-family: $Poppins
+    font-size: 15px
+    line-height: 1.8
+    color: var(--text)
+.kb-help__action
+  flex: 0 0 auto
+  @include media(540)
+    width: 100%
+    .btn
+      width: 100%
+      justify-content: center
+.kb-answer-inner
+  padding-top: 30px
+  margin-top: 28px
+  border-top: 1px solid var(--border)
+  @include media(540)
+    padding-top: 24px
+    margin-top: 22px
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    margin: 0 0 14px
+    font-family: $Poppins
+    font-weight: 600
+    line-height: 1.4
+    color: var(--black)
+  h1
+    font-size: 30px
+  h2
+    font-size: 27px
+  h3
+    font-size: 24px
+  h4
+    font-size: 20px
+  h5
+    font-size: 17px
+  h6
+    font-size: 15px
+  p:not(.kb-article__cta > p)
+    margin: 0 0 18px
+    font-family: $Poppins
+    font-size: 14px
+    font-weight: 400
+    line-height: 1.8
+    color: var(--text)
+    &:last-child
+      margin-bottom: 0
+  span,
+  strong,
+  em,
+  i,
+  b,
+  small
+    font-family: $Poppins
+    color: var(--text)
+  span
+    font-size: 14px
+    line-height: 1.8
+  strong,
+  b
+    font-weight: 600
+    color: var(--black)
+  em,
+  i
+    font-size: 14px
+    font-style: italic
+    line-height: 1.8
+  small
+    font-size: 14px
+    line-height: 1.7
+  a
+    color: var(--primary)
+    text-decoration: underline
+    text-decoration-thickness: 1px
+    text-underline-offset: 3px
+    transition: color .25s ease
+    overflow-wrap: anywhere
+    &:hover
+      color: var(--black)
+  ul,
+  ol
+    margin: 0 0 20px
+    padding: 0
+    list-style: none
+    &:last-child
+      margin-bottom: 0
+    li
+      position: relative
+      padding-left: 24px
+      margin: 0 0 10px
+      font-family: $Poppins
+      font-size: 14px
+      font-weight: 400
+      line-height: 1.8
+      color: var(--text)
+      &:last-child
+        margin-bottom: 0
+  ul
+    li
+      &::before
+        content: ""
+        position: absolute
+        top: 10px
+        left: 5px
+        width: 6px
+        height: 6px
+        border-radius: 50%
+        background: var(--black)
+  ol
+    counter-reset: kb-list
+    li
+      counter-increment: kb-list
+      &::before
+        content: counter(kb-list)
+        position: absolute
+        top: 0
+        left: 0
+        width: 18px
+        height: 18px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-family: $Poppins
+        font-size: 11px
+        font-weight: 600
+        line-height: 1
+        color: var(--black)
+  blockquote
+    margin: 24px 0
+    padding: 18px 20px
+    border-left: 3px solid var(--primary)
+    background: var(--gray-sec)
+    font-family: $Poppins
+    font-size: 14px
+    font-style: italic
+    line-height: 1.8
+    color: var(--text)
+    @include media(540)
+      margin: 20px 0
+      padding: 16px
+  hr
+    margin: 25px 0
+    border: 0
+    border-top: 1px solid var(--border)
+  img
+    display: block
+    max-width: 100%
+    height: auto
+    margin: 20px 0
+    border-radius: 10px

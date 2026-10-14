@@ -1,0 +1,618 @@
+@import "../_common"
+
+.banner
+    .bg
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            inset: 0
+            background: linear-gradient(360deg, rgb(0 0 0 / 84%) 12%, rgb(0 0 0 / 30%) 55%, rgb(0 0 0 / 80%) 100%)
+            z-index: 1
+            pointer-events: none
+            border-radius: 20px
+
+        .content
+            width: 100%
+            max-width: 560px
+            text-align: center
+
+            @include media(768)
+                max-width: 100%
+            h1
+                width: 100%
+                max-width: 100%
+                font-size: 45px
+                @include media(991)
+                    font-size: 36px
+                @include media(540)
+                    font-size: 28px
+
+            .eyebrow
+                color: var(--white)
+
+            .banner-actions
+                @include media(540)
+                    display: flex
+                    flex-direction: column
+                    align-items: stretch
+                    gap: 14px
+                    width: 100%
+
+                    .btn
+                        width: 100%
+                        justify-content: center
+
+.contact-cards
+  padding: 70px 0
+
+  @include media(1024)
+    padding: 60px 0
+
+  @include media(768)
+    padding: 50px 0
+
+  @include media(540)
+    padding: 40px 0
+
+  .heading
+    max-width: 620px
+    margin: 0 auto 56px
+    text-align: center
+
+    @include media(768)
+      margin: 0 auto 40px
+
+    @include media(540)
+      margin: 0 auto 32px
+
+    h3
+      font-size: 34px
+      color: var(--black)
+
+      @include media(768)
+        font-size: 26px
+
+    p
+      font-size: 15px
+      color: var(--text)
+      margin-top: 10px
+
+  &__grid
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 24px
+
+    @include media(1024)
+      gap: 20px
+
+    @include media(991)
+      grid-template-columns: repeat(2, 1fr)
+
+    @include media(540)
+      grid-template-columns: 1fr
+      gap: 18px
+
+  .contact-card
+    position: relative
+    display: flex
+    flex-direction: column
+    min-width: 0
+    padding: 36px 32px
+    background: var(--white)
+    border: 1px solid var(--border)
+    border-radius: 20px
+    text-decoration: none
+    overflow: hidden
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease
+
+    @include media(1280)
+      padding: 32px 28px
+
+    @include media(1024)
+      padding: 30px 24px
+
+    @include media(768)
+      padding: 30px 26px
+
+    @include media(540)
+      padding: 28px 22px
+      border-radius: 16px
+
+    &:last-child
+      @include media(991)
+        grid-column: 1 / -1
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      height: 3px
+      background: var(--yellow)
+      transform: scaleX(0)
+      transform-origin: left
+      transition: transform .4s ease
+
+    &:hover
+      transform: translateY(-6px)
+      box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .25)
+      border-color: transparent
+
+      &::before
+        transform: scaleX(1)
+
+      .contact-card__icon
+        background: var(--black)
+        color: var(--white)
+
+      .contact-card__link
+        gap: 12px
+        color: var(--black)
+
+        i
+          transform: translate(3px, -3px)
+
+    &__top
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 28px
+
+      @include media(540)
+        margin-bottom: 22px
+
+    &__icon
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-shrink: 0
+      width: 50px
+      height: 50px
+      border-radius: 14px
+      background: var(--yellow)
+      color: var(--black)
+      transition: background .35s ease, color .35s ease
+
+      @include media(540)
+        width: 46px
+        height: 46px
+        border-radius: 12px
+
+      svg
+        width: 22px
+        height: 22px
+
+    &__index
+      font-family: $Poppins
+      font-style: italic
+      font-weight: 600
+      font-size: 15px
+      color: var(--black)
+      opacity: .25
+
+    &__body
+      flex: 1
+      min-width: 0
+      margin-bottom: 28px
+
+      @include media(540)
+        margin-bottom: 22px
+
+      .contact-card__tag
+        display: block
+        margin-bottom: 12px
+        font-size: 11px
+        font-weight: 700
+        letter-spacing: .12em
+        text-transform: uppercase
+        color: var(--text)
+        opacity: .5
+
+      h4
+        margin: 0 0 10px
+        font-family: $Poppins
+        font-size: 19px
+        font-weight: 600
+        color: var(--black)
+        line-height: 1.3
+
+      .contact-card__value
+        display: block
+        margin-bottom: 14px
+        font-family: $Poppins
+        font-size: 16px
+        font-weight: 700
+        color: var(--black)
+        overflow-wrap: anywhere
+
+      p
+        margin: 0
+        font-size: 14px
+        line-height: 1.65
+        color: var(--text)
+
+    &__link
+      display: inline-flex
+      align-items: center
+      gap: 8px
+      padding-top: 20px
+      margin-top: auto
+      border-top: 1px solid var(--border)
+      font-family: $Poppins
+      font-size: 13.5px
+      font-weight: 600
+      color: var(--text)
+      transition: gap .3s ease, color .3s ease
+
+      @include media(540)
+        padding-top: 16px
+
+      i
+        font-style: normal
+        transition: transform .3s ease
+
+.contact-form
+  padding: 0 0 100px
+
+  @include media(1024)
+    padding: 0 0 80px
+
+  @include media(768)
+    padding: 0 0 60px
+
+  @include media(540)
+    padding: 0 0 50px
+
+  &__panel
+    background: var(--yellow)
+    border-radius: 28px
+    padding: 70px
+
+    @include media(1280)
+      padding: 60px
+
+    @include media(1024)
+      padding: 50px 40px
+
+    @include media(991)
+      padding: 50px 36px
+
+    @include media(768)
+      padding: 40px 28px
+      border-radius: 24px
+
+    @include media(540)
+      padding: 36px 22px
+      border-radius: 20px
+
+    @include media(420)
+      padding: 30px 18px
+
+  &__grid
+    display: grid
+    grid-template-columns: 1fr .75fr
+    gap: 90px
+    align-items: center
+
+    @include media(1280)
+      gap: 60px
+
+    @include media(1024)
+      gap: 40px
+
+    @include media(991)
+      grid-template-columns: 1fr
+      gap: 50px
+
+    @include media(768)
+      gap: 40px
+
+  &__content
+    min-width: 0
+
+  .heading
+    max-width: 480px
+    margin-bottom: 40px
+
+    @include media(991)
+      max-width: 100%
+
+    @include media(540)
+      margin-bottom: 28px
+
+  &__form
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+    @include media(540)
+      gap: 16px
+
+  .form-row
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 20px
+
+    @include media(1024)
+      gap: 16px
+
+    @include media(540)
+      grid-template-columns: 1fr
+      gap: 16px
+
+  .form-group
+    display: flex
+    flex-direction: column
+    gap: 8px
+    min-width: 0
+
+    label
+      font-family: $Poppins
+      font-size: 13px
+      font-weight: 600
+      color: var(--black)
+
+    input,
+    select,
+    textarea,
+    .custom-select
+      width: 100%
+      padding: 14px 16px
+      border-radius: 12px
+      border: 1px solid var(--border)
+      background: var(--white)
+      font-family: $Poppins
+      font-size: 14px
+      color: var(--black)
+      transition: border-color .3s ease, box-shadow .3s ease
+
+      @include media(540)
+        padding: 13px 14px
+
+      &:focus
+        outline: none
+        border-color: var(--black)
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, .06)
+
+      &::placeholder
+        color: var(--text)
+        opacity: .5
+
+    textarea
+      resize: vertical
+      min-height: 130px
+
+      @include media(540)
+        min-height: 110px
+
+    select
+      appearance: none
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+      background-repeat: no-repeat
+      background-position: right 16px center
+      background-size: 14px
+
+      @include media(540)
+        background-position: right 14px center
+
+  &__form .btn
+    width: fit-content
+    margin-top: 8px
+
+    @include media(991)
+      width: 100%
+      justify-content: center
+
+  &__visual
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    height: 100%
+    min-width: 0
+
+  &__cloud
+    width: 100%
+    max-width: 380px
+
+    @include media(991)
+      max-width: 340px
+
+    @include media(540)
+      max-width: 260px
+
+    img
+      width: 100%
+      height: auto
+      object-fit: contain
+
+  &__quote
+    max-width: 300px
+    margin-top: 20px
+    font-family: $Poppins
+    font-size: 15px
+    font-weight: 500
+    color: var(--black)
+
+    @include media(540)
+      font-size: 15px
+      margin-top: 16px
+
+.contact-map
+  padding: 0 0 50px
+
+  @include media(768)
+    padding: 0 0 40px
+
+  @include media(540)
+    padding: 0 0 30px
+
+  .heading
+    max-width: 456px
+    margin: 0 auto 50px
+    text-align: center
+
+    @include media(768)
+      margin: 0 auto 36px
+
+    @include media(540)
+      margin: 0 auto 28px
+
+    h3
+      color: var(--black)
+
+    p
+      color: var(--text)
+      margin-top: 10px
+
+  &__grid
+    display: grid
+    grid-template-columns: 1.4fr .8fr
+    gap: 30px
+    align-items: stretch
+
+    @include media(1280)
+      gap: 24px
+
+    @include media(1024)
+      grid-template-columns: 1.2fr .9fr
+
+    @include media(991)
+      grid-template-columns: 1fr
+      gap: 24px
+
+    @include media(540)
+      gap: 18px
+
+  &__frame
+    width: 100%
+    min-height: 420px
+    border-radius: 20px
+    overflow: hidden
+    border: 1px solid var(--border)
+
+    @include media(1024)
+      min-height: 380px
+
+    @include media(991)
+      min-height: 360px
+
+    @include media(768)
+      min-height: 320px
+
+    @include media(540)
+      min-height: 260px
+      border-radius: 16px
+
+    iframe
+      display: block
+      width: 100%
+      height: 100%
+      min-height: 420px
+      filter: grayscale(15%)
+
+      @include media(1024)
+        min-height: 380px
+
+      @include media(991)
+        min-height: 360px
+
+      @include media(768)
+        min-height: 320px
+
+      @include media(540)
+        min-height: 260px
+
+  &__details
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 14px
+    min-width: 0
+    padding: 44px
+    background: var(--white)
+    border: 1px solid var(--border)
+    border-radius: 20px
+
+    @include media(1280)
+      padding: 36px
+
+    @include media(1024)
+      padding: 32px
+
+    @include media(768)
+      padding: 32px
+
+    @include media(540)
+      padding: 26px 22px
+      border-radius: 16px
+
+    h4
+      margin: 0
+      font-family: $Poppins
+      font-size: 22px
+      font-weight: 700
+      color: var(--black)
+
+    > p
+      margin: 0
+      font-size: 14px
+      line-height: 1.65
+      color: var(--text)
+      max-width: 260px
+
+      @include media(991)
+        max-width: 100%
+
+  &__hours
+    display: flex
+    flex-direction: column
+    gap: 4px
+    padding: 18px 0
+    border-top: 1px solid var(--border)
+    border-bottom: 1px solid var(--border)
+    margin: 6px 0
+
+    .hours-label
+      font-family: $Poppins
+      font-size: 12px
+      font-weight: 700
+      letter-spacing: .08em
+      text-transform: uppercase
+      color: var(--text)
+      opacity: .5
+
+    .hours-value
+      font-family: $Poppins
+      font-size: 15px
+      font-weight: 600
+      color: var(--black)
+
+  &__details .row-link
+    display: inline-flex
+    align-items: center
+    gap: 8px
+    width: fit-content
+    padding-bottom: 3px
+    border-bottom: 1px solid var(--border)
+    font-family: $Poppins
+    font-size: 13.5px
+    font-weight: 600
+    color: var(--black)
+    text-decoration: none
+    transition: gap .3s ease, border-color .3s ease
+
+    i
+      font-style: normal
+      transition: transform .3s ease
+
+    &:hover
+      border-color: var(--black)
+      gap: 12px
+
+      i
+        transform: translate(2px, -2px)

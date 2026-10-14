@@ -1,0 +1,2178 @@
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+.secL-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.secL-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.banner .bg {
+  position: relative;
+}
+@media only screen and (max-width: 540px) {
+  .banner .bg {
+    height: 58vh;
+  }
+}
+.banner .bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.84) 12%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 20px;
+}
+.banner .bg .content {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .banner .bg .content {
+    max-width: 100%;
+  }
+}
+.banner .bg .content h1 {
+  width: 100%;
+  max-width: 100%;
+  font-size: 45px;
+}
+@media only screen and (max-width: 1024px) {
+  .banner .bg .content h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .banner .bg .content h1 {
+    font-size: 36px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .banner .bg .content h1 {
+    font-size: 24px;
+  }
+}
+.banner .bg .content .eyebrow {
+  color: var(--white);
+}
+.banner .bg .content .banner-price {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 22px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--white) 30%, transparent);
+  background: color-mix(in srgb, var(--white) 10%, transparent);
+  backdrop-filter: blur(6px);
+}
+.banner .bg .content .banner-price span {
+  font-family: "Poppins";
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+
+.flutterIntro {
+  padding: 110px 0 70px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1280px) {
+  .flutterIntro {
+    padding: 95px 0 65px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .flutterIntro {
+    padding: 85px 0 60px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .flutterIntro {
+    padding: 75px 0 55px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterIntro {
+    padding: 65px 0 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterIntro {
+    padding: 50px 0 45px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .flutterIntro {
+    padding: 45px 0 40px;
+  }
+}
+.flutterIntro .heading {
+  width: 100%;
+  max-width: 575px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterIntro .heading {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterIntro .heading {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterIntro .heading {
+    margin-bottom: 35px;
+  }
+}
+.flutterIntro .heading h3 {
+  margin: 0 0 10px;
+}
+.flutterIntro-main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 85px;
+}
+@media only screen and (max-width: 1280px) {
+  .flutterIntro-main {
+    gap: 55px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .flutterIntro-main {
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .flutterIntro-main {
+    gap: 32px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterIntro-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+.flutterIntro-visual {
+  position: relative;
+  min-width: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 768px) {
+  .flutterIntro-visual {
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.flutterIntro-visual-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 0 18px;
+  font-family: "Poppins";
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #969d91;
+}
+@media only screen and (max-width: 420px) {
+  .flutterIntro-visual-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+.flutterIntro-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  letter-spacing: 0;
+  color: #626b5d;
+}
+.flutterIntro-live i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+.flutterIntro-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  padding: 20px;
+  background: var(--light-yellow);
+}
+@media only screen and (max-width: 540px) {
+  .flutterIntro-image {
+    min-height: 330px;
+    padding: 12px 0;
+  }
+}
+.flutterIntro-image::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 18%;
+  left: 130px;
+  width: 329px;
+  height: 375px;
+  border-radius: 20px;
+  background: #68c95b;
+  transform: rotate(5deg);
+}
+@media only screen and (max-width: 1280px) {
+  .flutterIntro-image::before {
+    left: 50%;
+    width: 300px;
+    height: 345px;
+    transform: translateX(-50%) rotate(5deg);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterIntro-image::before {
+    width: 62%;
+    height: 70%;
+  }
+}
+.flutterIntro-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 570px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 2;
+  -o-object-position: center;
+     object-position: center;
+}
+.flutterIntro-visual-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0 0;
+  border-top: 1px solid #dfe3da;
+}
+.flutterIntro-visual-bottom strong,
+.flutterIntro-visual-bottom span {
+  display: block;
+  font-family: "Poppins";
+}
+.flutterIntro-visual-bottom strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+}
+.flutterIntro-visual-bottom span {
+  margin-top: 4px;
+  font-size: 10px;
+  color: #969d91;
+}
+.flutterIntro-arrow {
+  display: grid !important;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin: 0 !important;
+  border: 1px solid #dfe3da;
+  border-radius: 50%;
+  font-size: 17px !important;
+  color: var(--black) !important;
+}
+.flutterIntro-content {
+  max-width: 550px;
+}
+@media only screen and (max-width: 768px) {
+  .flutterIntro-content {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterIntro-content .btn {
+    width: 100%;
+  }
+}
+.flutterIntro-intro {
+  margin: 0;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+}
+.flutterIntro-description {
+  margin: 20px 0 0;
+  font-family: "Poppins";
+  font-size: 16px;
+  color: var(--text);
+}
+.flutterIntro-features {
+  margin: 32px 0 35px;
+  border-top: 1px solid #dfe3da;
+}
+@media only screen and (max-width: 768px) {
+  .flutterIntro-features {
+    margin: 28px 0 30px;
+  }
+}
+.flutterIntro-feature {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid #dfe3da;
+}
+@media only screen and (max-width: 540px) {
+  .flutterIntro-feature {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px 0;
+  }
+}
+.flutterIntro-feature h3 {
+  margin: 0;
+  font-family: "Poppins";
+  font-size: 18px;
+  color: var(--black);
+}
+.flutterIntro-feature p {
+  margin: 6px 0 0;
+  font-family: "Poppins";
+  font-size: 14px;
+  color: var(--text);
+}
+.flutterIntro-feature-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #dfe3da;
+  border-radius: 12px;
+  background: #fff;
+}
+@media only screen and (max-width: 540px) {
+  .flutterIntro-feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+}
+.flutterIntro-feature-icon i {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-style: normal;
+  color: var(--primary);
+}
+
+.flutterWhy {
+  padding: 70px 0;
+  background: var(--yellow);
+  overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterWhy {
+    padding: 64px 0;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .flutterWhy {
+    padding: 60px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterWhy {
+    padding: 54px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterWhy {
+    padding: 45px 0;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .flutterWhy {
+    padding: 40px 0;
+  }
+}
+.flutterWhy .heading {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterWhy .heading {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterWhy .heading {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterWhy .heading {
+    margin-bottom: 35px;
+  }
+}
+.flutterWhy .heading h3 {
+  margin: 0 0 10px;
+}
+.flutterWhy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterWhy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterWhy-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+.flutterWhy-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 355px;
+  padding: 24px 21px 20px;
+  border: 1px solid #e5e8e1;
+  border-radius: 18px;
+  background: #f8f9f6;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+@media only screen and (max-width: 1280px) {
+  .flutterWhy-card {
+    padding: 22px 18px 20px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .flutterWhy-card {
+    min-height: 300px;
+    padding: 24px 21px 20px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterWhy-card {
+    min-height: auto;
+    padding: 23px;
+  }
+}
+.flutterWhy-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 45px -30px rgba(0, 0, 0, 0.3);
+}
+.flutterWhy-card:nth-child(2) {
+  background: #f4f6f0;
+}
+.flutterWhy-card:nth-child(3) {
+  background: #faf9f5;
+}
+.flutterWhy-card:nth-child(4) {
+  background: #f1f5ef;
+}
+.flutterWhy-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.flutterWhy-symbol {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #dfe5d9;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.75);
+  font-family: "Poppins";
+  font-size: 18px;
+  color: var(--primary);
+}
+.flutterWhy-label {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.flutterWhy-card-body {
+  flex: 1;
+  padding-top: 48px;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterWhy-card-body {
+    padding-top: 30px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterWhy-card-body {
+    padding-top: 20px;
+  }
+}
+.flutterWhy-card-body h4 {
+  margin: 0 0 13px;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+}
+.flutterWhy-card-body p {
+  margin: 0;
+  font-size: 14px;
+}
+.flutterWhy-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 28px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e5dc;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterWhy-card-footer {
+    margin-top: 24px;
+  }
+}
+.flutterWhy-card-footer span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 12px;
+  border: 1px solid #dfe5d9;
+  border-radius: 30px;
+  font-family: "Poppins";
+  font-size: 10px;
+  font-weight: 600;
+  color: #727c6b;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.flutterTypes {
+  padding: 70px 0;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterTypes {
+    padding: 64px 0;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .flutterTypes {
+    padding: 56px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterTypes {
+    padding: 50px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterTypes {
+    padding: 45px 0;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .flutterTypes {
+    padding: 40px 0;
+  }
+}
+.flutterTypes .heading {
+  max-width: 652px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterTypes .heading {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterTypes .heading {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterTypes .heading {
+    margin-bottom: 35px;
+  }
+}
+.flutterTypes .heading h3 {
+  margin: 0 0 10px;
+}
+.flutterTypes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterTypes-grid {
+    gap: 12px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .flutterTypes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterTypes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.flutterTypes-card {
+  position: relative;
+  height: 310px;
+  min-width: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #dfe4dc;
+}
+@media only screen and (max-width: 540px) {
+  .flutterTypes-card {
+    height: 250px;
+    border-radius: 15px;
+  }
+}
+.flutterTypes-card > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.flutterTypes-card:hover > img {
+  transform: scale(1.06);
+}
+.flutterTypes-card:hover .flutterTypes-top i {
+  transform: translate(3px, -3px);
+}
+.flutterTypes-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(179deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 49%, rgb(0, 0, 0) 100%);
+}
+.flutterTypes-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 19px 20px;
+  color: var(--white);
+}
+@media only screen and (max-width: 540px) {
+  .flutterTypes-content {
+    padding: 18px;
+  }
+}
+.flutterTypes-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.flutterTypes-top span {
+  font-family: "Poppins";
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.85);
+}
+.flutterTypes-top i {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  font-size: 14px;
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+.flutterTypes-info {
+  max-width: 370px;
+  margin-top: auto;
+  padding-right: 4px;
+}
+.flutterTypes-info h4 {
+  margin: 0 0 7px;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+}
+.flutterTypes-info p {
+  max-width: 390px;
+  margin: 0;
+  font-family: "Poppins";
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.flutterTypes-more {
+  gap: 24px;
+  height: 310px;
+  padding: 28px 32px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  background: var(--gradient-c);
+}
+@media only screen and (max-width: 1280px) {
+  .flutterTypes-more {
+    height: auto;
+    padding: 26px 28px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .flutterTypes-more {
+    gap: 18px;
+    padding: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterTypes-more {
+    padding: 25px 26px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterTypes-more {
+    padding: 22px;
+    border-radius: 17px;
+  }
+}
+.flutterTypes-more-content {
+  flex: 1;
+}
+.flutterTypes-more-content > span {
+  display: block;
+  margin-bottom: 14px;
+  font-family: "Poppins";
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(0, 0, 0, 0.6);
+}
+.flutterTypes-more-content h4 {
+  margin: 0 0 5px;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+}
+.flutterTypes-more-content p {
+  max-width: 600px;
+  margin: 18px 0 30px;
+  font-size: 14px;
+  color: var(--text);
+}
+@media only screen and (max-width: 1280px) {
+  .flutterTypes-more-content p {
+    margin: 14px 0 20px;
+  }
+}
+.flutterTypes-more .btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+@media only screen and (max-width: 540px) {
+  .flutterTypes-more .btn {
+    width: 100%;
+  }
+}
+.flutterTypes-more .btn i {
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+.flutterTypes-more .btn:hover i {
+  transform: translate(3px, -3px);
+}
+
+.flutterCapabilities {
+  padding: 70px 0;
+  background: var(--yellow);
+}
+@media only screen and (max-width: 1024px) {
+  .flutterCapabilities {
+    padding: 64px 0;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .flutterCapabilities {
+    padding: 60px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterCapabilities {
+    padding: 54px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterCapabilities {
+    padding: 45px 0;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .flutterCapabilities {
+    padding: 40px 0;
+  }
+}
+.flutterCapabilities .heading {
+  width: 100%;
+  max-width: 680px;
+  text-align: center;
+  margin: 0 auto 65px;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterCapabilities .heading {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterCapabilities .heading {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterCapabilities .heading {
+    margin-bottom: 35px;
+  }
+}
+.flutterCapabilities .heading p {
+  max-width: 620px;
+  margin-top: 10px;
+}
+.flutterCapabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterCapabilities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterCapabilities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.flutterCapabilities-card {
+  min-height: 390px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  background: var(--white);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+@media only screen and (max-width: 1280px) {
+  .flutterCapabilities-card {
+    min-height: 380px;
+    padding: 22px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .flutterCapabilities-card {
+    min-height: 340px;
+    padding: 24px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterCapabilities-card {
+    min-height: 0;
+    padding: 22px;
+    border-radius: 17px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .flutterCapabilities-card {
+    padding: 20px;
+  }
+}
+.flutterCapabilities-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.07);
+}
+.flutterCapabilities-card:hover .flutterCapabilities-icon {
+  background: var(--black);
+  color: var(--white);
+  transform: rotate(-8deg);
+}
+.flutterCapabilities-card:hover .flutterCapabilities-card-bottom svg {
+  transform: translate(3px, -3px);
+}
+.flutterCapabilities-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.flutterCapabilities-number {
+  font-family: "Poppins";
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(0, 0, 0, 0.45);
+}
+.flutterCapabilities-icon {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gradient-c);
+  color: var(--black);
+  transition: background 0.35s ease, color 0.35s ease, transform 0.35s ease;
+}
+@media only screen and (max-width: 540px) {
+  .flutterCapabilities-icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+}
+.flutterCapabilities-icon svg {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+@media only screen and (max-width: 540px) {
+  .flutterCapabilities-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+.flutterCapabilities-card-content {
+  margin: 42px 0 35px;
+}
+@media only screen and (max-width: 1024px) {
+  .flutterCapabilities-card-content {
+    margin: 35px 0 30px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterCapabilities-card-content {
+    margin: 14px 0 10px;
+  }
+}
+.flutterCapabilities-card-content h3 {
+  margin: 0 0 14px;
+  font-family: "Poppins";
+  font-size: 24px;
+}
+.flutterCapabilities-card-content p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+}
+.flutterCapabilities-card-bottom {
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.flutterCapabilities-card-bottom span {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.6);
+}
+.flutterCapabilities-card-bottom svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  color: var(--black);
+  transition: transform 0.3s ease;
+}
+.flutterCapabilities-footer {
+  margin-top: 18px;
+  padding: 30px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 22px;
+  background: var(--gradient-c);
+}
+@media only screen and (max-width: 1024px) {
+  .flutterCapabilities-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flutterCapabilities-footer {
+    padding: 26px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .flutterCapabilities-footer {
+    gap: 22px;
+    padding: 23px;
+    border-radius: 17px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .flutterCapabilities-footer {
+    padding: 21px;
+  }
+}
+.flutterCapabilities-footer .btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.flutterCapabilities-footer .btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+.flutterCapabilities-footer .btn:hover svg {
+  transform: translate(3px, -3px);
+}
+.flutterCapabilities-footer-content {
+  flex: 1;
+}
+.flutterCapabilities-footer-content > span {
+  display: block;
+  margin-bottom: 12px;
+  font-family: "Poppins";
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(0, 0, 0, 0.6);
+}
+.flutterCapabilities-footer-content h3 {
+  margin: 0;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+}
+@media only screen and (max-width: 768px) {
+  .flutterCapabilities-footer-content h3 {
+    font-size: 18px;
+  }
+}
+.flutterCapabilities-footer-content h3 span {
+  display: block;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.secG {
+  position: relative;
+  padding: 70px 0;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+  .secG {
+    padding: 70px 0;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .secG {
+    padding: 60px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secG {
+    padding: 45px 0;
+  }
+}
+.secG .heading {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+@media only screen and (max-width: 991px) {
+  .secG .heading {
+    margin-bottom: 45px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secG .heading {
+    margin-bottom: 32px;
+  }
+}
+.secG .heading h3 {
+  margin-bottom: 10px;
+}
+.secG-process {
+  position: relative;
+  max-width: 1080px;
+  margin: 65px auto 0;
+}
+@media only screen and (max-width: 991px) {
+  .secG-process {
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secG-process {
+    margin-top: 35px;
+  }
+}
+.secG-line {
+  position: absolute;
+  top: 35px;
+  bottom: 35px;
+  left: 50%;
+  width: 1px;
+  background: rgba(69, 124, 16, 0.12);
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 991px) {
+  .secG-line {
+    left: 32px;
+    transform: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secG-line {
+    left: 24px;
+  }
+}
+.secG-line span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--primary);
+  opacity: 0.35;
+}
+.secG-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  align-items: center;
+  min-height: 230px;
+}
+.secG-step:not(:last-child) {
+  margin-bottom: 25px;
+}
+.secG-step:nth-child(odd) .secG-info {
+  grid-column: 3;
+  grid-row: 1;
+  padding-left: 45px;
+}
+.secG-step:nth-child(odd) .secG-side {
+  grid-column: 1;
+  grid-row: 1;
+  justify-content: flex-end;
+  padding-right: 45px;
+}
+.secG-step:nth-child(even) .secG-info {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: 45px;
+}
+.secG-step:nth-child(even) .secG-side {
+  grid-column: 3;
+  grid-row: 1;
+  justify-content: flex-start;
+  padding-left: 45px;
+}
+@media only screen and (max-width: 991px) {
+  .secG-step {
+    display: block;
+    min-height: 0;
+    padding-left: 72px;
+  }
+  .secG-step:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .secG-step:nth-child(odd) .secG-info, .secG-step:nth-child(even) .secG-info {
+    padding: 28px 28px 28px 0;
+    text-align: left;
+  }
+  .secG-step:nth-child(odd) .secG-info .secG-details, .secG-step:nth-child(even) .secG-info .secG-details {
+    justify-content: flex-start;
+  }
+  .secG-step:nth-child(odd) .secG-side, .secG-step:nth-child(even) .secG-side {
+    display: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secG-step {
+    padding-left: 50px;
+  }
+  .secG-step:not(:last-child) {
+    margin-bottom: 14px;
+  }
+  .secG-step:nth-child(odd) .secG-info, .secG-step:nth-child(even) .secG-info {
+    padding: 22px 18px 22px 0;
+  }
+}
+.secG-marker {
+  position: relative;
+  z-index: 3;
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100%;
+}
+@media only screen and (max-width: 991px) {
+  .secG-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 65px;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secG-marker {
+    width: 48px;
+  }
+}
+.secG-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(69, 124, 16, 0.16);
+  border-radius: 18px;
+  background: var(--light-yellow);
+  box-shadow: 0 12px 30px rgba(36, 35, 35, 0.06);
+}
+.secG-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media only screen and (max-width: 991px) {
+  .secG-icon {
+    width: 48px;
+    height: 48px;
+    margin-top: 7px;
+    border-radius: 14px;
+  }
+  .secG-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secG-icon {
+    width: 42px;
+    height: 42px;
+    margin-top: 4px;
+    border-radius: 12px;
+  }
+  .secG-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+.secG-info {
+  position: relative;
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.secG-info .secG-kicker {
+  display: block;
+  margin-bottom: 9px;
+  font-family: "Poppins";
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+}
+.secG-info h4 {
+  margin: 0 0 12px;
+  font-family: "Poppins";
+  font-size: 27px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: var(--black);
+}
+@media only screen and (max-width: 991px) {
+  .secG-info h4 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secG-info h4 {
+    font-size: 21px;
+  }
+}
+.secG-info p {
+  max-width: 490px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+}
+.secG-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 19px;
+}
+.secG-details span {
+  padding: 6px 10px;
+  border: 1px solid rgba(69, 124, 16, 0.12);
+  border-radius: 6px;
+  background: rgba(240, 249, 238, 0.55);
+  font-family: "Poppins";
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--primary);
+}
+.secG-side {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.secG-side span {
+  font-family: "Poppins";
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -3px;
+  color: rgba(69, 124, 16, 0.1607843137);
+}
+.secG-side strong {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.secG-step:hover .secG-icon {
+  border-color: rgba(69, 124, 16, 0.25);
+  background: var(--gradient-c);
+}
+.secG-step:hover .secG-icon svg {
+  transform: scale(1.05);
+}
+.secG-step-last .secG-info {
+  border-bottom-color: transparent;
+}
+@media only screen and (max-width: 991px) {
+  .secG-step-last .secG-info {
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.secC {
+  padding: 70px 0;
+  overflow: hidden;
+  background: var(--yellow);
+}
+@media only screen and (max-width: 1024px) {
+  .secC {
+    padding: 64px 0;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .secC {
+    padding: 56px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .secC {
+    padding: 50px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secC {
+    padding: 45px 0;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .secC {
+    padding: 40px 0;
+  }
+}
+.secC .heading {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .secC .heading {
+    margin-bottom: 55px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .secC .heading {
+    margin-bottom: 45px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secC .heading {
+    margin-bottom: 35px;
+  }
+}
+.secC .heading h3 {
+  margin-bottom: 10px;
+}
+.secC .swiper-wrapped {
+  position: relative;
+  container-type: inline-size;
+}
+.secC .swiper-wrapped .secC-swiper {
+  margin: 0 10px;
+}
+.secC .swiper-wrapped .swiper-slide {
+  height: auto;
+}
+.secC .swiper-wrapped .swiper-group {
+  position: absolute;
+  width: 100%;
+  top: 28.125cqw;
+  display: flex;
+  justify-content: space-between;
+  z-index: 11;
+}
+@media only screen and (max-width: 991px) {
+  .secC .swiper-wrapped .swiper-group {
+    top: 31.25cqw;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secC .swiper-wrapped .swiper-group {
+    top: 37.5cqw;
+  }
+}
+.secC .swiper-wrapped .swiper-group button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--white) 35%, transparent);
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--black) 18%, transparent);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+@media only screen and (max-width: 540px) {
+  .secC .swiper-wrapped .swiper-group button {
+    width: 38px;
+    height: 38px;
+  }
+}
+.secC .swiper-wrapped .swiper-group button svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+@media only screen and (max-width: 540px) {
+  .secC .swiper-wrapped .swiper-group button svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+.secC .swiper-wrapped .swiper-group button:hover {
+  background: var(--black);
+  transform: translateY(-50%) scale(1.08);
+}
+.secC .swiper-wrapped .swiper-group button.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+.secC .swiper-wrapped .swiper-group .secC-prev {
+  left: 14px;
+}
+@media only screen and (max-width: 540px) {
+  .secC .swiper-wrapped .swiper-group .secC-prev {
+    left: 10px;
+  }
+}
+.secC .swiper-wrapped .swiper-group .secC-next {
+  right: 14px;
+}
+@media only screen and (max-width: 540px) {
+  .secC .swiper-wrapped .swiper-group .secC-next {
+    right: 10px;
+  }
+}
+.secC .swiper-wrapped .swiper-group .secC-next svg {
+  transform: rotate(180deg);
+}
+.secC-panel {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--white);
+}
+@media only screen and (max-width: 540px) {
+  .secC-panel {
+    border-radius: 17px;
+  }
+}
+.secC-panel__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--yellow);
+}
+@media only screen and (max-width: 991px) {
+  .secC-panel__media {
+    aspect-ratio: 16/10;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secC-panel__media {
+    aspect-ratio: 4/3;
+  }
+}
+.secC-panel__media img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+  transition: transform 0.7s ease;
+}
+.secC-panel:hover .secC-panel__media img {
+  transform: scale(1.035);
+}
+.secC-panel__body {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 30px;
+}
+@media only screen and (max-width: 991px) {
+  .secC-panel__body {
+    padding: 22px 26px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .secC-panel__body {
+    gap: 18px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secC-panel__body {
+    padding: 20px 18px 22px;
+  }
+}
+.secC-panel__body h4 {
+  margin: 0 0 5px;
+  font-family: "Poppins";
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--black);
+}
+.secC-panel__body p {
+  max-width: 520px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.secC-panel__text {
+  min-width: 0;
+}
+.secC-panel__actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 12px;
+}
+@media only screen and (max-width: 768px) {
+  .secC-panel__actions {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 9px;
+  }
+}
+.secC-panel__actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+@media only screen and (max-width: 540px) {
+  .secC-panel__actions .btn {
+    flex: 1 1 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .secC-panel__media img {
+    transition: none;
+  }
+}
+.secH {
+  padding: 70px 0;
+}
+@media only screen and (max-width: 991px) {
+  .secH {
+    padding: 55px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secH {
+    padding: 40px 0;
+  }
+}
+.secH .heading {
+  margin: 0 auto 45px;
+  text-align: center;
+  width: 100%;
+  max-width: 560px;
+}
+@media only screen and (max-width: 768px) {
+  .secH .heading {
+    margin-bottom: 36px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secH .heading {
+    margin-bottom: 30px;
+  }
+}
+.secH .heading h3 {
+  margin-bottom: 10px;
+}
+.secH-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .secH-grid {
+    gap: 14px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .secH-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secH-grid {
+    gap: 10px;
+  }
+}
+.secH-grid li {
+  height: 270px;
+}
+@media only screen and (max-width: 540px) {
+  .secH-grid li {
+    height: 180px;
+  }
+}
+.secH-grid li a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+}
+@media only screen and (max-width: 540px) {
+  .secH-grid li a {
+    padding: 12px;
+    border-radius: 12px;
+  }
+}
+.secH-grid li a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(179deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 49%, rgb(0, 0, 0) 100%);
+  z-index: 1;
+}
+.secH-grid li a img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.secH-grid li a:hover img {
+  transform: scale(1.06);
+}
+.secH-name {
+  position: relative;
+  z-index: 2;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+@media only screen and (max-width: 540px) {
+  .secH-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.25;
+    margin-bottom: 5px;
+  }
+}
+.secH-desc {
+  position: relative;
+  z-index: 2;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--white) 80%, transparent);
+}
+@media only screen and (max-width: 540px) {
+  .secH-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+  }
+}
+
+.secL {
+  padding: 70px 0;
+  background: var(--yellow);
+}
+@media only screen and (max-width: 1024px) {
+  .secL {
+    padding: 64px 0;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .secL {
+    padding: 56px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .secL {
+    padding: 50px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secL {
+    padding: 45px 0;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .secL {
+    padding: 40px 0;
+  }
+}
+.secL .cntr {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+@media only screen and (max-width: 540px) {
+  .secL .cntr {
+    margin-top: 35px;
+  }
+}
+.secL .heading {
+  max-width: 500px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+@media only screen and (max-width: 1280px) {
+  .secL .heading {
+    margin-bottom: 60px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .secL .heading {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secL .heading {
+    margin-bottom: 40px;
+  }
+}
+.secL .heading h3 {
+  margin: 0 0 10px;
+}
+.secL-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 1280px) {
+  .secL-list {
+    gap: 16px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .secL-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secL-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+.secL-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+  min-height: 210px;
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid color-mix(in srgb, var(--black) 8%, transparent);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media only screen and (max-width: 1280px) {
+  .secL-list li {
+    padding: 24px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .secL-list li {
+    min-height: 190px;
+    padding: 26px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .secL-list li {
+    padding: 24px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secL-list li {
+    min-height: auto;
+    padding: 22px;
+    gap: 14px;
+  }
+}
+.secL-list li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.secL-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+.secL-list li:hover::before {
+  transform: scaleX(1);
+}
+.secL-list li:hover .secL-icon {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+.secL-list li h4 {
+  margin: 0 0 8px;
+  font-family: "Poppins";
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--black);
+}
+.secL-list li p {
+  margin: 0;
+  max-width: 420px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.secL-num {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  display: none;
+  font-family: "Poppins";
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--primary) 70%, transparent);
+}
+.secL-icon {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--yellow);
+  color: var(--black);
+  transition: all 0.3s ease;
+}
+.secL-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.secN {
+  padding: 70px 0;
+}
+@media only screen and (max-width: 1024px) {
+  .secN {
+    padding: 64px 0;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .secN {
+    padding: 56px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .secN {
+    padding: 50px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secN {
+    padding: 45px 0;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .secN {
+    padding: 40px 0;
+  }
+}
+.secN .heading {
+  width: 100%;
+  max-width: 628px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+@media only screen and (max-width: 991px) {
+  .secN .heading {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .secN .heading {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .secN .heading {
+    margin-bottom: 30px;
+  }
+}
+.secN .heading h3 {
+  color: var(--black);
+  margin-bottom: 0;
+}
+.secN .heading p {
+  color: rgba(0, 0, 0, 0.55);
+}
+.secN .accordion-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.secN .accordion-item {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+@media only screen and (max-width: 540px) {
+  .secN .accordion-item {
+    margin-bottom: 10px;
+  }
+}
+.secN .accordion-item:hover {
+  border-color: var(--black);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+.secN .accordion-item.active {
+  border-color: var(--black);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.secN .accordion-item.active .accordion-icon {
+  color: var(--white);
+  background: var(--black);
+  border-color: var(--black);
+}
+.secN .accordion-item.active .accordion-header h4 {
+  color: var(--black);
+}
+.secN .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+@media only screen and (max-width: 540px) {
+  .secN .accordion-header {
+    padding: 17px 18px;
+  }
+}
+.secN .accordion-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.72);
+  margin: 0;
+  flex: 1;
+  font-family: "Poppins";
+  padding-right: 20px;
+  transition: color 0.3s ease;
+}
+@media only screen and (max-width: 540px) {
+  .secN .accordion-header h4 {
+    padding-right: 14px;
+  }
+}
+.secN .accordion-icon {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--black);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+@media only screen and (max-width: 540px) {
+  .secN .accordion-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+.secN .accordion-content {
+  padding: 0 24px 22px;
+  padding-right: 65px;
+  display: none;
+  background: transparent;
+}
+@media only screen and (max-width: 540px) {
+  .secN .accordion-content {
+    padding: 0 18px 17px;
+    padding-right: 48px;
+  }
+}
+.secN .accordion-content p {
+  padding: 5px 0 0;
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.55;
+}/*# sourceMappingURL=flutter.css.map */
