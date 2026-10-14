@@ -75,6 +75,42 @@ Route::middleware('maintenance.mode')->group(function () {
 
     Route::controller(FrontController::class)->group(function () {
         Route::get('/', 'home')->name('home');
+        Route::view('/about', 'front-pages.about');
+        Route::view('/android-applications-development', 'front-pages.android-applications-development');
+        Route::view('/blogs', 'front-pages.blog');
+        Route::view('/blog-detail', 'front-pages.blog-detail');
+        Route::view('/business-website-development', 'front-pages.business-website-development');
+        Route::view('/career', 'front-pages.career');
+        Route::view('/career-detail', 'front-pages.career-detail');
+        Route::view('/classified-portals-development', 'front-pages.classified-portals-development');
+        Route::view('/contact', 'front-pages.contact');
+        Route::view('/custom-web-applications-development', 'front-pages.custom-web-applications-development');
+        Route::view('/digital-branding', 'front-pages.digital-branding');
+        Route::view('/digital-marketing', 'front-pages.digital-marketing');
+        Route::view('/E-Commerce-website-development', 'front-pages.E-Commerce-website-development');
+        Route::view('/E-Learning-LMS-development', 'front-pages.E-Learning-LMS-development');
+        Route::view('/education-coaching', 'front-pages.education-coaching');
+        Route::view('/faqs', 'front-pages.faqs');
+        Route::view('/flutter-app-development', 'front-pages.flutter-app-development');
+        Route::view('/google-ads-management', 'front-pages.google-ads-management');
+        Route::view('/graphic-designing', 'front-pages.graphic-designing');
+        Route::view('/healthcare-clinics', 'front-pages.healthcare-clinics');
+        Route::view('/hotels-hospitality', 'front-pages.hotels-hospitality');
+        Route::view('/iOS-applications-development', 'front-pages.iOS-applications-development');
+        Route::view('/Knowledge-base', 'front-pages.Knowledge-base');
+        Route::view('/lifeAt', 'front-pages.lifeAt');
+        Route::view('/manufacturing-export', 'front-pages.manufacturing-export');
+        Route::view('/meta-ads-management', 'front-pages.meta-ads-management');
+        Route::view('/mobile-app-development', 'front-pages.mobile-app-development');
+        Route::view('/NGO-Non-Profits', 'front-pages.NGO-Non-Profits');
+        Route::view('/our-works', 'front-pages.our-works');
+        Route::view('/real-state', 'front-pages.real-state');
+        Route::view('/retail-E-Commerce-D2C', 'front-pages.retail-E-Commerce-D2C');
+        Route::view('/search-engine-optimisation', 'front-pages.search-engine-optimisation');
+        Route::view('/social-media-marketing', 'front-pages.social-media-marketing');
+        Route::view('/travel-tourism', 'front-pages.travel-tourism');
+        Route::view('/video-creations', 'front-pages.video-creations');
+        Route::view('/website-design-development.', 'front-pages.website-design-development.');
     });
 
 });
