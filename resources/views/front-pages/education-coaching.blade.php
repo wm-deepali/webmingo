@@ -692,7 +692,7 @@
 
         <div class="ngoTypes-grid">
           <!-- CARD 01 — FEATURED -->
-          <a href="website-design-development.html" class="ngoTypes-card ngoTypes-card--featured">
+          <a href="{{ route('website-design-development') }}" class="ngoTypes-card ngoTypes-card--featured">
             <img src="assets/images/comman/web-desiging.png" alt="Website design and development" loading="lazy" />
 
             <div class="ngoTypes-overlay"></div>
@@ -712,7 +712,7 @@
           </a>
 
           <!-- CARD 02 -->
-          <a href="digital-marketing.html" class="ngoTypes-card ngoTypes-card--medium">
+          <a href="{{ route('digital-marketing') }}" class="ngoTypes-card ngoTypes-card--medium">
             <img src="assets/images/comman/seoFor.png" alt="Digital marketing services" loading="lazy" />
 
             <div class="ngoTypes-overlay"></div>
@@ -732,7 +732,7 @@
           </a>
 
           <!-- CARD 03 -->
-          <a href="mobile-app-development.html" class="ngoTypes-card ngoTypes-card--medium">
+          <a href="{{ route('mobile-app-development') }}" class="ngoTypes-card ngoTypes-card--medium">
             <img src="assets/images/comman/mobile-application.png" alt="Mobile application development" loading="lazy" />
 
             <div class="ngoTypes-overlay"></div>
@@ -752,7 +752,7 @@
           </a>
 
           <!-- CARD 04 -->
-          <a href="digital-branding.html" class="ngoTypes-card ngoTypes-card--medium">
+          <a href="{{ route('digital-branding') }}" class="ngoTypes-card ngoTypes-card--medium">
             <img src="assets/images/comman/digital-branding.png" alt="Digital branding services" loading="lazy" />
 
             <div class="ngoTypes-overlay"></div>

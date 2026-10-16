@@ -34,7 +34,7 @@
         <div class="container">
             <div class="header-wrapper">
                 <div class="colA">
-                    <a href="index.html" class="logo">
+                    <a href="{{ route('home') }}" class="logo">
                         <img src="assets/images/logo.png" alt="Web Mingo" title="Web Mingo" />
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                     <nav class="main-navigation" aria-label="Main Navigation">
                         <ul class="center-menu-list">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="{{ route('home') }}">Home</a>
                             </li>
 
                             <li class="hasDropDown">
@@ -59,9 +59,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="lifeAt.html">Life at Web Mingo</a></li>
-                                    <li><a href="career.html">Careers</a></li>
+                                    <li><a href="{{ route('about') }}">About Us</a></li>
+                                    <li><a href="{{ route('lifeAt') }}">Life at Web Mingo</a></li>
+                                    <li><a href="{{ route('career') }}">Careers</a></li>
                                 </ul>
                             </li>
 
@@ -84,23 +84,23 @@
                                             <span class="mega-menu__col-title">Website Design &amp; Development</span>
                                             <ul>
                                                 <li>
-                                                    <a href="business-website-development.html">Business Website
+                                                    <a href="{{ route('business-website-development') }}">Business Website
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="E-Commerce-website-development.html">E-Commerce Website
+                                                    <a href="{{ route('E-Commerce-website-development') }}">E-Commerce Website
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="E-Learning-LMS-development.html">E-Learning &amp; LMS
+                                                    <a href="{{ route('E-Learning-LMS-development') }}">E-Learning &amp; LMS
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="classified-portals-development.html">Classified Portals
+                                                    <a href="{{ route('classified-portals-development') }}">Classified Portals
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="custom-web-applications-development.html">Custom Web
+                                                    <a href="{{ route('custom-web-applications-development') }}">Custom Web
                                                         Applications Development</a>
                                                 </li>
                                             </ul>
@@ -111,18 +111,18 @@
                                             <span class="mega-menu__col-title">Digital Marketing</span>
                                             <ul>
                                                 <li>
-                                                    <a href="search-engine-optimisation.html">Search Engine Optimisation
+                                                    <a href="{{ route('search-engine-optimisation') }}">Search Engine Optimisation
                                                         (SEO)</a>
                                                 </li>
                                                 <li>
-                                                    <a href="social-media-marketing.html">Social Media Marketing
+                                                    <a href="{{ route('social-media-marketing') }}">Social Media Marketing
                                                         (SMM)</a>
                                                 </li>
                                                 <li>
-                                                    <a href="google-ads-management.html">Google Ads Management (PPC)</a>
+                                                    <a href="{{ route('google-ads-management') }}">Google Ads Management (PPC)</a>
                                                 </li>
                                                 <li>
-                                                    <a href="meta-ads-management.html">Meta Ads Management</a>
+                                                    <a href="{{ route('meta-ads-management') }}">Meta Ads Management</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -132,15 +132,15 @@
                                             <span class="mega-menu__col-title">Mobile Applications</span>
                                             <ul>
                                                 <li>
-                                                    <a href="android-applications-development.html">Android Applications
+                                                    <a href="{{ route('android-applications-development') }}">Android Applications
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="iOS-applications-development.html">iOS Applications
+                                                    <a href="{{ route('iOS-applications-development') }}">iOS Applications
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="flutter-app-development.html">Flutter App Development</a>
+                                                    <a href="{{ route('flutter-app-development') }}">Flutter App Development</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -150,10 +150,10 @@
                                             <span class="mega-menu__col-title">Graphics &amp; Media</span>
                                             <ul>
                                                 <li>
-                                                    <a href="graphic-designing.html">Graphic Designing</a>
+                                                    <a href="{{ route('graphic-designing') }}">Graphic Designing</a>
                                                 </li>
                                                 <li>
-                                                    <a href="video-creations.html">Video Creations</a>
+                                                    <a href="{{ route('video-creations') }}">Video Creations</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -186,26 +186,26 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="education-coaching.html">Education &amp; Coaching</a>
+                                        <a href="{{ route('education-coaching') }}">Education &amp; Coaching</a>
                                     </li>
                                     <li>
-                                        <a href="retail-E-Commerce-D2C.html">Retail, E-Commerce &amp; D2C</a>
+                                        <a href="{{ route('retail-E-Commerce-D2C') }}">Retail, E-Commerce &amp; D2C</a>
                                     </li>
-                                    <li><a href="real-state.html">Real Estate</a></li>
+                                    <li><a href="{{ route('real-state') }}">Real Estate</a></li>
                                     <li>
-                                        <a href="healthcare-clinics.html">Healthcare &amp; Clinics</a>
-                                    </li>
-                                    <li>
-                                        <a href="NGO-Non-Profits.html">NGO &amp; Non-Profits</a>
+                                        <a href="{{ route('healthcare-clinics') }}">Healthcare &amp; Clinics</a>
                                     </li>
                                     <li>
-                                        <a href="manufacturing-export.html">Manufacturing &amp; Export</a>
+                                        <a href="{{ route('NGO-Non-Profits') }}">NGO &amp; Non-Profits</a>
                                     </li>
                                     <li>
-                                        <a href="hotels-hospitality.html">Hotels &amp; Hospitality</a>
+                                        <a href="{{ route('manufacturing-export') }}">Manufacturing &amp; Export</a>
                                     </li>
                                     <li>
-                                        <a href="travel-tourism.html">Travel &amp; Tourism</a>
+                                        <a href="{{ route('hotels-hospitality') }}">Hotels &amp; Hospitality</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('travel-tourism') }}">Travel &amp; Tourism</a>
                                     </li>
                                     <li class="dropdown-menu__view-all">
                                         <a href="javascript:void()">View All Industries</a>
@@ -214,11 +214,11 @@
                             </li>
 
                             <li>
-                                <a href="our-works.html">Our Works</a>
+                                <a href="{{ route('our-works') }}">Our Works</a>
                             </li>
 
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="{{ route('contact') }}">Contact</a>
                             </li>
                         </ul>
                     </nav>
@@ -316,7 +316,7 @@
             <div class="container">
                 <!-- Brand column -->
                 <div class="footer-col footer-col--brand">
-                    <a href="index.html" class="footer-logo">
+                    <a href="{{ route('home') }}" class="footer-logo">
                         <img src="assets/images/logo.png" alt="Web Mingo" />
                     </a>
 
@@ -397,11 +397,11 @@
                 <div class="footer-col">
                     <h5>Company</h5>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="lifeAt.html">Life at Web Mingo</a></li>
-                        <li><a href="our-works.html">Our Works</a></li>
-                        <li><a href="career.html">Careers</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="{{ route('about') }}">About Us</a></li>
+                        <li><a href="{{ route('lifeAt') }}">Life at Web Mingo</a></li>
+                        <li><a href="{{ route('our-works') }}">Our Works</a></li>
+                        <li><a href="{{ route('career') }}">Careers</a></li>
+                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
                         <li><a href="javascript:void(0)">Share Your Feedback</a></li>
                     </ul>
                 </div>
@@ -411,13 +411,13 @@
                     <h5>Services</h5>
                     <ul>
                         <li>
-                            <a href="website-design-development.html">Website Design & Development</a>
+                            <a href="{{ route('website-design-development') }}">Website Design & Development</a>
                         </li>
-                        <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="{{ route('digital-marketing') }}">Digital Marketing</a></li>
                         <li>
-                            <a href="mobile-app-development.html">Mobile App Development</a>
+                            <a href="{{ route('mobile-app-development') }}">Mobile App Development</a>
                         </li>
-                        <li><a href="digital-branding.html">Digital Branding</a></li>
+                        <li><a href="{{ route('digital-branding') }}">Digital Branding</a></li>
                     </ul>
                 </div>
 
@@ -425,9 +425,9 @@
                 <div class="footer-col">
                     <h5>Resources</h5>
                     <ul>
-                        <li><a href="blog.html">Blogs</a></li>
-                        <li><a href="faqs.html">FAQ</a></li>
-                        <li><a href="Knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="{{ route('blog') }}">Blogs</a></li>
+                        <li><a href="{{ route('faqs') }}">FAQ</a></li>
+                        <li><a href="{{ route('Knowledge-base') }}">Knowledge Base</a></li>
                         <li><a href="javascript:void(0)">Help &amp; Support</a></li>
                     </ul>
                 </div>
@@ -478,9 +478,9 @@
                 </p>
 
                 <ul class="footer-legal">
-                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -508,7 +508,7 @@
             <div class="ham-views">
                 <div class="ham-view is-active" data-ham-view="main" data-ham-title="Menu">
                     <ul class="ham-list">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li>
                             <button type="button" class="ham-link" data-ham-open="company">
                                 <span class="ham-link-text">Company</span>
@@ -534,8 +534,8 @@
                                     </svg></span>
                             </button>
                         </li>
-                        <li><a href="our-works.html">Our Works</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="{{ route('our-works') }}">Our Works</a></li>
+                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -544,9 +544,9 @@
                         <h3 class="ham-title">Company</h3>
                     </div>
                     <ul class="ham-list ham-list--sub">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="lifeAt.html">Life at Web Mingo</a></li>
-                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="{{ route('about') }}">About Us</a></li>
+                        <li><a href="{{ route('lifeAt') }}">Life at Web Mingo</a></li>
+                        <li><a href="{{ route('career') }}">Careers</a></li>
                     </ul>
                 </div>
 
@@ -596,19 +596,19 @@
                     </div>
                     <ul class="ham-list ham-list--sub">
                         <li>
-                            <a href="business-website-development.html">Business Website Development</a>
+                            <a href="{{ route('business-website-development') }}">Business Website Development</a>
                         </li>
                         <li>
-                            <a href="E-Commerce-website-development.html">E-Commerce Website Development</a>
+                            <a href="{{ route('E-Commerce-website-development') }}">E-Commerce Website Development</a>
                         </li>
                         <li>
-                            <a href="E-Learning-LMS-development.html">E-Learning &amp; LMS Development</a>
+                            <a href="{{ route('E-Learning-LMS-development') }}">E-Learning &amp; LMS Development</a>
                         </li>
                         <li>
-                            <a href="classified-portals-development.html">Classified Portals Development</a>
+                            <a href="{{ route('classified-portals-development') }}">Classified Portals Development</a>
                         </li>
                         <li>
-                            <a href="custom-web-applications-development.html">Custom Web Applications Development</a>
+                            <a href="{{ route('custom-web-applications-development') }}">Custom Web Applications Development</a>
                         </li>
                     </ul>
                 </div>
@@ -619,16 +619,16 @@
                     </div>
                     <ul class="ham-list ham-list--sub">
                         <li>
-                            <a href="search-engine-optimisation.html">Search Engine Optimisation (SEO)</a>
+                            <a href="{{ route('search-engine-optimisation') }}">Search Engine Optimisation (SEO)</a>
                         </li>
                         <li>
-                            <a href="social-media-marketing.html">Social Media Marketing (SMM)</a>
+                            <a href="{{ route('social-media-marketing') }}">Social Media Marketing (SMM)</a>
                         </li>
                         <li>
-                            <a href="google-ads-management.html">Google Ads Management (PPC)</a>
+                            <a href="{{ route('google-ads-management') }}">Google Ads Management (PPC)</a>
                         </li>
                         <li>
-                            <a href="meta-ads-management.html">Meta Ads Management</a>
+                            <a href="{{ route('meta-ads-management') }}">Meta Ads Management</a>
                         </li>
                     </ul>
                 </div>
@@ -639,13 +639,13 @@
                     </div>
                     <ul class="ham-list ham-list--sub">
                         <li>
-                            <a href="android-applications-development.html">Android Applications Development</a>
+                            <a href="{{ route('android-applications-development') }}">Android Applications Development</a>
                         </li>
                         <li>
-                            <a href="iOS-applications-development.html">iOS Applications Development</a>
+                            <a href="{{ route('iOS-applications-development') }}">iOS Applications Development</a>
                         </li>
                         <li>
-                            <a href="flutter-app-development.html">Flutter App Development</a>
+                            <a href="{{ route('flutter-app-development') }}">Flutter App Development</a>
                         </li>
                     </ul>
                 </div>
@@ -655,8 +655,8 @@
                         <h3 class="ham-title">Graphics &amp; Media</h3>
                     </div>
                     <ul class="ham-list ham-list--sub">
-                        <li><a href="graphic-designing.html">Graphic Designing</a></li>
-                        <li><a href="video-creations.html">Video Creations</a></li>
+                        <li><a href="{{ route('graphic-designing') }}">Graphic Designing</a></li>
+                        <li><a href="{{ route('video-creations') }}">Video Creations</a></li>
                     </ul>
                 </div>
 
@@ -666,23 +666,23 @@
                     </div>
                     <ul class="ham-list ham-list--sub">
                         <li>
-                            <a href="education-coaching.html">Education &amp; Coaching</a>
+                            <a href="{{ route('education-coaching') }}">Education &amp; Coaching</a>
                         </li>
                         <li>
-                            <a href="retail-E-Commerce-D2C.html">Retail, E-Commerce &amp; D2C</a>
+                            <a href="{{ route('retail-E-Commerce-D2C') }}">Retail, E-Commerce &amp; D2C</a>
                         </li>
-                        <li><a href="real-state.html">Real Estate</a></li>
+                        <li><a href="{{ route('real-state') }}">Real Estate</a></li>
                         <li>
-                            <a href="healthcare-clinics.html">Healthcare &amp; Clinics</a>
+                            <a href="{{ route('healthcare-clinics') }}">Healthcare &amp; Clinics</a>
                         </li>
-                        <li><a href="NGO-Non-Profits.html">NGO &amp; Non-Profits</a></li>
+                        <li><a href="{{ route('NGO-Non-Profits') }}">NGO &amp; Non-Profits</a></li>
                         <li>
-                            <a href="manufacturing-export.html">Manufacturing &amp; Export</a>
+                            <a href="{{ route('manufacturing-export') }}">Manufacturing &amp; Export</a>
                         </li>
                         <li>
-                            <a href="hotels-hospitality.html">Hotels &amp; Hospitality</a>
+                            <a href="{{ route('hotels-hospitality') }}">Hotels &amp; Hospitality</a>
                         </li>
-                        <li><a href="travel-tourism.html">Travel &amp; Tourism</a></li>
+                        <li><a href="{{ route('travel-tourism') }}">Travel &amp; Tourism</a></li>
                         <li><a href="javascript:void(0)">View All Industries</a></li>
                     </ul>
                 </div>

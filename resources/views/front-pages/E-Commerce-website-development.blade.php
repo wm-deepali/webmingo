@@ -252,7 +252,7 @@
           <div class="mfgTypes-grid">
             <!-- SEARCH ENGINE OPTIMIZATION -->
             <a
-              href="search-engine-optimisation.html"
+              href="{{ route('search-engine-optimisation') }}"
               class="mfgTypes-card mfgTypes-card--featured"
             >
               <img
@@ -298,7 +298,7 @@
 
             <!-- SOCIAL MEDIA MARKETING -->
             <a
-              href="social-media-marketing.html"
+              href="{{ route('social-media-marketing') }}"
               class="mfgTypes-card mfgTypes-card--medium"
             >
               <img
@@ -344,7 +344,7 @@
 
             <!-- GOOGLE ADWORDS -->
             <a
-              href="google-ads-management.html"
+              href="{{ route('google-ads-management') }}"
               class="mfgTypes-card mfgTypes-card--medium"
             >
               <img
@@ -390,7 +390,7 @@
 
             <!-- META ADS -->
             <a
-              href="meta-ads-management.html"
+              href="{{ route('meta-ads-management') }}"
               class="mfgTypes-card mfgTypes-card--medium"
             >
               <img

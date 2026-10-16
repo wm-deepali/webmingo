@@ -149,7 +149,7 @@
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Full-time</span>
             </div>
             <p>Build and maintain scalable, high-performance interfaces across our core product suite.</p>
-            <a href="career-detail.html" class="btn btn-black career-card__apply">
+            <a href="{{ route('career-detail') }}" class="btn btn-black career-card__apply">
               Apply Now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
             </a>
@@ -165,7 +165,7 @@
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Full-time</span>
             </div>
             <p>Own end-to-end design for new features — from research and wireframes to production-ready interfaces.</p>
-            <a href="career-detail.html" class="btn btn-black career-card__apply">
+            <a href="{{ route('career-detail') }}" class="btn btn-black career-card__apply">
               Apply Now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
             </a>
@@ -181,7 +181,7 @@
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Full-time</span>
             </div>
             <p>Shape campaigns, positioning, and messaging that connect us with new audiences.</p>
-            <a href="career-detail.html" class="btn btn-black career-card__apply">
+            <a href="{{ route('career-detail') }}" class="btn btn-black career-card__apply">
               Apply Now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
             </a>
@@ -197,7 +197,7 @@
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Full-time</span>
             </div>
             <p>Identify new opportunities and help grow our partner and client base.</p>
-            <a href="career-detail.html" class="btn btn-black career-card__apply">
+            <a href="{{ route('career-detail') }}" class="btn btn-black career-card__apply">
               Apply Now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
             </a>

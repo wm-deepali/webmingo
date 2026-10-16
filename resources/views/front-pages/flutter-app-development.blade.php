@@ -1067,7 +1067,7 @@
         <ul class="secH-grid">
           <!-- Education & Coaching -->
           <li>
-            <a href="education-coaching.html">
+            <a href="{{ route('education-coaching') }}">
               <img src="assets/images/website/education.jpg" alt="Education and coaching business" loading="lazy" />
 
               <span class="secH-name">Education &amp; Coaching</span>
@@ -1079,7 +1079,7 @@
 
           <!-- Retail, E-Commerce & D2C -->
           <li>
-            <a href="retail-E-Commerce-D2C.html">
+            <a href="{{ route('retail-E-Commerce-D2C') }}">
               <img src="assets/images/website/retail.jpg" alt="Retail and e-commerce business" loading="lazy" />
 
               <span class="secH-name">Retail, E-Commerce &amp; D2C</span>
@@ -1091,7 +1091,7 @@
 
           <!-- Real Estate -->
           <li>
-            <a href="real-state.html">
+            <a href="{{ route('real-state') }}">
               <img src="assets/images/website/realstate.jpg" alt="Real estate business" loading="lazy" />
 
               <span class="secH-name">Real Estate</span>
@@ -1104,7 +1104,7 @@
 
           <!-- Healthcare & Clinics -->
           <li>
-            <a href="healthcare-clinics.html">
+            <a href="{{ route('healthcare-clinics') }}">
               <img src="assets/images/website/healthcare.jpg" alt="Healthcare and clinic business" loading="lazy" />
 
               <span class="secH-name">Healthcare &amp; Clinics</span>
@@ -1117,7 +1117,7 @@
 
           <!-- NGO & Non-Profits -->
           <li>
-            <a href="NGO-Non-Profits.html">
+            <a href="{{ route('NGO-Non-Profits') }}">
               <img src="assets/images/website/ngo.jpg" alt="NGO and non-profit organisation" loading="lazy" />
 
               <span class="secH-name">NGO &amp; Non-Profits</span>
@@ -1130,7 +1130,7 @@
 
           <!-- Manufacturing & Export -->
           <li>
-            <a href="manufacturing-export.html">
+            <a href="{{ route('manufacturing-export') }}">
               <img src="assets/images/website/manufacturing.jpg" alt="Manufacturing and export business" loading="lazy" />
 
               <span class="secH-name">Manufacturing &amp; Export</span>
@@ -1143,7 +1143,7 @@
 
           <!-- Hotels & Hospitality -->
           <li>
-            <a href="hotels-hospitality.html">
+            <a href="{{ route('hotels-hospitality') }}">
               <img src="assets/images/website/hotel.jpg" alt="Hotels and hospitality business" loading="lazy" />
 
               <span class="secH-name">Hotels &amp; Hospitality</span>
@@ -1156,7 +1156,7 @@
 
           <!-- Travel & Tourism -->
           <li>
-            <a href="travel-tourism.html">
+            <a href="{{ route('travel-tourism') }}">
               <img src="assets/images/website/travel.jpg" alt="Travel and tourism business" loading="lazy" />
 
               <span class="secH-name">Travel &amp; Tourism</span>

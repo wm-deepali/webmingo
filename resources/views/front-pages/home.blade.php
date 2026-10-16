@@ -91,7 +91,7 @@
                     Start Your Project
                     <i>↗</i>
                   </button>
-                  <a href="our-works.html" class="btn btn-secondary">
+                  <a href="{{ route('our-works') }}" class="btn btn-secondary">
                     View Our Work
                     <i>↗</i>
                   </a>
@@ -659,7 +659,7 @@
                           <li>LMS &amp; E-Learning</li>
                           <li>Admission Forms</li>
                         </ul>
-                        <a href="education-coaching.html" class="panel-cta">
+                        <a href="{{ route('education-coaching') }}" class="panel-cta">
                           <span>Explore education solutions</span>
                           <em>→</em>
                         </a>
@@ -682,7 +682,7 @@
                           <li>D2C Websites</li>
                           <li>Payments &amp; Orders</li>
                         </ul>
-                        <a href="retail-E-Commerce-D2C.html" class="panel-cta">
+                        <a href="{{ route('retail-E-Commerce-D2C') }}" class="panel-cta">
                           <span>Explore retail solutions</span>
                           <em>→</em>
                         </a>
@@ -705,7 +705,7 @@
                           <li>Project Websites</li>
                           <li>Lead Management</li>
                         </ul>
-                        <a href="real-state.html" class="panel-cta">
+                        <a href="{{ route('real-state') }}" class="panel-cta">
                           <span>Explore real estate solutions</span>
                           <em>→</em>
                         </a>
@@ -728,7 +728,7 @@
                           <li>Appointment Booking</li>
                           <li>Patient Enquiries</li>
                         </ul>
-                        <a href="healthcare-clinics.html" class="panel-cta">
+                        <a href="{{ route('healthcare-clinics') }}" class="panel-cta">
                           <span>Explore healthcare solutions</span>
                           <em>→</em>
                         </a>
@@ -751,7 +751,7 @@
                           <li>Donation Platforms</li>
                           <li>Volunteer Forms</li>
                         </ul>
-                        <a href="NGO-Non-Profits.html" class="panel-cta">
+                        <a href="{{ route('NGO-Non-Profits') }}" class="panel-cta">
                           <span>Explore NGO solutions</span>
                           <em>→</em>
                         </a>
@@ -774,7 +774,7 @@
                           <li>Product Catalogues</li>
                           <li>B2B Enquiries</li>
                         </ul>
-                        <a href="manufacturing-export.html" class="panel-cta">
+                        <a href="{{ route('manufacturing-export') }}" class="panel-cta">
                           <span>Explore manufacturing solutions</span>
                           <em>→</em>
                         </a>
@@ -797,7 +797,7 @@
                           <li>Room Booking</li>
                           <li>Property Galleries</li>
                         </ul>
-                        <a href="hotels-hospitality.html" class="panel-cta">
+                        <a href="{{ route('hotels-hospitality') }}" class="panel-cta">
                           <span>Explore hospitality solutions</span>
                           <em>→</em>
                         </a>
@@ -820,7 +820,7 @@
                           <li>Tour Packages</li>
                           <li>Booking &amp; Enquiries</li>
                         </ul>
-                        <a href="travel-tourism.html" class="panel-cta">
+                        <a href="{{ route('travel-tourism') }}" class="panel-cta">
                           <span>Explore travel solutions</span>
                           <em>→</em>
                         </a>
@@ -893,7 +893,7 @@
             </div>
 
             <div class="row-action">
-              <a href="website-design-development.html" class="btn btn-outline-black">
+              <a href="{{ route('website-design-development') }}" class="btn btn-outline-black">
                 Details
                 <em>↗</em>
               </a>
@@ -926,7 +926,7 @@
             </div>
 
             <div class="row-action">
-              <a href="digital-marketing.html" class="btn btn-outline-black">
+              <a href="{{ route('digital-marketing') }}" class="btn btn-outline-black">
                 Details
                 <em>↗</em>
               </a>
@@ -958,7 +958,7 @@
             </div>
 
             <div class="row-action">
-              <a href="mobile-app-development.html" class="btn btn-outline-black">
+              <a href="{{ route('mobile-app-development') }}" class="btn btn-outline-black">
                 Details
                 <em>↗</em>
               </a>
@@ -991,7 +991,7 @@
             </div>
 
             <div class="row-action">
-              <a href="digital-branding.html" class="btn btn-outline-black">
+              <a href="{{ route('digital-branding') }}" class="btn btn-outline-black">
                 Details
                 <em>↗</em>
               </a>
@@ -2328,7 +2328,7 @@
                   </ul>
                 </div>
 
-                <a href="E-Commerce-website-development.html" class="btn btn-outline-black">
+                <a href="{{ route('E-Commerce-website-development') }}" class="btn btn-outline-black">
                   Explore Solutions
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                     <path fill="currentColor"
@@ -2358,7 +2358,7 @@
                   </ul>
                 </div>
 
-                <a href="E-Learning-LMS-development.html" class="btn btn-outline-black">
+                <a href="{{ route('E-Learning-LMS-development') }}" class="btn btn-outline-black">
                   Explore Solutions
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                     <path fill="currentColor"
@@ -2389,7 +2389,7 @@
                   </ul>
                 </div>
 
-                <a href="classified-portals-development.html" class="btn btn-outline-black">
+                <a href="{{ route('classified-portals-development') }}" class="btn btn-outline-black">
                   Explore Solutions
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                     <path fill="currentColor"

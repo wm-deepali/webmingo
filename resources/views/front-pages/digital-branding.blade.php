@@ -335,7 +335,7 @@
           </div>
 
           <div class="brandRows-list">
-            <a href="graphic-design.html" class="brandRows-card">
+            <a href="{{ route('graphic-designing') }}" class="brandRows-card">
               <img
                 src="assets/images/umbrella/graphic.png"
                 alt="Graphic Design Services"
@@ -362,7 +362,7 @@
               </div>
             </a>
 
-            <a href="video-creation.html" class="brandRows-card">
+            <a href="{{ route('video-creations') }}" class="brandRows-card">
               <img
                 src="assets/images/umbrella/video.png"
                 alt="Video Creation Services"

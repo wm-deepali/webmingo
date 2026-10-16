@@ -71,7 +71,7 @@
           <div class="blog-grid">
             <!-- Blog Card 01 -->
             <article class="blog-card">
-              <a href="blog-detail.html" class="blog-card__image">
+              <a href="{{ route('blog-detail') }}" class="blog-card__image">
                 <img
                   src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=85"
                   alt="Designer working on a digital interface"
@@ -91,7 +91,7 @@
                   experiences clearer, easier, and more engaging.
                 </p>
 
-                <a href="blog-detail.html" class="btn btn-outline-black">
+                <a href="{{ route('blog-detail') }}" class="btn btn-outline-black">
                   Read Article
                   <i>↗</i>
                 </a>
@@ -100,7 +100,7 @@
 
             <!-- Blog Card 02 -->
             <article class="blog-card">
-              <a href="blog-detail.html" class="blog-card__image">
+              <a href="{{ route('blog-detail') }}" class="blog-card__image">
                 <img
                   src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=85"
                   alt="Developer working with code on a computer"
@@ -120,7 +120,7 @@
                   website built to grow with your business.
                 </p>
 
-                <a href="blog-detail.html" class="btn btn-outline-black">
+                <a href="{{ route('blog-detail') }}" class="btn btn-outline-black">
                   Read Article
                   <i>↗</i>
                 </a>
@@ -129,7 +129,7 @@
 
             <!-- Blog Card 03 -->
             <article class="blog-card">
-              <a href="blog-detail.html" class="blog-card__image">
+              <a href="{{ route('blog-detail') }}" class="blog-card__image">
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=85"
                   alt="Creative team discussing a digital strategy"
@@ -149,7 +149,7 @@
                   audience, and the opportunity before opening the design file.
                 </p>
 
-                <a href="blog-detail.html" class="btn btn-outline-black">
+                <a href="{{ route('blog-detail') }}" class="btn btn-outline-black">
                   Read Article
                   <i>↗</i>
                 </a>
@@ -158,7 +158,7 @@
 
             <!-- Blog Card 04 -->
             <article class="blog-card">
-              <a href="blog-detail.html" class="blog-card__image">
+              <a href="{{ route('blog-detail') }}" class="blog-card__image">
                 <img
                   src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=85"
                   alt="Brand identity design materials on a desk"
@@ -178,7 +178,7 @@
                   experience people remember at every digital touchpoint.
                 </p>
 
-                <a href="blog-detail.html" class="btn btn-outline-black">
+                <a href="{{ route('blog-detail') }}" class="btn btn-outline-black">
                   Read Article
                   <i>↗</i>
                 </a>
@@ -187,7 +187,7 @@
 
             <!-- Blog Card 05 -->
             <article class="blog-card">
-              <a href="blog-detail.html" class="blog-card__image">
+              <a href="{{ route('blog-detail') }}" class="blog-card__image">
                 <img
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85"
                   alt="Analytics dashboard showing digital growth data"
@@ -207,7 +207,7 @@
                   experiences can help turn attention into real opportunities.
                 </p>
 
-                <a href="blog-detail.html" class="btn btn-outline-black">
+                <a href="{{ route('blog-detail') }}" class="btn btn-outline-black">
                   Read Article
                   <i>↗</i>
                 </a>
@@ -216,7 +216,7 @@
 
             <!-- Blog Card 06 -->
             <article class="blog-card">
-              <a href="blog-detail.html" class="blog-card__image">
+              <a href="{{ route('blog-detail') }}" class="blog-card__image">
                 <img
                   src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=900&q=85"
                   alt="Modern workspace with technology and laptop"
@@ -238,7 +238,7 @@
                   businesses, teams, and the digital experiences they create.
                 </p>
 
-                <a href="blog-detail.html" class="btn btn-outline-black">
+                <a href="{{ route('blog-detail') }}" class="btn btn-outline-black">
                   Read Article
                   <i>↗</i>
                 </a>

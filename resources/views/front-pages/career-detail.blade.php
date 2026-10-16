@@ -633,7 +633,7 @@
             </p>
 
             <div class="cta-promo__actions">
-              <a href="career.html" class="btn btn-white">
+              <a href="{{ route('career') }}" class="btn btn-white">
                 View All Open Positions
               </a>
 
