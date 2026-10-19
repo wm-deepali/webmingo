@@ -119,6 +119,7 @@
                                 <th style="width:60px">ID</th>
                                 <th>Question</th>
                                 <th style="width:110px">Show on Home</th>
+                                <th style="width:80px">Order</th>
                                 <th style="width:110px">Status</th>
                                 <th style="width:90px">Actions</th>
                             </tr>
@@ -141,6 +142,8 @@
                                             <span class="pill pill-no">No</span>
                                         @endif
                                     </td>
+
+                                    <td><span class="id-chip">{{ $faq->sort_order }}</span></td>
 
                                     <td>
                                         @if($faq->status)

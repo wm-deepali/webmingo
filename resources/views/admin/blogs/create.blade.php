@@ -16,6 +16,7 @@
         --green:         #007a5e;
         --green-bg:      #e3f1ec;
         --red:           #b22222;
+        --red-bg:        #fce8e8;
         --radius-sm:     8px;
         --radius-md:     12px;
         --shadow-card:   0 1px 3px rgba(0,0,0,.08), 0 0 0 1px var(--border);
@@ -32,6 +33,10 @@
     .crumb a { color: var(--accent); text-decoration: none; }
     .crumb a:hover { text-decoration: underline; }
     .crumb span { margin: 0 5px; }
+
+    /* ── Error alert ── */
+    .form-errors { background: var(--red-bg); border: 1px solid #f2c4c4; color: var(--red); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 16px; font-size: 13px; }
+    .form-errors ul { margin: 0; padding-left: 18px; }
 
     /* ── Buttons ── */
     .btn-primary-dash {
@@ -69,6 +74,8 @@
     /* ── Form fields ── */
     .field-group { margin-bottom: 16px; }
     .field-group:last-child { margin-bottom: 0; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:600px) { .field-row { grid-template-columns: 1fr; } }
     .field-label { display: block; font-size: 12px; font-weight: 600; color: var(--text-secondary); letter-spacing: .03em; text-transform: uppercase; margin-bottom: 6px; }
     .field-label .req { color: var(--red); margin-left: 2px; }
 
@@ -155,6 +162,16 @@
                 </div>
             </div>
 
+            @if ($errors->any())
+                <div class="form-errors">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <form id="blogForm" method="POST" enctype="multipart/form-data"
                   action="{{ route('admin.blogs.store') }}">
                 @csrf
@@ -171,22 +188,40 @@
 
                                 <div class="field-group">
                                     <label class="field-label">Title <span class="req">*</span></label>
-                                    <input type="text" name="title" id="title" class="field-input" required>
+                                    <input type="text" name="title" id="title" class="field-input"
+                                           value="{{ old('title') }}" required>
                                 </div>
 
                                 <div class="field-group">
                                     <label class="field-label">Slug</label>
                                     <div class="slug-wrap">
                                         <span class="slug-prefix">blog/</span>
-                                        <input type="text" name="slug" id="slug" class="field-input">
+                                        <input type="text" name="slug" id="slug" class="field-input"
+                                               value="{{ old('slug') }}">
                                     </div>
                                     <div class="field-hint">Auto-generated from title. You can edit manually.</div>
+                                </div>
+
+                                <div class="field-row">
+                                    <div class="field-group">
+                                        <label class="field-label">Category</label>
+                                        <input type="text" name="category" class="field-input"
+                                               value="{{ old('category') }}"
+                                               placeholder="e.g. Design, Branding, Marketing">
+                                        <div class="field-hint">Shown above the title on blog cards.</div>
+                                    </div>
+
+                                    <div class="field-group">
+                                        <label class="field-label">Publish Date</label>
+                                        <input type="date" name="published_at" class="field-input"
+                                               value="{{ old('published_at', date('Y-m-d')) }}">
+                                    </div>
                                 </div>
 
                                 <div class="field-group">
                                     <label class="field-label">Short Description</label>
                                     <textarea name="short_description" class="field-textarea" rows="3"
-                                              placeholder="A brief summary shown on blog listing…"></textarea>
+                                              placeholder="A brief summary shown on blog listing…">{{ old('short_description') }}</textarea>
                                 </div>
 
                             </div>
@@ -197,9 +232,8 @@
                             <div class="section-card-header"><h5>Content <span style="color:var(--red);font-size:12px">*</span></h5></div>
                             <div class="section-card-body">
                                 <div class="field-group">
-                                    <textarea name="content" class="field-textarea" rows="12"
-                                              style="min-height:280px" required
-                                              placeholder="Write your blog content here…"></textarea>
+                                    <textarea name="content" id="content" class="field-textarea" rows="12"
+                                              placeholder="Write your blog content here…">{{ old('content') }}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +243,6 @@
                     <!-- ── RIGHT column ── -->
                     <div>
 
-                    
                         <!-- Image upload -->
                         <div class="section-card">
                             <div class="section-card-header"><h5>Featured Image</h5></div>
@@ -226,34 +259,42 @@
                                         <span id="previewName"></span>
                                     </div>
                                 </div>
+
+                                <div class="field-group" style="margin-top:14px">
+                                    <label class="field-label">Image Alt Text</label>
+                                    <input type="text" name="image_alt" class="field-input"
+                                           value="{{ old('image_alt') }}"
+                                           placeholder="Describe the image">
+                                </div>
                             </div>
                         </div>
 
+                        <!-- SEO -->
                         <div class="section-card">
-    <div class="section-card-header">
-        <h5>SEO Settings</h5>
-    </div>
-    <div class="section-card-body">
+                            <div class="section-card-header">
+                                <h5>SEO Settings</h5>
+                            </div>
+                            <div class="section-card-body">
 
-        <div class="field-group">
-            <label class="field-label">Meta Title</label>
-            <input type="text"
-                   name="meta_title"
-                   class="field-input"
-                   value="{{ old('meta_title' ?? '') }}"
-                   placeholder="Enter meta title">
-        </div>
+                                <div class="field-group">
+                                    <label class="field-label">Meta Title</label>
+                                    <input type="text"
+                                           name="meta_title"
+                                           class="field-input"
+                                           value="{{ old('meta_title') }}"
+                                           placeholder="Enter meta title">
+                                </div>
 
-        <div class="field-group">
-            <label class="field-label">Meta Description</label>
-            <textarea name="meta_description"
-                      class="field-textarea"
-                      rows="4"
-                      placeholder="Enter meta description">{{ old('meta_description' ?? '') }}</textarea>
-        </div>
+                                <div class="field-group">
+                                    <label class="field-label">Meta Description</label>
+                                    <textarea name="meta_description"
+                                              class="field-textarea"
+                                              rows="4"
+                                              placeholder="Enter meta description">{{ old('meta_description') }}</textarea>
+                                </div>
 
-    </div>
-</div>
+                            </div>
+                        </div>
 
                         <!-- Settings -->
                         <div class="section-card">
@@ -266,7 +307,8 @@
                                         <div class="toggle-sub">Publish this blog post</div>
                                     </div>
                                     <label class="toggle-switch">
-                                        <input type="checkbox" name="status" id="status" checked>
+                                        <input type="checkbox" name="status" id="status"
+                                               {{ old('_token') ? (old('status') ? 'checked' : '') : 'checked' }}>
                                         <span class="toggle-track"></span>
                                     </label>
                                 </div>
@@ -274,10 +316,11 @@
                                 <div class="toggle-row">
                                     <div>
                                         <div class="toggle-label">Show on Home Page</div>
-                                        <div class="toggle-sub">Feature on the storefront homepage</div>
+                                        <div class="toggle-sub">Feature on the homepage</div>
                                     </div>
                                     <label class="toggle-switch">
-                                        <input type="checkbox" name="show_home" id="show_home">
+                                        <input type="checkbox" name="show_home" id="show_home"
+                                               {{ old('show_home') ? 'checked' : '' }}>
                                         <span class="toggle-track"></span>
                                     </label>
                                 </div>
@@ -304,12 +347,17 @@
 
 @include('admin.footer')
 
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <script>
+// Rich text editor
+CKEDITOR.replace('content', { height: 320 });
+
 // Slug auto-generate from title
 document.getElementById('title').addEventListener('keyup', function () {
     document.getElementById('slug').value = this.value
         .toLowerCase()
-        .replace(/ /g, '-')
+        .trim()
+        .replace(/\s+/g, '-')
         .replace(/[^\w-]+/g, '');
 });
 
@@ -322,8 +370,7 @@ document.getElementById('imageInput').addEventListener('change', function () {
         document.getElementById('previewImg').src = e.target.result;
         document.getElementById('previewName').textContent = file.name;
         document.getElementById('uploadPlaceholder').style.display = 'none';
-        const prev = document.getElementById('uploadPreview');
-        prev.style.display = 'flex';
+        document.getElementById('uploadPreview').style.display = 'flex';
     };
     reader.readAsDataURL(file);
 });

@@ -2,167 +2,36 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\InvoiceSetting;
 use App\Models\State;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use App\Models\City;
-use App\Models\SmtpSetting;
-use App\Models\PaymentSetting;
 use App\Models\Setting;
-use App\Models\Courier;
+use App\Models\SmtpSetting;
+use Illuminate\Http\Request;
 use App\Models\GoogleSetting;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class AdminSettingController extends Controller
 {
     // ðŸ”¹ Show form
     public function index(Request $request)
     {
-        $invoice_setting = InvoiceSetting::first();
         $smtp = SmtpSetting::first();
-        $payment = PaymentSetting::first();
         $general = Setting::first();
         $states = State::all();
-        $couriers = Courier::latest()->get();
+        $google_setting = GoogleSetting::current();
         $activeTab = $request->tab ?? 'general';
-        
-         $google_setting = GoogleSetting::current(); // 👈 new
 
         return view(
             'admin.admin-settings.index',
             compact(
-                'invoice_setting',
                 'smtp',
-                'payment',
                 'general',
                 'states',
-                'couriers',
                 'google_setting',
                 'activeTab'
             )
         );
-    }
-
-    // ðŸ”¹ Save settings
-    public function invoiceSettingStore(Request $request)
-    {
-        $rules = [
-            // Company
-            'company_name' => 'required|string|max:255',
-            'company_address' => 'required|string',
-            'company_state' => 'required|exists:states,id',
-            'company_city' => 'required|exists:cities,id',
-            'company_pincode' => 'required|string|max:10',
-            'company_phone' => 'nullable|string|max:20',
-            'company_email' => 'nullable|email|max:255',
-            // Invoice
-            'invoice_prefix' => 'required|string|max:20',
-            'invoice_serial' => 'required|integer|min:1',
-            'invoice_year_format' => 'nullable|in:none,slash,year',
-            'invoice_separator' => 'nullable|string|max:5',
-            'invoice_date_format' => 'nullable|in:d/m/Y,d M Y,m-d-Y',
-            // Tax
-            'tax_type' => 'nullable|in:inclusive,exclusive',
-            'business_type' => 'nullable|in:registered,unregistered',
-            // Footer
-            'terms_conditions' => 'nullable|string',
-        ];
-
-        // GST Validation Only For Registered
-        if ($request->business_type == 'registered') {
-            $rules['company_gstin'] = 'required|string|max:15';
-            $rules['company_pan'] = 'required|string|max:10';
-            $rules['cgst'] = 'required|numeric|min:0|max:100';
-            $rules['sgst'] = 'required|numeric|min:0|max:100';
-            $rules['igst'] = 'required|numeric|min:0|max:100';
-        }
-
-        $validated = $request->validate($rules);
-
-        // Checkboxes
-        $validated['show_gst_breakup'] =
-            $request->has('show_gst_breakup');
-        $validated['auto_generate_invoice'] =
-            $request->has('auto_generate_invoice');
-        $validated['email_invoice_customer'] =
-            $request->has('email_invoice_customer');
-
-        // Unregistered Business
-        if ($request->business_type == 'unregistered') {
-            $validated['company_gstin'] = null;
-            $validated['company_pan'] = null;
-            $validated['cgst'] = 0;
-            $validated['sgst'] = 0;
-            $validated['igst'] = 0;
-            $validated['show_gst_breakup'] = 0;
-        }
-
-        // Logo Upload
-        if ($request->hasFile('company_logo')) {
-            $validated['company_logo'] = $request
-                ->file('company_logo')
-                ->store('company', 'public');
-        }
-
-        InvoiceSetting::updateOrCreate(
-            ['id' => 1],
-            $validated
-        );
-
-        return redirect()
-            ->route('admin.admin-setting.index', ['tab' => 'gst'])
-            ->with('success', 'Invoice & GST settings updated successfully.');
-    }
-
-    // ðŸ”¥ Generate Invoice Number (SAFE VERSION)
-    public static function generateInvoiceNumber()
-    {
-        return DB::transaction(function () {
-            $setting = InvoiceSetting::lockForUpdate()->first();
-
-            if (!$setting) {
-                return 'INV/00001';
-            }
-
-            $serial = $setting->invoice_serial;
-            $year = now()->year;
-            $nextYear = substr($year + 1, -2);
-
-            $yearPart = '';
-            switch ($setting->invoice_year_format) {
-                case 'slash':
-                    $yearPart = $year . '-' . $nextYear;
-                    break;
-                case 'year':
-                    $yearPart = $year;
-                    break;
-                case 'none':
-                default:
-                    $yearPart = '';
-                    break;
-            }
-
-            $parts = [];
-            if (!empty($setting->invoice_prefix)) {
-                $parts[] = $setting->invoice_prefix;
-            }
-            if (!empty($yearPart)) {
-                $parts[] = $yearPart;
-            }
-            $parts[] = str_pad($serial, 5, '0', STR_PAD_LEFT);
-
-            $invoiceNumber = implode(
-                $setting->invoice_separator ?: '/',
-                $parts
-            );
-
-            // increment next invoice number
-            $setting->increment('invoice_serial');
-
-            return $invoiceNumber;
-        });
     }
 
     public function getCities(Request $request)
@@ -207,28 +76,6 @@ class AdminSettingController extends Controller
         return back()->with(
             'success',
             'SMTP settings saved successfully.'
-        );
-    }
-
-    public function paymentSettingStore(Request $request)
-    {
-        $validated = $request->validate([
-            'test_key_id' => 'nullable|string|max:255',
-            'test_key_secret' => 'nullable|string',
-            'live_key_id' => 'nullable|string|max:255',
-            'live_key_secret' => 'nullable|string',
-        ]);
-
-        $validated['live_mode'] = $request->has('live_mode');
-
-        PaymentSetting::updateOrCreate(
-            ['id' => 1],
-            $validated
-        );
-
-        return back()->with(
-            'success',
-            'Payment settings saved successfully.'
         );
     }
 
@@ -323,47 +170,6 @@ class AdminSettingController extends Controller
         );
     }
 
-    public function courierStore(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'website_url' => 'nullable|url|max:255',
-        ]);
-
-        $validated['is_active'] =
-            $request->has('is_active');
-
-        Courier::updateOrCreate(
-            ['id' => $request->id],
-            $validated
-        );
-
-        return redirect()
-            ->route(
-                'admin.admin-setting.index',
-                ['tab' => 'couriers']
-            )
-            ->with(
-                'success',
-                'Courier saved successfully.'
-            );
-    }
-
-    public function courierDelete(Courier $courier)
-    {
-        $courier->delete();
-
-        return redirect()
-            ->route(
-                'admin.admin-setting.index',
-                ['tab' => 'couriers']
-            )
-            ->with(
-                'success',
-                'Courier deleted successfully.'
-            );
-    }
-    
     public function googleSettingStore(Request $request)
     {
         $request->validate([
@@ -420,5 +226,5 @@ class AdminSettingController extends Controller
             ->route('admin.admin-setting.index', ['tab' => 'tracking'])
             ->with('success', 'Tracking settings saved successfully.');
     }
-    
+
 }

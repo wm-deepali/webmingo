@@ -209,6 +209,20 @@
                             </div>
                         </div>
 
+                        <div class="section-card">
+    <div class="section-card-header">
+        <h5>Display Order</h5>
+    </div>
+    <div class="section-card-body" style="padding:16px 20px">
+        <div class="field-group">
+            <label class="field-label">Sort Order</label>
+            <input type="number" name="sort_order" class="field-input" min="0"
+                value="{{ old('sort_order', $faq->sort_order) }}">
+            <div class="toggle-sub" style="margin-top:6px">Lower numbers appear first.</div>
+        </div>
+    </div>
+</div>
+
                         <!-- Record info -->
                         <div class="section-card">
                             <div class="section-card-header">

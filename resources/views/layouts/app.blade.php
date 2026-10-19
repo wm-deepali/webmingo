@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
     <!-- ================= Project CSS ================= -->
-    <link rel="stylesheet" href="assets/font/font.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/sass/header/header.css" />
-    <link rel="stylesheet" href="assets/sass/footer/footer.css" />
-    <link rel="stylesheet" href="assets/sass/home/home.css" />
+    <link rel="stylesheet" href="{{ asset('assets/font/font.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/sass/header/header.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/sass/footer/footer.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/sass/home/home.css')}}" />
     <!-- ================= Animation / Popup CSS ================= -->
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/fancybox.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/fancybox.css')}}" />
 
     @stack('styles')
 
@@ -35,7 +35,7 @@
             <div class="header-wrapper">
                 <div class="colA">
                     <a href="{{ route('home') }}" class="logo">
-                        <img src="assets/images/logo.png" alt="Web Mingo" title="Web Mingo" />
+                        <img src="{{ asset('assets/images/logo.png')}}" alt="Web Mingo" title="Web Mingo" />
                     </a>
                 </div>
 
@@ -317,7 +317,7 @@
                 <!-- Brand column -->
                 <div class="footer-col footer-col--brand">
                     <a href="{{ route('home') }}" class="footer-logo">
-                        <img src="assets/images/logo.png" alt="Web Mingo" />
+                        <img src="{{ asset('assets/images/logo.png')}}" alt="Web Mingo" />
                     </a>
 
                     <p class="footer-tagline">
@@ -871,10 +871,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- ================= Project JS ================= -->
-    <script type="text/javascript" src="assets/js/animate.js"></script>
-    <script type="text/javascript" src="assets/js/fancybox.js"></script>
-    <script type="text/javascript" src="assets/js/function.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/animate.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/fancybox.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/function.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/main.js')}}"></script>
  
     @stack('scripts')
     

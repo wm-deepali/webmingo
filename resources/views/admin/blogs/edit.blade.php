@@ -34,6 +34,10 @@
     .crumb a:hover { text-decoration: underline; }
     .crumb span { margin: 0 5px; }
 
+    /* ── Error alert ── */
+    .form-errors { background: var(--red-bg); border: 1px solid #f2c4c4; color: var(--red); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 16px; font-size: 13px; }
+    .form-errors ul { margin: 0; padding-left: 18px; }
+
     /* ── Identity chip ── */
     .blog-identity {
         display: flex; align-items: center; gap: 12px;
@@ -98,6 +102,8 @@
     /* ── Form fields ── */
     .field-group { margin-bottom: 16px; }
     .field-group:last-child { margin-bottom: 0; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:600px) { .field-row { grid-template-columns: 1fr; } }
     .field-label { display: block; font-size: 12px; font-weight: 600; color: var(--text-secondary); letter-spacing: .03em; text-transform: uppercase; margin-bottom: 6px; }
     .field-label .req { color: var(--red); margin-left: 2px; }
 
@@ -188,7 +194,7 @@
                 <!-- Identity chip -->
                 <div class="blog-identity">
                     @if($blog->image)
-                        <img src="{{ asset('uploads/blogs/' . $blog->image) }}"
+                        <img src="{{ $blog->image_url }}"
                              class="blog-identity-thumb" alt="{{ $blog->title }}">
                     @else
                         <div class="blog-identity-icon"><i class="fa fa-pen-to-square"></i></div>
@@ -206,6 +212,16 @@
                     </div>
                 </div>
             </div>
+
+            @if ($errors->any())
+                <div class="form-errors">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <form id="blogForm" method="POST" enctype="multipart/form-data"
                   action="{{ route('admin.blogs.update', $blog->id) }}">
@@ -225,7 +241,7 @@
                                 <div class="field-group">
                                     <label class="field-label">Title <span class="req">*</span></label>
                                     <input type="text" name="title" id="title" class="field-input"
-                                           value="{{ $blog->title }}" required>
+                                           value="{{ old('title', $blog->title) }}" required>
                                 </div>
 
                                 <div class="field-group">
@@ -233,14 +249,30 @@
                                     <div class="slug-wrap">
                                         <span class="slug-prefix">blog/</span>
                                         <input type="text" name="slug" id="slug" class="field-input"
-                                               value="{{ $blog->slug }}">
+                                               value="{{ old('slug', $blog->slug) }}">
                                     </div>
-                                    <div class="field-hint">Auto-generated from title. You can edit manually.</div>
+                                    <div class="field-hint">Changing the slug changes the blog's URL.</div>
+                                </div>
+
+                                <div class="field-row">
+                                    <div class="field-group">
+                                        <label class="field-label">Category</label>
+                                        <input type="text" name="category" class="field-input"
+                                               value="{{ old('category', $blog->category) }}"
+                                               placeholder="e.g. Design, Branding, Marketing">
+                                        <div class="field-hint">Shown above the title on blog cards.</div>
+                                    </div>
+
+                                    <div class="field-group">
+                                        <label class="field-label">Publish Date</label>
+                                        <input type="date" name="published_at" class="field-input"
+                                               value="{{ old('published_at', optional($blog->published_at)->format('Y-m-d')) }}">
+                                    </div>
                                 </div>
 
                                 <div class="field-group">
                                     <label class="field-label">Short Description</label>
-                                    <textarea name="short_description" class="field-textarea" rows="3">{{ $blog->short_description }}</textarea>
+                                    <textarea name="short_description" class="field-textarea" rows="3">{{ old('short_description', $blog->short_description) }}</textarea>
                                 </div>
 
                             </div>
@@ -251,8 +283,7 @@
                             <div class="section-card-header"><h5>Content <span style="color:var(--red);font-size:12px">*</span></h5></div>
                             <div class="section-card-body">
                                 <div class="field-group">
-                                    <textarea name="content" class="field-textarea" rows="12"
-                                              style="min-height:280px" required>{{ $blog->content }}</textarea>
+                                    <textarea name="content" id="content" class="field-textarea" rows="12">{{ old('content', $blog->content) }}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -270,10 +301,10 @@
                                 @if($blog->image)
                                     <div style="margin-bottom:12px">
                                         <div class="current-image-label">Current Image</div>
-                                        <img src="{{ asset('uploads/blogs/' . $blog->image) }}"
+                                        <img src="{{ $blog->image_url }}"
                                              class="current-image-thumb"
                                              id="currentThumb"
-                                             alt="{{ $blog->title }}">
+                                             alt="{{ $blog->image_alt ?: $blog->title }}">
                                     </div>
                                 @endif
 
@@ -291,32 +322,40 @@
                                     <span id="newPreviewName"></span>
                                 </div>
 
+                                <div class="field-group" style="margin-top:14px">
+                                    <label class="field-label">Image Alt Text</label>
+                                    <input type="text" name="image_alt" class="field-input"
+                                           value="{{ old('image_alt', $blog->image_alt) }}"
+                                           placeholder="Describe the image">
+                                </div>
+
                             </div>
                         </div>
 
+                        <!-- SEO -->
                         <div class="section-card">
-    <div class="section-card-header">
-        <h5>SEO Settings</h5>
-    </div>
-    <div class="section-card-body">
+                            <div class="section-card-header">
+                                <h5>SEO Settings</h5>
+                            </div>
+                            <div class="section-card-body">
 
-        <div class="field-group">
-            <label class="field-label">Meta Title</label>
-            <input type="text"
-                   name="meta_title"
-                   class="field-input"
-                   value="{{ old('meta_title', $blog->meta_title) }}">
-        </div>
+                                <div class="field-group">
+                                    <label class="field-label">Meta Title</label>
+                                    <input type="text"
+                                           name="meta_title"
+                                           class="field-input"
+                                           value="{{ old('meta_title', $blog->meta_title) }}">
+                                </div>
 
-        <div class="field-group">
-            <label class="field-label">Meta Description</label>
-            <textarea name="meta_description"
-                      class="field-textarea"
-                      rows="4">{{ old('meta_description', $blog->meta_description) }}</textarea>
-        </div>
+                                <div class="field-group">
+                                    <label class="field-label">Meta Description</label>
+                                    <textarea name="meta_description"
+                                              class="field-textarea"
+                                              rows="4">{{ old('meta_description', $blog->meta_description) }}</textarea>
+                                </div>
 
-    </div>
-</div>
+                            </div>
+                        </div>
 
                         <!-- Settings -->
                         <div class="section-card">
@@ -330,7 +369,7 @@
                                     </div>
                                     <label class="toggle-switch">
                                         <input type="checkbox" name="status" id="status"
-                                               {{ $blog->status ? 'checked' : '' }}>
+                                               {{ old('_token') ? (old('status') ? 'checked' : '') : ($blog->status ? 'checked' : '') }}>
                                         <span class="toggle-track"></span>
                                     </label>
                                 </div>
@@ -338,11 +377,11 @@
                                 <div class="toggle-row">
                                     <div>
                                         <div class="toggle-label">Show on Home Page</div>
-                                        <div class="toggle-sub">Feature on the storefront homepage</div>
+                                        <div class="toggle-sub">Feature on the homepage</div>
                                     </div>
                                     <label class="toggle-switch">
                                         <input type="checkbox" name="show_home" id="show_home"
-                                               {{ $blog->show_home ? 'checked' : '' }}>
+                                               {{ old('_token') ? (old('show_home') ? 'checked' : '') : ($blog->show_home ? 'checked' : '') }}>
                                         <span class="toggle-track"></span>
                                     </label>
                                 </div>
@@ -352,8 +391,6 @@
 
                     </div>
                 </div>
-
-
 
                 <!-- Action bar -->
                 <div class="action-bar">
@@ -371,14 +408,10 @@
 
 @include('admin.footer')
 
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <script>
-// Slug auto-generate from title
-document.getElementById('title').addEventListener('keyup', function () {
-    document.getElementById('slug').value = this.value
-        .toLowerCase()
-        .replace(/ /g, '-')
-        .replace(/[^\w-]+/g, '');
-});
+// Rich text editor
+CKEDITOR.replace('content', { height: 320 });
 
 // New image preview
 document.getElementById('imageInput').addEventListener('change', function () {
@@ -391,8 +424,7 @@ document.getElementById('imageInput').addEventListener('change', function () {
         // Fade current thumb to show it will be replaced
         const cur = document.getElementById('currentThumb');
         if (cur) cur.style.opacity = '.4';
-        const prev = document.getElementById('newPreview');
-        prev.style.display = 'flex';
+        document.getElementById('newPreview').style.display = 'flex';
     };
     reader.readAsDataURL(file);
 });
