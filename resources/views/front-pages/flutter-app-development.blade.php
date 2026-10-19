@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-       01 — BANNER
-  ============================================================= -->
+         01 — BANNER
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect6.mp4"
@@ -46,8 +46,8 @@
     </section>
 
     <!-- ============================================================
-       02 — INTRODUCTION
-  ============================================================= -->
+         02 — INTRODUCTION
+    ============================================================= -->
     <section class="flutterIntro">
       <div class="container">
         <div class="heading">
@@ -152,8 +152,8 @@
     </section>
 
     <!-- ============================================================
-       03 — WHY FLUTTER
-  ============================================================= -->
+         03 — WHY FLUTTER
+    ============================================================= -->
     <section class="flutterWhy">
       <div class="container">
         <div class="heading">
@@ -259,8 +259,8 @@
     </section>
 
     <!-- ============================================================
-       04 — TYPES OF FLUTTER APPS
-  ============================================================= -->
+         04 — TYPES OF FLUTTER APPS
+    ============================================================= -->
     <section class="flutterTypes">
       <div class="container">
         <div class="heading">
@@ -406,12 +406,12 @@
     </section>
 
     <!-- ============================================================
-       FLUTTER CORE CAPABILITIES
-  ============================================================= -->
+         FLUTTER CORE CAPABILITIES
+    ============================================================= -->
 
     <!-- ============================================================
-       FLUTTER CORE CAPABILITIES
-  ============================================================= -->
+         FLUTTER CORE CAPABILITIES
+    ============================================================= -->
 
     <section class="flutterCapabilities">
       <div class="container">
@@ -651,8 +651,8 @@
     </section>
 
     <!-- ============================================================
-       07 — DEVELOPMENT PROCESS (.secG — reused, unchanged design)
-  ============================================================= -->
+         07 — DEVELOPMENT PROCESS (.secG — reused, unchanged design)
+    ============================================================= -->
     <section class="secG" id="flutter-development-process">
       <div class="container">
         <div class="heading">
@@ -1048,8 +1048,8 @@
     </section>
 
     <!-- ============================================================
-       09 — INDUSTRIES (.secH — reused, unchanged design)
-  ============================================================= -->
+         09 — INDUSTRIES (.secH — reused, unchanged design)
+    ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1171,8 +1171,8 @@
     </section>
 
     <!-- ============================================================
-       10 — WHY WEB MINGO (.secL — reused, unchanged design)
-  ============================================================= -->
+         10 — WHY WEB MINGO (.secL — reused, unchanged design)
+    ============================================================= -->
 
     <section class="secL">
       <div class="container">
@@ -1290,191 +1290,16 @@
     </section>
 
     <!-- ============================================================
-       11 — FAQ (.secN — reused, unchanged design)
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>
-            Frequently Asked Questions
-            <span>About Flutter App Development.</span>
-          </h3>
-          <p>
-            Straight answers to what most people ask before getting started.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What is Flutter app development?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Flutter is a cross-platform UI development framework built
-                with Dart that can support applications for Android and iOS
-                through a shared codebase. Suitability depends on the
-                application's technical requirements and platform-specific
-                needs.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  How long does it take to develop a Flutter application?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Timeline depends on app complexity, number of screens, custom
-                features, UI/UX requirements, API and backend integrations,
-                testing requirements, and platform-specific functionality. We
-                provide a realistic timeline once your requirements are
-                understood.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How much does Flutter app development cost?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Cost depends on application scope, number of features and
-                screens, UI/UX complexity, backend requirements, API
-                integrations, payment and notification functionality, and
-                testing and maintenance needs. We recommend requesting a
-                project-specific estimate.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can Flutter build both Android and iOS applications?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes, Flutter supports cross-platform application development
-                through a shared codebase. Some platform-specific
-                functionality may require additional implementation based on
-                project requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Flutter vs Native — what's the difference, and which one do
-                  I need?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                <strong>Flutter</strong> uses a shared codebase for Android
-                and iOS, suitable for projects where cross-platform
-                development aligns with requirements and can support an
-                efficient development workflow — though platform-specific
-                integrations may require additional work.
-                <strong>Native Android/iOS</strong>
-                uses a platform-specific approach with access to
-                platform-specific APIs and capabilities, which may suit
-                applications requiring deep platform specialization.
-              </p>
-              <p>
-                Consider <a href="[ANDROID_APP_URL]">Native Android</a> when
-                your primary audience or functionality is Android-focused.
-                Consider <a href="[IOS_APP_URL]">Native iOS</a> when your
-                product specifically targets Apple users and the App Store
-                ecosystem. Consider <strong>Flutter</strong> when Android and
-                iOS applications can be developed effectively through a shared
-                codebase and the project suits a cross-platform approach.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can Flutter integrate APIs, payment gateways, and
-                  notifications?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Flutter applications can integrate required APIs and external
-                services based on technical compatibility, business
-                requirements, and provider requirements. Integrations are
-                planned according to the application architecture.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can Flutter apps support offline functionality?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Selected offline features may be supported through local data
-                handling and synchronization, depending on the application's
-                workflow and technical requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can Flutter apps be published on Google Play and the Apple
-                  App Store?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Flutter supports application builds for relevant platforms.
-                Publishing requires platform-specific configuration,
-                compliance with applicable requirements, testing, and
-                submission processes. We cannot guarantee approval or a fixed
-                review timeline.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         11 — FAQ (.secN — reused, unchanged design)
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'title' => 'Frequently Asked Questions <span>About Flutter App Development.</span>',
+      'intro' => 'Straight answers to what most people ask before getting started.',
+    ])
 
     <!-- ============================================================
-       12 — FINAL CTA (reused, unchanged design)
-  ============================================================= -->
+         12 — FINAL CTA (reused, unchanged design)
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1498,8 +1323,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

@@ -2,23 +2,52 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Career;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class FrontController extends Controller
 {
+
     public function home(Request $request)
     {
-        return view('front-pages.home');
+        // Home page FAQ section = General FAQs
+        $faqs = Faq::active()->general()->get();
+
+        return view('front-pages.home', compact('faqs'));
     }
 
     public function faqs()
     {
-        $faqs = Faq::active()->get();
+        // Main FAQ page = General FAQs only
+        $faqs = Faq::active()->general()->get();
 
         return view('front-pages.faqs', compact('faqs'));
+    }
+
+    /**
+     * Main service + sub service pages.
+     * The route name doubles as the view name and the FAQ key.
+     */
+    public function servicePage()
+    {
+        $key = Route::currentRouteName();
+        $faqs = Faq::active()->forService($key)->get();
+
+        return view('front-pages.' . $key, compact('faqs'));
+    }
+
+    /**
+     * Industry pages.
+     */
+    public function industryPage()
+    {
+        $key = Route::currentRouteName();
+        $faqs = Faq::active()->forIndustry($key)->get();
+
+        return view('front-pages.' . $key, compact('faqs'));
     }
 
     public function blogs(Request $request)
@@ -69,5 +98,4 @@ class FrontController extends Controller
 
         return view('front-pages.career-detail', compact('career'));
     }
-
 }

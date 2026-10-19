@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-       01 — HERO
-  ============================================================= -->
+         01 — HERO
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
@@ -48,8 +48,8 @@
     </section>
 
     <!-- ============================================================
-       02 — ABOUT RETAIL, E-COMMERCE & D2C
-  ============================================================= -->
+         02 — ABOUT RETAIL, E-COMMERCE & D2C
+    ============================================================= -->
     <section class="retailIntro">
       <div class="container">
         <div class="retailIntro-head">
@@ -160,9 +160,9 @@
     </section>
 
     <!-- ============================================================
-       03 — WHY RETAIL, E-COMMERCE & D2C BUSINESSES NEED A
-            PROFESSIONAL WEBSITE
-  ============================================================= -->
+         03 — WHY RETAIL, E-COMMERCE & D2C BUSINESSES NEED A
+              PROFESSIONAL WEBSITE
+    ============================================================= -->
     <section class="retailWhy">
       <div class="container">
         <div class="heading">
@@ -340,8 +340,8 @@
     </section>
 
     <!-- ============================================================
-       04 — WHAT YOUR RETAIL / E-COMMERCE WEBSITE SHOULD INCLUDE
-  ============================================================= -->
+         04 — WHAT YOUR RETAIL / E-COMMERCE WEBSITE SHOULD INCLUDE
+    ============================================================= -->
     <section class="retailWhat">
       <div class="container">
         <div class="heading">
@@ -363,8 +363,8 @@
 
         <div class="retailWhat-grid">
           <!-- ======================================================
-             SHOPPING EXPERIENCE
-        ======================================================= -->
+               SHOPPING EXPERIENCE
+          ======================================================= -->
           <div class="retailWhat-col retailWhat-col--customers">
             <div class="retailWhat-col-head">
               <span class="retailWhat-col-icon">
@@ -483,8 +483,8 @@
           </div>
 
           <!-- ======================================================
-             STORE & BUSINESS OPERATIONS
-        ======================================================= -->
+               STORE & BUSINESS OPERATIONS
+          ======================================================= -->
           <div class="retailWhat-col retailWhat-col--business">
             <div class="retailWhat-col-head">
               <span class="retailWhat-col-icon">
@@ -686,9 +686,9 @@
     </section>
 
     <!-- ============================================================
-       06 — HOW WE HELP YOUR RETAIL, E-COMMERCE & D2C BUSINESS
-            GROW DIGITALLY
-  ============================================================= -->
+         06 — HOW WE HELP YOUR RETAIL, E-COMMERCE & D2C BUSINESS
+              GROW DIGITALLY
+    ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -916,112 +916,16 @@
     </section>
 
     <!-- ============================================================
-       08 — FAQ
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>
-            Frequently Asked Questions
-            <span>About Retail, E-Commerce &amp; D2C.</span>
-          </h3>
-          <p>
-            Straight answers to common questions businesses ask before taking
-            their store online.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  What type of retail or e-commerce website can you build?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                We build retail websites, e-commerce stores, D2C brand
-                websites, product catalogue websites and custom online stores.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can I sell my products directly through the website?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Your website can include product pages, shopping cart,
-                checkout, online payments and order management.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you integrate payments and delivery options?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We can integrate suitable payment gateways and delivery
-                solutions based on your products and business requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can you connect inventory, CRM or other business systems?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We can connect your store with inventory, CRM, ERP and
-                other tools to support your retail operations.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you help grow our online store after launch?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We offer SEO and digital marketing support to improve
-                visibility, bring more visitors and generate more sales.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         08 — FAQ
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'title' => 'Frequently Asked Questions <span>About Retail, E-Commerce &amp; D2C.</span>',
+      'intro' => 'Straight answers to common questions businesses ask before taking their store online.',
+    ])
 
     <!-- ============================================================
-       09 — FINAL CTA
-  ============================================================= -->
+         09 — FINAL CTA
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1052,8 +956,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

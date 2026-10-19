@@ -44,8 +44,8 @@
     </section>
 
     <!-- ============================================================
-       GRAPHIC INTRO — EDITORIAL CREATIVE SECTION
-  ============================================================ -->
+         GRAPHIC INTRO — EDITORIAL CREATIVE SECTION
+    ============================================================ -->
 
     <section class="graphicIntro">
       <div class="container">
@@ -519,8 +519,8 @@
     </section>
 
     <!-- ============================================================
-       GRAPHIC DESIGN CTA
-  ============================================================ -->
+         GRAPHIC DESIGN CTA
+    ============================================================ -->
 
     <section class="androidCta" id="graphicCta">
       <div class="container">
@@ -834,105 +834,10 @@
       </div>
     </section>
 
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>Questions About Our <span>Digital Branding Services?</span></h3>
-          <p>
-            Find answers to common questions about graphic design, video
-            creation, branding requirements and ongoing creative support.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What digital branding services do you offer?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                We offer graphic design, logo design, social media creatives,
-                marketing visuals, video creation and other custom branding
-                services.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you work with our existing brand identity?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We can follow your existing logo, colors, typography and
-                brand guidelines to keep your digital content consistent.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Do you provide both graphic design and video creation?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We create both static visual content and video content
-                for social media, campaigns, promotions and brand
-                communication.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you handle ongoing creative requirements?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We can provide ongoing creative support for regular
-                social media designs, marketing campaigns, promotional content
-                and other recurring branding needs.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How can I discuss my branding requirements?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Share your requirements through the enquiry form on this page.
-                Our team can then discuss your creative needs, scope and next
-                steps.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.page-faqs', [
+      'title' => 'Questions About Our <span>Digital Branding Services?</span>',
+      'intro' => 'Find answers to common questions about graphic design, video creation, branding requirements and ongoing creative support.',
+    ])
 
     <div class="container">
       <div class="cta-promo">
@@ -956,8 +861,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

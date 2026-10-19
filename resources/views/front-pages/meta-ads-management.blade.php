@@ -9,8 +9,8 @@
 
   <main>
     <!-- ============================================================
-       01 — BANNER (comman .banner reused)
-  ============================================================= -->
+         01 — BANNER (comman .banner reused)
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
@@ -44,8 +44,8 @@
     </section>
 
     <!-- ============================================================
-       META ADS — THE PROBLEM WE SOLVE
-  ============================================================ -->
+         META ADS — THE PROBLEM WE SOLVE
+    ============================================================ -->
 
     <section class="metaProblem" id="metaProblem">
       <div class="container">
@@ -197,8 +197,8 @@
       </div>
     </section>
     <!-- ============================================================
-       03 — TYPES OF META AD CAMPAIGNS WE RUN (.metaTypes — NEW)
-  ============================================================= -->
+         03 — TYPES OF META AD CAMPAIGNS WE RUN (.metaTypes — NEW)
+    ============================================================= -->
     <section class="metaTypes">
       <div class="container">
         <div class="heading">
@@ -305,8 +305,8 @@
     </section>
 
     <!-- ============================================================
-       04 — WHAT'S INCLUDED IN OUR META ADS SERVICE
-  ============================================================= -->
+         04 — WHAT'S INCLUDED IN OUR META ADS SERVICE
+    ============================================================= -->
 
     <section class="metaIncluded">
       <div class="container">
@@ -433,8 +433,8 @@
     </section>
 
     <!-- ============================================================
-       META ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
-  ============================================================= -->
+         META ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
+    ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -619,8 +619,8 @@
     </section>
 
     <!-- ============================================================
-       05 — OUR APPROACH: CREATIVE-FIRST STRATEGY (comman .secG reused)
-  ============================================================= -->
+         05 — OUR APPROACH: CREATIVE-FIRST STRATEGY (comman .secG reused)
+    ============================================================= -->
     <section class="secG" id="meta-approach">
       <div class="container">
         <div class="heading">
@@ -840,8 +840,8 @@
     </section>
 
     <!-- ============================================================
-       06 — META PIXEL & CONVERSION TRACKING
-  ============================================================= -->
+         06 — META PIXEL & CONVERSION TRACKING
+    ============================================================= -->
 
     <section class="metaPixel">
       <div class="container">
@@ -997,8 +997,8 @@
     </section>
 
     <!-- ============================================================
-       07 — INDUSTRIES WE RUN META ADS FOR (comman .secH reused)
-  ============================================================= -->
+         07 — INDUSTRIES WE RUN META ADS FOR (comman .secH reused)
+    ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1122,8 +1122,8 @@
     </section>
 
     <!-- ============================================================
-       09 — WHY CHOOSE WEB MINGO (comman .secL reused)
-  ============================================================= -->
+         09 — WHY CHOOSE WEB MINGO (comman .secL reused)
+    ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1202,108 +1202,16 @@
     </section>
 
     <!-- ============================================================
-       11 — FAQ (comman .secN reused)
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>
-            Frequently Asked Questions <span>About Meta Ads Management.</span>
-          </h3>
-          <p>
-            Straight answers to what most people ask before getting started.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What is the minimum budget required for Meta Ads?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                There is no fixed minimum for every business. The starting
-                budget depends on your industry, audience, target locations,
-                campaign objective and the level of testing required.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Will the Meta ad account belong to us?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Your Meta Business account and advertising assets remain
-                under your ownership, while our team can be given the required
-                access to manage campaigns.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Do you create ad creatives, or do we need to provide them?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                We can create image, video and carousel ad creatives based on
-                your campaign goals and brand guidelines. Existing assets can
-                also be incorporated where appropriate.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Do you manage both Facebook and Instagram Ads?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Campaigns can be managed across Facebook and Instagram,
-                with targeting, placements and creative variations adjusted
-                according to your audience and campaign objectives.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you set up Meta Pixel and Conversions API?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Meta Pixel and Conversions API can be configured where
-                supported by your website and technical setup to help measure
-                relevant actions and campaign performance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         11 — FAQ (comman .secN reused)
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'title' => 'Frequently Asked Questions <span>About Meta Ads Management.</span>',
+      'intro' => 'Straight answers to what most people ask before getting started.',
+    ])
 
     <!-- ============================================================
-       12 — FINAL CTA (comman .cta-promo reused)
-  ============================================================= -->
+         12 — FINAL CTA (comman .cta-promo reused)
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1327,8 +1235,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

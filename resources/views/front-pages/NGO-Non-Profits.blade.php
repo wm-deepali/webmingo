@@ -9,8 +9,8 @@
   <main>
 
     <!-- ============================================================
-       01 — HERO
-  ============================================================= -->
+         01 — HERO
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
@@ -54,8 +54,8 @@
 
 
     <!-- ============================================================
-       02 — ABOUT NGOS & NON-PROFITS
-  ============================================================= -->
+         02 — ABOUT NGOS & NON-PROFITS
+    ============================================================= -->
     <section class="ngoIntro">
       <div class="container">
 
@@ -149,8 +149,8 @@
 
 
     <!-- ============================================================
-       03 — WHY NGOS & NON-PROFITS NEED A PROFESSIONAL WEBSITE
-  ============================================================= -->
+         03 — WHY NGOS & NON-PROFITS NEED A PROFESSIONAL WEBSITE
+    ============================================================= -->
     <section class="ngoWhy">
       <div class="container">
 
@@ -276,8 +276,8 @@
 
 
     <!-- ============================================================
-       04 — WHAT YOUR NGO WEBSITE SHOULD INCLUDE
-  ============================================================= -->
+         04 — WHAT YOUR NGO WEBSITE SHOULD INCLUDE
+    ============================================================= -->
     <section class="ngoGet">
       <div class="container">
 
@@ -507,8 +507,8 @@
     </section>
 
     <!-- ============================================================
-       06 — DIGITAL GROWTH OUTCOMES
-  ============================================================= -->
+         06 — DIGITAL GROWTH OUTCOMES
+    ============================================================= -->
     <section class="ngoValue">
       <div class="container">
 
@@ -772,124 +772,15 @@
 
 
 
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            <span class="eyebrow-line"></span>
-            FREQUENTLY ASKED QUESTIONS
-          </span>
-
-          <h3>
-            Answers To Common<br />
-            <span>NGO Website Questions.</span>
-          </h3>
-
-          <p>
-            Straight answers to common questions NGOs and non-profits ask before
-            building or upgrading their website.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What type of NGO websites can Web Mingo build?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                We build websites for NGOs, charities, foundations, trusts,
-                social impact organisations and community organisations.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you build donation functionality?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. We can build donation pages and integrate suitable payment
-                options for one-time or recurring contributions.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can the website showcase programmes and projects?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Your programmes, projects and causes can have dedicated
-                pages with relevant details and impact information.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can we add volunteer registration and enquiry forms?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. We can create volunteer registration, enquiry and
-                supporter forms based on your organisation's requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you integrate CRM or NGO management systems?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. We can connect CRM, donor-management or NGO-management
-                systems your organisation already uses.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you help with SEO and digital marketing?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. We can support SEO and digital marketing to improve
-                visibility and reach relevant supporters.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    @include('partials.page-faqs', [
+      'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
+      'title' => 'Answers To Common<br /><span>NGO Website Questions.</span>',
+      'intro' => 'Straight answers to common questions NGOs and non-profits ask before building or upgrading their website.',
+    ])
 
     <!-- ============================================================
-       09 — FINAL CTA
-  ============================================================= -->
+         09 — FINAL CTA
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -921,8 +812,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

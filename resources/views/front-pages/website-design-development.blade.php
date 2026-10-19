@@ -47,8 +47,8 @@
     </section>
 
     <!-- ============================================================
-       02 — INTRODUCTION (NEW: .webIntro)
-  ============================================================= -->
+         02 — INTRODUCTION (NEW: .webIntro)
+    ============================================================= -->
     <section class="webIntro">
       <div class="container">
         <div class="heading">
@@ -347,8 +347,8 @@
     </section>
 
     <!-- ============================================================
-       04 — OUR APPROACH
-  ============================================================= -->
+         04 — OUR APPROACH
+    ============================================================= -->
 
     <section class="webApproach" id="web-process">
       <div class="container">
@@ -850,8 +850,8 @@
     </section>
 
     <!-- ============================================================
-       07 — WHY WEB MINGO (existing .secL, 4 points)
-  ============================================================= -->
+         07 — WHY WEB MINGO (existing .secL, 4 points)
+    ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1068,8 +1068,8 @@
     </section>
 
     <!-- ============================================================
-       09 — FINAL CTA (existing .cta-promo)
-  ============================================================= -->
+         09 — FINAL CTA (existing .cta-promo)
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1092,118 +1092,13 @@
     </div>
 
     <!-- ============================================================
-       08 — FAQ (existing .secN)
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow"><span class="eyebrow-line"></span>FREQUENTLY ASKED
-            QUESTIONS</span>
-          <h3>
-            Which Website Solution <br />
-            <span>Is Right For My Business?</span>
-          </h3>
-          <p>
-            Straightforward answers to help you understand your options before
-            you start.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What type of website does my business need?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                It depends on what the website needs to do. A business website
-                works well for showcasing services and generating enquiries,
-                while e-commerce is suited to selling products online. If you
-                need custom workflows, logins or dashboards, a web application
-                may be more suitable.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can you redesign my existing website instead of building a
-                  new one?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. We can review your existing website, content, design and
-                business goals, then recommend whether a complete redesign,
-                targeted improvements or a fresh build is the right approach.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Will my website work properly on mobile and tablet devices?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Websites are developed with responsive layouts so
-                content, navigation, forms and key functionality adapt across
-                mobile, tablet and desktop screen sizes.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can you integrate forms, CRM, payment gateways or other
-                  tools?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. We can integrate enquiry forms, CRM systems, payment
-                gateways, analytics, chat tools and other third-party services
-                based on your business requirements and available
-                integrations.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can the website be expanded as my business grows?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. The website structure can be planned with future growth
-                in mind, allowing you to add pages, features, products,
-                integrations and other functionality as your requirements
-                evolve.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         08 — FAQ (existing .secN)
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
+      'title' => 'Which Website Solution <br /><span>Is Right For My Business?</span>',
+      'intro' => 'Straightforward answers to help you understand your options before you start.',
+    ])
 
     <section class="secO">
       <div class="container">

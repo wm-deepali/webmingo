@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-         01 — BANNER
-    ============================================================= -->
+           01 — BANNER
+      ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
@@ -50,8 +50,8 @@
     </section>
 
     <!-- ============================================================
-         02 — INTRODUCTION
-    ============================================================= -->
+           02 — INTRODUCTION
+      ============================================================= -->
     <section class="travelIntro">
       <div class="container">
         <div class="travelIntro-wrap">
@@ -140,8 +140,8 @@
     </section>
 
     <!-- ============================================================
-         03 — WHY TRAVEL BUSINESSES NEED A WEBSITE
-    ============================================================= -->
+           03 — WHY TRAVEL BUSINESSES NEED A WEBSITE
+      ============================================================= -->
     <section class="travelValue">
       <div class="container">
         <div class="heading">
@@ -281,8 +281,8 @@
     </section>
 
     <!-- ============================================================
-         04 — TRAVEL WEBSITE ESSENTIALS
-    ============================================================= -->
+           04 — TRAVEL WEBSITE ESSENTIALS
+      ============================================================= -->
     <section class="travelDeliver">
       <div class="container">
         <div class="heading">
@@ -518,8 +518,8 @@
     </section>
 
     <!-- ============================================================
-       06 — DIGITAL GROWTH OUTCOMES
-  ============================================================= -->
+         06 — DIGITAL GROWTH OUTCOMES
+    ============================================================= -->
     <section class="travelGrowth">
       <div class="container">
         <div class="heading">
@@ -811,132 +811,17 @@
     </section>
 
     <!-- ============================================================
-       08 — FAQ
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            <span class="eyebrow-line"></span>
-            FREQUENTLY ASKED QUESTIONS
-          </span>
-
-          <h3>
-            Answers To Common
-            <span>Travel Website Questions.</span>
-          </h3>
-
-          <p>
-            Straight answers to common questions travel businesses ask before
-            building or upgrading their website.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What type of travel website can you build?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                We build websites for travel agencies, tour operators,
-                destination businesses, holiday planners and tourism brands.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can I showcase destinations and travel packages?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Destinations, packages, experiences, itineraries, pricing
-                and travel information can be presented clearly.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can travellers enquire or request a booking?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Enquiry forms, booking requests, quote requests,
-                callbacks and WhatsApp connections can be included.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can you build customised travel package functionality?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Custom trip enquiries and request-a-quote functionality
-                can be planned for personalised travel requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you integrate CRM or booking systems?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                CRM, booking, payment, analytics and required third-party
-                integrations can be planned around your business needs.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can I add new destinations and packages later?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Your website can be structured to add new destinations,
-                packages and travel experiences as your business grows.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         08 — FAQ
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
+      'title' => 'Answers To Common <span>Travel Website Questions.</span>',
+      'intro' => 'Straight answers to common questions travel businesses ask before building or upgrading their website.',
+    ])
 
     <!-- ============================================================
-         09 — FINAL CTA
-    ============================================================= -->
+           09 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -967,8 +852,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

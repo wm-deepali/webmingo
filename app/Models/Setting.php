@@ -36,7 +36,6 @@ class Setting extends Model
         'product_reviews',
         'wishlist',
         'stock_alerts',
-        'cod_enabled'
     ];
 
     protected $casts = [

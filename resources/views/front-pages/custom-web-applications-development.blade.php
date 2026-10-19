@@ -7,8 +7,8 @@
 @section('content')
   <main>
     <!-- ============================================================
-       01 — BANNER
-  ============================================================= -->
+         01 — BANNER
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect4.mp4"
@@ -44,8 +44,8 @@
     </section>
 
     <!-- ============================================================
-       WHY CUSTOM DEVELOPMENT?
-  ============================================================= -->
+         WHY CUSTOM DEVELOPMENT?
+    ============================================================= -->
     <section class="secA classifiedOverview">
       <div class="container">
         <div class="wrapper">
@@ -163,8 +163,8 @@
     </section>
 
     <!-- ============================================================
-       04 — TYPES OF WEB APPLICATIONS WE DEVELOP
-  ============================================================= -->
+         04 — TYPES OF WEB APPLICATIONS WE DEVELOP
+    ============================================================= -->
     <section class="webAppTypes">
       <div class="container">
         <div class="webAppTypes-grid">
@@ -325,8 +325,8 @@
       </div>
     </section>
     <!-- ============================================================
-       05 — BUILT AROUND YOUR BUSINESS WORKFLOW
-  ============================================================= -->
+         05 — BUILT AROUND YOUR BUSINESS WORKFLOW
+    ============================================================= -->
     <section class="webAppWorkflow">
       <div class="container">
         <div class="heading">
@@ -505,8 +505,8 @@
     </section>
 
     <!-- ============================================================
-       07 — CONNECTED BUSINESS SYSTEM
-  ============================================================= -->
+         07 — CONNECTED BUSINESS SYSTEM
+    ============================================================= -->
     <section class="webAppIntegrations">
       <div class="container">
         <div class="heading">
@@ -1201,14 +1201,14 @@
     </section>
 
     <!-- ============================================================
-       15 — BUILD YOUR CUSTOM WEB APP — ENQUIRY
-  ============================================================= -->
+         15 — BUILD YOUR CUSTOM WEB APP — ENQUIRY
+    ============================================================= -->
     <section class="webAppEnquire">
       <div class="container">
         <div class="webAppEnquire-shell">
           <!-- ======================================================
-             LEFT — PROJECT INTRO
-        ======================================================= -->
+               LEFT — PROJECT INTRO
+          ======================================================= -->
           <div class="webAppEnquire-content">
             <div class="heading">
               <span class="eyebrow"><span class="eyebrow-line"></span>LET'S BUILD SOMETHING
@@ -1279,8 +1279,8 @@
           </div>
 
           <!-- ======================================================
-             RIGHT — ENQUIRY FORM
-        ======================================================= -->
+               RIGHT — ENQUIRY FORM
+          ======================================================= -->
           <div class="webAppEnquire-formWrap">
             <div class="webAppEnquire-formHead">
               <div>
@@ -1378,150 +1378,16 @@
     </section>
 
     <!-- ============================================================
-       16 — secN — FAQ
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>
-            Questions About Custom Web<span> Application Development?</span>
-          </h3>
-          <p>
-            Clear answers to common questions about building a custom web
-            application with Web Mingo.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How much does a custom web application cost?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                The cost depends on the application's scope, workflows, number
-                of users, modules, integrations, complexity and development
-                requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How long does custom application development take?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                The timeline depends on the application's features, workflow
-                complexity, integrations, testing requirements and overall
-                scope.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Will I own the source code?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Source-code ownership and licensing can be defined according
-                to the project agreement and scope.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can I request changes after development starts?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Requirements can evolve during development, and changes
-                can be reviewed based on their impact on scope and timeline.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you integrate my existing software?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Where APIs or supported integration methods are
-                available, the application can be connected with existing
-                systems and third-party services.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you build a completely custom workflow?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Custom applications are specifically suited to businesses
-                with workflows that do not fit standard software.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Do you provide hosting and deployment?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Deployment and hosting requirements can be discussed based on
-                the application's infrastructure and business needs.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Do you provide support after launch?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Ongoing support, maintenance and future improvements can
-                be planned according to the project requirements.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         16 — secN — FAQ
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'title' => 'Questions About Custom Web<span> Application Development?</span>',
+      'intro' => 'Clear answers to common questions about building a custom web application with Web Mingo.',
+    ])
 
     <!-- ============================================================
-       17 — cta-promo — FINAL CTA
-  ============================================================= -->
+         17 — cta-promo — FINAL CTA
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1552,8 +1418,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

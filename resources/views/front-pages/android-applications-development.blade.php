@@ -41,8 +41,8 @@
     </section>
 
     <!-- ============================================================
-       02 — INTRODUCTION (creative stage)
-  ============================================================= -->
+         02 — INTRODUCTION (creative stage)
+    ============================================================= -->
     <section class="appIntro" id="app-intro">
       <div class="container">
         <div class="appIntro-top">
@@ -523,8 +523,8 @@
     </section>
 
     <!-- ============================================================
-       WEBSITE → MOBILE APP — Digital Experience Evolution
-  ============================================================= -->
+         WEBSITE → MOBILE APP — Digital Experience Evolution
+    ============================================================= -->
     <section class="appJourney">
       <div class="container">
         <div class="heading">
@@ -542,8 +542,8 @@
         </div>
 
         <!-- ======================================================
-           STAGE — Laptop (real device) → Connector → Phone (real device)
-      ======================================================= -->
+             STAGE — Laptop (real device) → Connector → Phone (real device)
+        ======================================================= -->
         <div class="appJourney-stage">
           <!-- LEFT — WEBSITE, on a real laptop device -->
           <div class="appJourney-panel appJourney-panel--laptop">
@@ -765,8 +765,8 @@
         </div>
 
         <!-- ======================================================
-           COMPARISON — Website vs Mobile App (unified table)
-      ======================================================= -->
+             COMPARISON — Website vs Mobile App (unified table)
+        ======================================================= -->
         <div class="appJourney-compare">
           <div class="appJourney-compare-head">
             <h3>A Better Experience for Returning Users</h3>
@@ -929,8 +929,8 @@
     </section>
 
     <!-- ============================================================
-       07 — OUR DEVELOPMENT PROCESS
-  ============================================================= -->
+         07 — OUR DEVELOPMENT PROCESS
+    ============================================================= -->
     <section class="secG" id="app-development-process">
       <div class="container">
         <div class="heading">
@@ -1150,8 +1150,8 @@
     </section>
 
     <!-- ============================================================
-       08 — OUR ANDROID APP WORK / PORTFOLIO
-  ============================================================= -->
+         08 — OUR ANDROID APP WORK / PORTFOLIO
+    ============================================================= -->
     <section class="secC">
       <div class="container">
         <div class="heading">
@@ -1328,8 +1328,8 @@
       </div>
     </section>
     <!-- ============================================================
-       09 — INDUSTRIES
-  ============================================================= -->
+         09 — INDUSTRIES
+    ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1451,8 +1451,8 @@
     </section>
 
     <!-- ============================================================
-       10 — WHY WEB MINGO
-  ============================================================= -->
+         10 — WHY WEB MINGO
+    ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1532,129 +1532,16 @@
     </section>
 
     <!-- ============================================================
-       11 — FAQ (with cross-link)
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>
-            Frequently Asked Questions
-            <span>About Android App Development.</span>
-          </h3>
-          <p>
-            Straight answers to what most people ask before getting started.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Should I choose Android, iOS, or Flutter?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                It depends on your audience and goals. Choose
-                <strong>Android</strong> if mass reach across India and
-                emerging markets through the Google Play ecosystem is your
-                priority — that's what this page covers. Choose
-                <a href="/ios-application-development">iOS</a> if you're
-                targeting a premium, App Store audience with higher spending
-                users and want a brand-conscious experience. Choose
-                <a href="/flutter-application-development">Flutter</a> if
-                you're budget or timeline-conscious and want both Android and
-                iOS built from a single codebase, faster and at lower cost.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How long does Play Store approval take?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Google Play review typically takes a few hours to a few days,
-                though it can take longer if your app requires additional
-                compliance checks.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What factors affect the cost of an Android app?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Cost depends on app complexity, number of screens, backend
-                requirements, third-party integrations, and design scope. We
-                provide a clear estimate after understanding your
-                requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How long does development typically take?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                A standard business or e-commerce app typically takes 6–12
-                weeks depending on feature scope, with more complex apps
-                taking longer.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Will I own the source code?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes, once the project is delivered, full source code and Play
-                Store account access remain fully yours.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Do you provide support after the app is launched?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes, we offer post-launch maintenance packages covering bug
-                fixes, OS updates, and minor feature enhancements.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         11 — FAQ (with cross-link)
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'title' => 'Frequently Asked Questions <span>About Android App Development.</span>',
+      'intro' => 'Straight answers to what most people ask before getting started.',
+    ])
 
     <!-- ============================================================
-       12 — FINAL CTA
-  ============================================================= -->
+         12 — FINAL CTA
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1677,8 +1564,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

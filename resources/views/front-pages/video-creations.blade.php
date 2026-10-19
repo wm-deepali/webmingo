@@ -240,8 +240,8 @@
     </section>
 
     <!-- ============================================================
-       VIDEO CREATION — CREATIVE CAPABILITIES
-  ============================================================ -->
+           VIDEO CREATION — CREATIVE CAPABILITIES
+      ============================================================ -->
 
     <section class="videoIncluded">
       <div class="container">
@@ -369,8 +369,8 @@
 
           <!-- Bottom Delivery Strip -->
           <!-- ============================================================
-       VIDEO DELIVERABLES
-  ============================================================ -->
+           VIDEO DELIVERABLES
+      ============================================================ -->
 
           <div class="videoIncluded-delivery">
             <div class="videoIncluded-delivery-title">
@@ -409,8 +409,8 @@
     </section>
 
     <!-- ============================================================
-       VIDEO CREATION CTA
-  ============================================================ -->
+           VIDEO CREATION CTA
+      ============================================================ -->
 
     <section class="androidCta" id="videoCta">
       <div class="container">
@@ -966,188 +966,10 @@
       </div>
     </section>
 
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>Questions About Our Video<span> Creation Services?</span></h3>
-          <p>
-            Find answers to common questions about video production, editing,
-            shooting, revisions, delivery formats, and ongoing video support.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What types of videos do you create?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                We create social media reels, promotional videos, explainer
-                and animated videos, corporate and brand videos, and video ad
-                creatives, based on your project requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Do you handle shooting, or do you provide editing only?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Video shooting and editing support depend on the project scope
-                and available arrangements. Share your requirements with our
-                team to discuss the suitable production approach.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you create videos from footage we provide?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. We can discuss editing and creative post-production
-                requirements using client-provided footage, subject to the
-                project's scope and technical requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Do you help with scripting and storyboarding?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Scripting and storyboarding can be discussed as part of
-                the video concept and production process, depending on the
-                selected service.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How long does it take to complete a video?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Turnaround time depends on the video type, complexity, footage
-                requirements, revisions, and feedback cycle. The estimated
-                timeline will be discussed during project planning.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can you create videos for Instagram Reels and YouTube?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Video requirements can be planned for different
-                platforms, including Instagram Reels, YouTube, and digital
-                advertising, based on the intended format and usage.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Do you provide voiceover and background music?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Voiceover, music, and sound design requirements can be
-                discussed based on the project scope, creative direction, and
-                agreed deliverables.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How many revisions are included?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Revisions are handled according to the agreed project scope
-                and revision terms. The exact revision allowance will be
-                confirmed before the project begins.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Do you offer monthly video content packages?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Ongoing video support can be discussed for recurring
-                social media content, promotional requirements, and other
-                creative needs, based on the agreed scope. If you also need
-                static creatives, explore our
-                <a href="/services/graphic-designing">Graphic Designing Services</a>
-                or the
-                <a href="/services/digital-branding">Digital Branding</a>
-                overview.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How can I request a video project?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                You can contact our team through the enquiry form or CTA on
-                this page. Share your video requirements, and we can discuss
-                the suitable next steps.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.page-faqs', [
+      'title' => 'Questions About Our Video<span> Creation Services?</span>',
+      'intro' => 'Find answers to common questions about video production, editing, shooting, revisions, delivery formats, and ongoing video support.',
+    ])
 
     <div class="container">
       <div class="cta-promo">
@@ -1171,8 +993,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

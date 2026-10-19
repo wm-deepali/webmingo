@@ -9,8 +9,8 @@
 
   <main>
     <!-- ============================================================
-       01 — HERO
-  ============================================================= -->
+         01 — HERO
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
@@ -52,8 +52,8 @@
     </section>
 
     <!-- ============================================================
-       02 — ABOUT THE INDUSTRY
-  ============================================================= -->
+         02 — ABOUT THE INDUSTRY
+    ============================================================= -->
     <section class="intro eduIntro">
       <div class="container">
         <div class="eduIntro-inner">
@@ -162,8 +162,8 @@
     </section>
 
     <!-- ============================================================
-       03 — WHY EDUCATION & COACHING BUSINESSES NEED A WEBSITE
-  ============================================================= -->
+         03 — WHY EDUCATION & COACHING BUSINESSES NEED A WEBSITE
+    ============================================================= -->
     <section class="eduNeed">
       <div class="container">
         <div class="heading">
@@ -310,8 +310,8 @@
     </section>
 
     <!-- ============================================================
-       04 — WHAT YOUR EDUCATION WEBSITE SHOULD INCLUDE
-  ============================================================= -->
+         04 — WHAT YOUR EDUCATION WEBSITE SHOULD INCLUDE
+    ============================================================= -->
     <section class="eduIncluded" id="eduIncluded">
       <div class="container">
         <div class="heading">
@@ -538,8 +538,8 @@
     </section>
 
     <!-- ============================================================
-       06 — HOW WE HELP YOUR EDUCATION BUSINESS GROW DIGITALLY
-  ============================================================= -->
+         06 — HOW WE HELP YOUR EDUCATION BUSINESS GROW DIGITALLY
+    ============================================================= -->
     <section class="eduJourney" id="eduJourney">
       <div class="container">
         <div class="heading">
@@ -798,125 +798,16 @@
     </section>
 
     <!-- ============================================================
-       10 — FAQ (.secN)
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>
-            Questions About Our <span>Education Digital Solutions?</span>
-          </h3>
-          <p>
-            Find answers to common questions about building a website or
-            platform for your institute.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What type of education websites can Web Mingo build?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                We build websites for coaching institutes, schools, colleges,
-                training institutes, exam institutes and online educators.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you build an LMS for our institute?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We build LMS platforms with courses, student accounts,
-                study material, assessments and progress tracking.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can our website include admission enquiries?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Enquiry forms and admission workflows can help students
-                connect with your team and make follow-ups easier.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you integrate WhatsApp, CRM and other tools?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We can integrate WhatsApp, CRM systems and other tools
-                your admissions or operations team uses.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can you build test series and online examination platforms?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We can build test series and examination platforms with
-                assessments, results, rankings and performance tracking.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you help with SEO and digital marketing?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We offer SEO, paid advertising and digital marketing to
-                improve visibility and generate more relevant enquiries.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         10 — FAQ (.secN)
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'title' => 'Questions About Our <span>Education Digital Solutions?</span>',
+      'intro' => 'Find answers to common questions about building a website or platform for your institute.',
+    ])
 
     <!-- ============================================================
-       11 — FINAL CTA (.cta-promo)
-  ============================================================= -->
+         11 — FINAL CTA (.cta-promo)
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -940,8 +831,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

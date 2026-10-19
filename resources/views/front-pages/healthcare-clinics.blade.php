@@ -10,8 +10,8 @@
   <main>
 
     <!-- ============================================================
-       01 — HERO
-  ============================================================= -->
+         01 — HERO
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
@@ -54,8 +54,8 @@
 
 
     <!-- ============================================================
-       02 — ABOUT HEALTHCARE & CLINICS
-  ============================================================= -->
+         02 — ABOUT HEALTHCARE & CLINICS
+    ============================================================= -->
     <section class="healthIntro">
       <div class="container">
 
@@ -152,8 +152,8 @@
 
 
     <!-- ============================================================
-       03 — WHY HEALTHCARE BUSINESSES NEED A PROFESSIONAL WEBSITE
-  ============================================================= -->
+         03 — WHY HEALTHCARE BUSINESSES NEED A PROFESSIONAL WEBSITE
+    ============================================================= -->
     <section class="healthTypes">
       <div class="container">
 
@@ -299,8 +299,8 @@
 
 
     <!-- ============================================================
-       04 — WHAT YOUR HEALTHCARE WEBSITE SHOULD INCLUDE
-  ============================================================= -->
+         04 — WHAT YOUR HEALTHCARE WEBSITE SHOULD INCLUDE
+    ============================================================= -->
     <section class="healthDeliver">
       <div class="container">
 
@@ -535,8 +535,8 @@
 
 
     <!-- ============================================================
-       06 — DIGITAL GROWTH OUTCOMES
-  ============================================================= -->
+         06 — DIGITAL GROWTH OUTCOMES
+    ============================================================= -->
     <section class="secL">
       <div class="container">
 
@@ -783,137 +783,18 @@
 
 
     <!-- ============================================================
-       08 — FAQ
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-
-        <div class="heading">
-          <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
-
-          <h3>
-            Answers To Common <br />
-            <span>Healthcare Website Questions.</span>
-          </h3>
-
-          <p>
-            Straight answers to common questions healthcare businesses ask before
-            building or upgrading their website.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What type of healthcare websites can you build?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                We build websites for doctors, clinics, hospitals, diagnostic
-                centres, dental practices, wellness businesses and healthcare providers.
-              </p>
-            </div>
-          </div>
-
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you build doctor and specialist profile pages?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We can create doctor profiles with qualifications, experience,
-                specialisations, services and other relevant information.
-              </p>
-            </div>
-          </div>
-
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can the website include appointment booking?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Appointment requests or online booking can be added based
-                on your clinic's workflow and requirements.
-              </p>
-            </div>
-          </div>
-
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you integrate WhatsApp and enquiry systems?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We can connect WhatsApp and enquiry forms so patients
-                can easily reach your team.
-              </p>
-            </div>
-          </div>
-
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can we manage multiple doctors, departments and services?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Your website can support multiple doctors, departments,
-                services and locations within one organised structure.
-              </p>
-            </div>
-          </div>
-
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you help with SEO and digital marketing?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. We offer SEO and digital marketing support to improve
-                healthcare visibility and generate relevant patient enquiries.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+         08 — FAQ
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
+      'title' => 'Answers To Common <br /><span>Healthcare Website Questions.</span>',
+      'intro' => 'Straight answers to common questions healthcare businesses ask before building or upgrading their website.',
+    ])
 
 
     <!-- ============================================================
-       09 — FINAL CTA
-  ============================================================= -->
+         09 — FINAL CTA
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -943,8 +824,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-         01 — BANNER
-    ============================================================= -->
+           01 — BANNER
+      ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
@@ -48,8 +48,8 @@
     </section>
 
     <!-- ============================================================
-         02 — ABOUT HOTELS & HOSPITALITY
-    ============================================================= -->
+           02 — ABOUT HOTELS & HOSPITALITY
+      ============================================================= -->
     <section class="hotelIntro">
       <div class="container">
         <div class="hotelIntro-top">
@@ -152,8 +152,8 @@
     </section>
 
     <!-- ============================================================
-         03 — WHY HOTELS & HOSPITALITY BUSINESSES NEED A WEBSITE
-    ============================================================= -->
+           03 — WHY HOTELS & HOSPITALITY BUSINESSES NEED A WEBSITE
+      ============================================================= -->
     <section class="hotelWhy">
       <div class="container">
         <div class="heading">
@@ -486,8 +486,8 @@
       </div>
     </section>
     <!-- ============================================================
-         06 — WHAT YOUR WEBSITE CAN SHOW
-    ============================================================= -->
+           06 — WHAT YOUR WEBSITE CAN SHOW
+      ============================================================= -->
     <section class="hotelShowcase">
       <div class="container">
         <div class="heading">
@@ -779,137 +779,17 @@
     </section>
 
     <!-- ============================================================
-       08 — FAQ
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            <span class="eyebrow-line"></span>
-            FREQUENTLY ASKED QUESTIONS
-          </span>
-
-          <h3>
-            Answers To Common Hotel &amp;
-            <span>Hospitality Website Questions.</span>
-          </h3>
-
-          <p>
-            Straight answers to common questions hotel and hospitality
-            businesses ask before building a website.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  What types of hotel and hospitality websites can you build?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                We build websites for hotels, resorts, boutique hotels,
-                homestays, serviced apartments, guest houses and other
-                hospitality businesses.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can we showcase our rooms and property properly?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Rooms, suites, images, amenities, facilities, pricing
-                information and property details can be presented clearly.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can guests make booking enquiries through the website?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Booking enquiries, reservation requests, contact forms,
-                callbacks and WhatsApp enquiries can be integrated.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you integrate an online booking system?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. An existing booking engine can be integrated, or a
-                suitable booking experience can be planned for your property.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can we showcase amenities, experiences and packages?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Dining, spa, wellness, activities, events, offers,
-                packages and guest services can all be presented.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Can the website support multiple properties or room types?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-
-            <div class="accordion-content">
-              <p>
-                Yes. Multiple properties, locations and room types can be
-                organised into a structured digital experience.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         08 — FAQ
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
+      'title' => 'Answers To Common Hotel &amp; <span>Hospitality Website Questions.</span>',
+      'intro' => 'Straight answers to common questions hotel and hospitality businesses ask before building a website.',
+    ])
 
     <!-- ============================================================
-         09 — FINAL CTA
-    ============================================================= -->
+           09 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">

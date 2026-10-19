@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-       01 — BANNER (existing structure, content updated)
-  ============================================================= -->
+         01 — BANNER (existing structure, content updated)
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
@@ -39,8 +39,8 @@
     </section>
 
     <!-- ============================================================
-       02 — smmHero — HERO (NEW, editorial visual composition)
-  ============================================================= -->
+         02 — smmHero — HERO (NEW, editorial visual composition)
+    ============================================================= -->
     <section class="smmHero">
       <div class="container">
         <div class="smmHero-layout">
@@ -93,8 +93,8 @@
     </section>
 
     <!-- ============================================================
-       03 — WHY STRATEGIC SOCIAL MEDIA MARKETING (.smmGrowth)
-  ============================================================= -->
+         03 — WHY STRATEGIC SOCIAL MEDIA MARKETING (.smmGrowth)
+    ============================================================= -->
     <section class="smmGrowth">
       <div class="container">
         <div class="heading">
@@ -199,8 +199,8 @@
     </section>
 
     <!-- ============================================================
-       04 — smmPlatforms — PLATFORMS WE MANAGE (NEW)
-  ============================================================= -->
+         04 — smmPlatforms — PLATFORMS WE MANAGE (NEW)
+    ============================================================= -->
     <section class="smmPlatforms">
       <div class="container">
         <div class="heading">
@@ -369,8 +369,8 @@
     </section>
 
     <!-- ============================================================
-       SOCIAL MEDIA MARKETING — PLANS + CUSTOM REQUIREMENTS FORM
-  ============================================================= -->
+         SOCIAL MEDIA MARKETING — PLANS + CUSTOM REQUIREMENTS FORM
+    ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -586,8 +586,8 @@
     </section>
 
     <!-- ============================================================
-       06 — secG — OUR APPROACH (SMM)
-  ============================================================= -->
+         06 — secG — OUR APPROACH (SMM)
+    ============================================================= -->
     <section class="secG" id="smm-approach">
       <div class="container">
         <div class="heading">
@@ -936,8 +936,8 @@
     </section>
 
     <!-- ============================================================
-       10 — secL (existing structure) — WHY CHOOSE WEB MINGO
-  ============================================================= -->
+         10 — secL (existing structure) — WHY CHOOSE WEB MINGO
+    ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1017,117 +1017,16 @@
     </section>
 
     <!-- ============================================================
-       12 — secN (existing structure) — FAQ
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>
-            Frequently Asked Questions
-            <span>About Social Media Marketing.</span>
-          </h3>
-          <p>
-            Straight answers to what most people ask before getting started.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  How long does it take to see results from social media
-                  marketing?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Social media growth builds gradually. Results vary based on
-                your audience, industry, content strategy, platform activity
-                and consistency over time.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Do you create the content, or do we need to provide it?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                We can handle the strategy, content planning, copywriting and
-                creative direction. Existing brand assets and business inputs
-                can also be incorporated into the content.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Which social media platforms do you manage?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                We can manage platforms such as Instagram, Facebook, LinkedIn,
-                YouTube and Pinterest based on your audience, business goals
-                and where your customers are most active.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  Do you manage paid advertising along with organic social
-                  media?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Paid social campaigns can be managed alongside organic
-                content to support objectives such as reach, engagement,
-                website traffic and lead generation.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>
-                  How do you measure social media marketing performance?
-                </h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                We track relevant metrics such as reach, engagement, audience
-                growth, website traffic and enquiries, then report performance
-                against the goals defined for your business.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         12 — secN (existing structure) — FAQ
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'title' => 'Frequently Asked Questions <span>About Social Media Marketing.</span>',
+      'intro' => 'Straight answers to what most people ask before getting started.',
+    ])
 
     <!-- ============================================================
-       13 — FINAL CTA (existing structure)
-  ============================================================= -->
+         13 — FINAL CTA (existing structure)
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1151,8 +1050,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

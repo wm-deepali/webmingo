@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-       01 — BANNER (comman .banner reused)
-  ============================================================= -->
+         01 — BANNER (comman .banner reused)
+    ============================================================= -->
     <section class="banner">
       <div class="bg">
         <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
@@ -293,8 +293,8 @@
     </section>
 
     <!-- ============================================================
-       03 — TYPES OF GOOGLE ADS CAMPAIGNS (new — .ppcCampaigns)
-  ============================================================= -->
+         03 — TYPES OF GOOGLE ADS CAMPAIGNS (new — .ppcCampaigns)
+    ============================================================= -->
     <section class="ppcCampaigns" id="ppc-campaigns">
       <div class="container">
         <div class="heading">
@@ -384,8 +384,8 @@
     </section>
 
     <!-- ============================================================
-       04 — WHAT'S INCLUDED IN OUR PPC SERVICE (new — .ppcDeliverables)
-  ============================================================= -->
+         04 — WHAT'S INCLUDED IN OUR PPC SERVICE (new — .ppcDeliverables)
+    ============================================================= -->
     <section class="ppcDeliverables">
       <div class="container">
         <div class="heading">
@@ -440,8 +440,8 @@
     </section>
 
     <!-- ============================================================
-       GOOGLE ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
-  ============================================================= -->
+         GOOGLE ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
+    ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -625,8 +625,8 @@
     </section>
 
     <!-- ============================================================
-       05 — OUR APPROACH (comman .secG reused)
-  ============================================================= -->
+         05 — OUR APPROACH (comman .secG reused)
+    ============================================================= -->
     <section class="secG" id="ppc-approach">
       <div class="container">
         <div class="heading">
@@ -845,8 +845,8 @@
     </section>
 
     <!-- ============================================================
-       06 — CONVERSION TRACKING ACCURACY (new — .ppcTracking, DIFFERENTIATOR)
-  ============================================================= -->
+         06 — CONVERSION TRACKING ACCURACY (new — .ppcTracking, DIFFERENTIATOR)
+    ============================================================= -->
     <section class="ppcTracking">
       <div class="container">
         <div class="heading">
@@ -1041,8 +1041,8 @@
     </section>
 
     <!-- ============================================================
-       09 — WHY CHOOSE WEB MINGO (comman .secL reused)
-  ============================================================= -->
+         09 — WHY CHOOSE WEB MINGO (comman .secL reused)
+    ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1115,107 +1115,16 @@
     </section>
 
     <!-- ============================================================
-       11 — FAQ (comman .secN reused)
-  ============================================================= -->
-    <section class="secN">
-      <div class="container">
-        <div class="heading">
-          <h3>
-            Frequently Asked Questions
-            <span>About Google Ads Management.</span>
-          </h3>
-          <p>
-            Straight answers to what most people ask before getting started.
-          </p>
-        </div>
-
-        <div class="accordion-wrapper">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What is the minimum budget required for Google Ads?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                There is no fixed minimum that works for every business. The
-                starting budget depends on your industry, competition, target
-                locations, keywords and campaign objectives.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How long does it take to see results from Google Ads?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Campaigns can generate data and initial results shortly after
-                launch, while more reliable performance insights generally
-                require ongoing testing, data collection and optimization.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>What types of Google Ads campaigns do you manage?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                We can manage Search, Display, Shopping, YouTube, Performance
-                Max and Remarketing campaigns based on your business goals,
-                audience and advertising requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>Can you set up conversion tracking for my website?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Yes. Conversion tracking can be configured for relevant
-                actions such as enquiry forms, calls, purchases and other
-                measurable actions that matter to your campaign goals.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <div class="faq-question">
-                <h4>How do you reduce wasted ad spend?</h4>
-              </div>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                We review search terms, keywords, targeting, bids, budgets and
-                campaign performance regularly to identify irrelevant traffic
-                and refine campaigns toward more relevant opportunities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         11 — FAQ (comman .secN reused)
+    ============================================================= -->
+    @include('partials.page-faqs', [
+      'title' => 'Frequently Asked Questions <span>About Google Ads Management.</span>',
+      'intro' => 'Straight answers to what most people ask before getting started.',
+    ])
 
     <!-- ============================================================
-       12 — FINAL CTA (comman .cta-promo reused)
-  ============================================================= -->
+         12 — FINAL CTA (comman .cta-promo reused)
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1239,8 +1148,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

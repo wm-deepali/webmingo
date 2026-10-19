@@ -36,33 +36,39 @@ Route::middleware('maintenance.mode')->group(function () {
         Route::view('/lifeAt', 'front-pages.lifeAt')->name('lifeAt');
         Route::view('/Knowledge-base', 'front-pages.Knowledge-base')->name('Knowledge-base');
         Route::view('/our-works', 'front-pages.our-works')->name('our-works');
-        Route::view('/real-state', 'front-pages.real-state')->name('real-state');
 
-        Route::view('/android-applications-development', 'front-pages.android-applications-development')->name('android-applications-development');
-        Route::view('/business-website-development', 'front-pages.business-website-development')->name('business-website-development');
-        Route::view('/classified-portals-development', 'front-pages.classified-portals-development')->name('classified-portals-development');
-        Route::view('/custom-web-applications-development', 'front-pages.custom-web-applications-development')->name('custom-web-applications-development');
-        Route::view('/digital-branding', 'front-pages.digital-branding')->name('digital-branding');
-        Route::view('/digital-marketing', 'front-pages.digital-marketing')->name('digital-marketing');
-        Route::view('/E-Commerce-website-development', 'front-pages.E-Commerce-website-development')->name('E-Commerce-website-development');
-        Route::view('/E-Learning-LMS-development', 'front-pages.E-Learning-LMS-development')->name('E-Learning-LMS-development');
-        Route::view('/education-coaching', 'front-pages.education-coaching')->name('education-coaching');
-        Route::view('/flutter-app-development', 'front-pages.flutter-app-development')->name('flutter-app-development');
-        Route::view('/google-ads-management', 'front-pages.google-ads-management')->name('google-ads-management');
-        Route::view('/graphic-designing', 'front-pages.graphic-designing')->name('graphic-designing');
-        Route::view('/healthcare-clinics', 'front-pages.healthcare-clinics')->name('healthcare-clinics');
-        Route::view('/hotels-hospitality', 'front-pages.hotels-hospitality')->name('hotels-hospitality');
-        Route::view('/iOS-applications-development', 'front-pages.iOS-applications-development')->name('iOS-applications-development');
-        Route::view('/manufacturing-export', 'front-pages.manufacturing-export')->name('manufacturing-export');
-        Route::view('/meta-ads-management', 'front-pages.meta-ads-management')->name('meta-ads-management');
-        Route::view('/mobile-app-development', 'front-pages.mobile-app-development')->name('mobile-app-development');
-        Route::view('/NGO-Non-Profits', 'front-pages.NGO-Non-Profits')->name('NGO-Non-Profits');
-        Route::view('/retail-E-Commerce-D2C', 'front-pages.retail-E-Commerce-D2C')->name('retail-E-Commerce-D2C');
-        Route::view('/search-engine-optimisation', 'front-pages.search-engine-optimisation')->name('search-engine-optimisation');
-        Route::view('/social-media-marketing', 'front-pages.social-media-marketing')->name('social-media-marketing');
-        Route::view('/travel-tourism', 'front-pages.travel-tourism')->name('travel-tourism');
-        Route::view('/video-creations', 'front-pages.video-creations')->name('video-creations');
-        Route::view('/website-design-development', 'front-pages.website-design-development')->name('website-design-development');
+        /* ── Service pages (main + sub) → FAQs by service ── */
+        Route::get('/website-design-development', 'servicePage')->name('website-design-development');
+        Route::get('/business-website-development', 'servicePage')->name('business-website-development');
+        Route::get('/E-Commerce-website-development', 'servicePage')->name('E-Commerce-website-development');
+        Route::get('/E-Learning-LMS-development', 'servicePage')->name('E-Learning-LMS-development');
+        Route::get('/classified-portals-development', 'servicePage')->name('classified-portals-development');
+        Route::get('/custom-web-applications-development', 'servicePage')->name('custom-web-applications-development');
+
+        Route::get('/digital-marketing', 'servicePage')->name('digital-marketing');
+        Route::get('/search-engine-optimisation', 'servicePage')->name('search-engine-optimisation');
+        Route::get('/social-media-marketing', 'servicePage')->name('social-media-marketing');
+        Route::get('/google-ads-management', 'servicePage')->name('google-ads-management');
+        Route::get('/meta-ads-management', 'servicePage')->name('meta-ads-management');
+
+        Route::get('/mobile-app-development', 'servicePage')->name('mobile-app-development');
+        Route::get('/android-applications-development', 'servicePage')->name('android-applications-development');
+        Route::get('/iOS-applications-development', 'servicePage')->name('iOS-applications-development');
+        Route::get('/flutter-app-development', 'servicePage')->name('flutter-app-development');
+
+        Route::get('/digital-branding', 'servicePage')->name('digital-branding');
+        Route::get('/graphic-designing', 'servicePage')->name('graphic-designing');
+        Route::get('/video-creations', 'servicePage')->name('video-creations');
+
+        /* ── Industry pages → FAQs by industry ── */
+        Route::get('/education-coaching', 'industryPage')->name('education-coaching');
+        Route::get('/retail-E-Commerce-D2C', 'industryPage')->name('retail-E-Commerce-D2C');
+        Route::get('/real-state', 'industryPage')->name('real-state');
+        Route::get('/healthcare-clinics', 'industryPage')->name('healthcare-clinics');
+        Route::get('/NGO-Non-Profits', 'industryPage')->name('NGO-Non-Profits');
+        Route::get('/manufacturing-export', 'industryPage')->name('manufacturing-export');
+        Route::get('/hotels-hospitality', 'industryPage')->name('hotels-hospitality');
+        Route::get('/travel-tourism', 'industryPage')->name('travel-tourism');
     });
 
 });
