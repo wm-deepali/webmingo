@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Career;
+use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Models\ContactEnquiry;
+use App\Models\CareerApplication;
 use Illuminate\Support\Facades\Route;
 
 class FrontController extends Controller
@@ -98,4 +101,108 @@ class FrontController extends Controller
 
         return view('front-pages.career-detail', compact('career'));
     }
+
+    public function contact()
+    {
+        // new Setting() avoids "property on null" errors if the settings row doesn't exist yet
+        $settings = Setting::first() ?? new Setting();
+
+        return view('front-pages.contact', compact('settings'));
+    }
+
+    public function contactStore(Request $request)
+    {
+        // Honeypot: real visitors never fill this hidden field
+        if ($request->filled('hp_check')) {
+            return redirect()->route('contact');
+        }
+
+        $data = $request->validate([
+            'full_name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'company' => 'nullable|string|max:255',
+            'phone' => 'nullable|string|max:30',
+            'service' => 'required|string|max:255',
+            'message' => 'required|string|max:5000',
+        ]);
+
+        ContactEnquiry::create($data + [
+            'ip_address' => $request->ip(),
+            'user_agent' => substr((string) $request->userAgent(), 0, 255),
+        ]);
+
+        return redirect()
+            ->to(route('contact') . '#contact-form')
+            ->with('success', "Thanks! We've received your enquiry and will get back to you shortly.");
+    }
+
+    public function careerApply(Request $request)
+    {
+        // Honeypot: real visitors never fill this hidden field
+        if ($request->filled('hp_check')) {
+            return back();
+        }
+
+        $data = $request->validate([
+            'career_id' => 'nullable|integer',
+            'apply_type' => 'nullable|string|max:50',
+            'position' => 'nullable|string|max:255',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:30',
+            'location' => 'nullable|string|max:255',
+            'experience' => 'nullable|string|max:50',
+            'notice_period' => 'nullable|string|max:20',
+            'portfolio' => 'nullable|url|max:255',
+            'linkedin' => 'nullable|url|max:255',
+            'resume' => 'required|file|mimes:pdf,doc,docx|max:5120',
+            'cover_letter' => 'nullable|string|max:5000',
+            'consent' => 'accepted',
+        ], [
+            'resume.max' => 'Your resume must be 5MB or smaller.',
+            'resume.mimes' => 'Please upload a PDF, DOC or DOCX file.',
+            'consent.accepted' => 'Please confirm to continue.',
+        ]);
+
+        // From the detail page, trust the opening itself, not the submitted position text
+        $career = null;
+        if (!empty($data['career_id'])) {
+            $career = Career::active()->find($data['career_id']);
+
+            if (!$career) {
+                return back()->withInput()->withErrors(['position' => 'This opening is no longer available.']);
+            }
+        }
+
+        $position = $career ? $career->title : ($data['position'] ?? null);
+
+        if (!$position) {
+            return back()->withInput()->withErrors(['position' => 'Please select a position.']);
+        }
+
+        // Careers page: link to the opening when the chosen title matches one
+        if (!$career) {
+            $career = Career::active()->where('title', $position)->first();
+        }
+
+        CareerApplication::create([
+            'career_id' => $career?->id,
+            'position' => $position,
+            'apply_type' => $data['apply_type'] ?: 'Job',
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'location' => $data['location'] ?? null,
+            'experience' => $data['experience'] ?? null,
+            'notice_period' => $data['notice_period'] ?? null,
+            'portfolio' => $data['portfolio'] ?? null,
+            'linkedin' => $data['linkedin'] ?? null,
+            'resume_path' => $request->file('resume')->store('career-resumes'), // private disk, not public
+            'cover_letter' => $data['cover_letter'] ?? null,
+            'ip_address' => $request->ip(),
+        ]);
+
+        return back()->with('success', "Thanks! We've received your application and will get back to you shortly.");
+    }
+
 }

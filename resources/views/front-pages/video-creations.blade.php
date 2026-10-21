@@ -7,41 +7,18 @@
 @section('content')
 
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect7.mp4"
-          poster="assets/video/poster/effect7.png">
-          <source src="assets/video/effect7.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">VIDEO CREATION SERVICES</span>
 
-              <h1>Turn Your Message Into Videos People Want to Watch.</h1>
-
-              <p>
-                We create business, promotional and social media videos
-                designed to communicate your message clearly and keep your
-                audience engaged.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Video Requirement
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect7.mp4',
+      'poster' => 'assets/video/poster/effect7.png',
+      'eyebrow' => 'VIDEO CREATION SERVICES',
+      'heading' => 'Turn Your Message Into Videos People Want to Watch.',
+      'description' => 'We create business, promotional and social media videos designed to communicate your message clearly and keep your audience engaged.',
+      'primary_text' => 'Chat on WhatsApp',
+      'primary_url' => 'javascript:void(0)',
+      'secondary_text' => 'Discuss Your Video Requirement',
+      'secondary_url' => '#enquire',
+    ])
 
     <section class="videoIntro">
       <div class="container">
@@ -240,8 +217,8 @@
     </section>
 
     <!-- ============================================================
-           VIDEO CREATION — CREATIVE CAPABILITIES
-      ============================================================ -->
+             VIDEO CREATION — CREATIVE CAPABILITIES
+        ============================================================ -->
 
     <section class="videoIncluded">
       <div class="container">
@@ -369,8 +346,8 @@
 
           <!-- Bottom Delivery Strip -->
           <!-- ============================================================
-           VIDEO DELIVERABLES
-      ============================================================ -->
+             VIDEO DELIVERABLES
+        ============================================================ -->
 
           <div class="videoIncluded-delivery">
             <div class="videoIncluded-delivery-title">
@@ -409,8 +386,8 @@
     </section>
 
     <!-- ============================================================
-           VIDEO CREATION CTA
-      ============================================================ -->
+             VIDEO CREATION CTA
+        ============================================================ -->
 
     <section class="androidCta" id="videoCta">
       <div class="container">
@@ -993,8 +970,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

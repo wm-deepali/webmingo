@@ -8,33 +8,20 @@
 
 
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect8.mp4"
-          poster="assets/video/poster/effect8.png">
-          <source src="assets/video/effect8.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">OUR WORK</span>
-              <h1>Digital Work Designed <br />To Be Remembered.</h1>
-              <p>
-                From websites, web applications and e-commerce to LMS, digital
-                marketing, mobile apps, graphics and video. Explore what we
-                create.
-              </p>
-              <div class="banner-actions">
-                <a href="#our-work" class="btn btn-outline-white">Explore Our Work <i>↗</i></a>
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Start Your Project <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+    @include('partials.hero', [
+      'video' => 'assets/video/effect8.mp4',
+      'poster' => 'assets/video/poster/effect8.png',
+      'default' => [
+        'eyebrow' => 'OUR WORK',
+        'heading' => 'Digital Work Designed To Be Remembered.',
+        'description' => 'From websites, web applications and e-commerce to LMS, digital marketing, mobile apps, graphics and video. Explore what we create.',
+        'primary_text' => 'Explore Our Work',
+        'primary_url' => '#our-work',
+        'secondary_text' => 'Start Your Project',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <section class="our-work" id="our-work">
       <div class="container">

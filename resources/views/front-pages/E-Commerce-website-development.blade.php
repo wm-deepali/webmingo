@@ -7,50 +7,26 @@
 @section('content')
   <main>
     <!-- ============================================================
-       01 — HERO (existing banner, content + image only)
-  ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
-          poster="assets/video/poster/effect3.png">
-          <source src="assets/video/effect3.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">DIGITAL MARKETING SERVICES</span>
+         01 — HERO (existing banner, content + image only)
+    ============================================================= -->
 
-              <h1>
-                Reach the Right Audience.<br />
-                Turn Attention Into Business Growth.
-              </h1>
-
-              <p>
-                We combine SEO, social media, Google Ads and Meta Ads to help
-                your business get discovered, reach potential customers and
-                generate measurable opportunities.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Get a Free Consultation
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect4.mp4',
+      'poster' => 'assets/video/poster/effect4.png',
+      'default' => [
+        'eyebrow' => 'E-LEARNING & LMS DEVELOPMENT',
+        'heading' => 'Build Your Own Digital Learning Platform.',
+        'description' => 'Launch a custom LMS for courses, test series, live classes and student management—built for your institute or EdTech business.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Get a Free Demo',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <!-- ============================================================
-       02 — INTRODUCTION
-  ============================================================= -->
+         02 — INTRODUCTION
+    ============================================================= -->
     <section class="dmIntro">
       <div class="container">
         <div class="dmIntro-layout">
@@ -546,8 +522,8 @@
     </section>
 
     <!-- ============================================================
-       — BUSINESS GROWTH THROUGH DIGITAL MARKETING
-  ============================================================= -->
+         — BUSINESS GROWTH THROUGH DIGITAL MARKETING
+    ============================================================= -->
     <section class="mfgGrowth">
       <div class="container">
         <div class="heading">
@@ -692,8 +668,8 @@
     </section>
 
     <!-- ============================================================
-       07 — WHY WEB MINGO (existing .secL, 4 points)
-  ============================================================= -->
+         07 — WHY WEB MINGO (existing .secL, 4 points)
+    ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -795,8 +771,8 @@
     </section>
 
     <!-- ============================================================
-       09 — FINAL CTA (existing .cta-promo)
-  ============================================================= -->
+         09 — FINAL CTA (existing .cta-promo)
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -820,8 +796,8 @@
     </div>
 
     <!-- ============================================================
-       08 — FAQ
-  ============================================================= -->
+         08 — FAQ
+    ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Which Digital Marketing Service <span>Is Right For My Business?</span>',

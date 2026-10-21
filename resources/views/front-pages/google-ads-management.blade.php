@@ -8,35 +8,22 @@
 
   <main>
     <!-- ============================================================
-         01 — BANNER (comman .banner reused)
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
-          poster="assets/video/poster/effect3.png">
-          <source src="assets/video/effect3.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">GOOGLE ADS MANAGEMENT</span>
-              <h1>Reach Customers Already Searching for What You Offer.</h1>
-              <p>
-                We plan and manage Google Ads campaigns focused on relevant
-                searches, qualified traffic and measurable business enquiries.
-              </p>
-              <div class="banner-actions">
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Get a Free Ads Consultation <i>↗</i>
-                </button>
-                <a href="javascript:void()" class="btn btn-outline-white">
-                  Chat on WhatsApp<i>↗</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+           01 — BANNER (comman .banner reused)
+      ============================================================= -->
+
+    @include('partials.hero', [
+      'video' => 'assets/video/effect3.mp4',
+      'poster' => 'assets/video/poster/effect3.png',
+      'default' => [
+        'eyebrow' => 'GOOGLE ADS MANAGEMENT',
+        'heading' => 'Reach Customers Already Searching for What You Offer.',
+        'description' => 'We plan and manage Google Ads campaigns focused on relevant searches, qualified traffic and measurable business enquiries.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Get a Free Ads Consultation',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <section class="ppcProblem" id="ppcProblem">
       <div class="container">
@@ -293,8 +280,8 @@
     </section>
 
     <!-- ============================================================
-         03 — TYPES OF GOOGLE ADS CAMPAIGNS (new — .ppcCampaigns)
-    ============================================================= -->
+           03 — TYPES OF GOOGLE ADS CAMPAIGNS (new — .ppcCampaigns)
+      ============================================================= -->
     <section class="ppcCampaigns" id="ppc-campaigns">
       <div class="container">
         <div class="heading">
@@ -384,8 +371,8 @@
     </section>
 
     <!-- ============================================================
-         04 — WHAT'S INCLUDED IN OUR PPC SERVICE (new — .ppcDeliverables)
-    ============================================================= -->
+           04 — WHAT'S INCLUDED IN OUR PPC SERVICE (new — .ppcDeliverables)
+      ============================================================= -->
     <section class="ppcDeliverables">
       <div class="container">
         <div class="heading">
@@ -440,8 +427,8 @@
     </section>
 
     <!-- ============================================================
-         GOOGLE ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
-    ============================================================= -->
+           GOOGLE ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
+      ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -625,8 +612,8 @@
     </section>
 
     <!-- ============================================================
-         05 — OUR APPROACH (comman .secG reused)
-    ============================================================= -->
+           05 — OUR APPROACH (comman .secG reused)
+      ============================================================= -->
     <section class="secG" id="ppc-approach">
       <div class="container">
         <div class="heading">
@@ -845,8 +832,8 @@
     </section>
 
     <!-- ============================================================
-         06 — CONVERSION TRACKING ACCURACY (new — .ppcTracking, DIFFERENTIATOR)
-    ============================================================= -->
+           06 — CONVERSION TRACKING ACCURACY (new — .ppcTracking, DIFFERENTIATOR)
+      ============================================================= -->
     <section class="ppcTracking">
       <div class="container">
         <div class="heading">
@@ -1041,8 +1028,8 @@
     </section>
 
     <!-- ============================================================
-         09 — WHY CHOOSE WEB MINGO (comman .secL reused)
-    ============================================================= -->
+           09 — WHY CHOOSE WEB MINGO (comman .secL reused)
+      ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1115,16 +1102,16 @@
     </section>
 
     <!-- ============================================================
-         11 — FAQ (comman .secN reused)
-    ============================================================= -->
+           11 — FAQ (comman .secN reused)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Google Ads Management.</span>',
       'intro' => 'Straight answers to what most people ask before getting started.',
     ])
 
     <!-- ============================================================
-         12 — FINAL CTA (comman .cta-promo reused)
-    ============================================================= -->
+           12 — FINAL CTA (comman .cta-promo reused)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1148,8 +1135,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

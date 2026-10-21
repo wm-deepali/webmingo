@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Web Mingo</title>
+    @include('partials.seo')
     <!-- ================= Google Fonts ================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
@@ -29,6 +29,9 @@
 </head>
 
 <body>
+    @if (!empty($seo?->body_scripts))
+        {!! $seo->body_scripts !!}
+    @endif
 
     <header class="site-header">
         <div class="container">
@@ -84,23 +87,28 @@
                                             <span class="mega-menu__col-title">Website Design &amp; Development</span>
                                             <ul>
                                                 <li>
-                                                    <a href="{{ route('business-website-development') }}">Business Website
+                                                    <a href="{{ route('business-website-development') }}">Business
+                                                        Website
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('E-Commerce-website-development') }}">E-Commerce Website
+                                                    <a href="{{ route('E-Commerce-website-development') }}">E-Commerce
+                                                        Website
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('E-Learning-LMS-development') }}">E-Learning &amp; LMS
+                                                    <a href="{{ route('E-Learning-LMS-development') }}">E-Learning &amp;
+                                                        LMS
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('classified-portals-development') }}">Classified Portals
+                                                    <a href="{{ route('classified-portals-development') }}">Classified
+                                                        Portals
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('custom-web-applications-development') }}">Custom Web
+                                                    <a href="{{ route('custom-web-applications-development') }}">Custom
+                                                        Web
                                                         Applications Development</a>
                                                 </li>
                                             </ul>
@@ -111,15 +119,18 @@
                                             <span class="mega-menu__col-title">Digital Marketing</span>
                                             <ul>
                                                 <li>
-                                                    <a href="{{ route('search-engine-optimisation') }}">Search Engine Optimisation
+                                                    <a href="{{ route('search-engine-optimisation') }}">Search Engine
+                                                        Optimisation
                                                         (SEO)</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('social-media-marketing') }}">Social Media Marketing
+                                                    <a href="{{ route('social-media-marketing') }}">Social Media
+                                                        Marketing
                                                         (SMM)</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('google-ads-management') }}">Google Ads Management (PPC)</a>
+                                                    <a href="{{ route('google-ads-management') }}">Google Ads Management
+                                                        (PPC)</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{ route('meta-ads-management') }}">Meta Ads Management</a>
@@ -132,15 +143,18 @@
                                             <span class="mega-menu__col-title">Mobile Applications</span>
                                             <ul>
                                                 <li>
-                                                    <a href="{{ route('android-applications-development') }}">Android Applications
+                                                    <a href="{{ route('android-applications-development') }}">Android
+                                                        Applications
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('iOS-applications-development') }}">iOS Applications
+                                                    <a href="{{ route('iOS-applications-development') }}">iOS
+                                                        Applications
                                                         Development</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('flutter-app-development') }}">Flutter App Development</a>
+                                                    <a href="{{ route('flutter-app-development') }}">Flutter App
+                                                        Development</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -608,7 +622,8 @@
                             <a href="{{ route('classified-portals-development') }}">Classified Portals Development</a>
                         </li>
                         <li>
-                            <a href="{{ route('custom-web-applications-development') }}">Custom Web Applications Development</a>
+                            <a href="{{ route('custom-web-applications-development') }}">Custom Web Applications
+                                Development</a>
                         </li>
                     </ul>
                 </div>
@@ -639,7 +654,8 @@
                     </div>
                     <ul class="ham-list ham-list--sub">
                         <li>
-                            <a href="{{ route('android-applications-development') }}">Android Applications Development</a>
+                            <a href="{{ route('android-applications-development') }}">Android Applications
+                                Development</a>
                         </li>
                         <li>
                             <a href="{{ route('iOS-applications-development') }}">iOS Applications Development</a>
@@ -875,9 +891,9 @@
     <script type="text/javascript" src="{{ asset('assets/js/fancybox.js')}}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/function.js')}}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/main.js')}}"></script>
- 
+
     @stack('scripts')
-    
+
 </body>
 
 </html>

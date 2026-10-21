@@ -323,11 +323,27 @@
                   </p>
                 </div>
 
-                <form class="career-form" action="" method="POST" enctype="multipart/form-data">
+                @if (session('success'))
+                  <div role="status" style="background:#ecfdf3;border:1px solid #abefc6;color:#067647;padding:12px 16px;border-radius:10px;margin-bottom:18px;font-size:14px;">
+                    {{ session('success') }}
+                  </div>
+                @endif
+
+                <form class="career-form" action="{{ route('career.apply') }}" method="POST" enctype="multipart/form-data"
+                  onsubmit="var b=this.querySelector('button[type=submit]'); if(b){b.disabled=true;}">
                   @csrf
                   <input type="hidden" name="career_id" value="{{ $career->id }}" />
-                  <input type="hidden" name="position" value="{{ $career->title }}" />
                   <input type="hidden" name="apply_type" value="{{ $career->type }}" />
+
+                  {{-- Honeypot: hidden from people, bots fill it --}}
+                  <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <label for="hp_check">Leave this field empty</label>
+                    <input type="text" id="hp_check" name="hp_check" tabindex="-1" autocomplete="new-password" />
+                  </div>
+
+                  @error('position')
+                    <div role="alert" style="background:#fef3f2;border:1px solid #fecdca;color:#b42318;padding:10px 14px;border-radius:10px;margin-bottom:14px;font-size:14px;">{{ $message }}</div>
+                  @enderror
 
                   <!-- Personal Details -->
                   <div class="career-form__section">
@@ -336,22 +352,26 @@
                     <div class="career-form__grid">
                       <div class="form-group">
                         <label for="full-name"> Full Name <sup>*</sup> </label>
-                        <input type="text" id="full-name" name="name" placeholder="Enter your full name" required />
+                        <input type="text" id="full-name" name="name" value="{{ old('name') }}" placeholder="Enter your full name" required />
+                        @error('name')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                       </div>
 
                       <div class="form-group">
                         <label for="email"> Email Address <sup>*</sup> </label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+                        <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Enter your email address" required />
+                        @error('email')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                       </div>
 
                       <div class="form-group">
                         <label for="phone"> Phone Number <sup>*</sup> </label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+                        <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Enter your phone number" required />
+                        @error('phone')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                       </div>
 
                       <div class="form-group">
                         <label for="location"> Current Location </label>
-                        <input type="text" id="location" name="location" placeholder="City, Country" />
+                        <input type="text" id="location" name="location" value="{{ old('location') }}" placeholder="City, Country" />
+                        @error('location')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                       </div>
                     </div>
                   </div>
@@ -365,34 +385,34 @@
                         <label for="experience"> Experience <sup>*</sup> </label>
                         <select id="experience" name="experience" required>
                           <option value="">Select experience</option>
-                          <option value="0-1">0–1 Years</option>
-                          <option value="1-3">1–3 Years</option>
-                          <option value="3-5">3–5 Years</option>
-                          <option value="5-8">5–8 Years</option>
-                          <option value="8+">8+ Years</option>
+                          @foreach (['0-1' => '0–1 Years', '1-3' => '1–3 Years', '3-5' => '3–5 Years', '5-8' => '5–8 Years', '8+' => '8+ Years'] as $val => $label)
+                            <option value="{{ $val }}" {{ old('experience') === $val ? 'selected' : '' }}>{{ $label }}</option>
+                          @endforeach
                         </select>
+                        @error('experience')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                       </div>
 
                       <div class="form-group">
                         <label for="notice-period"> Notice Period </label>
                         <select id="notice-period" name="notice_period">
                           <option value="">Select notice period</option>
-                          <option value="immediate">Immediate</option>
-                          <option value="15">15 Days</option>
-                          <option value="30">30 Days</option>
-                          <option value="60">60 Days</option>
-                          <option value="90">90 Days</option>
+                          @foreach (['immediate' => 'Immediate', '15' => '15 Days', '30' => '30 Days', '60' => '60 Days', '90' => '90 Days'] as $val => $label)
+                            <option value="{{ $val }}" {{ old('notice_period') === (string) $val ? 'selected' : '' }}>{{ $label }}</option>
+                          @endforeach
                         </select>
+                        @error('notice_period')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                       </div>
 
                       <div class="form-group">
                         <label for="portfolio"> Portfolio / Website </label>
-                        <input type="url" id="portfolio" name="portfolio" placeholder="https://yourwebsite.com" />
+                        <input type="url" id="portfolio" name="portfolio" value="{{ old('portfolio') }}" placeholder="https://yourwebsite.com" />
+                        @error('portfolio')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                       </div>
 
                       <div class="form-group">
                         <label for="linkedin"> LinkedIn Profile </label>
-                        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/..." />
+                        <input type="url" id="linkedin" name="linkedin" value="{{ old('linkedin') }}" placeholder="https://linkedin.com/in/..." />
+                        @error('linkedin')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                       </div>
                     </div>
                   </div>
@@ -415,6 +435,7 @@
                           </div>
                         </div>
                       </div>
+                      @error('resume')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                     </div>
 
                     <div class="form-group">
@@ -424,26 +445,34 @@
                         name="cover_letter"
                         rows="5"
                         placeholder="Tell us briefly why you’re a good fit for this role..."
-                      ></textarea>
+                      >{{ old('cover_letter') }}</textarea>
+                      @error('cover_letter')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                     </div>
                   </div>
 
                   <!-- Consent -->
                   <div class="career-form__footer">
                     <label class="career-checkbox">
-                      <input type="checkbox" name="consent" required />
+                      <input type="checkbox" name="consent" value="1" {{ old('consent') ? 'checked' : '' }} required />
                       <span></span>
                       <p>
                         I confirm that the information provided is accurate and
                         I agree to be contacted regarding this application.
                       </p>
                     </label>
+                    @error('consent')<small style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
 
                     <button type="submit" class="btn btn-black">
                       Submit Application ↗
                     </button>
                   </div>
                 </form>
+
+                @if (session('success') || $errors->any())
+                  <script>
+                    document.getElementById('career-apply')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  </script>
+                @endif
               </div>
             </aside>
           </div>

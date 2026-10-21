@@ -8,46 +8,26 @@
 
   <main>
     <!-- ============================================================
-         01 — BANNER
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect6.mp4"
-          poster="assets/video/poster/effect6.png">
-          <source src="assets/video/effect6.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">FLUTTER APPLICATION DEVELOPMENT</span>
+           01 — BANNER
+      ============================================================= -->
 
-              <h1>Build Once. Launch Everywhere. Grow Faster.</h1>
-
-              <p>
-                Turn your ideas into powerful Android and iOS applications
-                with Flutter. We build high-performance, cost-effective, and
-                scalable mobile experiences using a single codebase—helping
-                your business launch faster and reach more users.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white" data-model=".enquire-pop">
-                  Discuss Your App Idea <i>↗</i>
-                </a>
-
-                <a href="#flutter-development-process" class="btn btn-white">
-                  Explore Our Services <i>↗</i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect6.mp4',
+      'poster' => 'assets/video/poster/effect6.png',
+      'default' => [
+        'eyebrow' => 'FLUTTER APPLICATION DEVELOPMENT',
+        'heading' => 'Build Once. Launch Everywhere. Grow Faster.',
+        'description' => 'Turn your ideas into powerful Android and iOS applications with Flutter. We build high-performance, cost-effective, and scalable mobile experiences using a single codebase—helping your business launch faster and reach more users.',
+        'primary_text' => 'Discuss Your App Idea',
+        'primary_url' => '#enquire',
+        'secondary_text' => 'Explore Our Services',
+        'secondary_url' => '#flutter-development-process',
+      ],
+    ])
 
     <!-- ============================================================
-         02 — INTRODUCTION
-    ============================================================= -->
+           02 — INTRODUCTION
+      ============================================================= -->
     <section class="flutterIntro">
       <div class="container">
         <div class="heading">
@@ -152,8 +132,8 @@
     </section>
 
     <!-- ============================================================
-         03 — WHY FLUTTER
-    ============================================================= -->
+           03 — WHY FLUTTER
+      ============================================================= -->
     <section class="flutterWhy">
       <div class="container">
         <div class="heading">
@@ -259,8 +239,8 @@
     </section>
 
     <!-- ============================================================
-         04 — TYPES OF FLUTTER APPS
-    ============================================================= -->
+           04 — TYPES OF FLUTTER APPS
+      ============================================================= -->
     <section class="flutterTypes">
       <div class="container">
         <div class="heading">
@@ -406,12 +386,12 @@
     </section>
 
     <!-- ============================================================
-         FLUTTER CORE CAPABILITIES
-    ============================================================= -->
+           FLUTTER CORE CAPABILITIES
+      ============================================================= -->
 
     <!-- ============================================================
-         FLUTTER CORE CAPABILITIES
-    ============================================================= -->
+           FLUTTER CORE CAPABILITIES
+      ============================================================= -->
 
     <section class="flutterCapabilities">
       <div class="container">
@@ -651,8 +631,8 @@
     </section>
 
     <!-- ============================================================
-         07 — DEVELOPMENT PROCESS (.secG — reused, unchanged design)
-    ============================================================= -->
+           07 — DEVELOPMENT PROCESS (.secG — reused, unchanged design)
+      ============================================================= -->
     <section class="secG" id="flutter-development-process">
       <div class="container">
         <div class="heading">
@@ -1048,8 +1028,8 @@
     </section>
 
     <!-- ============================================================
-         09 — INDUSTRIES (.secH — reused, unchanged design)
-    ============================================================= -->
+           09 — INDUSTRIES (.secH — reused, unchanged design)
+      ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1171,8 +1151,8 @@
     </section>
 
     <!-- ============================================================
-         10 — WHY WEB MINGO (.secL — reused, unchanged design)
-    ============================================================= -->
+           10 — WHY WEB MINGO (.secL — reused, unchanged design)
+      ============================================================= -->
 
     <section class="secL">
       <div class="container">
@@ -1290,16 +1270,16 @@
     </section>
 
     <!-- ============================================================
-         11 — FAQ (.secN — reused, unchanged design)
-    ============================================================= -->
+           11 — FAQ (.secN — reused, unchanged design)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Flutter App Development.</span>',
       'intro' => 'Straight answers to what most people ask before getting started.',
     ])
 
     <!-- ============================================================
-         12 — FINAL CTA (reused, unchanged design)
-    ============================================================= -->
+           12 — FINAL CTA (reused, unchanged design)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1323,8 +1303,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

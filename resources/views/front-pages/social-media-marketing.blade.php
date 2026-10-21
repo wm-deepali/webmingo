@@ -8,39 +8,24 @@
 
   <main>
     <!-- ============================================================
-         01 — BANNER (existing structure, content updated)
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
-          poster="assets/video/poster/effect3.png">
-          <source src="assets/video/effect3.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">SOCIAL MEDIA MARKETING</span>
-              <h1>Turn Social Media Into a Stronger Business Presence.</h1>
-              <p>
-                We plan, create and manage social content that keeps your
-                brand visible, relevant and connected with the right audience.
-              </p>
-              <div class="banner-actions">
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Discuss Your Social Strategy<i>↗</i>
-                </button>
-                <a href="javascript:void()" class="btn btn-outline-white">
-                  Chat on WhatsApp<i>↗</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+           01 — BANNER (existing structure, content updated)
+      ============================================================= -->
+
+    @include('partials.hero', [
+      'video' => 'assets/video/effect3.mp4',
+      'poster' => 'assets/video/poster/effect3.png',
+      'eyebrow' => 'SOCIAL MEDIA MARKETING',
+      'heading' => 'Turn Social Media Into a Stronger Business Presence.',
+      'description' => 'We plan, create and manage social content that keeps your brand visible, relevant and connected with the right audience.',
+      'primary_text' => 'Chat on WhatsApp',
+      'primary_url' => 'javascript:void(0)',
+      'secondary_text' => 'Discuss Your Social Strategy',
+      'secondary_url' => '#enquire',
+    ])
 
     <!-- ============================================================
-         02 — smmHero — HERO (NEW, editorial visual composition)
-    ============================================================= -->
+           02 — smmHero — HERO (NEW, editorial visual composition)
+      ============================================================= -->
     <section class="smmHero">
       <div class="container">
         <div class="smmHero-layout">
@@ -93,8 +78,8 @@
     </section>
 
     <!-- ============================================================
-         03 — WHY STRATEGIC SOCIAL MEDIA MARKETING (.smmGrowth)
-    ============================================================= -->
+           03 — WHY STRATEGIC SOCIAL MEDIA MARKETING (.smmGrowth)
+      ============================================================= -->
     <section class="smmGrowth">
       <div class="container">
         <div class="heading">
@@ -199,8 +184,8 @@
     </section>
 
     <!-- ============================================================
-         04 — smmPlatforms — PLATFORMS WE MANAGE (NEW)
-    ============================================================= -->
+           04 — smmPlatforms — PLATFORMS WE MANAGE (NEW)
+      ============================================================= -->
     <section class="smmPlatforms">
       <div class="container">
         <div class="heading">
@@ -369,8 +354,8 @@
     </section>
 
     <!-- ============================================================
-         SOCIAL MEDIA MARKETING — PLANS + CUSTOM REQUIREMENTS FORM
-    ============================================================= -->
+           SOCIAL MEDIA MARKETING — PLANS + CUSTOM REQUIREMENTS FORM
+      ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -586,8 +571,8 @@
     </section>
 
     <!-- ============================================================
-         06 — secG — OUR APPROACH (SMM)
-    ============================================================= -->
+           06 — secG — OUR APPROACH (SMM)
+      ============================================================= -->
     <section class="secG" id="smm-approach">
       <div class="container">
         <div class="heading">
@@ -936,8 +921,8 @@
     </section>
 
     <!-- ============================================================
-         10 — secL (existing structure) — WHY CHOOSE WEB MINGO
-    ============================================================= -->
+           10 — secL (existing structure) — WHY CHOOSE WEB MINGO
+      ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1017,16 +1002,16 @@
     </section>
 
     <!-- ============================================================
-         12 — secN (existing structure) — FAQ
-    ============================================================= -->
+           12 — secN (existing structure) — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Social Media Marketing.</span>',
       'intro' => 'Straight answers to what most people ask before getting started.',
     ])
 
     <!-- ============================================================
-         13 — FINAL CTA (existing structure)
-    ============================================================= -->
+           13 — FINAL CTA (existing structure)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1050,8 +1035,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

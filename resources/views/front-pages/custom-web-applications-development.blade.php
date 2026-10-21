@@ -7,45 +7,26 @@
 @section('content')
   <main>
     <!-- ============================================================
-         01 — BANNER
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect4.mp4"
-          poster="assets/video/poster/effect4.png">
-          <source src="assets/video/effect4.mp4" type="video/mp4" />
-        </video>
-
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">CUSTOM WEB APPLICATION DEVELOPMENT</span>
-
-              <h1>
-                Your Business Works Differently. Your Software Should Too.
-              </h1>
-
-              <p>
-                Tell us your workflow, challenge or idea—we'll build a custom
-                web application around the way your business actually works.
-              </p>
-
-              <div class="banner-actions">
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Discuss Your Requirement<i>↗</i>
-                </button>
-                <a href="javascript:void()" class="btn btn-outline-white">
-                  Chat on WhatsApp<i>↗</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+           01 — BANNER
+      ============================================================= -->
+      
+    @include('partials.hero', [
+      'video' => 'assets/video/effect4.mp4',
+      'poster' => 'assets/video/poster/effect4.png',
+      'default' => [
+        'eyebrow' => 'CUSTOM WEB APPLICATION DEVELOPMENT',
+        'heading' => 'Your Business Works Differently. Your Software Should Too.',
+        'description' => "Tell us your workflow, challenge or idea—we'll build a custom web application around the way your business actually works.",
+        'primary_text' => 'Discuss Your Requirement',
+        'primary_url' => '#enquire',
+        'secondary_text' => 'Chat on WhatsApp',
+        'secondary_url' => 'javascript:void(0)',
+      ],
+    ])
 
     <!-- ============================================================
-         WHY CUSTOM DEVELOPMENT?
-    ============================================================= -->
+           WHY CUSTOM DEVELOPMENT?
+      ============================================================= -->
     <section class="secA classifiedOverview">
       <div class="container">
         <div class="wrapper">
@@ -163,8 +144,8 @@
     </section>
 
     <!-- ============================================================
-         04 — TYPES OF WEB APPLICATIONS WE DEVELOP
-    ============================================================= -->
+           04 — TYPES OF WEB APPLICATIONS WE DEVELOP
+      ============================================================= -->
     <section class="webAppTypes">
       <div class="container">
         <div class="webAppTypes-grid">
@@ -325,8 +306,8 @@
       </div>
     </section>
     <!-- ============================================================
-         05 — BUILT AROUND YOUR BUSINESS WORKFLOW
-    ============================================================= -->
+           05 — BUILT AROUND YOUR BUSINESS WORKFLOW
+      ============================================================= -->
     <section class="webAppWorkflow">
       <div class="container">
         <div class="heading">
@@ -505,8 +486,8 @@
     </section>
 
     <!-- ============================================================
-         07 — CONNECTED BUSINESS SYSTEM
-    ============================================================= -->
+           07 — CONNECTED BUSINESS SYSTEM
+      ============================================================= -->
     <section class="webAppIntegrations">
       <div class="container">
         <div class="heading">
@@ -1201,14 +1182,14 @@
     </section>
 
     <!-- ============================================================
-         15 — BUILD YOUR CUSTOM WEB APP — ENQUIRY
-    ============================================================= -->
+           15 — BUILD YOUR CUSTOM WEB APP — ENQUIRY
+      ============================================================= -->
     <section class="webAppEnquire">
       <div class="container">
         <div class="webAppEnquire-shell">
           <!-- ======================================================
-               LEFT — PROJECT INTRO
-          ======================================================= -->
+                 LEFT — PROJECT INTRO
+            ======================================================= -->
           <div class="webAppEnquire-content">
             <div class="heading">
               <span class="eyebrow"><span class="eyebrow-line"></span>LET'S BUILD SOMETHING
@@ -1279,8 +1260,8 @@
           </div>
 
           <!-- ======================================================
-               RIGHT — ENQUIRY FORM
-          ======================================================= -->
+                 RIGHT — ENQUIRY FORM
+            ======================================================= -->
           <div class="webAppEnquire-formWrap">
             <div class="webAppEnquire-formHead">
               <div>
@@ -1378,16 +1359,16 @@
     </section>
 
     <!-- ============================================================
-         16 — secN — FAQ
-    ============================================================= -->
+           16 — secN — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Questions About Custom Web<span> Application Development?</span>',
       'intro' => 'Clear answers to common questions about building a custom web application with Web Mingo.',
     ])
 
     <!-- ============================================================
-         17 — cta-promo — FINAL CTA
-    ============================================================= -->
+           17 — cta-promo — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1418,8 +1399,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

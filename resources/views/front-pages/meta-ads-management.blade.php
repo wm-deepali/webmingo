@@ -9,43 +9,26 @@
 
   <main>
     <!-- ============================================================
-         01 — BANNER (comman .banner reused)
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
-          poster="assets/video/poster/effect3.png">
-          <source src="assets/video/effect3.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">META ADS MANAGEMENT</span>
+           01 — BANNER (comman .banner reused)
+      ============================================================= -->
 
-              <h1>Reach the Right Audience Across Facebook & Instagram.</h1>
-
-              <p>
-                We build and manage Meta campaigns designed around your
-                audience, offer and business objective—from awareness to leads
-                and sales.
-              </p>
-
-              <div class="banner-actions">
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Discuss Your Ad Campaign<i>↗</i>
-                </button>
-                <a href="javascript:void()" class="btn btn-outline-white">
-                  Chat on WhatsApp<i>↗</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect3.mp4',
+      'poster' => 'assets/video/poster/effect3.png',
+      'default' => [
+        'eyebrow' => 'META ADS MANAGEMENT',
+        'heading' => 'Reach the Right Audience Across Facebook & Instagram.',
+        'description' => 'We build and manage Meta campaigns designed around your audience, offer and business objective—from awareness to leads and sales.',
+        'primary_text' => 'Discuss Your Ad Campaign',
+        'primary_url' => '#enquire',
+        'secondary_text' => 'Chat on WhatsApp',
+        'secondary_url' => 'javascript:void(0)',
+      ],
+    ])
 
     <!-- ============================================================
-         META ADS — THE PROBLEM WE SOLVE
-    ============================================================ -->
+           META ADS — THE PROBLEM WE SOLVE
+      ============================================================ -->
 
     <section class="metaProblem" id="metaProblem">
       <div class="container">
@@ -197,8 +180,8 @@
       </div>
     </section>
     <!-- ============================================================
-         03 — TYPES OF META AD CAMPAIGNS WE RUN (.metaTypes — NEW)
-    ============================================================= -->
+           03 — TYPES OF META AD CAMPAIGNS WE RUN (.metaTypes — NEW)
+      ============================================================= -->
     <section class="metaTypes">
       <div class="container">
         <div class="heading">
@@ -305,8 +288,8 @@
     </section>
 
     <!-- ============================================================
-         04 — WHAT'S INCLUDED IN OUR META ADS SERVICE
-    ============================================================= -->
+           04 — WHAT'S INCLUDED IN OUR META ADS SERVICE
+      ============================================================= -->
 
     <section class="metaIncluded">
       <div class="container">
@@ -433,8 +416,8 @@
     </section>
 
     <!-- ============================================================
-         META ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
-    ============================================================= -->
+           META ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
+      ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -619,8 +602,8 @@
     </section>
 
     <!-- ============================================================
-         05 — OUR APPROACH: CREATIVE-FIRST STRATEGY (comman .secG reused)
-    ============================================================= -->
+           05 — OUR APPROACH: CREATIVE-FIRST STRATEGY (comman .secG reused)
+      ============================================================= -->
     <section class="secG" id="meta-approach">
       <div class="container">
         <div class="heading">
@@ -840,8 +823,8 @@
     </section>
 
     <!-- ============================================================
-         06 — META PIXEL & CONVERSION TRACKING
-    ============================================================= -->
+           06 — META PIXEL & CONVERSION TRACKING
+      ============================================================= -->
 
     <section class="metaPixel">
       <div class="container">
@@ -997,8 +980,8 @@
     </section>
 
     <!-- ============================================================
-         07 — INDUSTRIES WE RUN META ADS FOR (comman .secH reused)
-    ============================================================= -->
+           07 — INDUSTRIES WE RUN META ADS FOR (comman .secH reused)
+      ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1122,8 +1105,8 @@
     </section>
 
     <!-- ============================================================
-         09 — WHY CHOOSE WEB MINGO (comman .secL reused)
-    ============================================================= -->
+           09 — WHY CHOOSE WEB MINGO (comman .secL reused)
+      ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1202,16 +1185,16 @@
     </section>
 
     <!-- ============================================================
-         11 — FAQ (comman .secN reused)
-    ============================================================= -->
+           11 — FAQ (comman .secN reused)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Meta Ads Management.</span>',
       'intro' => 'Straight answers to what most people ask before getting started.',
     ])
 
     <!-- ============================================================
-         12 — FINAL CTA (comman .cta-promo reused)
-    ============================================================= -->
+           12 — FINAL CTA (comman .cta-promo reused)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1235,8 +1218,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

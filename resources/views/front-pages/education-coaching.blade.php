@@ -9,51 +9,26 @@
 
   <main>
     <!-- ============================================================
-         01 — HERO
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
-          poster="assets/video/poster/effect1.png">
-          <source src="assets/video/effect1.mp4" type="video/mp4" />
-        </video>
+           01 — HERO
+      ============================================================= -->
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">DIGITAL SOLUTIONS FOR EDUCATION &amp; COACHING</span>
-
-              <h1>
-                Build a Stronger Digital Learning Experience for Your
-                Students.
-              </h1>
-
-              <p>
-                From institute websites and LMS platforms to admissions, test
-                series, mobile apps and digital marketing—we help education
-                businesses grow digitally.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Requirements
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect1.mp4',
+      'poster' => 'assets/video/poster/effect1.png',
+      'default' => [
+        'eyebrow' => 'DIGITAL SOLUTIONS FOR EDUCATION & COACHING',
+        'heading' => 'Build a Stronger Digital Learning Experience for Your Students.',
+        'description' => 'From institute websites and LMS platforms to admissions, test series, mobile apps and digital marketing—we help education businesses grow digitally.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your Requirements',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <!-- ============================================================
-         02 — ABOUT THE INDUSTRY
-    ============================================================= -->
+           02 — ABOUT THE INDUSTRY
+      ============================================================= -->
     <section class="intro eduIntro">
       <div class="container">
         <div class="eduIntro-inner">
@@ -162,8 +137,8 @@
     </section>
 
     <!-- ============================================================
-         03 — WHY EDUCATION & COACHING BUSINESSES NEED A WEBSITE
-    ============================================================= -->
+           03 — WHY EDUCATION & COACHING BUSINESSES NEED A WEBSITE
+      ============================================================= -->
     <section class="eduNeed">
       <div class="container">
         <div class="heading">
@@ -310,8 +285,8 @@
     </section>
 
     <!-- ============================================================
-         04 — WHAT YOUR EDUCATION WEBSITE SHOULD INCLUDE
-    ============================================================= -->
+           04 — WHAT YOUR EDUCATION WEBSITE SHOULD INCLUDE
+      ============================================================= -->
     <section class="eduIncluded" id="eduIncluded">
       <div class="container">
         <div class="heading">
@@ -538,8 +513,8 @@
     </section>
 
     <!-- ============================================================
-         06 — HOW WE HELP YOUR EDUCATION BUSINESS GROW DIGITALLY
-    ============================================================= -->
+           06 — HOW WE HELP YOUR EDUCATION BUSINESS GROW DIGITALLY
+      ============================================================= -->
     <section class="eduJourney" id="eduJourney">
       <div class="container">
         <div class="heading">
@@ -798,16 +773,16 @@
     </section>
 
     <!-- ============================================================
-         10 — FAQ (.secN)
-    ============================================================= -->
+           10 — FAQ (.secN)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Questions About Our <span>Education Digital Solutions?</span>',
       'intro' => 'Find answers to common questions about building a website or platform for your institute.',
     ])
 
     <!-- ============================================================
-         11 — FINAL CTA (.cta-promo)
-    ============================================================= -->
+           11 — FINAL CTA (.cta-promo)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -831,8 +806,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

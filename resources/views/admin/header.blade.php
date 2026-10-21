@@ -46,20 +46,18 @@
 
         {{-- CONTENT MANAGEMENT --}}
         <li class="{{ request()->routeIs(
-    'admin.home-page.*',
-    'admin.banners.*',
+    'admin.page-heroes.*',
+    'admin.careers.*',
     'admin.faqs.*',
     'admin.blogs.*',
     'admin.pages.*',
-    'admin.announcements.*',
-    'admin.clients.*',
-    'admin.testimonials.*',
-    'admin.teams.*'
 ) ? 'active' : '' }}">
             <a href="#"><i class="fa-solid fa-file-lines"></i> Content Management</a>
             <ul>
+                <li><a href="{{ route('admin.page-heroes.index') }}">Page Hero Sections</a></li>
                 <li><a href="{{ route('admin.faqs.index') }}">FAQ</a></li>
                 <li><a href="{{ route('admin.blogs.index') }}">Blog Management</a></li>
+                <li><a href="{{ route('admin.careers.index') }}">Career Openings</a></li>
                 <li><a href="{{ route('admin.pages.index') }}">Dynamic Pages</a></li>
             </ul>
         </li>
@@ -79,7 +77,23 @@
         </li>
 
 
-        {{-- Admin Setting --}}
+        {{-- ENQUIRIES & APPLICATIONS --}}
+
+        <li class="{{ request()->routeIs('admin.enquiries.*', 'admin.career-applications.*') ? 'active' : '' }}">
+            <a href="#">
+                <i class="fa-solid fa-inbox"></i> Enquiries & Applications
+            </a>
+            <ul>
+                <li>
+                    <a href="{{ route('admin.enquiries.index') }}">Contact Enquiries</a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.career-applications.index') }}">Job Applications
+                    </a>
+                </li>
+            </ul>
+        </li>
+
         {{-- Admin Setting --}}
         <li class="{{ request()->routeIs(
     'admin.settings.*',

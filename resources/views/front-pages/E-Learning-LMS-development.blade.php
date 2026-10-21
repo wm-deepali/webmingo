@@ -7,43 +7,23 @@
 @section('content')
 
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect4.mp4"
-          poster="assets/video/poster/effect4.png">
-          <source src="assets/video/effect4.mp4" type="video/mp4" />
-        </video>
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow"> E-LEARNING & LMS DEVELOPMENT </span>
-
-              <h1>Build Your Own Digital Learning Platform.</h1>
-
-              <p>
-                Launch a custom LMS for courses, test series, live classes and
-                student management—built for your institute or EdTech
-                business.
-              </p>
-
-              <div class="banner-actions">
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Get a Free Demo
-                  <i>↗</i>
-                </button>
-                <a href="javascript:void()" class="btn btn-outline-white">
-                  Chat on WhatsApp<i>↗</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    @include('partials.hero', [
+      'video' => 'assets/video/effect4.mp4',
+      'poster' => 'assets/video/poster/effect4.png',
+      'default' => [
+        'eyebrow' => 'E-LEARNING & LMS DEVELOPMENT',
+        'heading' => 'Build Your Own Digital Learning Platform.',
+        'description' => 'Launch a custom LMS for courses, test series, live classes and student management—built for your institute or EdTech business.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Get a Free Demo',
+        'secondary_url' => '#enquire',
+      ],
+    ])
     <!-- ============================================================
-       02 — E-LEARNING & LMS INTRO
-  ============================================================= -->
+         02 — E-LEARNING & LMS INTRO
+    ============================================================= -->
     <section class="appIntro">
       <div class="container">
         <div class="appIntro-head">
@@ -96,8 +76,8 @@
     </section>
 
     <!-- ============================================================
-       03 — WHO WE BUILD LMS PLATFORMS FOR
-  ============================================================= -->
+         03 — WHO WE BUILD LMS PLATFORMS FOR
+    ============================================================= -->
     <section class="lmsAudience">
       <div class="container">
         <div class="heading">
@@ -249,8 +229,8 @@
     </section>
 
     <!-- ============================================================
-       04 — TYPES OF E-LEARNING PLATFORMS
-  ============================================================= -->
+         04 — TYPES OF E-LEARNING PLATFORMS
+    ============================================================= -->
     <section class="lmsTypes">
       <div class="container">
         <div class="heading">
@@ -460,8 +440,8 @@
     </section>
 
     <!-- ============================================================
-       E-LEARNING & LMS DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
-  ============================================================= -->
+         E-LEARNING & LMS DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
+    ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -752,8 +732,8 @@
     </section>
 
     <!-- ============================================================
-       06 — CORE LMS CAPABILITIES
-  ============================================================= -->
+         06 — CORE LMS CAPABILITIES
+    ============================================================= -->
     <section class="lmsFeatures">
       <div class="container">
         <div class="heading">
@@ -923,8 +903,8 @@
     </section>
 
     <!-- ============================================================
-       07 — STUDENT, FACULTY & ADMINISTRATION MANAGEMENT
-  ============================================================= -->
+         07 — STUDENT, FACULTY & ADMINISTRATION MANAGEMENT
+    ============================================================= -->
     <section class="lmsManagement">
       <div class="container">
         <div class="heading">
@@ -1077,8 +1057,8 @@
     </section>
 
     <!-- ============================================================
-       08 — CUSTOM FEATURES & THIRD-PARTY INTEGRATIONS
-  ============================================================= -->
+         08 — CUSTOM FEATURES & THIRD-PARTY INTEGRATIONS
+    ============================================================= -->
     <section class="lmsIntegrations" style="display: none">
       <div class="container">
         <div class="heading">
@@ -1587,8 +1567,8 @@
     </section>
 
     <!-- ============================================================
-       08 — PORTFOLIO (.secC)
-  ============================================================= -->
+         08 — PORTFOLIO (.secC)
+    ============================================================= -->
     <section class="secC">
       <div class="container">
         <div class="heading">
@@ -1832,8 +1812,8 @@
     ])
 
     <!-- ============================================================
-         15 — FINAL CTA (common .cta-promo)
-    ============================================================= -->
+           15 — FINAL CTA (common .cta-promo)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1857,8 +1837,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

@@ -10,52 +10,27 @@
   <main>
 
     <!-- ============================================================
-         01 — HERO
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
-          poster="assets/video/poster/effect1.png">
-          <source src="assets/video/effect1.mp4" type="video/mp4" />
-        </video>
+           01 — HERO
+      ============================================================= -->
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-
-              <span class="eyebrow">DIGITAL SOLUTIONS FOR HEALTHCARE</span>
-
-              <h1>
-                Make It Easier for Patients to Find &amp; Connect With You.
-              </h1>
-
-              <p>
-                Build a professional digital presence with healthcare websites, appointment
-                solutions, patient-focused applications and digital marketing.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Get a Free Consultation
-                  <i>↗</i>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect1.mp4',
+      'poster' => 'assets/video/poster/effect1.png',
+      'default' => [
+        'eyebrow' => 'DIGITAL SOLUTIONS FOR HEALTHCARE',
+        'heading' => 'Make It Easier for Patients to Find & Connect With You.',
+        'description' => 'Build a professional digital presence with healthcare websites, appointment solutions, patient-focused applications and digital marketing.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Get a Free Consultation',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
 
     <!-- ============================================================
-         02 — ABOUT HEALTHCARE & CLINICS
-    ============================================================= -->
+           02 — ABOUT HEALTHCARE & CLINICS
+      ============================================================= -->
     <section class="healthIntro">
       <div class="container">
 
@@ -152,8 +127,8 @@
 
 
     <!-- ============================================================
-         03 — WHY HEALTHCARE BUSINESSES NEED A PROFESSIONAL WEBSITE
-    ============================================================= -->
+           03 — WHY HEALTHCARE BUSINESSES NEED A PROFESSIONAL WEBSITE
+      ============================================================= -->
     <section class="healthTypes">
       <div class="container">
 
@@ -299,8 +274,8 @@
 
 
     <!-- ============================================================
-         04 — WHAT YOUR HEALTHCARE WEBSITE SHOULD INCLUDE
-    ============================================================= -->
+           04 — WHAT YOUR HEALTHCARE WEBSITE SHOULD INCLUDE
+      ============================================================= -->
     <section class="healthDeliver">
       <div class="container">
 
@@ -535,8 +510,8 @@
 
 
     <!-- ============================================================
-         06 — DIGITAL GROWTH OUTCOMES
-    ============================================================= -->
+           06 — DIGITAL GROWTH OUTCOMES
+      ============================================================= -->
     <section class="secL">
       <div class="container">
 
@@ -783,8 +758,8 @@
 
 
     <!-- ============================================================
-         08 — FAQ
-    ============================================================= -->
+           08 — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common <br /><span>Healthcare Website Questions.</span>',
@@ -793,8 +768,8 @@
 
 
     <!-- ============================================================
-         09 — FINAL CTA
-    ============================================================= -->
+           09 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -824,8 +799,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

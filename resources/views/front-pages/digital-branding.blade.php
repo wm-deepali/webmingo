@@ -7,44 +7,22 @@
 @section('content')
   <main>
     <!-- ============================================================
-         01 — HERO
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
-          poster="assets/video/poster/effect3.png">
-          <source src="assets/video/effect3.mp4" type="video/mp4" />
-        </video>
-
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">DIGITAL BRANDING &amp; CREATIVE SERVICES</span>
-
-              <h1>Give Your Business a Consistent Digital Identity.</h1>
-
-              <p>
-                We create graphics, marketing creatives and videos that help
-                your business communicate clearly and maintain a consistent
-                presence across digital platforms.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Brand Requirements
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+           01 — HERO
+      ============================================================= -->
+      
+    @include('partials.hero', [
+      'video' => 'assets/video/effect3.mp4',
+      'poster' => 'assets/video/poster/effect3.png',
+      'default' => [
+        'eyebrow' => 'DIGITAL BRANDING & CREATIVE SERVICES',
+        'heading' => 'Give Your Business a Consistent Digital Identity.',
+        'description' => 'We create graphics, marketing creatives and videos that help your business communicate clearly and maintain a consistent presence across digital platforms.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your Brand Requirements',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <section class="brandIntro">
       <div class="container">
@@ -1105,8 +1083,8 @@
     </section>
 
     <!-- ============================================================
-         09 — FINAL CTA (.cta-promo)
-    ============================================================= -->
+           09 — FINAL CTA (.cta-promo)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1134,8 +1112,8 @@
     </div>
 
     <!-- ============================================================
-         08 — FAQ (.secN)
-    ============================================================= -->
+           08 — FAQ (.secN)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Questions About <span>Digital Branding?</span>',

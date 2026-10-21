@@ -9,53 +9,32 @@
 
   <main>
     <!-- ============================================================
-       01 — HERO
-  ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect6.mp4"
-          poster="assets/video/poster/effect6.png">
-          <source src="assets/video/effect6.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">IOS APP DEVELOPMENT</span>
+         01 — HERO
+    ============================================================= -->
 
-              <h1>Custom iOS Apps Designed for Your Business.</h1>
-
-              <p>
-                From business applications to customer-facing platforms, we
-                build iOS apps around your functionality, users and growth
-                plans.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Discuss Your App Idea
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect6.mp4',
+      'poster' => 'assets/video/poster/effect6.png',
+      'default' => [
+        'eyebrow' => 'IOS APP DEVELOPMENT',
+        'heading' => 'Custom iOS Apps Designed for Your Business.',
+        'description' => 'From business applications to customer-facing platforms, we build iOS apps around your functionality, users and growth plans.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your App Idea',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <!-- ============================================================
-       02 — IOS INTRODUCTION
-  ============================================================= -->
+         02 — IOS INTRODUCTION
+    ============================================================= -->
     <section class="iosIntro" id="app-intro">
       <div class="container">
         <div class="iosIntro-layout">
           <!-- ======================================================
-             LEFT — CONTENT
-        ======================================================= -->
+               LEFT — CONTENT
+          ======================================================= -->
           <div class="iosIntro-content">
             <span class="eyebrow">
               <span class="eyebrow-line"></span>
@@ -128,8 +107,8 @@
           </div>
 
           <!-- ======================================================
-             RIGHT — PRODUCT VISUAL
-        ======================================================= -->
+               RIGHT — PRODUCT VISUAL
+          ======================================================= -->
           <div class="iosIntro-visual">
             <div class="iosIntro-visual-grid"></div>
 
@@ -183,8 +162,8 @@
     </section>
 
     <!-- ============================================================
-       03 — TYPES OF iOS APPS
-  ============================================================= -->
+         03 — TYPES OF iOS APPS
+    ============================================================= -->
     <section class="iosTypes" id="app-types">
       <div class="container">
         <div class="heading">
@@ -429,8 +408,8 @@
       </div>
     </section>
     <!-- ============================================================
-       05 — THIRD-PARTY INTEGRATIONS
-  ============================================================= -->
+         05 — THIRD-PARTY INTEGRATIONS
+    ============================================================= -->
     <section class="iosIntegrations" id="app-integrations">
       <div class="container">
         <div class="heading iosIntegrations-heading">
@@ -650,8 +629,8 @@
       </div>
     </section>
     <!-- ============================================================
-       07 — OUR DEVELOPMENT PROCESS
-  ============================================================= -->
+         07 — OUR DEVELOPMENT PROCESS
+    ============================================================= -->
     <section class="secG" id="app-development-process">
       <div class="container">
         <div class="heading">
@@ -1045,8 +1024,8 @@
       </div>
     </section>
     <!-- ============================================================
-       09 — INDUSTRIES
-  ============================================================= -->
+         09 — INDUSTRIES
+    ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1168,8 +1147,8 @@
     </section>
 
     <!-- ============================================================
-       10 — WHY WEB MINGO
-  ============================================================= -->
+         10 — WHY WEB MINGO
+    ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1246,8 +1225,8 @@
     </section>
 
     <!-- ============================================================
-       11 — FAQ (with cross-link)
-  ============================================================= -->
+         11 — FAQ (with cross-link)
+    ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common Hotel &amp; <span>Hospitality Website Questions.</span>',
@@ -1255,8 +1234,8 @@
     ])
 
     <!-- ============================================================
-       12 — FINAL CTA
-  ============================================================= -->
+         12 — FINAL CTA
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1280,8 +1259,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

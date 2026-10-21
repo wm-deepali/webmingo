@@ -10,53 +10,27 @@
   <main>
 
     <!-- ============================================================
-       01 — HERO
-  ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
-          poster="assets/video/poster/effect1.png">
-          <source src="assets/video/effect1.mp4" type="video/mp4" />
-        </video>
+         01 — HERO
+    ============================================================= -->
 
-
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-
-              <span class="eyebrow">DIGITAL SOLUTIONS FOR REAL ESTATE</span>
-
-              <h1>
-                Turn Property Searches Into Business Opportunities.
-              </h1>
-
-              <p>
-                From property websites and lead management to CRM, portals and digital
-                campaigns—we help real estate businesses connect with serious buyers.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Requirements
-                  <i>↗</i>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect1.mp4',
+      'poster' => 'assets/video/poster/effect1.png',
+      'default' => [
+        'eyebrow' => 'DIGITAL SOLUTIONS FOR REAL ESTATE',
+        'heading' => 'Turn Property Searches Into Business Opportunities.',
+        'description' => 'From property websites and lead management to CRM, portals and digital campaigns—we help real estate businesses connect with serious buyers.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your Requirements',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
 
     <!-- ============================================================
-       02 — ABOUT REAL ESTATE
-  ============================================================= -->
+         02 — ABOUT REAL ESTATE
+    ============================================================= -->
     <section class="realEstateIntro">
       <div class="container">
         <div class="heading">
@@ -151,8 +125,8 @@
 
 
     <!-- ============================================================
-       03 — WHY REAL ESTATE BUSINESSES NEED A WEBSITE
-  ============================================================= -->
+         03 — WHY REAL ESTATE BUSINESSES NEED A WEBSITE
+    ============================================================= -->
     <section class="realEstateWhy" id="realEstateWhy">
       <div class="container">
         <div class="heading">
@@ -284,8 +258,8 @@
 
 
     <!-- ============================================================
-       04 — WHAT YOUR REAL ESTATE WEBSITE SHOULD INCLUDE
-  ============================================================= -->
+         04 — WHAT YOUR REAL ESTATE WEBSITE SHOULD INCLUDE
+    ============================================================= -->
     <section class="realEstateGet" id="realEstateGet">
       <div class="container">
         <div class="heading">
@@ -567,8 +541,8 @@
     </section>
 
     <!-- ============================================================
-       06 — DIGITAL GROWTH OUTCOMES
-  ============================================================= -->
+         06 — DIGITAL GROWTH OUTCOMES
+    ============================================================= -->
     <section class="secL">
       <div class="container">
 
@@ -794,19 +768,19 @@
 
       </div>
     </section>
-    
+
     <!-- ============================================================
-       08 — FAQ
-  ============================================================= -->
+         08 — FAQ
+    ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common <br/><span>Real Estate Website Questions.</span>',
       'intro' => 'Straight answers to common questions property businesses ask before building or upgrading their website.',
     ])
-    
+
     <!-- ============================================================
-       09 — FINAL CTA
-  ============================================================= -->
+         09 — FINAL CTA
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -836,8 +810,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

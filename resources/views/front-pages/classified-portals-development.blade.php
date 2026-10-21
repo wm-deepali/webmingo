@@ -6,44 +6,24 @@
 
 @section('content')
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect4.mp4"
-          poster="assets/video/poster/effect4.png">
-          <source src="assets/video/effect4.mp4" type="video/mp4" />
-        </video>
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">CLASSIFIED PORTAL DEVELOPMENT</span>
-
-              <h1>
-                Turn Your Marketplace Idea Into a Powerful Classified Portal.
-              </h1>
-
-              <p>
-                We build custom classified platforms where sellers can post
-                listings, buyers can discover them and your marketplace can
-                grow.
-              </p>
-
-              <div class="banner-actions">
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Discuss Your Portal Idea<i>↗</i>
-                </button>
-                <a href="javascript:void()" class="btn btn-outline-white">
-                  Chat on WhatsApp<i>↗</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect4.mp4',
+      'poster' => 'assets/video/poster/effect4.png',
+      'default' => [
+        'eyebrow' => 'CLASSIFIED PORTAL DEVELOPMENT',
+        'heading' => 'Turn Your Marketplace Idea Into a Powerful Classified Portal.',
+        'description' => 'We build custom classified platforms where sellers can post listings, buyers can discover them and your marketplace can grow.',
+        'primary_text' => 'Discuss Your Portal Idea',
+        'primary_url' => '#enquire',
+        'secondary_text' => 'Chat on WhatsApp',
+        'secondary_url' => 'javascript:void(0)',
+      ],
+    ])
 
     <!-- ============================================================
-       02 — CLASSIFIED PORTAL INTRO
-  ============================================================= -->
+         02 — CLASSIFIED PORTAL INTRO
+    ============================================================= -->
     <section class="appIntro">
       <div class="container">
         <div class="appIntro-head">
@@ -94,8 +74,8 @@
     </section>
 
     <!-- ============================================================
-       03 — TYPES OF CLASSIFIED PORTALS WE DEVELOP
-  ============================================================= -->
+         03 — TYPES OF CLASSIFIED PORTALS WE DEVELOP
+    ============================================================= -->
     <section class="classifiedTypes">
       <div class="container">
         <div class="heading">
@@ -484,8 +464,8 @@
     </section>
 
     <!-- ============================================================
-       CORE CLASSIFIED PORTAL CAPABILITIES
-  ============================================================= -->
+         CORE CLASSIFIED PORTAL CAPABILITIES
+    ============================================================= -->
     <section class="classifiedCaps">
       <div class="container">
         <div class="heading">
@@ -910,8 +890,8 @@
     </section>
 
     <!-- ============================================================
-       SCALABILITY & CUSTOM DEVELOPMENT
-  ============================================================= -->
+         SCALABILITY & CUSTOM DEVELOPMENT
+    ============================================================= -->
     <section class="classifiedScale">
       <div class="container">
         <div class="heading">
@@ -1039,8 +1019,8 @@
     </section>
 
     <!-- ============================================================
-       CLASSIFIED PORTAL DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
-  ============================================================= -->
+         CLASSIFIED PORTAL DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
+    ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -1875,16 +1855,16 @@
     </section>
 
     <!-- ============================================================
-       14 — FAQ (.secN)
-  ============================================================= -->
+         14 — FAQ (.secN)
+    ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Questions About Classified <span>Portal Development?</span>',
       'intro' => 'Clear answers to common questions about building and scaling a classified marketplace with Web Mingo.',
     ])
 
     <!-- ============================================================
-       15 — FINAL CTA (common .cta-promo)
-  ============================================================= -->
+         15 — FINAL CTA (common .cta-promo)
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1915,8 +1895,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

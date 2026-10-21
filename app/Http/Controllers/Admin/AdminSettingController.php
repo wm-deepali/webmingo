@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminSettingController extends Controller
 {
-    // ðŸ”¹ Show form
+    // Show form
     public function index(Request $request)
     {
         $smtp = SmtpSetting::first();
@@ -91,7 +91,10 @@ class AdminSettingController extends Controller
             'phone' => 'nullable|string|max:20',
             'whatsapp' => 'nullable|string|max:20',
             'business_address' => 'nullable|string',
+            'business_hours' => 'nullable|string|max:255',
+            'google_map_url' => 'nullable|string|max:2000',
             'footer_description' => 'nullable|string',
+            'footer_copyright' => 'nullable|string|max:255',
             'facebook' => 'nullable|url|max:255',
             'instagram' => 'nullable|url|max:255',
             'twitter' => 'nullable|url|max:255',
@@ -108,16 +111,14 @@ class AdminSettingController extends Controller
             'admin_dashboard_logo' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:2048',
         ]);
 
-        $validated['maintenance_mode']
-            = $request->has('maintenance_mode');
-        $validated['product_reviews']
-            = $request->has('product_reviews');
-        $validated['wishlist']
-            = $request->has('wishlist');
-        $validated['stock_alerts']
-            = $request->has('stock_alerts');
-        $validated['cod_enabled']
-            = $request->has('cod_enabled');
+        // If the full <iframe ...> embed code was pasted, keep only the src URL.
+        if (!empty($validated['google_map_url']) && stripos($validated['google_map_url'], '<iframe') !== false) {
+            if (preg_match('/src=["\']([^"\']+)["\']/i', $validated['google_map_url'], $m)) {
+                $validated['google_map_url'] = html_entity_decode($m[1]);
+            }
+        }
+
+        $validated['maintenance_mode']= $request->has('maintenance_mode');
 
         // Header Logo
         if ($request->hasFile('header_logo')) {

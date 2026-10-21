@@ -14,11 +14,15 @@ use App\Http\Controllers\Admin\{
     SystemLogController,
     RedirectController,
     CareerController,
+    ContactEnquiryController,
+    CareerApplicationController,
+    PageHeroController
 };
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\SitemapController;
 
 
 Route::middleware('maintenance.mode')->group(function () {
@@ -30,9 +34,11 @@ Route::middleware('maintenance.mode')->group(function () {
         Route::get('/blog/{slug}', 'blogDetail')->name('blog-detail');
         Route::get('/careers', 'careers')->name('career');
         Route::get('/career/{slug}', 'careerDetail')->name('career-detail');
+        Route::get('/contact', 'contact')->name('contact');
+        Route::post('/contact', 'contactStore')->name('contact.store')->middleware('throttle:5,1');
+        Route::post('/career/apply', 'careerApply')->name('career.apply')->middleware('throttle:3,1');
 
         Route::view('/about', 'front-pages.about')->name('about');
-        Route::view('/contact', 'front-pages.contact')->name('contact');
         Route::view('/lifeAt', 'front-pages.lifeAt')->name('lifeAt');
         Route::view('/Knowledge-base', 'front-pages.Knowledge-base')->name('Knowledge-base');
         Route::view('/our-works', 'front-pages.our-works')->name('our-works');
@@ -74,6 +80,9 @@ Route::middleware('maintenance.mode')->group(function () {
 });
 
 
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
+
 // Admin Routes list
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
@@ -94,16 +103,24 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('careers', CareerController::class)->except(['show']);
 
-        Route::get('/logout', [LogoutController::class, 'logout']);
+        // Inbox: website enquiries + job applications
+        Route::resource('enquiries', ContactEnquiryController::class)
+            ->only(['index', 'show', 'update', 'destroy'])
+            ->parameters(['enquiries' => 'enquiry']);
+
+        Route::get('career-applications/{application}/resume', [CareerApplicationController::class, 'resume'])
+            ->name('career-applications.resume');
+        Route::resource('career-applications', CareerApplicationController::class)
+            ->only(['index', 'show', 'update', 'destroy'])
+            ->parameters(['career-applications' => 'application']);
+
+        Route::get('page-heroes', [PageHeroController::class, 'index'])->name('page-heroes.index');
+        Route::get('page-heroes/{pageKey}/edit', [PageHeroController::class, 'edit'])->name('page-heroes.edit');
+        Route::put('page-heroes/{pageKey}', [PageHeroController::class, 'update'])->name('page-heroes.update');
+        Route::delete('page-heroes/{pageKey}', [PageHeroController::class, 'destroy'])->name('page-heroes.destroy');
 
         Route::get('/seo', [SeoController::class, 'index'])->name('seo.index');
         Route::put('/seo/{id}', [SeoController::class, 'update'])->name('seo.update');
-
-        // Admin Settings routes
-        Route::view('/admin-setting/whatsapp', 'admin.admin-settings.whatsapp')->name('admin-setting.whatsapp');
-        Route::view('/admin-setting/sms-api', 'admin.admin-settings.sms-api')->name('admin-setting.sms-api');
-        Route::view('/admin-setting/delivery-setting', 'admin.admin-settings.delivery-setting')->name('admin-setting.delivery-setting');
-        Route::view('/security/security-settings', 'admin.security.security-settings')->name('security.security-settings');
 
 
         Route::prefix('redirect-settings')->name('redirect-settings.')->group(function () {
@@ -139,8 +156,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/{notification}', [NotificationController::class, 'destroy'])->name('destroy');
         });
 
-        Route::view('/templates-setting', 'admin.admin-settings.template-setting')->name('templates.template-setting');
-
         Route::prefix('roles-and-permission')->group(function () {
 
             // Roles Category
@@ -165,6 +180,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
         });
+
+        Route::get('/logout', [LogoutController::class, 'logout']);
 
     });
 });

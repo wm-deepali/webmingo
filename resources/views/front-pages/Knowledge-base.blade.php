@@ -9,46 +9,26 @@
 
   <main>
     <!-- =========================================================
-         BANNER — COMMON
-    ========================================================== -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect8.mp4"
-          poster="assets/video/poster/effect8.png">
-          <source src="assets/video/effect8.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">KNOWLEDGE BASE</span>
+           BANNER — COMMON
+      ========================================================== -->
 
-              <h1>Find Answers. Learn. Solve It Faster.</h1>
-
-              <p>
-                Access practical guides, how-to resources and answers to help
-                you understand and manage your digital platforms better.
-              </p>
-
-              <div class="banner-actions">
-                <a href="#knowledge-base" class="btn btn-outline-white">
-                  Browse Knowledge Base
-                  <i>↗</i>
-                </a>
-
-                <a href="javascript:void()" class="btn btn-white">
-                  Search for an Answer
-                  <i>↗</i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect8.mp4',
+      'poster' => 'assets/video/poster/effect8.png',
+      'default' => [
+        'eyebrow' => 'KNOWLEDGE BASE',
+        'heading' => 'Find Answers. Learn. Solve It Faster.',
+        'description' => 'Access practical guides, how-to resources and answers to help you understand and manage your digital platforms better.',
+        'primary_text' => 'Browse Knowledge Base',
+        'primary_url' => '#knowledge-base',
+        'secondary_text' => 'Search for an Answer',
+        'secondary_url' => 'javascript:void(0)',
+      ],
+    ])
 
     <!-- =========================================================
-       01 — KNOWLEDGE BASE INTRO
-  ========================================================== -->
+         01 — KNOWLEDGE BASE INTRO
+    ========================================================== -->
     <section class="kb-intro" id="knowledge-base">
       <div class="container">
         <div class="heading">
@@ -91,20 +71,20 @@
     </section>
 
     <!-- =========================================================
-       02 — KNOWLEDGE BASE ARTICLES
-  ========================================================== -->
+         02 — KNOWLEDGE BASE ARTICLES
+    ========================================================== -->
     <section class="kb-main" id="kb-articles">
       <div class="container">
         <div class="kb-grid">
           <!-- ===============================================
-             LEFT — ARTICLES
-        ================================================ -->
+               LEFT — ARTICLES
+          ================================================ -->
           <div class="kb-articles">
             <div class="tab-nav-content kb-category-content">
               <!-- =========================================
-                 ALL
-                 All category panels active together
-            ========================================== -->
+                   ALL
+                   All category panels active together
+              ========================================== -->
               <div class="tabs active" data-tab="all">
                 <!-- ARTICLE 01 -->
                 <article class="kb-article">
@@ -499,8 +479,8 @@
               </div>
 
               <!-- =========================================
-                 E-COMMERCE
-            ========================================== -->
+                   E-COMMERCE
+              ========================================== -->
               <div class="tabs" data-tab="ecommerce">
                 <article class="kb-article">
                   <span class="kb-article__tag"> E-COMMERCE </span>
@@ -568,8 +548,8 @@
               </div>
 
               <!-- =========================================
-                 SEO
-            ========================================== -->
+                   SEO
+              ========================================== -->
               <div class="tabs" data-tab="seo">
                 <article class="kb-article">
                   <span class="kb-article__tag"> SEO </span>
@@ -624,8 +604,8 @@
               </div>
 
               <!-- =========================================
-                 WEB APPLICATIONS
-            ========================================== -->
+                   WEB APPLICATIONS
+              ========================================== -->
               <div class="tabs" data-tab="web-applications">
                 <article class="kb-article">
                   <span class="kb-article__tag"> WEB APPLICATIONS </span>
@@ -682,8 +662,8 @@
               </div>
 
               <!-- =========================================
-                 DIGITAL MARKETING
-            ========================================== -->
+                   DIGITAL MARKETING
+              ========================================== -->
               <div class="tabs" data-tab="digital-marketing">
                 <article class="kb-article">
                   <span class="kb-article__tag"> DIGITAL MARKETING </span>
@@ -739,8 +719,8 @@
               </div>
 
               <!-- =========================================
-                 SECURITY
-            ========================================== -->
+                   SECURITY
+              ========================================== -->
               <div class="tabs" data-tab="security">
                 <article class="kb-article">
                   <span class="kb-article__tag"> SECURITY </span>
@@ -800,8 +780,8 @@
               </div>
 
               <!-- =========================================
-                 HOSTING & MAINTENANCE
-            ========================================== -->
+                   HOSTING & MAINTENANCE
+              ========================================== -->
               <div class="tabs" data-tab="hosting-maintenance">
                 <article class="kb-article">
                   <span class="kb-article__tag">
@@ -859,8 +839,8 @@
           </div>
 
           <!-- ===============================================
-             RIGHT — STICKY CONSULTATION FORM
-        ================================================ -->
+               RIGHT — STICKY CONSULTATION FORM
+          ================================================ -->
           <aside class="kb-sidebar">
             <div class="kb-form">
               <span class="sec-label"> NEED HELP WITH YOUR PROJECT? </span>

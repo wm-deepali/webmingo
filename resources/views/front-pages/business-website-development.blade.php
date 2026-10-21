@@ -6,34 +6,20 @@
 
 @section('content')
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect4.mp4"
-          poster="assets/video/poster/effect4.png">
-          <source src="assets/video/effect4.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">BUSINESS WEBSITE DEVELOPMENT</span>
-              <h1>Business Websites Built Around Your Business.</h1>
-              <p>
-                We design and develop professional websites that present your
-                business clearly, build credibility and turn visitors into
-                enquiries.
-              </p>
-              <div class="banner-actions">
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Start Your Website Project<i>↗</i>
-                </button>
-                <a href="javascript:void()" class="btn btn-outline-white">
-                  Chat on WhatsApp<i>↗</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+  @include('partials.hero', [
+      'video' => 'assets/video/effect4.mp4',
+      'poster' => 'assets/video/poster/effect4.png',
+      'default' => [
+        'eyebrow' => 'BUSINESS WEBSITE DEVELOPMENT',
+        'heading' => 'Business Websites Built Around Your Business.',
+        'description' => 'We design and develop professional websites that present your business clearly, build credibility and turn visitors into enquiries.',
+        'primary_text' => 'Start Your Website Project',
+        'primary_url' => '#enquire',
+        'secondary_text' => 'Chat on WhatsApp',
+        'secondary_url' => 'javascript:void()',
+      ],
+    ])
 
     <section class="secA">
       <div class="container">

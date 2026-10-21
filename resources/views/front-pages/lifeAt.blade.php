@@ -8,36 +8,20 @@
 
 
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/about.mp4"
-          poster="assets/video/poster/about.png">
-          <source src="assets/video/about.mp4" type="video/mp4" />
-        </video>
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">WHY LIFE AT WEB MINGO</span>
-
-              <h1>Why People Choose Life at Web Mingo</h1>
-
-              <p>
-                We believe great work starts with great people. At Web Mingo, you’ll
-                find a culture that encourages ideas, supports growth, celebrates
-                collaboration, and gives you the space to do meaningful work.
-              </p>
-
-              <a href="javascript:void(0)" class="btn btn-white">
-                Explore Life at Web Mingo
-                <i>↗</i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/about.mp4',
+      'poster' => 'assets/video/poster/about.png',
+      'default' => [
+        'eyebrow' => 'WHY LIFE AT WEB MINGO',
+        'heading' => 'Why People Choose Life at Web Mingo',
+        'description' => 'We believe great work starts with great people. At Web Mingo, you’ll find a culture that encourages ideas, supports growth, celebrates collaboration, and gives you the space to do meaningful work.',
+        'primary_text' => 'Explore Life at Web Mingo',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => '',
+        'secondary_url' => '',
+      ],
+    ])
 
     <section class="secA">
       <div class="container">
@@ -423,8 +407,8 @@
 
 
     <!-- ========================================
-         08. BEHIND THE SCENES
-    ======================================== -->
+             08. BEHIND THE SCENES
+        ======================================== -->
 
     <section class="secF behind-sec">
       <div class="container">
@@ -673,8 +657,8 @@
 
 
         <!-- ========================================
-                 TAB CONTENT
-            ======================================== -->
+                     TAB CONTENT
+                ======================================== -->
 
         <div class="tab-nav-content">
 

@@ -6,43 +6,24 @@
 
 @section('content')
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect6.mp4"
-          poster="assets/video/poster/effect6.png">
-          <source src="assets/video/effect6.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">ANDROID APP DEVELOPMENT</span>
 
-              <h1>Android Apps Built Around Your Business &amp; Users.</h1>
-
-              <p>
-                We develop custom Android applications that turn your business
-                requirements into reliable, easy-to-use mobile experiences.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Discuss Your App Idea
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect6.mp4',
+      'poster' => 'assets/video/poster/effect6.png',
+      'default' => [
+        'eyebrow' => 'ANDROID APP DEVELOPMENT',
+        'heading' => 'Android Apps Built Around Your Business &amp; Users.',
+        'description' => 'We develop custom Android applications that turn your business requirements into reliable, easy-to-use mobile experiences.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void()',
+        'secondary_text' => 'Discuss Your App Idea',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <!-- ============================================================
-         02 — INTRODUCTION (creative stage)
-    ============================================================= -->
+           02 — INTRODUCTION (creative stage)
+      ============================================================= -->
     <section class="appIntro" id="app-intro">
       <div class="container">
         <div class="appIntro-top">
@@ -523,8 +504,8 @@
     </section>
 
     <!-- ============================================================
-         WEBSITE → MOBILE APP — Digital Experience Evolution
-    ============================================================= -->
+           WEBSITE → MOBILE APP — Digital Experience Evolution
+      ============================================================= -->
     <section class="appJourney">
       <div class="container">
         <div class="heading">
@@ -542,8 +523,8 @@
         </div>
 
         <!-- ======================================================
-             STAGE — Laptop (real device) → Connector → Phone (real device)
-        ======================================================= -->
+               STAGE — Laptop (real device) → Connector → Phone (real device)
+          ======================================================= -->
         <div class="appJourney-stage">
           <!-- LEFT — WEBSITE, on a real laptop device -->
           <div class="appJourney-panel appJourney-panel--laptop">
@@ -765,8 +746,8 @@
         </div>
 
         <!-- ======================================================
-             COMPARISON — Website vs Mobile App (unified table)
-        ======================================================= -->
+               COMPARISON — Website vs Mobile App (unified table)
+          ======================================================= -->
         <div class="appJourney-compare">
           <div class="appJourney-compare-head">
             <h3>A Better Experience for Returning Users</h3>
@@ -929,8 +910,8 @@
     </section>
 
     <!-- ============================================================
-         07 — OUR DEVELOPMENT PROCESS
-    ============================================================= -->
+           07 — OUR DEVELOPMENT PROCESS
+      ============================================================= -->
     <section class="secG" id="app-development-process">
       <div class="container">
         <div class="heading">
@@ -1150,8 +1131,8 @@
     </section>
 
     <!-- ============================================================
-         08 — OUR ANDROID APP WORK / PORTFOLIO
-    ============================================================= -->
+           08 — OUR ANDROID APP WORK / PORTFOLIO
+      ============================================================= -->
     <section class="secC">
       <div class="container">
         <div class="heading">
@@ -1328,8 +1309,8 @@
       </div>
     </section>
     <!-- ============================================================
-         09 — INDUSTRIES
-    ============================================================= -->
+           09 — INDUSTRIES
+      ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1451,8 +1432,8 @@
     </section>
 
     <!-- ============================================================
-         10 — WHY WEB MINGO
-    ============================================================= -->
+           10 — WHY WEB MINGO
+      ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1532,16 +1513,16 @@
     </section>
 
     <!-- ============================================================
-         11 — FAQ (with cross-link)
-    ============================================================= -->
+           11 — FAQ (with cross-link)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Android App Development.</span>',
       'intro' => 'Straight answers to what most people ask before getting started.',
     ])
 
     <!-- ============================================================
-         12 — FINAL CTA
-    ============================================================= -->
+           12 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1564,8 +1545,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

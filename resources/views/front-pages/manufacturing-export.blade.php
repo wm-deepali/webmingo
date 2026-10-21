@@ -9,53 +9,27 @@
   <main>
 
     <!-- ============================================================
-         01 — BANNER
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
-          poster="assets/video/poster/effect1.png">
-          <source src="assets/video/effect1.mp4" type="video/mp4" />
-        </video>
+           01 — BANNER
+      ============================================================= -->
 
-
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-
-              <span class="eyebrow">DIGITAL SOLUTIONS FOR MANUFACTURING &amp; EXPORT</span>
-
-              <h1>
-                Present Your Manufacturing Business to a Bigger Market.
-              </h1>
-
-              <p>
-                Showcase products and capabilities, generate B2B enquiries and streamline
-                operations with websites, business software and digital marketing.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Requirements
-                  <i>↗</i>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect1.mp4',
+      'poster' => 'assets/video/poster/effect1.png',
+      'default' => [
+        'eyebrow' => 'DIGITAL SOLUTIONS FOR MANUFACTURING & EXPORT',
+        'heading' => 'Present Your Manufacturing Business to a Bigger Market.',
+        'description' => 'Showcase products and capabilities, generate B2B enquiries and streamline operations with websites, business software and digital marketing.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your Requirements',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
 
     <!-- ============================================================
-         02 — ABOUT MANUFACTURING & EXPORT
-    ============================================================= -->
+           02 — ABOUT MANUFACTURING & EXPORT
+      ============================================================= -->
     <section class="manuIntro">
       <div class="container">
 
@@ -170,8 +144,8 @@
 
 
     <!-- ============================================================
-         03 — WHY MANUFACTURING BUSINESSES NEED A WEBSITE
-    ============================================================= -->
+           03 — WHY MANUFACTURING BUSINESSES NEED A WEBSITE
+      ============================================================= -->
     <section class="mfgWhy">
       <div class="container">
 
@@ -295,8 +269,8 @@
 
 
     <!-- ============================================================
-         04 — MANUFACTURING WEBSITE ESSENTIALS
-    ============================================================= -->
+           04 — MANUFACTURING WEBSITE ESSENTIALS
+      ============================================================= -->
     <section class="mfgGet">
       <div class="container">
 
@@ -786,8 +760,8 @@
 
 
     <!-- ============================================================
-       08 — FAQ
-  ============================================================= -->
+         08 — FAQ
+    ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common <span>Manufacturing Website Questions.</span>',
@@ -795,8 +769,8 @@
     ])
 
     <!-- ============================================================
-         09 — FINAL CTA
-    ============================================================= -->
+           09 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -833,8 +807,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

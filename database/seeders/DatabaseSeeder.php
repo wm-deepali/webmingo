@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BlogSeeder::class,
             FaqSeeder::class,
-            CareerSeeder::class
+            CareerSeeder::class,
+            SeoPageSeeder::class
         ]);
 
     }

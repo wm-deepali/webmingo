@@ -8,48 +8,26 @@
 
   <main>
     <!-- ============================================================
-         01 — HERO
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
-          poster="assets/video/poster/effect1.png">
-          <source src="assets/video/effect1.mp4" type="video/mp4" />
-        </video>
+           01 — HERO
+      ============================================================= -->
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">DIGITAL SOLUTIONS FOR RETAIL &amp; D2C</span>
-
-              <h1>Take Your Products Beyond the Storefront.</h1>
-
-              <p>
-                Build your online store, streamline commerce operations and
-                reach more customers with technology and digital marketing
-                built for retail growth.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your E-Commerce Growth
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect1.mp4',
+      'poster' => 'assets/video/poster/effect1.png',
+      'default' => [
+        'eyebrow' => 'DIGITAL SOLUTIONS FOR RETAIL & D2C',
+        'heading' => 'Take Your Products Beyond the Storefront.',
+        'description' => 'Build your online store, streamline commerce operations and reach more customers with technology and digital marketing built for retail growth.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your E-Commerce Growth',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <!-- ============================================================
-         02 — ABOUT RETAIL, E-COMMERCE & D2C
-    ============================================================= -->
+           02 — ABOUT RETAIL, E-COMMERCE & D2C
+      ============================================================= -->
     <section class="retailIntro">
       <div class="container">
         <div class="retailIntro-head">
@@ -160,9 +138,9 @@
     </section>
 
     <!-- ============================================================
-         03 — WHY RETAIL, E-COMMERCE & D2C BUSINESSES NEED A
-              PROFESSIONAL WEBSITE
-    ============================================================= -->
+           03 — WHY RETAIL, E-COMMERCE & D2C BUSINESSES NEED A
+                PROFESSIONAL WEBSITE
+      ============================================================= -->
     <section class="retailWhy">
       <div class="container">
         <div class="heading">
@@ -340,8 +318,8 @@
     </section>
 
     <!-- ============================================================
-         04 — WHAT YOUR RETAIL / E-COMMERCE WEBSITE SHOULD INCLUDE
-    ============================================================= -->
+           04 — WHAT YOUR RETAIL / E-COMMERCE WEBSITE SHOULD INCLUDE
+      ============================================================= -->
     <section class="retailWhat">
       <div class="container">
         <div class="heading">
@@ -363,8 +341,8 @@
 
         <div class="retailWhat-grid">
           <!-- ======================================================
-               SHOPPING EXPERIENCE
-          ======================================================= -->
+                 SHOPPING EXPERIENCE
+            ======================================================= -->
           <div class="retailWhat-col retailWhat-col--customers">
             <div class="retailWhat-col-head">
               <span class="retailWhat-col-icon">
@@ -483,8 +461,8 @@
           </div>
 
           <!-- ======================================================
-               STORE & BUSINESS OPERATIONS
-          ======================================================= -->
+                 STORE & BUSINESS OPERATIONS
+            ======================================================= -->
           <div class="retailWhat-col retailWhat-col--business">
             <div class="retailWhat-col-head">
               <span class="retailWhat-col-icon">
@@ -686,9 +664,9 @@
     </section>
 
     <!-- ============================================================
-         06 — HOW WE HELP YOUR RETAIL, E-COMMERCE & D2C BUSINESS
-              GROW DIGITALLY
-    ============================================================= -->
+           06 — HOW WE HELP YOUR RETAIL, E-COMMERCE & D2C BUSINESS
+                GROW DIGITALLY
+      ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -916,16 +894,16 @@
     </section>
 
     <!-- ============================================================
-         08 — FAQ
-    ============================================================= -->
+           08 — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Retail, E-Commerce &amp; D2C.</span>',
       'intro' => 'Straight answers to common questions businesses ask before taking their store online.',
     ])
 
     <!-- ============================================================
-         09 — FINAL CTA
-    ============================================================= -->
+           09 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -956,8 +934,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

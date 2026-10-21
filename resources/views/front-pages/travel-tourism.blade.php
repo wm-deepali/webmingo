@@ -8,50 +8,24 @@
 
   <main>
     <!-- ============================================================
-           01 — BANNER
-      ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
-          poster="assets/video/poster/banner.png">
-          <source src="assets/video/effect1.mp4" type="video/mp4" />
-        </video>
+             01 — BANNER
+        ============================================================= -->
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">DIGITAL SOLUTIONS FOR TRAVEL &amp; TOURISM</span>
-
-              <h1>
-                Turn Travel Searches Into Real Enquiries &amp; Bookings.
-              </h1>
-
-              <p>
-                Showcase destinations and packages, manage enquiries and reach
-                travellers with websites, booking solutions and digital
-                marketing.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Requirements
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect1.mp4',
+      'poster' => 'assets/video/poster/banner.png',
+      'eyebrow' => 'DIGITAL SOLUTIONS FOR TRAVEL & TOURISM',
+      'heading' => 'Turn Travel Searches Into Real Enquiries & Bookings.',
+      'description' => 'Showcase destinations and packages, manage enquiries and reach travellers with websites, booking solutions and digital marketing.',
+      'primary_text' => 'Chat on WhatsApp',
+      'primary_url' => 'javascript:void(0)',
+      'secondary_text' => 'Discuss Your Requirements',
+      'secondary_url' => '#enquire',
+    ])
 
     <!-- ============================================================
-           02 — INTRODUCTION
-      ============================================================= -->
+             02 — INTRODUCTION
+        ============================================================= -->
     <section class="travelIntro">
       <div class="container">
         <div class="travelIntro-wrap">
@@ -140,8 +114,8 @@
     </section>
 
     <!-- ============================================================
-           03 — WHY TRAVEL BUSINESSES NEED A WEBSITE
-      ============================================================= -->
+             03 — WHY TRAVEL BUSINESSES NEED A WEBSITE
+        ============================================================= -->
     <section class="travelValue">
       <div class="container">
         <div class="heading">
@@ -281,8 +255,8 @@
     </section>
 
     <!-- ============================================================
-           04 — TRAVEL WEBSITE ESSENTIALS
-      ============================================================= -->
+             04 — TRAVEL WEBSITE ESSENTIALS
+        ============================================================= -->
     <section class="travelDeliver">
       <div class="container">
         <div class="heading">
@@ -518,8 +492,8 @@
     </section>
 
     <!-- ============================================================
-         06 — DIGITAL GROWTH OUTCOMES
-    ============================================================= -->
+           06 — DIGITAL GROWTH OUTCOMES
+      ============================================================= -->
     <section class="travelGrowth">
       <div class="container">
         <div class="heading">
@@ -811,8 +785,8 @@
     </section>
 
     <!-- ============================================================
-         08 — FAQ
-    ============================================================= -->
+           08 — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common <span>Travel Website Questions.</span>',
@@ -820,8 +794,8 @@
     ])
 
     <!-- ============================================================
-           09 — FINAL CTA
-      ============================================================= -->
+             09 — FINAL CTA
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -852,8 +826,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

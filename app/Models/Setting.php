@@ -11,14 +11,15 @@ class Setting extends Model
         'tagline',
         'header_logo',
         'footer_logo',
-        'favicon',
         'admin_login_logo',
         'admin_dashboard_logo',
+        'favicon',
         'admin_email',
         'support_email',
         'phone',
         'whatsapp',
         'business_address',
+        'business_hours',
         'footer_description',
         'footer_copyright',
         'google_map_url',
@@ -33,16 +34,9 @@ class Setting extends Model
         'timezone',
         'maintenance_mode',
         'admin_session_timeout',
-        'product_reviews',
-        'wishlist',
-        'stock_alerts',
     ];
 
     protected $casts = [
         'maintenance_mode' => 'boolean',
-        'product_reviews' => 'boolean',
-        'wishlist' => 'boolean',
-        'stock_alerts' => 'boolean',
-        'cod_enabled' => 'boolean',
     ];
 }

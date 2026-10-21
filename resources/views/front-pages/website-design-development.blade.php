@@ -8,47 +8,21 @@
 
   <main>
 
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
-          poster="assets/video/poster/effect3.png">
-          <source src="assets/video/effect3.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">WEBSITE DESIGN &amp; DEVELOPMENT</span>
-
-              <h1>
-                Websites &amp; Web Platforms Built Around Your Business.
-              </h1>
-
-              <p>
-                From business websites and e-commerce stores to LMS,
-                classified portals and custom web applications, we build
-                digital platforms around your goals and requirements.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Project
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect3.mp4',
+      'poster' => 'assets/video/poster/effect3.png',
+      'eyebrow' => 'WEBSITE DESIGN & DEVELOPMENT',
+      'heading' => 'Websites & Web Platforms Built Around Your Business.',
+      'description' => 'From business websites and e-commerce stores to LMS, classified portals and custom web applications, we build digital platforms around your goals and requirements.',
+      'primary_text' => 'Chat on WhatsApp',
+      'primary_url' => 'javascript:void(0)',
+      'secondary_text' => 'Discuss Your Project',
+      'secondary_url' => '#enquire',
+    ])
 
     <!-- ============================================================
-         02 — INTRODUCTION (NEW: .webIntro)
-    ============================================================= -->
+           02 — INTRODUCTION (NEW: .webIntro)
+      ============================================================= -->
     <section class="webIntro">
       <div class="container">
         <div class="heading">
@@ -347,8 +321,8 @@
     </section>
 
     <!-- ============================================================
-         04 — OUR APPROACH
-    ============================================================= -->
+           04 — OUR APPROACH
+      ============================================================= -->
 
     <section class="webApproach" id="web-process">
       <div class="container">
@@ -850,8 +824,8 @@
     </section>
 
     <!-- ============================================================
-         07 — WHY WEB MINGO (existing .secL, 4 points)
-    ============================================================= -->
+           07 — WHY WEB MINGO (existing .secL, 4 points)
+      ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1068,8 +1042,8 @@
     </section>
 
     <!-- ============================================================
-         09 — FINAL CTA (existing .cta-promo)
-    ============================================================= -->
+           09 — FINAL CTA (existing .cta-promo)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1092,8 +1066,8 @@
     </div>
 
     <!-- ============================================================
-         08 — FAQ (existing .secN)
-    ============================================================= -->
+           08 — FAQ (existing .secN)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Which Website Solution <br /><span>Is Right For My Business?</span>',

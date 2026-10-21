@@ -7,39 +7,22 @@
 @section('content')
 
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
-          poster="assets/video/poster/effect3.png">
-          <source src="assets/video/effect3.mp4" type="video/mp4" />
-        </video>
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">SEARCH ENGINE OPTIMISATION</span>
-              <h1>Get Found When Your Customers Search on Google.</h1>
-              <p>
-                We improve your website's search visibility through technical
-                SEO, on-page optimisation, content and a strategy built around
-                relevant searches.
-              </p>
-              <div class="banner-actions">
-                <button class="btn btn-white" data-model=".enquire-pop">
-                  Get a Free SEO Audit <i>↗</i>
-                </button>
-                <a href="javascript:void()" class="btn btn-outline-white">
-                  Chat on WhatsApp<i>↗</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect3.mp4',
+      'poster' => 'assets/video/poster/effect3.png',
+      'eyebrow' => 'SEARCH ENGINE OPTIMISATION',
+      'heading' => 'Get Found When Your Customers Search on Google.',
+      'description' => "We improve your website's search visibility through technical SEO, on-page optimisation, content and a strategy built around relevant searches.",
+      'primary_text' => 'Chat on WhatsApp',
+      'primary_url' => 'javascript:void(0)',
+      'secondary_text' => 'Get a Free SEO Audit',
+      'secondary_url' => '#enquire',
+    ])
 
     <!-- ============================================================
-       02 — appIntro — WHAT IS SEO?
-  ============================================================= -->
+         02 — appIntro — WHAT IS SEO?
+    ============================================================= -->
     <section class="appIntro">
       <div class="container">
         <div class="appIntro-head">
@@ -150,8 +133,8 @@
     </section>
 
     <!-- ============================================================
-       SEO SERVICES
-  ============================================================ -->
+         SEO SERVICES
+    ============================================================ -->
 
     <section class="seoServices">
       <div class="container">
@@ -278,8 +261,8 @@
     </section>
 
     <!-- ============================================================
-       04 — SEO BEFORE & AFTER
-  ============================================================= -->
+         04 — SEO BEFORE & AFTER
+    ============================================================= -->
 
     <section class="seoCompare">
       <div class="container">
@@ -771,8 +754,8 @@
     </section>
 
     <!-- ============================================================
-       SEO SERVICES — PACKAGES + CUSTOM REQUIREMENTS FORM
-  ============================================================= -->
+         SEO SERVICES — PACKAGES + CUSTOM REQUIREMENTS FORM
+    ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -1185,8 +1168,8 @@
       </div>
     </section>
     <!-- ============================================================
-       10 — secG — OUR SEO PROCESS
-  ============================================================= -->
+         10 — secG — OUR SEO PROCESS
+    ============================================================= -->
     <section class="secG">
       <div class="container">
         <div class="heading">
@@ -1409,8 +1392,8 @@
     </section>
 
     <!-- ============================================================
-       09 — secH — SEO APPLICATIONS / INDUSTRIES
-  ============================================================= -->
+         09 — secH — SEO APPLICATIONS / INDUSTRIES
+    ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1537,16 +1520,16 @@
     </section>
 
     <!-- ============================================================
-       14 — secN — SEO FAQS
-  ============================================================= -->
+         14 — secN — SEO FAQS
+    ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About SEO.</span>',
       'intro' => 'Everything you should know before getting started.',
     ])
 
     <!-- ============================================================
-       15 — FINAL CTA
-  ============================================================= -->
+         15 — FINAL CTA
+    ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1569,8 +1552,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

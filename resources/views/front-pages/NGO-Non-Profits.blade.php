@@ -9,53 +9,27 @@
   <main>
 
     <!-- ============================================================
-         01 — HERO
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
-          poster="assets/video/poster/effect1.png">
-          <source src="assets/video/effect1.mp4" type="video/mp4" />
-        </video>
+           01 — HERO
+      ============================================================= -->
 
-
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-
-              <span class="eyebrow">DIGITAL SOLUTIONS FOR NGOs &amp; NON-PROFITS</span>
-
-              <h1>
-                Take Your Mission Further With the Right Digital Platform.
-              </h1>
-
-              <p>
-                From informative websites and donation systems to campaign outreach and
-                custom platforms, we help organisations connect with supporters and communities.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Project
-                  <i>↗</i>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect1.mp4',
+      'poster' => 'assets/video/poster/effect1.png',
+      'default' => [
+        'eyebrow' => 'DIGITAL SOLUTIONS FOR NGOs & NON-PROFITS',
+        'heading' => 'Take Your Mission Further With the Right Digital Platform.',
+        'description' => 'From informative websites and donation systems to campaign outreach and custom platforms, we help organisations connect with supporters and communities.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your Project',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
 
     <!-- ============================================================
-         02 — ABOUT NGOS & NON-PROFITS
-    ============================================================= -->
+           02 — ABOUT NGOS & NON-PROFITS
+      ============================================================= -->
     <section class="ngoIntro">
       <div class="container">
 
@@ -149,8 +123,8 @@
 
 
     <!-- ============================================================
-         03 — WHY NGOS & NON-PROFITS NEED A PROFESSIONAL WEBSITE
-    ============================================================= -->
+           03 — WHY NGOS & NON-PROFITS NEED A PROFESSIONAL WEBSITE
+      ============================================================= -->
     <section class="ngoWhy">
       <div class="container">
 
@@ -276,8 +250,8 @@
 
 
     <!-- ============================================================
-         04 — WHAT YOUR NGO WEBSITE SHOULD INCLUDE
-    ============================================================= -->
+           04 — WHAT YOUR NGO WEBSITE SHOULD INCLUDE
+      ============================================================= -->
     <section class="ngoGet">
       <div class="container">
 
@@ -507,8 +481,8 @@
     </section>
 
     <!-- ============================================================
-         06 — DIGITAL GROWTH OUTCOMES
-    ============================================================= -->
+           06 — DIGITAL GROWTH OUTCOMES
+      ============================================================= -->
     <section class="ngoValue">
       <div class="container">
 
@@ -779,8 +753,8 @@
     ])
 
     <!-- ============================================================
-         09 — FINAL CTA
-    ============================================================= -->
+           09 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -812,8 +786,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

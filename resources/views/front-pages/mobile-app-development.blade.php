@@ -8,47 +8,26 @@
 
   <main>
     <!-- ============================================================
-         01 — HERO
-    ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect3.mp4"
-          poster="assets/video/poster/effect3.png">
-          <source src="assets/video/effect3.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">MOBILE APP DEVELOPMENT</span>
+           01 — HERO
+      ============================================================= -->
 
-              <h1>Turn Your Business Idea Into a Mobile Experience.</h1>
-
-              <p>
-                We develop Android, iOS and Flutter applications around your
-                users, business processes and the functionality your idea
-                actually requires.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your App Idea
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect3.mp4',
+      'poster' => 'assets/video/poster/effect3.png',
+      'default' => [
+        'eyebrow' => 'MOBILE APP DEVELOPMENT',
+        'heading' => 'Turn Your Business Idea Into a Mobile Experience.',
+        'description' => 'We develop Android, iOS and Flutter applications around your users, business processes and the functionality your idea actually requires.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your App Idea',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <!-- ============================================================
-       02 — INTRODUCTION (.appIntro)
-  ============================================================= -->
+         02 — INTRODUCTION (.appIntro)
+    ============================================================= -->
     <section class="appIntro">
       <div class="container">
         <div class="appIntro-layout">
@@ -302,8 +281,8 @@
     </section>
 
     <!-- ============================================================
-       03 — OUR MOBILE APP DEVELOPMENT SERVICES
-  ============================================================= -->
+         03 — OUR MOBILE APP DEVELOPMENT SERVICES
+    ============================================================= -->
     <section class="mfgTypes">
       <div class="container">
         <div class="heading">
@@ -325,8 +304,8 @@
 
         <div class="mfgTypes-grid">
           <!-- ======================================================
-             ANDROID APPLICATION
-        ======================================================= -->
+               ANDROID APPLICATION
+          ======================================================= -->
           <a href="{{ route('android-applications-development') }}" class="mfgTypes-card mfgTypes-card--android">
             <img src="assets/images/umbrella/android.png" alt="Android mobile application development" loading="lazy" />
 
@@ -350,8 +329,8 @@
           </a>
 
           <!-- ======================================================
-             IOS APPLICATION
-        ======================================================= -->
+               IOS APPLICATION
+          ======================================================= -->
           <a href="{{ route('iOS-applications-development') }}" class="mfgTypes-card mfgTypes-card--ios">
             <img src="assets/images/umbrella/iso.png" alt="iOS mobile application development" loading="lazy" />
 
@@ -375,8 +354,8 @@
           </a>
 
           <!-- ======================================================
-             FLUTTER APPLICATION
-        ======================================================= -->
+               FLUTTER APPLICATION
+          ======================================================= -->
           <a href="{{ route('flutter-app-development') }}" class="mfgTypes-card mfgTypes-card--flutter">
             <img src="assets/images/umbrella/flutter.png" alt="Flutter mobile application development" loading="lazy" />
 
@@ -400,8 +379,8 @@
           </a>
 
           <!-- ======================================================
-             CUSTOM APPLICATION
-        ======================================================= -->
+               CUSTOM APPLICATION
+          ======================================================= -->
           <div class="mfgTypes-card mfgTypes-card--cta">
             <div class="mfgTypes-cta-top">
               <span class="mfgTypes-cta-tag"> NEED SOMETHING CUSTOM? </span>
@@ -432,8 +411,8 @@
     </section>
 
     <!-- ============================================================
-         04 — OUR APPROACH
-    ============================================================= -->
+           04 — OUR APPROACH
+      ============================================================= -->
     <section class="webApproach" id="app-process">
       <div class="container">
         <div class="heading">
@@ -905,8 +884,8 @@
     </section>
 
     <!-- ============================================================
-         07 — WHY WEB MINGO
-    ============================================================= -->
+           07 — WHY WEB MINGO
+      ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1139,8 +1118,8 @@
     </section>
 
     <!-- ============================================================
-         09 — FINAL CTA
-    ============================================================= -->
+           09 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1171,12 +1150,12 @@
     </div>
 
     <!-- ============================================================
-         08 — FAQ
-    ============================================================= -->
+           08 — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
-      'title'   => 'What Type Of Mobile App <br /><span>Does My Business Need?</span>',
-      'intro'   => 'Straightforward answers to help you understand your options before you start.',
+      'title' => 'What Type Of Mobile App <br /><span>Does My Business Need?</span>',
+      'intro' => 'Straightforward answers to help you understand your options before you start.',
     ])
 
     <section class="secO">

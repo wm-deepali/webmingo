@@ -7,41 +7,20 @@
 @section('content')
 
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="{{ asset('assets/video/effect8.mp4')}}"
-          poster="{{ asset('assets/video/poster/effect8.png')}}">
-          <source src="{{ asset('assets/video/effect8.mp4')}}" type="video/mp4" />
-        </video>
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
-
-              <h1>Questions? Start Here.</h1>
-
-              <p>
-                Find answers about our services, development process,
-                timelines, pricing, support and working with Web Mingo.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Ask Us a Question
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect8.mp4',
+      'poster' => 'assets/video/poster/effect8.png',
+      'default' => [
+        'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
+        'heading' => 'Questions? Start Here.',
+        'description' => 'Find answers about our services, development process, timelines, pricing, support and working with Web Mingo.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Ask Us a Question',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <section class="indu-secL">
       <div class="container">
@@ -59,8 +38,8 @@
 
         <div class="indu-secL-main">
           <!-- =====================================================
-                 STICKY INTRO
-            ====================================================== -->
+                     STICKY INTRO
+                ====================================================== -->
 
           <div class="indu-secL-side">
             <div class="indu-secL-side-inner">
@@ -84,8 +63,8 @@
           </div>
 
           <!-- =====================================================
-                 FAQ ACCORDION
-            ====================================================== -->
+                     FAQ ACCORDION
+                ====================================================== -->
 
           <div class="accordion-wrapper">
             @forelse($faqs as $faq)

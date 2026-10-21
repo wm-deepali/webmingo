@@ -8,48 +8,27 @@
 
   <main>
     <!-- ============================================================
-           01 — BANNER
-      ============================================================= -->
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect1.mp4"
-          poster="assets/video/poster/effect1.png">
-          <source src="assets/video/effect1.mp4" type="video/mp4" />
-        </video>
+             01 — BANNER
+        ============================================================= -->
 
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">DIGITAL SOLUTIONS FOR HOTELS &amp; HOSPITALITY</span>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect1.mp4',
+      'poster' => 'assets/video/poster/effect1.png',
+      'default' => [
+        'eyebrow' => 'DIGITAL SOLUTIONS FOR HOTELS & HOSPITALITY',
+        'heading' => 'Turn Online Visitors Into Direct Guest Enquiries.',
+        'description' => 'Build your hotel\'s digital presence with a professional website, booking solutions, guest-focused experiences and targeted digital marketing.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Get a Free Consultation',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
-              <h1>Turn Online Visitors Into Direct Guest Enquiries.</h1>
-
-              <p>
-                Build your hotel's digital presence with a professional
-                website, booking solutions, guest-focused experiences and
-                targeted digital marketing.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Get a Free Consultation
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ============================================================
-           02 — ABOUT HOTELS & HOSPITALITY
-      ============================================================= -->
+             02 — ABOUT HOTELS & HOSPITALITY
+        ============================================================= -->
     <section class="hotelIntro">
       <div class="container">
         <div class="hotelIntro-top">
@@ -152,8 +131,8 @@
     </section>
 
     <!-- ============================================================
-           03 — WHY HOTELS & HOSPITALITY BUSINESSES NEED A WEBSITE
-      ============================================================= -->
+             03 — WHY HOTELS & HOSPITALITY BUSINESSES NEED A WEBSITE
+        ============================================================= -->
     <section class="hotelWhy">
       <div class="container">
         <div class="heading">
@@ -486,8 +465,8 @@
       </div>
     </section>
     <!-- ============================================================
-           06 — WHAT YOUR WEBSITE CAN SHOW
-      ============================================================= -->
+             06 — WHAT YOUR WEBSITE CAN SHOW
+        ============================================================= -->
     <section class="hotelShowcase">
       <div class="container">
         <div class="heading">
@@ -779,8 +758,8 @@
     </section>
 
     <!-- ============================================================
-         08 — FAQ
-    ============================================================= -->
+           08 — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common Hotel &amp; <span>Hospitality Website Questions.</span>',
@@ -788,8 +767,8 @@
     ])
 
     <!-- ============================================================
-           09 — FINAL CTA
-      ============================================================= -->
+             09 — FINAL CTA
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">

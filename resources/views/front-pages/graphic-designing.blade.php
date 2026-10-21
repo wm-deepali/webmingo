@@ -7,45 +7,24 @@
 @section('content')
 
   <main>
-    <section class="banner">
-      <div class="bg">
-        <video autoplay muted loop playsinline class="bg-video" src="assets/video/effect7.mp4"
-          poster="assets/video/poster/effect7.png">
-          <source src="assets/video/effect7.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="banner-wrapper">
-            <div class="content">
-              <span class="eyebrow">GRAPHIC DESIGN SERVICES</span>
 
-              <h1>Creative Designs That Keep Your Brand Consistent.</h1>
-
-              <p>
-                From social media creatives to marketing materials, we design
-                visual communication that reflects your brand across digital
-                platforms.
-              </p>
-
-              <div class="banner-actions">
-                <a href="javascript:void(0)" class="btn btn-outline-white">
-                  Chat on WhatsApp
-                  <i>↗</i>
-                </a>
-
-                <button data-model=".enquire-pop" class="btn btn-white">
-                  Discuss Your Design Requirement
-                  <i>↗</i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.hero', [
+      'video' => 'assets/video/effect7.mp4',
+      'poster' => 'assets/video/poster/effect7.png',
+      'default' => [
+        'eyebrow' => 'GRAPHIC DESIGN SERVICES',
+        'heading' => 'Creative Designs That Keep Your Brand Consistent.',
+        'description' => 'From social media creatives to marketing materials, we design visual communication that reflects your brand across digital platforms.',
+        'primary_text' => 'Chat on WhatsApp',
+        'primary_url' => 'javascript:void(0)',
+        'secondary_text' => 'Discuss Your Design Requirement',
+        'secondary_url' => '#enquire',
+      ],
+    ])
 
     <!-- ============================================================
-         GRAPHIC INTRO — EDITORIAL CREATIVE SECTION
-    ============================================================ -->
+           GRAPHIC INTRO — EDITORIAL CREATIVE SECTION
+      ============================================================ -->
 
     <section class="graphicIntro">
       <div class="container">
@@ -519,8 +498,8 @@
     </section>
 
     <!-- ============================================================
-         GRAPHIC DESIGN CTA
-    ============================================================ -->
+           GRAPHIC DESIGN CTA
+      ============================================================ -->
 
     <section class="androidCta" id="graphicCta">
       <div class="container">
@@ -861,8 +840,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">
