@@ -7,8 +7,8 @@
 @section('content')
   <main>
     <!-- ============================================================
-         01 — HERO (existing banner, content + image only)
-    ============================================================= -->
+           01 — HERO (existing banner, content + image only)
+      ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect3.mp4',
@@ -25,8 +25,8 @@
     ])
 
     <!-- ============================================================
-         02 — INTRODUCTION
-    ============================================================= -->
+           02 — INTRODUCTION
+      ============================================================= -->
     <section class="dmIntro">
       <div class="container">
         <div class="dmIntro-layout">
@@ -449,81 +449,28 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <!-- LEFT: HEADING CONTENT -->
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              READY TO GROW YOUR BUSINESS
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Stronger Digital Presence.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build digital marketing strategies around your business,
-              audience, goals and growth targets—from search and paid
-              campaigns to social media, content and conversion-focused
-              marketing.
-            </p>
-          </div>
-
-          <!-- RIGHT: SHORT REQUIREMENT FORM -->
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Marketing Service</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your marketing service
-                  </option>
-                  <option value="seo">SEO</option>
-                  <option value="google-ads">Google Ads</option>
-                  <option value="social-media">Social Media Marketing</option>
-                  <option value="content-marketing">Content Marketing</option>
-                  <option value="performance-marketing">
-                    Performance Marketing
-                  </option>
-                  <option value="email-marketing">Email Marketing</option>
-                  <option value="complete-digital-marketing">
-                    Complete Digital Marketing
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    {{-- digital-marketing (both digital marketing pages use the same form) --}}
+    @include('partials.package-form', [
+      'label' => 'READY TO GROW YOUR BUSINESS',
+      'highlight' => 'Build A Stronger Digital Presence.',
+      'intro' => 'We build digital marketing strategies around your business, audience, goals and growth targets—from search and paid campaigns to social media, content and conversion-focused marketing.',
+      'fieldLabel' => 'Marketing Service',
+      'placeholder' => 'Select your marketing service',
+      'options' => [
+        'seo' => 'SEO',
+        'google-ads' => 'Google Ads',
+        'social-media' => 'Social Media Marketing',
+        'content-marketing' => 'Content Marketing',
+        'performance-marketing' => 'Performance Marketing',
+        'email-marketing' => 'Email Marketing',
+        'complete-digital-marketing' => 'Complete Digital Marketing',
+        'other' => 'Other',
+      ],
+    ])
 
     <!-- ============================================================
-         — BUSINESS GROWTH THROUGH DIGITAL MARKETING
-    ============================================================= -->
+           — BUSINESS GROWTH THROUGH DIGITAL MARKETING
+      ============================================================= -->
     <section class="mfgGrowth">
       <div class="container">
         <div class="heading">
@@ -668,8 +615,8 @@
     </section>
 
     <!-- ============================================================
-         07 — WHY WEB MINGO (existing .secL, 4 points)
-    ============================================================= -->
+           07 — WHY WEB MINGO (existing .secL, 4 points)
+      ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -771,8 +718,8 @@
     </section>
 
     <!-- ============================================================
-         09 — FINAL CTA (existing .cta-promo)
-    ============================================================= -->
+           09 — FINAL CTA (existing .cta-promo)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -796,8 +743,8 @@
     </div>
 
     <!-- ============================================================
-         08 — FAQ (existing .secN)
-    ============================================================= -->
+           08 — FAQ (existing .secN)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Which Digital Marketing Service <br /><span>Is Right For My Business?</span>',

@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-           01 — BANNER (comman .banner reused)
-      ============================================================= -->
+             01 — BANNER (comman .banner reused)
+        ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect3.mp4',
@@ -280,8 +280,8 @@
     </section>
 
     <!-- ============================================================
-           03 — TYPES OF GOOGLE ADS CAMPAIGNS (new — .ppcCampaigns)
-      ============================================================= -->
+             03 — TYPES OF GOOGLE ADS CAMPAIGNS (new — .ppcCampaigns)
+        ============================================================= -->
     <section class="ppcCampaigns" id="ppc-campaigns">
       <div class="container">
         <div class="heading">
@@ -371,8 +371,8 @@
     </section>
 
     <!-- ============================================================
-           04 — WHAT'S INCLUDED IN OUR PPC SERVICE (new — .ppcDeliverables)
-      ============================================================= -->
+             04 — WHAT'S INCLUDED IN OUR PPC SERVICE (new — .ppcDeliverables)
+        ============================================================= -->
     <section class="ppcDeliverables">
       <div class="container">
         <div class="heading">
@@ -427,8 +427,8 @@
     </section>
 
     <!-- ============================================================
-           GOOGLE ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
-      ============================================================= -->
+             GOOGLE ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
+        ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -561,59 +561,32 @@
               </p>
             </div>
 
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Business Type</label>
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your business type
-                  </option>
-                  <option value="corporate">Corporate</option>
-                  <option value="small-business">Small Business</option>
-                  <option value="professional-services">
-                    Professional Services
-                  </option>
-                  <option value="ecommerce">E-Commerce</option>
-                  <option value="startup">Startup</option>
-                  <option value="local-business">Local Business</option>
-                  <option value="other">Other Business</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMessage">Your Requirements</label>
-                <textarea id="packageMessage" name="requirements" rows="4"
-                  placeholder="Tell us about your campaign goals, budget or requirements"></textarea>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-black">
-                  Tell Us Your Google Ads Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
+            {{-- google-ads-management --}}
+            @include('partials.package-form-fields', [
+              'fieldLabel' => 'Business Type',
+              'placeholder' => 'Select your business type',
+              'withRequirements' => true,
+              'requirementsPlaceholder' => 'Tell us about your campaign goals, budget or requirements',
+              'submitText' => 'Tell Us Your Google Ads Requirements',
+              'submitClass' => 'btn-black',
+              'options' => [
+                'corporate' => 'Corporate',
+                'small-business' => 'Small Business',
+                'professional-services' => 'Professional Services',
+                'ecommerce' => 'E-Commerce',
+                'startup' => 'Startup',
+                'local-business' => 'Local Business',
+                'other' => 'Other Business',
+              ],
+            ])
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-           05 — OUR APPROACH (comman .secG reused)
-      ============================================================= -->
+             05 — OUR APPROACH (comman .secG reused)
+        ============================================================= -->
     <section class="secG" id="ppc-approach">
       <div class="container">
         <div class="heading">
@@ -832,8 +805,8 @@
     </section>
 
     <!-- ============================================================
-           06 — CONVERSION TRACKING ACCURACY (new — .ppcTracking, DIFFERENTIATOR)
-      ============================================================= -->
+             06 — CONVERSION TRACKING ACCURACY (new — .ppcTracking, DIFFERENTIATOR)
+        ============================================================= -->
     <section class="ppcTracking">
       <div class="container">
         <div class="heading">
@@ -1028,8 +1001,8 @@
     </section>
 
     <!-- ============================================================
-           09 — WHY CHOOSE WEB MINGO (comman .secL reused)
-      ============================================================= -->
+             09 — WHY CHOOSE WEB MINGO (comman .secL reused)
+        ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1102,16 +1075,16 @@
     </section>
 
     <!-- ============================================================
-           11 — FAQ (comman .secN reused)
-      ============================================================= -->
+             11 — FAQ (comman .secN reused)
+        ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Google Ads Management.</span>',
       'intro' => 'Straight answers to what most people ask before getting started.',
     ])
 
     <!-- ============================================================
-           12 — FINAL CTA (comman .cta-promo reused)
-      ============================================================= -->
+             12 — FINAL CTA (comman .cta-promo reused)
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1135,8 +1108,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

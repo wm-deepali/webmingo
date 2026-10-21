@@ -9,8 +9,8 @@
   <main>
 
     <!-- ============================================================
-           01 — HERO
-      ============================================================= -->
+             01 — HERO
+        ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect1.mp4',
@@ -28,8 +28,8 @@
 
 
     <!-- ============================================================
-           02 — ABOUT NGOS & NON-PROFITS
-      ============================================================= -->
+             02 — ABOUT NGOS & NON-PROFITS
+        ============================================================= -->
     <section class="ngoIntro">
       <div class="container">
 
@@ -123,8 +123,8 @@
 
 
     <!-- ============================================================
-           03 — WHY NGOS & NON-PROFITS NEED A PROFESSIONAL WEBSITE
-      ============================================================= -->
+             03 — WHY NGOS & NON-PROFITS NEED A PROFESSIONAL WEBSITE
+        ============================================================= -->
     <section class="ngoWhy">
       <div class="container">
 
@@ -250,8 +250,8 @@
 
 
     <!-- ============================================================
-           04 — WHAT YOUR NGO WEBSITE SHOULD INCLUDE
-      ============================================================= -->
+             04 — WHAT YOUR NGO WEBSITE SHOULD INCLUDE
+        ============================================================= -->
     <section class="ngoGet">
       <div class="container">
 
@@ -404,85 +404,25 @@
     </section>
 
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              DIGITAL SOLUTIONS FOR NGOs &amp; NON-PROFITS
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Stronger Digital Mission.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build NGO and non-profit websites around your mission, programs,
-              beneficiaries, donors and community goals—from informative websites
-              to digital platforms that support donations, volunteers and outreach.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">NGO Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="ngo-website">
-                    NGO &amp; Non-Profit Website
-                  </option>
-                  <option value="charity-website">
-                    Charity Organisation Website
-                  </option>
-                  <option value="donation-platform">
-                    Donation Platform
-                  </option>
-                  <option value="volunteer-platform">
-                    Volunteer &amp; Community Platform
-                  </option>
-                  <option value="csr-platform">
-                    CSR Initiative Website
-                  </option>
-                  <option value="custom-nonprofit">
-                    Custom Non-Profit Solution
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.package-form', [
+      'label' => 'DIGITAL SOLUTIONS FOR NGOs &amp; NON-PROFITS',
+      'highlight' => 'Build A Stronger Digital Mission.',
+      'intro' => 'We build NGO and non-profit websites around your mission, programs, beneficiaries, donors and community goals—from informative websites to digital platforms that support donations, volunteers and outreach.',
+      'fieldLabel' => 'NGO Website Type',
+      'options' => [
+        'ngo-website' => 'NGO &amp; Non-Profit Website',
+        'charity-website' => 'Charity Organisation Website',
+        'donation-platform' => 'Donation Platform',
+        'volunteer-platform' => 'Volunteer &amp; Community Platform',
+        'csr-platform' => 'CSR Initiative Website',
+        'custom-nonprofit' => 'Custom Non-Profit Solution',
+        'other' => 'Other',
+      ],
+    ])
 
     <!-- ============================================================
-           06 — DIGITAL GROWTH OUTCOMES
-      ============================================================= -->
+             06 — DIGITAL GROWTH OUTCOMES
+        ============================================================= -->
     <section class="ngoValue">
       <div class="container">
 
@@ -753,8 +693,8 @@
     ])
 
     <!-- ============================================================
-           09 — FINAL CTA
-      ============================================================= -->
+             09 — FINAL CTA
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -786,8 +726,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

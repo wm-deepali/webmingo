@@ -16,7 +16,10 @@ use App\Http\Controllers\Admin\{
     CareerController,
     ContactEnquiryController,
     CareerApplicationController,
-    PageHeroController
+    PageHeroController,
+    KnowledgeBaseArticleController,
+    KnowledgeBaseCategoryController,
+    KnowledgeBaseEnquiryController
 };
 
 use Illuminate\Support\Facades\Route;
@@ -37,10 +40,12 @@ Route::middleware('maintenance.mode')->group(function () {
         Route::get('/contact', 'contact')->name('contact');
         Route::post('/contact', 'contactStore')->name('contact.store')->middleware('throttle:5,1');
         Route::post('/career/apply', 'careerApply')->name('career.apply')->middleware('throttle:3,1');
+        Route::get('/Knowledge-base', 'knowledgeBase')->name('Knowledge-base');
+        Route::post('/knowledge-base/enquiry', 'knowledgeBaseEnquiry')->middleware('throttle:5,1')->name('knowledge-base.enquiry');
+        Route::get('/page/{slug}', 'dynamicPage')->name('dynamic-page');
 
         Route::view('/about', 'front-pages.about')->name('about');
         Route::view('/lifeAt', 'front-pages.lifeAt')->name('lifeAt');
-        Route::view('/Knowledge-base', 'front-pages.Knowledge-base')->name('Knowledge-base');
         Route::view('/our-works', 'front-pages.our-works')->name('our-works');
 
         /* ── Service pages (main + sub) → FAQs by service ── */
@@ -75,6 +80,7 @@ Route::middleware('maintenance.mode')->group(function () {
         Route::get('/manufacturing-export', 'industryPage')->name('manufacturing-export');
         Route::get('/hotels-hospitality', 'industryPage')->name('hotels-hospitality');
         Route::get('/travel-tourism', 'industryPage')->name('travel-tourism');
+        Route::post('/package-enquiry', 'packageEnquiryStore')->name('package-enquiry.store')->middleware('throttle:5,1');
     });
 
 });
@@ -104,20 +110,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('careers', CareerController::class)->except(['show']);
 
         // Inbox: website enquiries + job applications
-        Route::resource('enquiries', ContactEnquiryController::class)
-            ->only(['index', 'show', 'update', 'destroy'])
-            ->parameters(['enquiries' => 'enquiry']);
+        Route::resource('enquiries', ContactEnquiryController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['enquiries' => 'enquiry']);
+        Route::resource('kb-enquiries', KnowledgeBaseEnquiryController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['kb-enquiries' => 'enquiry']);
 
-        Route::get('career-applications/{application}/resume', [CareerApplicationController::class, 'resume'])
-            ->name('career-applications.resume');
-        Route::resource('career-applications', CareerApplicationController::class)
-            ->only(['index', 'show', 'update', 'destroy'])
-            ->parameters(['career-applications' => 'application']);
+        Route::get('career-applications/{application}/resume', [CareerApplicationController::class, 'resume'])->name('career-applications.resume');
+        Route::resource('career-applications', CareerApplicationController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['career-applications' => 'application']);
 
         Route::get('page-heroes', [PageHeroController::class, 'index'])->name('page-heroes.index');
         Route::get('page-heroes/{pageKey}/edit', [PageHeroController::class, 'edit'])->name('page-heroes.edit');
         Route::put('page-heroes/{pageKey}', [PageHeroController::class, 'update'])->name('page-heroes.update');
         Route::delete('page-heroes/{pageKey}', [PageHeroController::class, 'destroy'])->name('page-heroes.destroy');
+
+        Route::resource('kb-categories', KnowledgeBaseCategoryController::class)->only(['index', 'store', 'update', 'destroy'])->parameters(['kb-categories' => 'category']);
+
+        Route::resource('kb-articles', KnowledgeBaseArticleController::class)->except(['show'])->parameters(['kb-articles' => 'article']);
 
         Route::get('/seo', [SeoController::class, 'index'])->name('seo.index');
         Route::put('/seo/{id}', [SeoController::class, 'update'])->name('seo.update');

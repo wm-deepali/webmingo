@@ -492,9 +492,9 @@
                 </p>
 
                 <ul class="footer-legal">
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    @foreach ($footerPages as $footerPage)
+                        <li><a href="{{ $footerPage->url }}">{{ $footerPage->page_name }}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>

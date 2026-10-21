@@ -123,21 +123,6 @@
                     </div>
 
                     <div class="section-card">
-                        <div class="section-card-header"><h5>Quick Actions</h5></div>
-                        <div class="section-card-body">
-                            <div class="inbox-btnrow">
-                                <a href="mailto:{{ $enquiry->email }}?subject={{ rawurlencode('Re: Your enquiry about ' . $enquiry->service) }}"
-                                   class="btn-primary-dash"><i class="fa fa-envelope"></i> Reply by email</a>
-                                @if ($enquiry->phone)
-                                    <a href="tel:{{ preg_replace('/[^0-9+]/', '', $enquiry->phone) }}" class="btn-secondary-dash">
-                                        <i class="fa fa-phone"></i> Call
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-card">
                         <div class="section-card-header"><h5>Danger Zone</h5></div>
                         <div class="section-card-body">
                             <p style="margin:0 0 12px;font-size:12.5px;color:var(--text-hint)">

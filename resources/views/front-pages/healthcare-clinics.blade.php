@@ -10,8 +10,8 @@
   <main>
 
     <!-- ============================================================
-           01 — HERO
-      ============================================================= -->
+             01 — HERO
+        ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect1.mp4',
@@ -29,8 +29,8 @@
 
 
     <!-- ============================================================
-           02 — ABOUT HEALTHCARE & CLINICS
-      ============================================================= -->
+             02 — ABOUT HEALTHCARE & CLINICS
+        ============================================================= -->
     <section class="healthIntro">
       <div class="container">
 
@@ -127,8 +127,8 @@
 
 
     <!-- ============================================================
-           03 — WHY HEALTHCARE BUSINESSES NEED A PROFESSIONAL WEBSITE
-      ============================================================= -->
+             03 — WHY HEALTHCARE BUSINESSES NEED A PROFESSIONAL WEBSITE
+        ============================================================= -->
     <section class="healthTypes">
       <div class="container">
 
@@ -274,8 +274,8 @@
 
 
     <!-- ============================================================
-           04 — WHAT YOUR HEALTHCARE WEBSITE SHOULD INCLUDE
-      ============================================================= -->
+             04 — WHAT YOUR HEALTHCARE WEBSITE SHOULD INCLUDE
+        ============================================================= -->
     <section class="healthDeliver">
       <div class="container">
 
@@ -431,87 +431,26 @@
     </section>
 
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              DIGITAL SOLUTIONS FOR HEALTHCARE
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A More Trusted Healthcare Experience.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build healthcare websites around your services, patients,
-              doctors and business goals—from clinic websites to complete digital
-              healthcare platforms that make information and appointments easier
-              to access.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Healthcare Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="clinic-website">
-                    Clinic &amp; Hospital Website
-                  </option>
-                  <option value="doctor-website">
-                    Doctor &amp; Personal Practice Website
-                  </option>
-                  <option value="healthcare-platform">
-                    Healthcare Platform
-                  </option>
-                  <option value="appointment-booking">
-                    Appointment Booking Website
-                  </option>
-                  <option value="patient-portal">
-                    Patient Portal
-                  </option>
-                  <option value="custom-healthcare">
-                    Custom Healthcare Solution
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.package-form', [
+      'label' => 'DIGITAL SOLUTIONS FOR HEALTHCARE',
+      'highlight' => 'Build A More Trusted Healthcare Experience.',
+      'intro' => 'We build healthcare websites around your services, patients, doctors and business goals—from clinic websites to complete digital healthcare platforms that make information and appointments easier to access.',
+      'fieldLabel' => 'Healthcare Website Type',
+      'options' => [
+        'clinic-website' => 'Clinic &amp; Hospital Website',
+        'doctor-website' => 'Doctor &amp; Personal Practice Website',
+        'healthcare-platform' => 'Healthcare Platform',
+        'appointment-booking' => 'Appointment Booking Website',
+        'patient-portal' => 'Patient Portal',
+        'custom-healthcare' => 'Custom Healthcare Solution',
+        'other' => 'Other',
+      ],
+    ])
 
 
     <!-- ============================================================
-           06 — DIGITAL GROWTH OUTCOMES
-      ============================================================= -->
+             06 — DIGITAL GROWTH OUTCOMES
+        ============================================================= -->
     <section class="secL">
       <div class="container">
 
@@ -758,8 +697,8 @@
 
 
     <!-- ============================================================
-           08 — FAQ
-      ============================================================= -->
+             08 — FAQ
+        ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common <br /><span>Healthcare Website Questions.</span>',
@@ -768,8 +707,8 @@
 
 
     <!-- ============================================================
-           09 — FINAL CTA
-      ============================================================= -->
+             09 — FINAL CTA
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -799,8 +738,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

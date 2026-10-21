@@ -435,54 +435,6 @@
                             </div>
                         </div>
 
-                        <!-- Terms & Policies page -->
-                        <div class="section-card">
-                            <div class="section-card-header">
-                                <h5>Terms &amp; Policies Page</h5>
-                            </div>
-                            <div class="section-card-body">
-
-                                <div class="field-group">
-                                    <label class="field-label">Show as a tab</label>
-                                    <select name="show_in_policies" class="field-select">
-                                        <option value="0" {{ old('show_in_policies', '0') == '0' ? 'selected' : '' }}>No</option>
-                                        <option value="1" {{ old('show_in_policies') == '1' ? 'selected' : '' }}>Yes</option>
-                                    </select>
-                                    <div class="field-hint">Shows this page as a tab on the Terms &amp; Policies page.</div>
-                                </div>
-
-                                <div class="field-group">
-                                    <label class="field-label">Tab Order</label>
-                                    <input type="number" name="sort_order" class="field-input" min="0"
-                                        value="{{ old('sort_order', 0) }}">
-                                    <div class="field-hint">Lower numbers appear first.</div>
-                                    @error('sort_order') <div class="field-error">{{ $message }}</div> @enderror
-                                </div>
-
-                                <div class="field-group">
-                                    <label class="field-label">Icon</label>
-                                    <input type="text" name="icon" class="field-input"
-                                        value="{{ old('icon') }}"
-                                        placeholder="e.g. fa-file-contract">
-                                    <div class="field-hint">Any Font Awesome icon name. Default: fa-file-lines.</div>
-                                    @error('icon') <div class="field-error">{{ $message }}</div> @enderror
-                                </div>
-
-                                <div class="field-group">
-                                    <label class="field-label">Badge Text</label>
-                                    <input type="text" name="badge" class="field-input" maxlength="40"
-                                        value="{{ old('badge') }}"
-                                        placeholder="e.g. AGREEMENT">
-                                </div>
-
-                                <div class="field-group">
-                                    <label class="field-label">Short Description</label>
-                                    <textarea name="summary" class="field-textarea" rows="3" maxlength="300"
-                                        placeholder="One line shown under the heading">{{ old('summary') }}</textarea>
-                                </div>
-
-                            </div>
-                        </div>
 
                         <!-- Help card -->
                         <div class="section-card">

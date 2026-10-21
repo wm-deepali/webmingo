@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-           01 — HERO
-      ============================================================= -->
+             01 — HERO
+        ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect1.mp4',
@@ -26,8 +26,8 @@
     ])
 
     <!-- ============================================================
-           02 — ABOUT RETAIL, E-COMMERCE & D2C
-      ============================================================= -->
+             02 — ABOUT RETAIL, E-COMMERCE & D2C
+        ============================================================= -->
     <section class="retailIntro">
       <div class="container">
         <div class="retailIntro-head">
@@ -138,9 +138,9 @@
     </section>
 
     <!-- ============================================================
-           03 — WHY RETAIL, E-COMMERCE & D2C BUSINESSES NEED A
-                PROFESSIONAL WEBSITE
-      ============================================================= -->
+             03 — WHY RETAIL, E-COMMERCE & D2C BUSINESSES NEED A
+                  PROFESSIONAL WEBSITE
+        ============================================================= -->
     <section class="retailWhy">
       <div class="container">
         <div class="heading">
@@ -318,8 +318,8 @@
     </section>
 
     <!-- ============================================================
-           04 — WHAT YOUR RETAIL / E-COMMERCE WEBSITE SHOULD INCLUDE
-      ============================================================= -->
+             04 — WHAT YOUR RETAIL / E-COMMERCE WEBSITE SHOULD INCLUDE
+        ============================================================= -->
     <section class="retailWhat">
       <div class="container">
         <div class="heading">
@@ -341,8 +341,8 @@
 
         <div class="retailWhat-grid">
           <!-- ======================================================
-                 SHOPPING EXPERIENCE
-            ======================================================= -->
+                   SHOPPING EXPERIENCE
+              ======================================================= -->
           <div class="retailWhat-col retailWhat-col--customers">
             <div class="retailWhat-col-head">
               <span class="retailWhat-col-icon">
@@ -461,8 +461,8 @@
           </div>
 
           <!-- ======================================================
-                 STORE & BUSINESS OPERATIONS
-            ======================================================= -->
+                   STORE & BUSINESS OPERATIONS
+              ======================================================= -->
           <div class="retailWhat-col retailWhat-col--business">
             <div class="retailWhat-col-head">
               <span class="retailWhat-col-icon">
@@ -587,86 +587,26 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              DIGITAL SOLUTIONS FOR RETAIL &amp; D2C
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Better Retail Experience.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build retail and D2C websites around your products, customers,
-              shopping journey and business goals—from product catalogues to
-              complete e-commerce experiences.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Retail Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="retail-business">
-                    Retail Business Website
-                  </option>
-                  <option value="d2c">
-                    D2C E-Commerce Website
-                  </option>
-                  <option value="product-catalogue">
-                    Product Catalogue Website
-                  </option>
-                  <option value="online-store">
-                    Online Store
-                  </option>
-                  <option value="multi-vendor">
-                    Multi-Vendor Marketplace
-                  </option>
-                  <option value="custom-ecommerce">
-                    Custom E-Commerce Website
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.package-form', [
+      'label' => 'DIGITAL SOLUTIONS FOR RETAIL &amp; D2C',
+      'highlight' => 'Build A Better Retail Experience.',
+      'intro' => 'We build retail and D2C websites around your products, customers, shopping journey and business goals—from product catalogues to complete e-commerce experiences.',
+      'fieldLabel' => 'Retail Website Type',
+      'options' => [
+        'retail-business' => 'Retail Business Website',
+        'd2c' => 'D2C E-Commerce Website',
+        'product-catalogue' => 'Product Catalogue Website',
+        'online-store' => 'Online Store',
+        'multi-vendor' => 'Multi-Vendor Marketplace',
+        'custom-ecommerce' => 'Custom E-Commerce Website',
+        'other' => 'Other',
+      ],
+    ])
 
     <!-- ============================================================
-           06 — HOW WE HELP YOUR RETAIL, E-COMMERCE & D2C BUSINESS
-                GROW DIGITALLY
-      ============================================================= -->
+             06 — HOW WE HELP YOUR RETAIL, E-COMMERCE & D2C BUSINESS
+                  GROW DIGITALLY
+        ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -894,16 +834,16 @@
     </section>
 
     <!-- ============================================================
-           08 — FAQ
-      ============================================================= -->
+             08 — FAQ
+        ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Retail, E-Commerce &amp; D2C.</span>',
       'intro' => 'Straight answers to common questions businesses ask before taking their store online.',
     ])
 
     <!-- ============================================================
-           09 — FINAL CTA
-      ============================================================= -->
+             09 — FINAL CTA
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -934,8 +874,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

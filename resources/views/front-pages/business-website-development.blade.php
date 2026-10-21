@@ -7,7 +7,7 @@
 @section('content')
   <main>
 
-  @include('partials.hero', [
+    @include('partials.hero', [
       'video' => 'assets/video/effect4.mp4',
       'poster' => 'assets/video/poster/effect4.png',
       'default' => [
@@ -52,8 +52,8 @@
     </section>
 
     <!-- ============================================================
-       03 — WHAT TYPE OF WEBSITE DO YOU NEED? (existing .bizTypes)
-  ============================================================= -->
+         03 — WHAT TYPE OF WEBSITE DO YOU NEED? (existing .bizTypes)
+    ============================================================= -->
     <section class="bizTypes">
       <div class="container">
         <div class="heading">
@@ -505,8 +505,8 @@
     </section>
 
     <!-- ============================================================
-       BUSINESS WEBSITE DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
-  ============================================================= -->
+         BUSINESS WEBSITE DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
+    ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -631,54 +631,23 @@
               </p>
             </div>
 
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName"> Full Name </label>
+            {{-- business-website-development --}}
+            @include('partials.package-form-fields', [
+              'fieldLabel' => 'Business Type',
+              'placeholder' => 'Select your business type',
+              'withRequirements' => true,
+              'requirementsPlaceholder' => 'Tell us about your website requirements',
+              'submitClass' => 'btn-black',
+              'options' => [
+                'corporate' => 'Corporate',
+                'small-business' => 'Small Business',
+                'professional-services' => 'Professional Services',
+                'startup' => 'Startup',
+                'product-catalogue' => 'Product Catalogue',
+                'other' => 'Other Business',
+              ],
+            ])
 
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile"> Mobile Number </label>
-
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness"> Business Type </label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your business type
-                  </option>
-                  <option value="corporate">Corporate</option>
-                  <option value="small-business">Small Business</option>
-                  <option value="professional-services">
-                    Professional Services
-                  </option>
-                  <option value="startup">Startup</option>
-                  <option value="product-catalogue">Product Catalogue</option>
-                  <option value="other">Other Business</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMessage"> Your Requirements </label>
-
-                <textarea id="packageMessage" name="requirements" rows="4"
-                  placeholder="Tell us about your website requirements"></textarea>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-black">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
           </div>
         </div>
       </div>
@@ -1770,8 +1739,8 @@
     ])
 
     <!-- ============================================================
-         14 — FINAL CTA (existing .cta-promo — untouched)
-    ============================================================= -->
+           14 — FINAL CTA (existing .cta-promo — untouched)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1795,8 +1764,8 @@
     </div>
 
     <!-- ============================================================
-       SEO LINKS (existing .secO)
-  ============================================================= -->
+         SEO LINKS (existing .secO)
+    ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

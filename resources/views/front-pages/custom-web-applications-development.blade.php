@@ -7,9 +7,9 @@
 @section('content')
   <main>
     <!-- ============================================================
-           01 — BANNER
-      ============================================================= -->
-      
+             01 — BANNER
+        ============================================================= -->
+
     @include('partials.hero', [
       'video' => 'assets/video/effect4.mp4',
       'poster' => 'assets/video/poster/effect4.png',
@@ -25,8 +25,8 @@
     ])
 
     <!-- ============================================================
-           WHY CUSTOM DEVELOPMENT?
-      ============================================================= -->
+             WHY CUSTOM DEVELOPMENT?
+        ============================================================= -->
     <section class="secA classifiedOverview">
       <div class="container">
         <div class="wrapper">
@@ -144,8 +144,8 @@
     </section>
 
     <!-- ============================================================
-           04 — TYPES OF WEB APPLICATIONS WE DEVELOP
-      ============================================================= -->
+             04 — TYPES OF WEB APPLICATIONS WE DEVELOP
+        ============================================================= -->
     <section class="webAppTypes">
       <div class="container">
         <div class="webAppTypes-grid">
@@ -306,8 +306,8 @@
       </div>
     </section>
     <!-- ============================================================
-           05 — BUILT AROUND YOUR BUSINESS WORKFLOW
-      ============================================================= -->
+             05 — BUILT AROUND YOUR BUSINESS WORKFLOW
+        ============================================================= -->
     <section class="webAppWorkflow">
       <div class="container">
         <div class="heading">
@@ -486,8 +486,8 @@
     </section>
 
     <!-- ============================================================
-           07 — CONNECTED BUSINESS SYSTEM
-      ============================================================= -->
+             07 — CONNECTED BUSINESS SYSTEM
+        ============================================================= -->
     <section class="webAppIntegrations">
       <div class="container">
         <div class="heading">
@@ -1182,14 +1182,14 @@
     </section>
 
     <!-- ============================================================
-           15 — BUILD YOUR CUSTOM WEB APP — ENQUIRY
-      ============================================================= -->
+             15 — BUILD YOUR CUSTOM WEB APP — ENQUIRY
+        ============================================================= -->
     <section class="webAppEnquire">
       <div class="container">
         <div class="webAppEnquire-shell">
           <!-- ======================================================
-                 LEFT — PROJECT INTRO
-            ======================================================= -->
+                   LEFT — PROJECT INTRO
+              ======================================================= -->
           <div class="webAppEnquire-content">
             <div class="heading">
               <span class="eyebrow"><span class="eyebrow-line"></span>LET'S BUILD SOMETHING
@@ -1260,8 +1260,8 @@
           </div>
 
           <!-- ======================================================
-                 RIGHT — ENQUIRY FORM
-            ======================================================= -->
+                   RIGHT — ENQUIRY FORM
+              ======================================================= -->
           <div class="webAppEnquire-formWrap">
             <div class="webAppEnquire-formHead">
               <div>
@@ -1273,33 +1273,34 @@
               <span class="webAppEnquire-formMark">↗</span>
             </div>
 
-            <form class="webAppEnquire-form">
+            <form class="webAppEnquire-form js-package-form" action="{{ route('package-enquiry.store') }}" method="POST"
+              novalidate>
+              @csrf
+              <input type="hidden" name="page" value="{{ Route::currentRouteName() }}">
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
               <!-- NAME -->
               <div class="webAppEnquire-field">
                 <label for="app-name">Your Name</label>
-
                 <input id="app-name" type="text" name="name" placeholder="Enter your name" required />
               </div>
 
               <!-- BUSINESS -->
               <div class="webAppEnquire-field">
                 <label for="app-business">Business / Company Name</label>
-
-                <input id="app-business" type="text" name="business" placeholder="Enter your business name" />
+                <input id="app-business" type="text" name="business_name" placeholder="Enter your business name" />
               </div>
 
               <!-- EMAIL + PHONE -->
               <div class="webAppEnquire-row">
                 <div class="webAppEnquire-field">
                   <label for="app-email">Work Email</label>
-
                   <input id="app-email" type="email" name="email" placeholder="you@company.com" required />
                 </div>
 
                 <div class="webAppEnquire-field">
                   <label for="app-phone">Phone Number</label>
-
-                  <input id="app-phone" type="tel" name="phone" placeholder="Your phone number" />
+                  <input id="app-phone" type="tel" name="mobile" placeholder="Your phone number" required />
                 </div>
               </div>
 
@@ -1308,24 +1309,18 @@
                 <label for="app-type">What Do You Want To Build?</label>
 
                 <div class="webAppEnquire-select">
-                  <select id="app-type" name="application_type">
+                  <select id="app-type" name="business_type" required>
                     <option value="">Select Application Type</option>
                     <option value="crm">CRM</option>
                     <option value="erp">ERP</option>
-                    <option value="management-system">
-                      Management System
-                    </option>
+                    <option value="management-system">Management System</option>
                     <option value="booking-system">Booking System</option>
                     <option value="customer-portal">Customer Portal</option>
                     <option value="vendor-portal">Vendor Portal</option>
                     <option value="saas-platform">SaaS Platform</option>
                     <option value="dashboard">Dashboard</option>
-                    <option value="workflow-application">
-                      Workflow Application
-                    </option>
-                    <option value="quote-invoice-system">
-                      Quote / Invoice System
-                    </option>
+                    <option value="workflow-application">Workflow Application</option>
+                    <option value="quote-invoice-system">Quote / Invoice System</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
@@ -1333,11 +1328,8 @@
 
               <!-- REQUIREMENT -->
               <div class="webAppEnquire-field">
-                <label for="app-requirement">
-                  Tell Us About Your Requirement
-                </label>
-
-                <textarea id="app-requirement" name="requirement" rows="4"
+                <label for="app-requirement">Tell Us About Your Requirement</label>
+                <textarea id="app-requirement" name="requirements" rows="4"
                   placeholder="Tell us how your business currently works and what you want to improve."></textarea>
               </div>
 
@@ -1351,24 +1343,28 @@
                 <span class="webAppEnquire-submit-note">
                   We'll review your requirement and get back to you.
                 </span>
+
+                <p class="js-form-status" role="status" aria-live="polite"></p>
               </div>
             </form>
+
+            @include('partials.package-form-script')
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-           16 — secN — FAQ
-      ============================================================= -->
+             16 — secN — FAQ
+        ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Questions About Custom Web<span> Application Development?</span>',
       'intro' => 'Clear answers to common questions about building a custom web application with Web Mingo.',
     ])
 
     <!-- ============================================================
-           17 — cta-promo — FINAL CTA
-      ============================================================= -->
+             17 — cta-promo — FINAL CTA
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1399,8 +1395,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

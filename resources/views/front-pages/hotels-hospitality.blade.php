@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-             01 — BANNER
-        ============================================================= -->
+               01 — BANNER
+          ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect1.mp4',
@@ -27,8 +27,8 @@
 
 
     <!-- ============================================================
-             02 — ABOUT HOTELS & HOSPITALITY
-        ============================================================= -->
+               02 — ABOUT HOTELS & HOSPITALITY
+          ============================================================= -->
     <section class="hotelIntro">
       <div class="container">
         <div class="hotelIntro-top">
@@ -131,8 +131,8 @@
     </section>
 
     <!-- ============================================================
-             03 — WHY HOTELS & HOSPITALITY BUSINESSES NEED A WEBSITE
-        ============================================================= -->
+               03 — WHY HOTELS & HOSPITALITY BUSINESSES NEED A WEBSITE
+          ============================================================= -->
     <section class="hotelWhy">
       <div class="container">
         <div class="heading">
@@ -388,85 +388,24 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              DIGITAL SOLUTIONS FOR HOTELS &amp; HOSPITALITY
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Better Hospitality Experience.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build hotel and hospitality websites around your rooms,
-              amenities, experiences and business goals—from engaging hotel
-              websites to digital platforms that support direct bookings,
-              enquiries and guest engagement.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Hospitality Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="hotel-website">
-                    Hotel &amp; Resort Website
-                  </option>
-                  <option value="hospitality-website">
-                    Hospitality Business Website
-                  </option>
-                  <option value="booking-platform">
-                    Hotel Booking Platform
-                  </option>
-                  <option value="restaurant-website">
-                    Restaurant &amp; Dining Website
-                  </option>
-                  <option value="travel-stay">
-                    Homestay &amp; Vacation Rental Website
-                  </option>
-                  <option value="custom-hospitality">
-                    Custom Hospitality Solution
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.package-form', [
+      'label' => 'DIGITAL SOLUTIONS FOR HOTELS &amp; HOSPITALITY',
+      'highlight' => 'Build A Better Hospitality Experience.',
+      'intro' => 'We build hotel and hospitality websites around your rooms, amenities, experiences and business goals—from engaging hotel websites to digital platforms that support direct bookings, enquiries and guest engagement.',
+      'fieldLabel' => 'Hospitality Website Type',
+      'options' => [
+        'hotel-website' => 'Hotel &amp; Resort Website',
+        'hospitality-website' => 'Hospitality Business Website',
+        'booking-platform' => 'Hotel Booking Platform',
+        'restaurant-website' => 'Restaurant &amp; Dining Website',
+        'travel-stay' => 'Homestay &amp; Vacation Rental Website',
+        'custom-hospitality' => 'Custom Hospitality Solution',
+        'other' => 'Other',
+      ],
+    ])
     <!-- ============================================================
-             06 — WHAT YOUR WEBSITE CAN SHOW
-        ============================================================= -->
+               06 — WHAT YOUR WEBSITE CAN SHOW
+          ============================================================= -->
     <section class="hotelShowcase">
       <div class="container">
         <div class="heading">
@@ -758,8 +697,8 @@
     </section>
 
     <!-- ============================================================
-           08 — FAQ
-      ============================================================= -->
+             08 — FAQ
+        ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common Hotel &amp; <span>Hospitality Website Questions.</span>',
@@ -767,8 +706,8 @@
     ])
 
     <!-- ============================================================
-             09 — FINAL CTA
-        ============================================================= -->
+               09 — FINAL CTA
+          ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">

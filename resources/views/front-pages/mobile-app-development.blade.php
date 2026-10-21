@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-           01 — HERO
-      ============================================================= -->
+               01 — HERO
+          ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect3.mp4',
@@ -26,8 +26,8 @@
     ])
 
     <!-- ============================================================
-         02 — INTRODUCTION (.appIntro)
-    ============================================================= -->
+             02 — INTRODUCTION (.appIntro)
+        ============================================================= -->
     <section class="appIntro">
       <div class="container">
         <div class="appIntro-layout">
@@ -281,8 +281,8 @@
     </section>
 
     <!-- ============================================================
-         03 — OUR MOBILE APP DEVELOPMENT SERVICES
-    ============================================================= -->
+             03 — OUR MOBILE APP DEVELOPMENT SERVICES
+        ============================================================= -->
     <section class="mfgTypes">
       <div class="container">
         <div class="heading">
@@ -304,8 +304,8 @@
 
         <div class="mfgTypes-grid">
           <!-- ======================================================
-               ANDROID APPLICATION
-          ======================================================= -->
+                   ANDROID APPLICATION
+              ======================================================= -->
           <a href="{{ route('android-applications-development') }}" class="mfgTypes-card mfgTypes-card--android">
             <img src="assets/images/umbrella/android.png" alt="Android mobile application development" loading="lazy" />
 
@@ -329,8 +329,8 @@
           </a>
 
           <!-- ======================================================
-               IOS APPLICATION
-          ======================================================= -->
+                   IOS APPLICATION
+              ======================================================= -->
           <a href="{{ route('iOS-applications-development') }}" class="mfgTypes-card mfgTypes-card--ios">
             <img src="assets/images/umbrella/iso.png" alt="iOS mobile application development" loading="lazy" />
 
@@ -354,8 +354,8 @@
           </a>
 
           <!-- ======================================================
-               FLUTTER APPLICATION
-          ======================================================= -->
+                   FLUTTER APPLICATION
+              ======================================================= -->
           <a href="{{ route('flutter-app-development') }}" class="mfgTypes-card mfgTypes-card--flutter">
             <img src="assets/images/umbrella/flutter.png" alt="Flutter mobile application development" loading="lazy" />
 
@@ -379,8 +379,8 @@
           </a>
 
           <!-- ======================================================
-               CUSTOM APPLICATION
-          ======================================================= -->
+                   CUSTOM APPLICATION
+              ======================================================= -->
           <div class="mfgTypes-card mfgTypes-card--cta">
             <div class="mfgTypes-cta-top">
               <span class="mfgTypes-cta-tag"> NEED SOMETHING CUSTOM? </span>
@@ -411,8 +411,8 @@
     </section>
 
     <!-- ============================================================
-           04 — OUR APPROACH
-      ============================================================= -->
+               04 — OUR APPROACH
+          ============================================================= -->
     <section class="webApproach" id="app-process">
       <div class="container">
         <div class="heading">
@@ -559,69 +559,23 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <!-- LEFT: HEADING CONTENT -->
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label"> READY TO BUILD YOUR APP </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Better Mobile Experience.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build mobile applications around your users, business
-              processes, goals and specific requirements—from native Android
-              and iOS apps to cross-platform and custom mobile experiences.
-            </p>
-          </div>
-
-          <!-- RIGHT: SHORT REQUIREMENT FORM -->
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Application Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your application type
-                  </option>
-                  <option value="android">Android Application</option>
-                  <option value="ios">iOS Application</option>
-                  <option value="flutter">Flutter Application</option>
-                  <option value="custom">Custom Mobile Application</option>
-                  <option value="business">Business Application</option>
-                  <option value="ecommerce">E-Commerce Application</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    {{-- mobile-app-development --}}
+    @include('partials.package-form', [
+      'label' => 'READY TO BUILD YOUR APP',
+      'highlight' => 'Build A Better Mobile Experience.',
+      'intro' => 'We build mobile applications around your users, business processes, goals and specific requirements—from native Android and iOS apps to cross-platform and custom mobile experiences.',
+      'fieldLabel' => 'Application Type',
+      'placeholder' => 'Select your application type',
+      'options' => [
+        'android' => 'Android Application',
+        'ios' => 'iOS Application',
+        'flutter' => 'Flutter Application',
+        'custom' => 'Custom Mobile Application',
+        'business' => 'Business Application',
+        'ecommerce' => 'E-Commerce Application',
+        'other' => 'Other',
+      ],
+    ])
 
     <section class="secC" id="app-results">
       <div class="container">
@@ -884,8 +838,8 @@
     </section>
 
     <!-- ============================================================
-           07 — WHY WEB MINGO
-      ============================================================= -->
+               07 — WHY WEB MINGO
+          ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1118,8 +1072,8 @@
     </section>
 
     <!-- ============================================================
-           09 — FINAL CTA
-      ============================================================= -->
+               09 — FINAL CTA
+          ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1150,8 +1104,8 @@
     </div>
 
     <!-- ============================================================
-           08 — FAQ
-      ============================================================= -->
+               08 — FAQ
+          ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'What Type Of Mobile App <br /><span>Does My Business Need?</span>',

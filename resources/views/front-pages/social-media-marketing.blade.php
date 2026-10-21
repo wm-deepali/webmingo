@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-           01 — BANNER (existing structure, content updated)
-      ============================================================= -->
+             01 — BANNER (existing structure, content updated)
+        ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect3.mp4',
@@ -24,8 +24,8 @@
     ])
 
     <!-- ============================================================
-           02 — smmHero — HERO (NEW, editorial visual composition)
-      ============================================================= -->
+             02 — smmHero — HERO (NEW, editorial visual composition)
+        ============================================================= -->
     <section class="smmHero">
       <div class="container">
         <div class="smmHero-layout">
@@ -78,8 +78,8 @@
     </section>
 
     <!-- ============================================================
-           03 — WHY STRATEGIC SOCIAL MEDIA MARKETING (.smmGrowth)
-      ============================================================= -->
+             03 — WHY STRATEGIC SOCIAL MEDIA MARKETING (.smmGrowth)
+        ============================================================= -->
     <section class="smmGrowth">
       <div class="container">
         <div class="heading">
@@ -184,8 +184,8 @@
     </section>
 
     <!-- ============================================================
-           04 — smmPlatforms — PLATFORMS WE MANAGE (NEW)
-      ============================================================= -->
+             04 — smmPlatforms — PLATFORMS WE MANAGE (NEW)
+        ============================================================= -->
     <section class="smmPlatforms">
       <div class="container">
         <div class="heading">
@@ -354,8 +354,8 @@
     </section>
 
     <!-- ============================================================
-           SOCIAL MEDIA MARKETING — PLANS + CUSTOM REQUIREMENTS FORM
-      ============================================================= -->
+             SOCIAL MEDIA MARKETING — PLANS + CUSTOM REQUIREMENTS FORM
+        ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -527,52 +527,29 @@
               </p>
             </div>
 
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Business Type</label>
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your business type
-                  </option>
-                  <option value="corporate">Corporate</option>
-                  <option value="small-business">Small Business</option>
-                  <option value="professional-services">
-                    Professional Services
-                  </option>
-                  <option value="ecommerce">E-Commerce</option>
-                  <option value="startup">Startup</option>
-                  <option value="local-business">Local Business</option>
-                  <option value="other">Other Business</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-black">
-                  Tell Us Your Social Media Requirements <i>↗</i>
-                </button>
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
+            @include('partials.package-form-fields', [
+              'fieldLabel' => 'Business Type',
+              'placeholder' => 'Select your business type',
+              'submitText' => 'Tell Us Your Social Media Requirements',
+              'submitClass' => 'btn-black',
+              'options' => [
+                'corporate' => 'Corporate',
+                'small-business' => 'Small Business',
+                'professional-services' => 'Professional Services',
+                'ecommerce' => 'E-Commerce',
+                'startup' => 'Startup',
+                'local-business' => 'Local Business',
+                'other' => 'Other Business',
+              ],
+            ])
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-           06 — secG — OUR APPROACH (SMM)
-      ============================================================= -->
+             06 — secG — OUR APPROACH (SMM)
+        ============================================================= -->
     <section class="secG" id="smm-approach">
       <div class="container">
         <div class="heading">
@@ -921,8 +898,8 @@
     </section>
 
     <!-- ============================================================
-           10 — secL (existing structure) — WHY CHOOSE WEB MINGO
-      ============================================================= -->
+             10 — secL (existing structure) — WHY CHOOSE WEB MINGO
+        ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1002,16 +979,16 @@
     </section>
 
     <!-- ============================================================
-           12 — secN (existing structure) — FAQ
-      ============================================================= -->
+             12 — secN (existing structure) — FAQ
+        ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Social Media Marketing.</span>',
       'intro' => 'Straight answers to what most people ask before getting started.',
     ])
 
     <!-- ============================================================
-           13 — FINAL CTA (existing structure)
-      ============================================================= -->
+             13 — FINAL CTA (existing structure)
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1035,8 +1012,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

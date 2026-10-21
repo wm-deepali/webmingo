@@ -51,12 +51,16 @@
     'admin.faqs.*',
     'admin.blogs.*',
     'admin.pages.*',
+    'admin.kb-categories.*',
+    'admin.kb-articles.*',
 ) ? 'active' : '' }}">
             <a href="#"><i class="fa-solid fa-file-lines"></i> Content Management</a>
             <ul>
                 <li><a href="{{ route('admin.page-heroes.index') }}">Page Hero Sections</a></li>
                 <li><a href="{{ route('admin.faqs.index') }}">FAQ</a></li>
                 <li><a href="{{ route('admin.blogs.index') }}">Blog Management</a></li>
+                <li><a href="{{ route('admin.kb-categories.index') }}">KB Categories</a></li>
+                <li><a href="{{ route('admin.kb-articles.index') }}">Knowledge Base Articles</a></li>
                 <li><a href="{{ route('admin.careers.index') }}">Career Openings</a></li>
                 <li><a href="{{ route('admin.pages.index') }}">Dynamic Pages</a></li>
             </ul>
@@ -79,13 +83,17 @@
 
         {{-- ENQUIRIES & APPLICATIONS --}}
 
-        <li class="{{ request()->routeIs('admin.enquiries.*', 'admin.career-applications.*') ? 'active' : '' }}">
+        <li
+            class="{{ request()->routeIs('admin.enquiries.*', 'admin.kb-enquiries.*', 'admin.career-applications.*') ? 'active' : '' }}">
             <a href="#">
                 <i class="fa-solid fa-inbox"></i> Enquiries & Applications
             </a>
             <ul>
                 <li>
                     <a href="{{ route('admin.enquiries.index') }}">Contact Enquiries</a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.kb-enquiries.index') }}">Knowledge Base Enquiries</a>
                 </li>
                 <li>
                     <a href="{{ route('admin.career-applications.index') }}">Job Applications
@@ -105,39 +113,13 @@
 
                 <li><a href="{{ route('admin.admin-setting.index', ['tab' => 'general']) }}">General Setting</a></li>
                 <li><a href="{{ route('admin.admin-setting.index', ['tab' => 'smtp']) }}">SMTP</a></li>
-                <li>
-                    <a href="{{ route('admin.settings.email-templates.index') }}">
-                        Email Template Settings
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.admin-setting.index', ['tab' => 'tracking']) }}">
-                        Tracking & Pixels
-                    </a>
-                </li>
+                <li><a href="{{ route('admin.settings.email-templates.index') }}">Email Template Settings</a></li>
+                <li><a href="{{ route('admin.admin-setting.index', ['tab' => 'tracking']) }}">Tracking & Pixels</a></li>
                 <li><a href="{{ route('admin.notifications.index') }}">Notification Centre</a></li>
                 <li><a href="{{ route('admin.security.system-logs') }}">System Logs</a></li>
                 <li><a href="{{ route('admin.redirect-settings.index') }}">Re-Direction Setting</a></li>
             </ul>
         </li>
-
-        {{-- ROLES & PERMISSION --}}
-        <li class="{{ request()->routeIs(
-    'admin.roles-category.*',
-    'admin.permission-settings.*',
-    'admin.team.*'
-) ? 'active' : '' }}">
-            <a href="#"><i class="fa-solid fa-user-shield"></i> Roles & Permission</a>
-            <ul>
-                <li><a href="{{ route('admin.roles-category.index') }}">Role Category</a></li>
-                <li><a href="{{ route('admin.permission-settings.index') }}">Roles Permission</a></li>
-                <li><a href="{{ route('admin.team.index') }}">Team Setup</a></li>
-                <li><a href="{{ route('admin.team.activity-logs') }}">Activity Logs</a></li>
-                <li><a href="{{ route('admin.team.login-summary') }}">Login Summary</a></li>
-            </ul>
-        </li>
-
-
 
     </ul>
 </div>

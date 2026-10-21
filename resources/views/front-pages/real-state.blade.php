@@ -10,8 +10,8 @@
   <main>
 
     <!-- ============================================================
-         01 — HERO
-    ============================================================= -->
+           01 — HERO
+      ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect1.mp4',
@@ -29,8 +29,8 @@
 
 
     <!-- ============================================================
-         02 — ABOUT REAL ESTATE
-    ============================================================= -->
+           02 — ABOUT REAL ESTATE
+      ============================================================= -->
     <section class="realEstateIntro">
       <div class="container">
         <div class="heading">
@@ -125,8 +125,8 @@
 
 
     <!-- ============================================================
-         03 — WHY REAL ESTATE BUSINESSES NEED A WEBSITE
-    ============================================================= -->
+           03 — WHY REAL ESTATE BUSINESSES NEED A WEBSITE
+      ============================================================= -->
     <section class="realEstateWhy" id="realEstateWhy">
       <div class="container">
         <div class="heading">
@@ -258,8 +258,8 @@
 
 
     <!-- ============================================================
-         04 — WHAT YOUR REAL ESTATE WEBSITE SHOULD INCLUDE
-    ============================================================= -->
+           04 — WHAT YOUR REAL ESTATE WEBSITE SHOULD INCLUDE
+      ============================================================= -->
     <section class="realEstateGet" id="realEstateGet">
       <div class="container">
         <div class="heading">
@@ -464,85 +464,25 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              DIGITAL SOLUTIONS FOR REAL ESTATE
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Better Real Estate Experience.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build real estate websites around your properties, listings,
-              buyers, agents and business goals—from property websites to complete
-              real estate platforms with lead-focused experiences.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Real Estate Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="real-estate-business">
-                    Real Estate Business Website
-                  </option>
-                  <option value="property-listing">
-                    Property Listing Website
-                  </option>
-                  <option value="property-portal">
-                    Property Portal
-                  </option>
-                  <option value="property-crm">
-                    Property CRM
-                  </option>
-                  <option value="channel-partner">
-                    Channel Partner Portal
-                  </option>
-                  <option value="custom-real-estate">
-                    Custom Real Estate Platform
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.package-form', [
+      'label' => 'DIGITAL SOLUTIONS FOR REAL ESTATE',
+      'highlight' => 'Build A Better Real Estate Experience.',
+      'intro' => 'We build real estate websites around your properties, listings, buyers, agents and business goals—from property websites to complete real estate platforms with lead-focused experiences.',
+      'fieldLabel' => 'Real Estate Website Type',
+      'options' => [
+        'real-estate-business' => 'Real Estate Business Website',
+        'property-listing' => 'Property Listing Website',
+        'property-portal' => 'Property Portal',
+        'property-crm' => 'Property CRM',
+        'channel-partner' => 'Channel Partner Portal',
+        'custom-real-estate' => 'Custom Real Estate Platform',
+        'other' => 'Other',
+      ],
+    ])
 
     <!-- ============================================================
-         06 — DIGITAL GROWTH OUTCOMES
-    ============================================================= -->
+           06 — DIGITAL GROWTH OUTCOMES
+      ============================================================= -->
     <section class="secL">
       <div class="container">
 
@@ -770,8 +710,8 @@
     </section>
 
     <!-- ============================================================
-         08 — FAQ
-    ============================================================= -->
+           08 — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common <br/><span>Real Estate Website Questions.</span>',
@@ -779,8 +719,8 @@
     ])
 
     <!-- ============================================================
-         09 — FINAL CTA
-    ============================================================= -->
+           09 — FINAL CTA
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -810,8 +750,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

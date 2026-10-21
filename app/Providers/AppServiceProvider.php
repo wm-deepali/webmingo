@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Providers;
-use Illuminate\Support\ServiceProvider;
 use App\Models\SeoPage;
-use Illuminate\Support\Facades\Route;
+use App\Models\DynamicPage;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
                 [
                     'seo' => $name ? SeoPage::forKey($name) : null,
                     'general' => $general,
+                    'footerPages'=> DynamicPage::active()->orderBy('id')->get(),
                 ]
             );
         });

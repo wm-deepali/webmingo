@@ -6,9 +6,14 @@ use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Career;
 use App\Models\Setting;
+use App\Models\DynamicPage;
 use Illuminate\Http\Request;
 use App\Models\ContactEnquiry;
+use App\Models\PackageEnquiry;
+use Illuminate\Validation\Rule;
 use App\Models\CareerApplication;
+use App\Models\KnowledgeBaseEnquiry;
+use App\Models\KnowledgeBaseCategory;
 use Illuminate\Support\Facades\Route;
 
 class FrontController extends Controller
@@ -203,6 +208,82 @@ class FrontController extends Controller
         ]);
 
         return back()->with('success', "Thanks! We've received your application and will get back to you shortly.");
+    }
+
+    public function knowledgeBase()
+    {
+        $categories = KnowledgeBaseCategory::active()
+            ->ordered()
+            ->with(['articles' => fn($q) => $q->active()->ordered()])
+            ->get()
+            ->filter(fn($category) => $category->articles->isNotEmpty())
+            ->values();
+
+        return view('front-pages.knowledge-base', compact('categories'));
+    }
+
+    public function knowledgeBaseEnquiry(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|max:150',
+            'phone' => 'nullable|string|max:20',
+            'need' => ['required', Rule::in(array_keys(KnowledgeBaseEnquiry::NEEDS))],
+            'message' => 'required|string|max:2000',
+        ]);
+
+        KnowledgeBaseEnquiry::create($data + [
+            'status' => 'new',
+            'ip_address' => $request->ip(),
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Thank you! Our team will contact you shortly.',
+        ]);
+    }
+
+    public function dynamicPage(string $slug)
+    {
+        // Small table, so match the slug in PHP (the slug is derived from page_name)
+        $page = DynamicPage::active()->get()->first(fn($p) => $p->slug === $slug);
+
+        abort_if(!$page, 404);
+
+        return view('front-pages.dynamic-page', compact('page'));
+    }
+
+    public function packageEnquiryStore(Request $request)
+    {
+        // Honeypot
+        if ($request->filled('website')) {
+            return response()->json(['success' => true, 'message' => 'Thank you! We will contact you shortly.']);
+        }
+
+        $data = $request->validate([
+            'name' => 'required|string|max:100',
+            'mobile' => ['required', 'regex:/^[0-9+\-\s]{10,15}$/'],
+            'email' => 'nullable|email|max:150',
+            'business_name' => 'nullable|string|max:150',
+            'business_type' => 'required|string|max:100',
+            'requirements' => 'nullable|string|max:2000',
+            'extra' => 'nullable|array',
+            'extra.*' => 'nullable|string|max:255',
+            'page' => 'required|string|max:100',
+        ], [
+            'mobile.regex' => 'Please enter a valid mobile number.',
+        ]);
+
+        PackageEnquiry::create($data + [
+            'page_url' => url()->previous(),
+            'ip_address' => $request->ip(),
+            'user_agent' => substr((string) $request->userAgent(), 0, 500),
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Thank you! We will contact you shortly.',
+        ]);
     }
 
 }

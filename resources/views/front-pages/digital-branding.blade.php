@@ -7,9 +7,9 @@
 @section('content')
   <main>
     <!-- ============================================================
-           01 — HERO
-      ============================================================= -->
-      
+             01 — HERO
+        ============================================================= -->
+
     @include('partials.hero', [
       'video' => 'assets/video/effect3.mp4',
       'poster' => 'assets/video/poster/effect3.png',
@@ -393,72 +393,24 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label"> READY TO BUILD YOUR BRAND </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Brand That Stands Out.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We create consistent visual identities and creative assets
-              around your brand, audience and marketing goals—from logos and
-              social media creatives to digital design and branded content.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Branding Service</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your branding service
-                  </option>
-                  <option value="ux-design">UX Design</option>
-                  <option value="logo-design">Logo Design</option>
-                  <option value="social-media-creatives">
-                    Social Media Creatives
-                  </option>
-                  <option value="brand-identity">Brand Identity</option>
-                  <option value="marketing-collateral">
-                    Marketing Collateral
-                  </option>
-                  <option value="video-creatives">Video Creatives</option>
-                  <option value="complete-branding">Complete Branding</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    {{-- digital-branding --}}
+    @include('partials.package-form', [
+      'label' => 'READY TO BUILD YOUR BRAND',
+      'highlight' => 'Build A Brand That Stands Out.',
+      'intro' => 'We create consistent visual identities and creative assets around your brand, audience and marketing goals—from logos and social media creatives to digital design and branded content.',
+      'fieldLabel' => 'Branding Service',
+      'placeholder' => 'Select your branding service',
+      'options' => [
+        'ux-design' => 'UX Design',
+        'logo-design' => 'Logo Design',
+        'social-media-creatives' => 'Social Media Creatives',
+        'brand-identity' => 'Brand Identity',
+        'marketing-collateral' => 'Marketing Collateral',
+        'video-creatives' => 'Video Creatives',
+        'complete-branding' => 'Complete Branding',
+        'other' => 'Other',
+      ],
+    ])
 
     <section class="secC">
       <div class="container">
@@ -1083,8 +1035,8 @@
     </section>
 
     <!-- ============================================================
-           09 — FINAL CTA (.cta-promo)
-      ============================================================= -->
+             09 — FINAL CTA (.cta-promo)
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1112,8 +1064,8 @@
     </div>
 
     <!-- ============================================================
-           08 — FAQ (.secN)
-      ============================================================= -->
+             08 — FAQ (.secN)
+        ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Questions About <span>Digital Branding?</span>',

@@ -21,8 +21,8 @@
     ])
 
     <!-- ============================================================
-           02 — INTRODUCTION (NEW: .webIntro)
-      ============================================================= -->
+             02 — INTRODUCTION (NEW: .webIntro)
+        ============================================================= -->
     <section class="webIntro">
       <div class="container">
         <div class="heading">
@@ -321,8 +321,8 @@
     </section>
 
     <!-- ============================================================
-           04 — OUR APPROACH
-      ============================================================= -->
+             04 — OUR APPROACH
+        ============================================================= -->
 
     <section class="webApproach" id="web-process">
       <div class="container">
@@ -486,77 +486,22 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <!-- LEFT: HEADING CONTENT -->
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              READY TO BUILD YOUR WEBSITE
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Better Website.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build professional websites around your business, customers,
-              services, products, goals and specific requirements—from simple
-              business websites to custom digital experiences.
-            </p>
-          </div>
-
-          <!-- RIGHT: SHORT REQUIREMENT FORM -->
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="corporate">Corporate Website</option>
-                  <option value="small-business">
-                    Small Business Website
-                  </option>
-                  <option value="professional-services">
-                    Professional Services Website
-                  </option>
-                  <option value="product-catalogue">
-                    Product &amp; Catalogue Website
-                  </option>
-                  <option value="custom">Custom Business Website</option>
-                  <option value="ecommerce">E-Commerce Website</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    {{-- web-development --}}
+    @include('partials.package-form', [
+      'label' => 'READY TO BUILD YOUR WEBSITE',
+      'highlight' => 'Build A Better Website.',
+      'intro' => 'We build professional websites around your business, customers, services, products, goals and specific requirements—from simple business websites to custom digital experiences.',
+      'fieldLabel' => 'Website Type',
+      'options' => [
+        'corporate' => 'Corporate Website',
+        'small-business' => 'Small Business Website',
+        'professional-services' => 'Professional Services Website',
+        'product-catalogue' => 'Product &amp; Catalogue Website',
+        'custom' => 'Custom Business Website',
+        'ecommerce' => 'E-Commerce Website',
+        'other' => 'Other',
+      ],
+    ])
 
     <section class="secC" id="web-portfolio">
       <div class="container">
@@ -824,8 +769,8 @@
     </section>
 
     <!-- ============================================================
-           07 — WHY WEB MINGO (existing .secL, 4 points)
-      ============================================================= -->
+             07 — WHY WEB MINGO (existing .secL, 4 points)
+        ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1042,8 +987,8 @@
     </section>
 
     <!-- ============================================================
-           09 — FINAL CTA (existing .cta-promo)
-      ============================================================= -->
+             09 — FINAL CTA (existing .cta-promo)
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1066,8 +1011,8 @@
     </div>
 
     <!-- ============================================================
-           08 — FAQ (existing .secN)
-      ============================================================= -->
+             08 — FAQ (existing .secN)
+        ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Which Website Solution <br /><span>Is Right For My Business?</span>',

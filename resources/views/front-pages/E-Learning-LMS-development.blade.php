@@ -22,8 +22,8 @@
       ],
     ])
     <!-- ============================================================
-         02 — E-LEARNING & LMS INTRO
-    ============================================================= -->
+           02 — E-LEARNING & LMS INTRO
+      ============================================================= -->
     <section class="appIntro">
       <div class="container">
         <div class="appIntro-head">
@@ -76,8 +76,8 @@
     </section>
 
     <!-- ============================================================
-         03 — WHO WE BUILD LMS PLATFORMS FOR
-    ============================================================= -->
+           03 — WHO WE BUILD LMS PLATFORMS FOR
+      ============================================================= -->
     <section class="lmsAudience">
       <div class="container">
         <div class="heading">
@@ -229,8 +229,8 @@
     </section>
 
     <!-- ============================================================
-         04 — TYPES OF E-LEARNING PLATFORMS
-    ============================================================= -->
+           04 — TYPES OF E-LEARNING PLATFORMS
+      ============================================================= -->
     <section class="lmsTypes">
       <div class="container">
         <div class="heading">
@@ -440,8 +440,8 @@
     </section>
 
     <!-- ============================================================
-         E-LEARNING & LMS DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
-    ============================================================= -->
+           E-LEARNING & LMS DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
+      ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -647,84 +647,28 @@
               </p>
             </div>
 
-            <form>
-              <div class="ecomPackage-model">
-                <label> Choose Your LMS Model </label>
-
-                <div class="ecomPackage-model-options">
-                  <label class="ecomPackage-model-option">
-                    <input type="radio" name="lms_model" value="single-tenant" />
-
-                    <span class="ecomPackage-model-option__content">
-                      <strong> Single-Tenant LMS </strong>
-
-                      <small> Dedicated LMS for your organisation. </small>
-                    </span>
-
-                    <i>✓</i>
-                  </label>
-
-                  <label class="ecomPackage-model-option">
-                    <input type="radio" name="lms_model" value="multi-tenant" />
-
-                    <span class="ecomPackage-model-option__content">
-                      <strong> Multi-Tenant / White-Label </strong>
-
-                      <small> One LMS for multiple brands or institutes. </small>
-                    </span>
-
-                    <i>✓</i>
-                  </label>
-                </div>
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="lmsPackageName"> Full Name </label>
-
-                <input type="text" id="lmsPackageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="lmsPackageMobile"> Mobile Number </label>
-
-                <input type="tel" id="lmsPackageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="lmsPackageType"> Learning Platform Type </label>
-
-                <select id="lmsPackageType" name="learning_platform">
-                  <option value="" selected disabled>
-                    Select your platform type
-                  </option>
-                  <option value="coaching-portal">Coaching Portal</option>
-                  <option value="lms">Learning Management System</option>
-                  <option value="test-series">Test Series Platform</option>
-                  <option value="course-admission">
-                    Course &amp; Admission Platform
-                  </option>
-                  <option value="online-academy">Online Academy</option>
-                  <option value="custom-elearning">Custom E-Learning</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMessage"> Your Requirements </label>
-
-                <textarea id="packageMessage" name="requirements" rows="4"
-                  placeholder="Tell us about your website requirements"></textarea>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-black">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
+            {{-- E-Learning-LMS-development --}}
+            @include('partials.package-form-fields', [
+              'models' => [
+                'single-tenant' => ['title' => 'Single-Tenant LMS', 'desc' => 'Dedicated LMS for your organisation.'],
+                'multi-tenant' => ['title' => 'Multi-Tenant / White-Label', 'desc' => 'One LMS for multiple brands or institutes.'],
+              ],
+              'modelsLabel' => 'Choose Your LMS Model',
+              'modelsKey' => 'lms_model',
+              'fieldLabel' => 'Learning Platform Type',
+              'placeholder' => 'Select your platform type',
+              'withRequirements' => true,
+              'requirementsPlaceholder' => 'Tell us about your requirements',
+              'submitClass' => 'btn-black',
+              'options' => [
+                'coaching-portal' => 'Coaching Portal',
+                'lms' => 'Learning Management System',
+                'test-series' => 'Test Series Platform',
+                'course-admission' => 'Course &amp; Admission Platform',
+                'online-academy' => 'Online Academy',
+                'custom-elearning' => 'Custom E-Learning',
+              ],
+            ])
           </div>
 
         </div>
@@ -732,8 +676,8 @@
     </section>
 
     <!-- ============================================================
-         06 — CORE LMS CAPABILITIES
-    ============================================================= -->
+           06 — CORE LMS CAPABILITIES
+      ============================================================= -->
     <section class="lmsFeatures">
       <div class="container">
         <div class="heading">
@@ -903,8 +847,8 @@
     </section>
 
     <!-- ============================================================
-         07 — STUDENT, FACULTY & ADMINISTRATION MANAGEMENT
-    ============================================================= -->
+           07 — STUDENT, FACULTY & ADMINISTRATION MANAGEMENT
+      ============================================================= -->
     <section class="lmsManagement">
       <div class="container">
         <div class="heading">
@@ -1057,8 +1001,8 @@
     </section>
 
     <!-- ============================================================
-         08 — CUSTOM FEATURES & THIRD-PARTY INTEGRATIONS
-    ============================================================= -->
+           08 — CUSTOM FEATURES & THIRD-PARTY INTEGRATIONS
+      ============================================================= -->
     <section class="lmsIntegrations" style="display: none">
       <div class="container">
         <div class="heading">
@@ -1567,8 +1511,8 @@
     </section>
 
     <!-- ============================================================
-         08 — PORTFOLIO (.secC)
-    ============================================================= -->
+           08 — PORTFOLIO (.secC)
+      ============================================================= -->
     <section class="secC">
       <div class="container">
         <div class="heading">
@@ -1812,8 +1756,8 @@
     ])
 
     <!-- ============================================================
-           15 — FINAL CTA (common .cta-promo)
-      ============================================================= -->
+             15 — FINAL CTA (common .cta-promo)
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1837,8 +1781,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

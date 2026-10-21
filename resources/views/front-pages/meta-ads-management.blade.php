@@ -9,8 +9,8 @@
 
   <main>
     <!-- ============================================================
-           01 — BANNER (comman .banner reused)
-      ============================================================= -->
+             01 — BANNER (comman .banner reused)
+        ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect3.mp4',
@@ -27,8 +27,8 @@
     ])
 
     <!-- ============================================================
-           META ADS — THE PROBLEM WE SOLVE
-      ============================================================ -->
+             META ADS — THE PROBLEM WE SOLVE
+        ============================================================ -->
 
     <section class="metaProblem" id="metaProblem">
       <div class="container">
@@ -180,8 +180,8 @@
       </div>
     </section>
     <!-- ============================================================
-           03 — TYPES OF META AD CAMPAIGNS WE RUN (.metaTypes — NEW)
-      ============================================================= -->
+             03 — TYPES OF META AD CAMPAIGNS WE RUN (.metaTypes — NEW)
+        ============================================================= -->
     <section class="metaTypes">
       <div class="container">
         <div class="heading">
@@ -288,8 +288,8 @@
     </section>
 
     <!-- ============================================================
-           04 — WHAT'S INCLUDED IN OUR META ADS SERVICE
-      ============================================================= -->
+             04 — WHAT'S INCLUDED IN OUR META ADS SERVICE
+        ============================================================= -->
 
     <section class="metaIncluded">
       <div class="container">
@@ -416,8 +416,8 @@
     </section>
 
     <!-- ============================================================
-           META ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
-      ============================================================= -->
+             META ADS — PACKAGE + CUSTOM REQUIREMENTS FORM
+        ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -551,59 +551,32 @@
               </p>
             </div>
 
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Business Type</label>
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your business type
-                  </option>
-                  <option value="corporate">Corporate</option>
-                  <option value="small-business">Small Business</option>
-                  <option value="professional-services">
-                    Professional Services
-                  </option>
-                  <option value="ecommerce">E-Commerce</option>
-                  <option value="startup">Startup</option>
-                  <option value="local-business">Local Business</option>
-                  <option value="other">Other Business</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMessage">Your Requirements</label>
-                <textarea id="packageMessage" name="requirements" rows="4"
-                  placeholder="Tell us about your campaign goals, budget or requirements"></textarea>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-black">
-                  Tell Us Your Meta Ads Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
+            {{-- meta-ads-management: same as Google Ads, only submitText differs --}}
+            @include('partials.package-form-fields', [
+              'fieldLabel' => 'Business Type',
+              'placeholder' => 'Select your business type',
+              'withRequirements' => true,
+              'requirementsPlaceholder' => 'Tell us about your campaign goals, budget or requirements',
+              'submitText' => 'Tell Us Your Meta Ads Requirements',
+              'submitClass' => 'btn-black',
+              'options' => [
+                'corporate' => 'Corporate',
+                'small-business' => 'Small Business',
+                'professional-services' => 'Professional Services',
+                'ecommerce' => 'E-Commerce',
+                'startup' => 'Startup',
+                'local-business' => 'Local Business',
+                'other' => 'Other Business',
+              ],
+            ])
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-           05 — OUR APPROACH: CREATIVE-FIRST STRATEGY (comman .secG reused)
-      ============================================================= -->
+             05 — OUR APPROACH: CREATIVE-FIRST STRATEGY (comman .secG reused)
+        ============================================================= -->
     <section class="secG" id="meta-approach">
       <div class="container">
         <div class="heading">
@@ -823,8 +796,8 @@
     </section>
 
     <!-- ============================================================
-           06 — META PIXEL & CONVERSION TRACKING
-      ============================================================= -->
+             06 — META PIXEL & CONVERSION TRACKING
+        ============================================================= -->
 
     <section class="metaPixel">
       <div class="container">
@@ -980,8 +953,8 @@
     </section>
 
     <!-- ============================================================
-           07 — INDUSTRIES WE RUN META ADS FOR (comman .secH reused)
-      ============================================================= -->
+             07 — INDUSTRIES WE RUN META ADS FOR (comman .secH reused)
+        ============================================================= -->
     <section class="secH">
       <div class="container">
         <div class="heading">
@@ -1105,8 +1078,8 @@
     </section>
 
     <!-- ============================================================
-           09 — WHY CHOOSE WEB MINGO (comman .secL reused)
-      ============================================================= -->
+             09 — WHY CHOOSE WEB MINGO (comman .secL reused)
+        ============================================================= -->
     <section class="secL">
       <div class="container">
         <div class="heading">
@@ -1185,16 +1158,16 @@
     </section>
 
     <!-- ============================================================
-           11 — FAQ (comman .secN reused)
-      ============================================================= -->
+             11 — FAQ (comman .secN reused)
+        ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Frequently Asked Questions <span>About Meta Ads Management.</span>',
       'intro' => 'Straight answers to what most people ask before getting started.',
     ])
 
     <!-- ============================================================
-           12 — FINAL CTA (comman .cta-promo reused)
-      ============================================================= -->
+             12 — FINAL CTA (comman .cta-promo reused)
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1218,8 +1191,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

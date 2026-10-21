@@ -22,8 +22,8 @@
     ])
 
     <!-- ============================================================
-         02 — CLASSIFIED PORTAL INTRO
-    ============================================================= -->
+           02 — CLASSIFIED PORTAL INTRO
+      ============================================================= -->
     <section class="appIntro">
       <div class="container">
         <div class="appIntro-head">
@@ -74,8 +74,8 @@
     </section>
 
     <!-- ============================================================
-         03 — TYPES OF CLASSIFIED PORTALS WE DEVELOP
-    ============================================================= -->
+           03 — TYPES OF CLASSIFIED PORTALS WE DEVELOP
+      ============================================================= -->
     <section class="classifiedTypes">
       <div class="container">
         <div class="heading">
@@ -464,8 +464,8 @@
     </section>
 
     <!-- ============================================================
-         CORE CLASSIFIED PORTAL CAPABILITIES
-    ============================================================= -->
+           CORE CLASSIFIED PORTAL CAPABILITIES
+      ============================================================= -->
     <section class="classifiedCaps">
       <div class="container">
         <div class="heading">
@@ -890,8 +890,8 @@
     </section>
 
     <!-- ============================================================
-         SCALABILITY & CUSTOM DEVELOPMENT
-    ============================================================= -->
+           SCALABILITY & CUSTOM DEVELOPMENT
+      ============================================================= -->
     <section class="classifiedScale">
       <div class="container">
         <div class="heading">
@@ -1019,8 +1019,8 @@
     </section>
 
     <!-- ============================================================
-         CLASSIFIED PORTAL DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
-    ============================================================= -->
+           CLASSIFIED PORTAL DEVELOPMENT — PACKAGE + CUSTOM REQUIREMENTS FORM
+      ============================================================= -->
     <section class="ecomPackage">
       <div class="container">
         <div class="ecomPackage-inner">
@@ -1179,60 +1179,24 @@
               </p>
             </div>
 
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName"> Full Name </label>
-
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile"> Mobile Number </label>
-
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness"> Classified Portal Type </label>
-
-                <select id="packageBusiness" name="portal_type">
-                  <option value="" selected disabled>
-                    Select your portal type
-                  </option>
-                  <option value="general-classifieds">
-                    General Classifieds
-                  </option>
-                  <option value="real-estate">Real Estate</option>
-                  <option value="jobs">Jobs &amp; Recruitment</option>
-                  <option value="automobile">Automobile</option>
-                  <option value="services">Services Marketplace</option>
-                  <option value="business-directory">
-                    Business Directory
-                  </option>
-                  <option value="multi-category">
-                    Multi-Category Marketplace
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMessage"> Your Requirements </label>
-
-                <textarea id="packageMessage" name="requirements" rows="4"
-                  placeholder="Tell us about your portal requirements"></textarea>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-black">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
+            {{-- classified-portals-development --}}
+            @include('partials.package-form-fields', [
+              'fieldLabel' => 'Classified Portal Type',
+              'placeholder' => 'Select your portal type',
+              'withRequirements' => true,
+              'requirementsPlaceholder' => 'Tell us about your portal requirements',
+              'submitClass' => 'btn-black',
+              'options' => [
+                'general-classifieds' => 'General Classifieds',
+                'real-estate' => 'Real Estate',
+                'jobs' => 'Jobs &amp; Recruitment',
+                'automobile' => 'Automobile',
+                'services' => 'Services Marketplace',
+                'business-directory' => 'Business Directory',
+                'multi-category' => 'Multi-Category Marketplace',
+                'other' => 'Other',
+              ],
+            ])
           </div>
         </div>
       </div>
@@ -1855,16 +1819,16 @@
     </section>
 
     <!-- ============================================================
-         14 — FAQ (.secN)
-    ============================================================= -->
+           14 — FAQ (.secN)
+      ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Questions About Classified <span>Portal Development?</span>',
       'intro' => 'Clear answers to common questions about building and scaling a classified marketplace with Web Mingo.',
     ])
 
     <!-- ============================================================
-         15 — FINAL CTA (common .cta-promo)
-    ============================================================= -->
+           15 — FINAL CTA (common .cta-promo)
+      ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -1895,8 +1859,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

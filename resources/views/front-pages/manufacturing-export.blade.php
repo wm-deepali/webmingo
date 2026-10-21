@@ -9,8 +9,8 @@
   <main>
 
     <!-- ============================================================
-           01 — BANNER
-      ============================================================= -->
+             01 — BANNER
+        ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect1.mp4',
@@ -28,8 +28,8 @@
 
 
     <!-- ============================================================
-           02 — ABOUT MANUFACTURING & EXPORT
-      ============================================================= -->
+             02 — ABOUT MANUFACTURING & EXPORT
+        ============================================================= -->
     <section class="manuIntro">
       <div class="container">
 
@@ -144,8 +144,8 @@
 
 
     <!-- ============================================================
-           03 — WHY MANUFACTURING BUSINESSES NEED A WEBSITE
-      ============================================================= -->
+             03 — WHY MANUFACTURING BUSINESSES NEED A WEBSITE
+        ============================================================= -->
     <section class="mfgWhy">
       <div class="container">
 
@@ -269,8 +269,8 @@
 
 
     <!-- ============================================================
-           04 — MANUFACTURING WEBSITE ESSENTIALS
-      ============================================================= -->
+             04 — MANUFACTURING WEBSITE ESSENTIALS
+        ============================================================= -->
     <section class="mfgGet">
       <div class="container">
 
@@ -431,82 +431,21 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              DIGITAL SOLUTIONS FOR MANUFACTURING &amp; EXPORT
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Stronger Manufacturing Business.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build manufacturing and export websites around your products,
-              capabilities, certifications and business goals—from professional
-              company websites to digital platforms that support enquiries,
-              distributors and global buyers.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Manufacturing Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="manufacturing-website">
-                    Manufacturing Company Website
-                  </option>
-                  <option value="export-website">
-                    Export Business Website
-                  </option>
-                  <option value="b2b-website">
-                    B2B Manufacturing Website
-                  </option>
-                  <option value="product-catalogue">
-                    Product Catalogue Website
-                  </option>
-                  <option value="distributor-platform">
-                    Distributor &amp; Dealer Platform
-                  </option>
-                  <option value="custom-manufacturing">
-                    Custom Manufacturing Solution
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.package-form', [
+      'label' => 'DIGITAL SOLUTIONS FOR MANUFACTURING &amp; EXPORT',
+      'highlight' => 'Build A Stronger Manufacturing Business.',
+      'intro' => 'We build manufacturing and export websites around your products, capabilities, certifications and business goals—from professional company websites to digital platforms that support enquiries, distributors and global buyers.',
+      'fieldLabel' => 'Manufacturing Website Type',
+      'options' => [
+        'manufacturing-website' => 'Manufacturing Company Website',
+        'export-website' => 'Export Business Website',
+        'b2b-website' => 'B2B Manufacturing Website',
+        'product-catalogue' => 'Product Catalogue Website',
+        'distributor-platform' => 'Distributor &amp; Dealer Platform',
+        'custom-manufacturing' => 'Custom Manufacturing Solution',
+        'other' => 'Other',
+      ],
+    ])
 
 
 
@@ -760,8 +699,8 @@
 
 
     <!-- ============================================================
-         08 — FAQ
-    ============================================================= -->
+           08 — FAQ
+      ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common <span>Manufacturing Website Questions.</span>',
@@ -769,8 +708,8 @@
     ])
 
     <!-- ============================================================
-           09 — FINAL CTA
-      ============================================================= -->
+             09 — FINAL CTA
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -807,8 +746,8 @@
     </div>
 
     <!-- ============================================================
-         SEO LINKS (existing .secO)
-    ============================================================= -->
+           SEO LINKS (existing .secO)
+      ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

@@ -27,12 +27,12 @@
     $canonical = $seo->canonical_url ?? url()->current();   // current() drops ?query / ?page=
     $robots    = $seo->robots ?? 'index, follow';
 
-    $ogTitle   = $seo->og_title ?: $title;
-    $ogDesc    = $seo->og_description ?: $desc;
+    $ogTitle   = $seo->og_title ?? $title;
+    $ogDesc    = $seo->og_description ?? $desc;
     $ogImage   = $abs($seo->og_image ?? null);
 
-    $twTitle   = $seo->twitter_title ?: $ogTitle;
-    $twDesc    = $seo->twitter_description ?: $ogDesc;
+    $twTitle   = $seo->twitter_title ?? $ogTitle;
+    $twDesc    = $seo->twitter_description ?? $ogDesc;
     $twImage   = $abs($seo->twitter_image ?? null) ?: $ogImage;
 @endphp
 

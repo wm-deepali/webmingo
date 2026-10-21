@@ -8,8 +8,8 @@
 
   <main>
     <!-- ============================================================
-             01 — BANNER
-        ============================================================= -->
+               01 — BANNER
+          ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect1.mp4',
@@ -24,8 +24,8 @@
     ])
 
     <!-- ============================================================
-             02 — INTRODUCTION
-        ============================================================= -->
+               02 — INTRODUCTION
+          ============================================================= -->
     <section class="travelIntro">
       <div class="container">
         <div class="travelIntro-wrap">
@@ -114,8 +114,8 @@
     </section>
 
     <!-- ============================================================
-             03 — WHY TRAVEL BUSINESSES NEED A WEBSITE
-        ============================================================= -->
+               03 — WHY TRAVEL BUSINESSES NEED A WEBSITE
+          ============================================================= -->
     <section class="travelValue">
       <div class="container">
         <div class="heading">
@@ -255,8 +255,8 @@
     </section>
 
     <!-- ============================================================
-             04 — TRAVEL WEBSITE ESSENTIALS
-        ============================================================= -->
+               04 — TRAVEL WEBSITE ESSENTIALS
+          ============================================================= -->
     <section class="travelDeliver">
       <div class="container">
         <div class="heading">
@@ -418,82 +418,25 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              DIGITAL SOLUTIONS FOR TRAVEL &amp; TOURISM
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build Better Travel Experiences.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build travel and tourism websites around your destinations,
-              packages, experiences and business goals—from engaging travel
-              websites to digital platforms that support bookings, enquiries
-              and seamless traveller engagement.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Travel Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="travel-agency">Travel Agency Website</option>
-                  <option value="tour-operator">Tour Operator Website</option>
-                  <option value="tour-package">
-                    Tour &amp; Holiday Package Website
-                  </option>
-                  <option value="travel-booking">
-                    Travel Booking Platform
-                  </option>
-                  <option value="destination-website">
-                    Destination Tourism Website
-                  </option>
-                  <option value="custom-travel">
-                    Custom Travel Solution
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.package-form', [
+      'label' => 'DIGITAL SOLUTIONS FOR TRAVEL &amp; TOURISM',
+      'highlight' => 'Build Better Travel Experiences.',
+      'intro' => 'We build travel and tourism websites around your destinations, packages, experiences and business goals—from engaging travel websites to digital platforms that support bookings, enquiries and seamless traveller engagement.',
+      'fieldLabel' => 'Travel Website Type',
+      'options' => [
+        'travel-agency' => 'Travel Agency Website',
+        'tour-operator' => 'Tour Operator Website',
+        'tour-package' => 'Tour &amp; Holiday Package Website',
+        'travel-booking' => 'Travel Booking Platform',
+        'destination-website' => 'Destination Tourism Website',
+        'custom-travel' => 'Custom Travel Solution',
+        'other' => 'Other',
+      ],
+    ])
 
     <!-- ============================================================
-           06 — DIGITAL GROWTH OUTCOMES
-      ============================================================= -->
+             06 — DIGITAL GROWTH OUTCOMES
+        ============================================================= -->
     <section class="travelGrowth">
       <div class="container">
         <div class="heading">
@@ -785,8 +728,8 @@
     </section>
 
     <!-- ============================================================
-           08 — FAQ
-      ============================================================= -->
+             08 — FAQ
+        ============================================================= -->
     @include('partials.page-faqs', [
       'eyebrow' => 'FREQUENTLY ASKED QUESTIONS',
       'title' => 'Answers To Common <span>Travel Website Questions.</span>',
@@ -794,8 +737,8 @@
     ])
 
     <!-- ============================================================
-             09 — FINAL CTA
-        ============================================================= -->
+               09 — FINAL CTA
+          ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -826,8 +769,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">

@@ -9,8 +9,8 @@
 
   <main>
     <!-- ============================================================
-           01 — HERO
-      ============================================================= -->
+             01 — HERO
+        ============================================================= -->
 
     @include('partials.hero', [
       'video' => 'assets/video/effect1.mp4',
@@ -27,8 +27,8 @@
     ])
 
     <!-- ============================================================
-           02 — ABOUT THE INDUSTRY
-      ============================================================= -->
+             02 — ABOUT THE INDUSTRY
+        ============================================================= -->
     <section class="intro eduIntro">
       <div class="container">
         <div class="eduIntro-inner">
@@ -137,8 +137,8 @@
     </section>
 
     <!-- ============================================================
-           03 — WHY EDUCATION & COACHING BUSINESSES NEED A WEBSITE
-      ============================================================= -->
+             03 — WHY EDUCATION & COACHING BUSINESSES NEED A WEBSITE
+        ============================================================= -->
     <section class="eduNeed">
       <div class="container">
         <div class="heading">
@@ -285,8 +285,8 @@
     </section>
 
     <!-- ============================================================
-           04 — WHAT YOUR EDUCATION WEBSITE SHOULD INCLUDE
-      ============================================================= -->
+             04 — WHAT YOUR EDUCATION WEBSITE SHOULD INCLUDE
+        ============================================================= -->
     <section class="eduIncluded" id="eduIncluded">
       <div class="container">
         <div class="heading">
@@ -433,88 +433,26 @@
       </div>
     </section>
 
-    <section class="ecomPackage">
-      <div class="container">
-        <div class="ecomPackage-inner">
-          <div class="ecomPackage-content">
-            <span class="ecomPackage-label">
-              READY TO GROW YOUR EDUCATION BUSINESS
-            </span>
-
-            <h3>
-              Everything You Need To
-              <span>Build A Better Education Website.</span>
-            </h3>
-
-            <p class="ecomPackage-intro">
-              We build education websites around your institute, courses, students,
-              learning goals and business requirements—from coaching institute
-              websites to complete LMS and online learning platforms.
-            </p>
-          </div>
-
-          <div class="ecomPackage-form">
-            <form>
-              <div class="ecomPackage-form-group">
-                <label for="packageName">Full Name</label>
-                <input type="text" id="packageName" name="name" placeholder="Enter your full name" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageMobile">Mobile Number</label>
-                <input type="tel" id="packageMobile" name="mobile" placeholder="Enter your mobile number" />
-              </div>
-
-              <div class="ecomPackage-form-group">
-                <label for="packageBusiness">Education Website Type</label>
-
-                <select id="packageBusiness" name="business_type">
-                  <option value="" selected disabled>
-                    Select your website type
-                  </option>
-                  <option value="coaching-institute">
-                    Coaching Institute Website
-                  </option>
-                  <option value="school-college">
-                    School &amp; College Website
-                  </option>
-                  <option value="lms">
-                    LMS &amp; Online Learning Platform
-                  </option>
-                  <option value="test-series">
-                    Test Series Platform
-                  </option>
-                  <option value="institute-erp">
-                    Institute ERP
-                  </option>
-                  <option value="online-courses">
-                    Online Courses Website
-                  </option>
-                  <option value="custom-education">
-                    Custom Education Website
-                  </option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="ecomPackage-form-action">
-                <button type="submit" class="btn btn-primary">
-                  Tell Us Your Requirements <i>↗</i>
-                </button>
-
-                <p class="ecomPackage-form-privacy">
-                  We respect your privacy. Your details are safe with us.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials.package-form', [
+      'label' => 'READY TO GROW YOUR EDUCATION BUSINESS',
+      'highlight' => 'Build A Better Education Website.',
+      'intro' => 'We build education websites around your institute, courses, students, learning goals and business requirements—from coaching institute websites to complete LMS and online learning platforms.',
+      'fieldLabel' => 'Education Website Type',
+      'options' => [
+        'coaching-institute' => 'Coaching Institute Website',
+        'school-college' => 'School &amp; College Website',
+        'lms' => 'LMS &amp; Online Learning Platform',
+        'test-series' => 'Test Series Platform',
+        'institute-erp' => 'Institute ERP',
+        'online-courses' => 'Online Courses Website',
+        'custom-education' => 'Custom Education Website',
+        'other' => 'Other',
+      ],
+    ])
 
     <!-- ============================================================
-           06 — HOW WE HELP YOUR EDUCATION BUSINESS GROW DIGITALLY
-      ============================================================= -->
+             06 — HOW WE HELP YOUR EDUCATION BUSINESS GROW DIGITALLY
+        ============================================================= -->
     <section class="eduJourney" id="eduJourney">
       <div class="container">
         <div class="heading">
@@ -773,16 +711,16 @@
     </section>
 
     <!-- ============================================================
-           10 — FAQ (.secN)
-      ============================================================= -->
+             10 — FAQ (.secN)
+        ============================================================= -->
     @include('partials.page-faqs', [
       'title' => 'Questions About Our <span>Education Digital Solutions?</span>',
       'intro' => 'Find answers to common questions about building a website or platform for your institute.',
     ])
 
     <!-- ============================================================
-           11 — FINAL CTA (.cta-promo)
-      ============================================================= -->
+             11 — FINAL CTA (.cta-promo)
+        ============================================================= -->
     <div class="container">
       <div class="cta-promo">
         <div class="cta-promo__inner">
@@ -806,8 +744,8 @@
     </div>
 
     <!-- ============================================================
-           SEO LINKS (existing .secO)
-      ============================================================= -->
+             SEO LINKS (existing .secO)
+        ============================================================= -->
     <section class="secO">
       <div class="container">
         <div class="heading">
