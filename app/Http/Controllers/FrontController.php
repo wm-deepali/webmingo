@@ -14,6 +14,10 @@ use Illuminate\Validation\Rule;
 use App\Models\CareerApplication;
 use App\Models\KnowledgeBaseEnquiry;
 use App\Models\KnowledgeBaseCategory;
+use App\Services\Enquiry\EnquiryNotifier;
+use App\Services\Otp\OtpService;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Route;
 
 class FrontController extends Controller
@@ -115,37 +119,63 @@ class FrontController extends Controller
         return view('front-pages.contact', compact('settings'));
     }
 
-    public function contactStore(Request $request)
+    /**
+     * Business / service enquiry.
+     *
+     * The enquiry is always saved. When the page's JS supports the OTP step (it sends
+     * otp_ui=1) an OTP is sent and the admin + thank-you emails wait for the outcome
+     * (see OtpController). Without OTP (JS off, SMS off, rate limited) the admin is
+     * notified straight away as "Mobile Verified: No".
+     */
+    public function contactStore(Request $request, OtpService $otp)
     {
+        $message = "Thanks! We've received your enquiry and will get back to you shortly.";
+
         // Honeypot: real visitors never fill this hidden field
         if ($request->filled('hp_check')) {
-            return redirect()->route('contact');
+            return $this->wantsJsonFlow($request)
+                ? $this->doneJson($message)
+                : redirect()->route('contact');
         }
 
         $data = $request->validate([
             'full_name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'company' => 'nullable|string|max:255',
-            'phone' => 'nullable|string|max:30',
+            'phone' => ['required', 'string', 'max:30', $this->mobileRule()],
             'service' => 'required|string|max:255',
             'message' => 'required|string|max:5000',
         ]);
 
-        ContactEnquiry::create($data + [
+        $data['phone'] = OtpService::normaliseMobile($data['phone']);
+
+        $enquiry = ContactEnquiry::create($data + [
             'ip_address' => $request->ip(),
             'user_agent' => substr((string) $request->userAgent(), 0, 255),
         ]);
 
+        if ($response = $this->startOtp($request, $enquiry, $enquiry->phone, $otp)) {
+            return $response;
+        }
+
+        EnquiryNotifier::resolve($enquiry, false);
+
+        if ($this->wantsJsonFlow($request)) {
+            return $this->doneJson($message);
+        }
+
         return redirect()
             ->to(route('contact') . '#contact-form')
-            ->with('success', "Thanks! We've received your enquiry and will get back to you shortly.");
+            ->with('success', $message);
     }
 
-    public function careerApply(Request $request)
+    public function careerApply(Request $request, OtpService $otp)
     {
+        $message = "Thanks! We've received your application and will get back to you shortly.";
+
         // Honeypot: real visitors never fill this hidden field
         if ($request->filled('hp_check')) {
-            return back();
+            return $this->wantsJsonFlow($request) ? $this->doneJson($message) : back();
         }
 
         $data = $request->validate([
@@ -154,7 +184,7 @@ class FrontController extends Controller
             'position' => 'nullable|string|max:255',
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:30',
+            'phone' => ['required', 'string', 'max:30', $this->mobileRule()],
             'location' => 'nullable|string|max:255',
             'experience' => 'nullable|string|max:50',
             'notice_period' => 'nullable|string|max:20',
@@ -175,14 +205,14 @@ class FrontController extends Controller
             $career = Career::active()->find($data['career_id']);
 
             if (!$career) {
-                return back()->withInput()->withErrors(['position' => 'This opening is no longer available.']);
+                return $this->failure($request, 'position', 'This opening is no longer available.');
             }
         }
 
         $position = $career ? $career->title : ($data['position'] ?? null);
 
         if (!$position) {
-            return back()->withInput()->withErrors(['position' => 'Please select a position.']);
+            return $this->failure($request, 'position', 'Please select a position.');
         }
 
         // Careers page: link to the opening when the chosen title matches one
@@ -190,13 +220,13 @@ class FrontController extends Controller
             $career = Career::active()->where('title', $position)->first();
         }
 
-        CareerApplication::create([
+        $application = CareerApplication::create([
             'career_id' => $career?->id,
             'position' => $position,
             'apply_type' => $data['apply_type'] ?: 'Job',
             'name' => $data['name'],
             'email' => $data['email'],
-            'phone' => $data['phone'],
+            'phone' => OtpService::normaliseMobile($data['phone']),
             'location' => $data['location'] ?? null,
             'experience' => $data['experience'] ?? null,
             'notice_period' => $data['notice_period'] ?? null,
@@ -207,7 +237,17 @@ class FrontController extends Controller
             'ip_address' => $request->ip(),
         ]);
 
-        return back()->with('success', "Thanks! We've received your application and will get back to you shortly.");
+        if ($response = $this->startOtp($request, $application, $application->phone, $otp)) {
+            return $response;
+        }
+
+        EnquiryNotifier::resolve($application, false);
+
+        if ($this->wantsJsonFlow($request)) {
+            return $this->doneJson($message);
+        }
+
+        return back()->with('success', $message);
     }
 
     public function knowledgeBase()
@@ -222,25 +262,41 @@ class FrontController extends Controller
         return view('front-pages.knowledge-base', compact('categories'));
     }
 
-    public function knowledgeBaseEnquiry(Request $request)
+    /**
+     * Knowledge base "Get a free consultation" form (always JSON).
+     * Same OTP flow as the other enquiry forms.
+     */
+    public function knowledgeBaseEnquiry(Request $request, OtpService $otp)
     {
+        $message = 'Thank you! Our team will contact you shortly.';
+
+        // Honeypot: real visitors never fill this hidden field
+        if ($request->filled('hp_check')) {
+            return $this->doneJson($message);
+        }
+
         $data = $request->validate([
             'name' => 'required|string|max:100',
             'email' => 'required|email|max:150',
-            'phone' => 'nullable|string|max:20',
+            'phone' => ['required', 'string', 'max:20', $this->mobileRule()],
             'need' => ['required', Rule::in(array_keys(KnowledgeBaseEnquiry::NEEDS))],
             'message' => 'required|string|max:2000',
         ]);
 
-        KnowledgeBaseEnquiry::create($data + [
+        $data['phone'] = OtpService::normaliseMobile($data['phone']);
+
+        $enquiry = KnowledgeBaseEnquiry::create($data + [
             'status' => 'new',
             'ip_address' => $request->ip(),
         ]);
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Thank you! Our team will contact you shortly.',
-        ]);
+        if ($response = $this->startOtp($request, $enquiry, $enquiry->phone, $otp)) {
+            return $response;
+        }
+
+        EnquiryNotifier::resolve($enquiry, false);
+
+        return $this->doneJson($message);
     }
 
     public function dynamicPage(string $slug)
@@ -253,16 +309,18 @@ class FrontController extends Controller
         return view('front-pages.dynamic-page', compact('page'));
     }
 
-    public function packageEnquiryStore(Request $request)
+    public function packageEnquiryStore(Request $request, OtpService $otp)
     {
+        $message = 'Thank you! We will contact you shortly.';
+
         // Honeypot
         if ($request->filled('website')) {
-            return response()->json(['success' => true, 'message' => 'Thank you! We will contact you shortly.']);
+            return $this->doneJson($message);
         }
 
         $data = $request->validate([
             'name' => 'required|string|max:100',
-            'mobile' => ['required', 'regex:/^[0-9+\-\s]{10,15}$/'],
+            'mobile' => ['required', 'string', 'max:30', $this->mobileRule()],
             'email' => 'nullable|email|max:150',
             'business_name' => 'nullable|string|max:150',
             'business_type' => 'required|string|max:100',
@@ -270,20 +328,91 @@ class FrontController extends Controller
             'extra' => 'nullable|array',
             'extra.*' => 'nullable|string|max:255',
             'page' => 'required|string|max:100',
-        ], [
-            'mobile.regex' => 'Please enter a valid mobile number.',
         ]);
 
-        PackageEnquiry::create($data + [
+        $data['mobile'] = OtpService::normaliseMobile($data['mobile']);
+
+        $enquiry = PackageEnquiry::create($data + [
             'page_url' => url()->previous(),
             'ip_address' => $request->ip(),
             'user_agent' => substr((string) $request->userAgent(), 0, 500),
         ]);
 
+        if ($response = $this->startOtp($request, $enquiry, $enquiry->mobile, $otp)) {
+            return $response;
+        }
+
+        EnquiryNotifier::resolve($enquiry, false);
+
+        return $this->doneJson($message);
+    }
+
+    // ── OTP helpers ──────────────────────────────────────────────────────────
+
+    /**
+     * Validation rule: must be a valid Indian mobile number.
+     */
+    private function mobileRule(): \Closure
+    {
+        return function (string $attribute, mixed $value, \Closure $fail) {
+            if (!OtpService::normaliseMobile((string) $value)) {
+                $fail('Please enter a valid 10-digit Indian mobile number.');
+            }
+        };
+    }
+
+    /**
+     * Forms whose JS can show the OTP step send otp_ui=1. Older forms keep working:
+     * they just skip the OTP step and the admin is notified as unverified.
+     */
+    private function wantsJsonFlow(Request $request): bool
+    {
+        return $request->boolean('otp_ui') || $request->expectsJson();
+    }
+
+    /**
+     * Start the OTP step. Returns the JSON for the browser, or null when no OTP step
+     * will happen (the caller then notifies the admin as unverified).
+     */
+    private function startOtp(Request $request, Model $record, string $mobile, OtpService $otp): ?JsonResponse
+    {
+        if (!$request->boolean('otp_ui')) {
+            return null;
+        }
+
+        $started = $otp->start($record, $mobile, $request->ip());
+
+        if (!$started) {
+            return null;
+        }
+
         return response()->json([
             'success' => true,
-            'message' => 'Thank you! We will contact you shortly.',
+            'requires_otp' => true,
+            'message' => 'Enter the OTP we sent to your mobile number.',
+        ] + $started);
+    }
+
+    private function doneJson(string $message): JsonResponse
+    {
+        return response()->json([
+            'success' => true,
+            'requires_otp' => false,
+            'message' => $message,
         ]);
+    }
+
+    private function failure(Request $request, string $field, string $message)
+    {
+        if ($this->wantsJsonFlow($request)) {
+            return response()->json([
+                'success' => false,
+                'message' => $message,
+                'errors' => [$field => [$message]],
+            ], 422);
+        }
+
+        return back()->withInput()->withErrors([$field => $message]);
     }
 
 }

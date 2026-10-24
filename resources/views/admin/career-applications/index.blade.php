@@ -5,6 +5,29 @@
     @include('admin.header')
     @include('admin.partials.inbox-styles')
 
+    <style>
+        /* Mobile OTP verification badge */
+        .mv-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 6px;
+            padding: 1px 8px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.6;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .mv-pill i { font-size: 10px; }
+
+        .mv-pill.yes { background: #e3f1ec; color: #007a5e; border-color: #9fcfc3; }
+        .mv-pill.no  { background: #fff5cc; color: #916a00; border-color: #e8d080; }
+    </style>
+
     <div class="app-content content container-fluid">
         <div class="list-page">
 
@@ -89,7 +112,18 @@
                                     <td>
                                         <div class="row-title">{{ $application->name }}</div>
                                         <div class="row-sub">{{ $application->email }}</div>
-                                        <div class="row-sub">{{ $application->phone }}</div>
+                                        <div class="row-sub">
+                                            {{ $application->phone }}
+                                            @if ($application->mobile_verified)
+                                                <span class="mv-pill yes" title="Mobile number verified with OTP">
+                                                    <i class="fa fa-circle-check"></i> Verified
+                                                </span>
+                                            @else
+                                                <span class="mv-pill no" title="Mobile number was not verified">
+                                                    <i class="fa fa-circle-exclamation"></i> Not verified
+                                                </span>
+                                            @endif
+                                        </div>
                                     </td>
 
                                     <td>

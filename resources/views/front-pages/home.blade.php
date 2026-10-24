@@ -1606,11 +1606,11 @@
                     </article>
                   </div>
 
-                  <!-- 01 — VANSH IT & COMM -->
+                  <!-- 01 — Web Mingo IT Solutions -->
                   <div class="swiper-slide">
                     <article class="portfolio-card">
                       <div class="portfolio-card__media">
-                        <img src="assets/images/website/portfolio/vansh.png" alt="Vansh IT & Comm website"
+                        <img src="assets/images/website/portfolio/vansh.png" alt="Web Mingo IT Solutions website"
                           loading="lazy" />
                       </div>
 

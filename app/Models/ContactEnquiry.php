@@ -16,5 +16,8 @@ class ContactEnquiry extends Model
         'status',
         'ip_address',
         'user_agent',
+        'mobile_verified',
+        'mobile_verified_at',
+        'admin_notified_at'
     ];
 }

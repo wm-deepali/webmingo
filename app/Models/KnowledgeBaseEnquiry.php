@@ -7,25 +7,34 @@ use Illuminate\Database\Eloquent\Model;
 class KnowledgeBaseEnquiry extends Model
 {
     public const NEEDS = [
-        'website'           => 'Website',
-        'ecommerce'         => 'E-Commerce',
-        'web-application'   => 'Web Application',
-        'seo'               => 'SEO',
+        'website' => 'Website',
+        'ecommerce' => 'E-Commerce',
+        'web-application' => 'Web Application',
+        'seo' => 'SEO',
         'digital-marketing' => 'Digital Marketing',
-        'redesign'          => 'Website Redesign',
-        'security'          => 'Security',
-        'maintenance'       => 'Maintenance',
-        'other'             => 'Other',
+        'redesign' => 'Website Redesign',
+        'security' => 'Security',
+        'maintenance' => 'Maintenance',
+        'other' => 'Other',
     ];
 
     public const STATUSES = [
-        'new'       => 'New',
+        'new' => 'New',
         'contacted' => 'Contacted',
-        'closed'    => 'Closed',
+        'closed' => 'Closed',
     ];
 
     protected $fillable = [
-        'name', 'email', 'phone', 'need', 'message', 'status', 'ip_address',
+        'name',
+        'email',
+        'phone',
+        'need',
+        'message',
+        'status',
+        'ip_address',
+        'mobile_verified',
+        'mobile_verified_at',
+        'admin_notified_at'
     ];
 
     public function getNeedLabelAttribute(): string

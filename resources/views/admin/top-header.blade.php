@@ -1,24 +1,30 @@
+{{-- Destination: resources/views/admin/top-header.blade.php --}}
+@php
+    $siteName = $general->site_name ?: config('app.name');
+    $adminUser = auth()->user();
+    $adminName = $adminUser?->name ?? 'Admin';
+    $adminInitial = \Illuminate\Support\Str::upper(\Illuminate\Support\Str::substr($adminName, 0, 1));
+
+    // New (unattended) leads for the bell badge
+    $newLeads = \App\Models\ContactEnquiry::where('status', 'new')->count()
+        + \App\Models\PackageEnquiry::where('status', 'new')->count()
+        + \App\Models\KnowledgeBaseEnquiry::where('status', 'new')->count();
+@endphp
 <!DOCTYPE html>
 <html lang="en" data-textdirection="ltr" class="loading">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-  <meta name="description" content="Web Mingo Single Vendor E-Commerce Package Starts 24,999/-">
-  <meta name="keywords" content="Web Mingo E-Commerce Admin">
-  <meta name="author" content="Webmingo">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="{{ $siteName }} admin panel">
+  <meta name="author" content="{{ $siteName }}">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <title>Admin Dashboard | Vansh IT & Comm</title>
+  <title>Admin Dashboard | {{ $siteName }}</title>
 
-  @php
-      $favicon = $general?->favicon;
-  @endphp
-
-  @if($favicon)
-      <link rel="icon" type="image/png" href="{{ asset('storage/' . $favicon) }}">
-      <link rel="shortcut icon" href="{{ asset('storage/' . $favicon) }}">
-  @else
-      <link rel="icon" type="image/png" href="{{ asset('assets/img/logo.png') }}">
+  @if ($general->favicon_url)
+      <link rel="icon" href="{{ $general->favicon_url }}">
+      <link rel="shortcut icon" href="{{ $general->favicon_url }}">
   @endif
 
   <!-- VENDOR CSS — exact same order as original -->
@@ -96,28 +102,6 @@ body {
     letter-spacing: .07em;
     font-weight: 500;
 }
-/* ── Divider ── */
-.th-sep {
-    width: 1px;
-    height: 26px;
-    background: rgba(255,255,255,.12);
-    flex-shrink: 0;
-}
-/* ── Store pill ── */
-.th-store {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 20px;
-    padding: 4px 12px;
-    font-size: 11.5px;
-    color: rgba(255,255,255,.65);
-    font-weight: 500;
-    flex-shrink: 0;
-}
-.th-store i { font-size: 10px; color: rgba(255,255,255,.4); }
 /* ── Spacer ── */
 .th-push { flex: 1 1 auto; }
 /* ── Right icon buttons ── */
@@ -141,17 +125,19 @@ body {
 .th-icon-btn:hover { background: rgba(255,255,255,.1); color: #fff; text-decoration: none; }
 .th-icon-btn .th-dot {
     position: absolute;
-    top: 5px; right: 5px;
-    width: 15px; height: 15px;
-    border-radius: 50%;
+    top: 3px; right: 1px;
+    min-width: 17px; height: 17px;
+    padding: 0 4px;
+    border-radius: 9px;
     background: #ef4444;
     color: #fff;
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid #1e2761;
+    box-sizing: content-box;
 }
 /* ── User button ── */
 .th-user-wrap {
@@ -183,7 +169,6 @@ body {
     letter-spacing: -.2px;
 }
 .th-uname  { font-size: 12.5px; font-weight: 650; color: #fff; line-height: 1.2; }
-.th-urole  { font-size: 10px;   color: rgba(255,255,255,.45); font-weight: 500; line-height: 1.2; }
 .th-caret  { font-size: 9px;    color: rgba(255,255,255,.35); margin-left: 2px; }
 /* ── Remove Bootstrap default dropdown arrow on toggle btn ── */
 .btn-group > .th-user-wrap::after { display: none; }
@@ -223,35 +208,38 @@ body {
 <div class="top-header-sec">
     <div class="container-fluid p-0">
         <div class="top-main-header">
+
             <!-- Logo -->
-            <div class="admin-logo">
+            <a href="{{ route('admin.dashboard') }}" class="admin-logo">
+                @if (filled($general->admin_dashboard_logo))
+                    <img src="{{ asset('storage/' . ltrim($general->admin_dashboard_logo, '/')) }}" alt="{{ $siteName }}">
+                @endif
                 <div class="admin-logo-text">
-                    <span class="admin-logo-brand">Vansh IT & Comm</span>
+                    <span class="admin-logo-brand">{{ $siteName }}</span>
                     <span class="admin-logo-sub">Admin Panel</span>
                 </div>
-            </div>
-            <div class="th-sep"></div>
-            <span class="th-store"><i class="fa-solid fa-store"></i> E-Commerce</span>
+            </a>
+
             <div class="th-push"></div>
-            <!-- Notification icon -->
-            <a href="#" class="th-icon-btn" title="Notifications">
+
+            <!-- New enquiries -->
+            <a href="{{ route('admin.enquiries.index', ['status' => 'new']) }}" class="th-icon-btn"
+                title="{{ $newLeads }} new {{ \Illuminate\Support\Str::plural('enquiry', $newLeads) }}"
+                style="margin-right:4px">
                 <i class="fa-solid fa-bell"></i>
-                <span class="th-dot">4</span>
+                @if ($newLeads > 0)
+                    <span class="th-dot">{{ $newLeads > 99 ? '99+' : $newLeads }}</span>
+                @endif
             </a>
-            <!-- Orders icon -->
-            <a href="#" class="th-icon-btn" title="Pending Orders" style="margin-right:4px">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span class="th-dot">7</span>
-            </a>
+
             <!-- User dropdown — original JS structure kept exactly -->
             <div class="btn-group">
                 <button class="btn bg-transparent p-0 dropdown-toggle" type="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="th-user-wrap">
-                        <div class="th-avatar">A</div>
+                        <div class="th-avatar">{{ $adminInitial }}</div>
                         <div style="display:flex;flex-direction:column">
-                            <span class="th-uname">Admin</span>
-                            <span class="th-urole">Super Admin</span>
+                            <span class="th-uname">{{ $adminName }}</span>
                         </div>
                         <i class="fa-solid fa-chevron-down th-caret"></i>
                     </div>
@@ -272,15 +260,3 @@ body {
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    jQuery('.dropdown-menu.keep-open').on('click', function (e) {
-      e.stopPropagation();
-    });
-    if (1) {
-      $('body').attr('tabindex', '0');
-    }
-    else {
-      alertify.confirm().set({ 'reverseButtons': true });
-      alertify.prompt().set({ 'reverseButtons': true });
-    }
-</script>

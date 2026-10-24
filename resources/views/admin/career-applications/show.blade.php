@@ -5,6 +5,29 @@
     @include('admin.header')
     @include('admin.partials.inbox-styles')
 
+    <style>
+        /* Mobile OTP verification badge */
+        .mv-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 8px;
+            padding: 1px 8px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.6;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .mv-pill i { font-size: 10px; }
+
+        .mv-pill.yes { background: #e3f1ec; color: #007a5e; border-color: #9fcfc3; }
+        .mv-pill.no  { background: #fff5cc; color: #916a00; border-color: #e8d080; }
+    </style>
+
     <div class="app-content content container-fluid">
         <div class="edit-page">
 
@@ -60,7 +83,14 @@
                                 <dd><a href="mailto:{{ $application->email }}">{{ $application->email }}</a></dd>
 
                                 <dt>Phone</dt>
-                                <dd><a href="tel:{{ preg_replace('/[^0-9+]/', '', $application->phone) }}">{{ $application->phone }}</a></dd>
+                                <dd>
+                                    <a href="tel:{{ preg_replace('/[^0-9+]/', '', $application->phone) }}">{{ $application->phone }}</a>
+                                    @if ($application->mobile_verified)
+                                        <span class="mv-pill yes"><i class="fa fa-circle-check"></i> Verified</span>
+                                    @else
+                                        <span class="mv-pill no"><i class="fa fa-circle-exclamation"></i> Not verified</span>
+                                    @endif
+                                </dd>
 
                                 <dt>Location</dt>
                                 <dd>{{ $application->location ?: '—' }}</dd>
@@ -118,6 +148,21 @@
 
                                 <dt>Received</dt>
                                 <dd>{{ $application->created_at->format('d M Y, h:i A') }}</dd>
+
+                                <dt>Verified</dt>
+                                <dd>
+                                    @if ($application->mobile_verified)
+                                        Yes
+                                        @if ($application->mobile_verified_at)
+                                            <div style="font-size:12px;color:var(--text-hint)">
+                                                {{ \Illuminate\Support\Carbon::parse($application->mobile_verified_at)->format('d M Y, h:i A') }}
+                                            </div>
+                                        @endif
+                                    @else
+                                        No
+                                        <div style="font-size:12px;color:var(--text-hint)">Mobile OTP was not completed</div>
+                                    @endif
+                                </dd>
 
                                 <dt>IP address</dt>
                                 <dd>{{ $application->ip_address ?: '—' }}</dd>

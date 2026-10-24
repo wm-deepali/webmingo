@@ -1,3 +1,4 @@
+{{-- Destination: resources/views/admin/dashboard/index.blade.php --}}
 @include('admin.top-header')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -12,7 +13,6 @@
     --text-secondary: #6d7175;
     --text-hint: #8c9196;
     --accent: #303d89;
-    /* Shopify indigo-navy */
     --accent-light: #f0f1fc;
     --green: #007a5e;
     --green-bg: #e3f1ec;
@@ -28,7 +28,6 @@
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
-  /* ── Reset for content area ─────────────────────────────────── */
   .content-area * {
     box-sizing: border-box;
   }
@@ -39,6 +38,27 @@
     min-height: 100vh;
     font-family: var(--font);
     color: var(--text-primary);
+  }
+
+  /* ── Layout grids ───────────────────────────────────────────── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   /* ── Page header ────────────────────────────────────────────── */
@@ -73,7 +93,6 @@
     font-size: 13px;
     font-weight: 500;
     color: var(--text-primary);
-    cursor: pointer;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
   }
 
@@ -84,7 +103,6 @@
     border-radius: var(--radius-md);
     padding: 20px;
     box-shadow: var(--shadow-card);
-    height: 100%;
     transition: box-shadow .18s;
   }
 
@@ -114,6 +132,24 @@
     margin-bottom: 16px;
   }
 
+  .cardx-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .cardx-head h5 {
+    margin: 0;
+  }
+
+  .cardx-head a {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
   /* ── KPI cards ──────────────────────────────────────────────── */
   .kpi-card {
     background: var(--surface);
@@ -122,7 +158,6 @@
     padding: 20px 20px 18px;
     box-shadow: var(--shadow-card);
     position: relative;
-    height: 100%;
     transition: box-shadow .18s;
   }
 
@@ -158,6 +193,11 @@
   .kpi-badge.up {
     background: var(--green-bg);
     color: var(--green);
+  }
+
+  .kpi-badge.down {
+    background: var(--red-bg);
+    color: var(--red);
   }
 
   .kpi-badge.warn {
@@ -204,59 +244,10 @@
     color: var(--amber);
   }
 
-  .kpi-divider {
-    height: 1px;
-    background: var(--border);
-    margin: 14px -20px;
-  }
-
   .kpi-sub {
     font-size: 12px;
     color: var(--text-hint);
-  }
-
-  /* ── Revenue banner ─────────────────────────────────────────── */
-  .revenue-banner {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 22px 24px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    box-shadow: var(--shadow-card);
-  }
-
-  .revenue-banner .greet {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 2px;
-  }
-
-  .revenue-banner .sub {
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-
-  .revenue-banner .rev-num {
-    text-align: right;
-  }
-
-  .revenue-banner .rev-num span {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--text-primary);
-    display: block;
-    line-height: 1.1;
-  }
-
-  .revenue-banner .rev-num small {
-    font-size: 12px;
-    color: var(--text-hint);
+    margin-left: 4px;
   }
 
   /* ── Progress bars ──────────────────────────────────────────── */
@@ -268,6 +259,7 @@
   }
 
   .progress-bar {
+    height: 100%;
     border-radius: 10px;
   }
 
@@ -333,6 +325,42 @@
     vertical-align: middle;
   }
 
+  .dash-table .sub {
+    display: block;
+    font-size: 12px;
+    color: var(--text-hint) !important;
+  }
+
+  .type-tag {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 2px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .view-link {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .vdot {
+    font-size: 11px;
+    margin-left: 4px;
+  }
+
+  .vdot.yes {
+    color: var(--green);
+  }
+
+  .vdot.no {
+    color: var(--amber);
+  }
+
   /* ── Status badges ──────────────────────────────────────────── */
   .status-pill {
     display: inline-flex;
@@ -342,6 +370,7 @@
     font-weight: 600;
     padding: 3px 9px;
     border-radius: 20px;
+    text-transform: capitalize;
   }
 
   .status-pill::before {
@@ -379,18 +408,7 @@
     background: var(--blue);
   }
 
-  .status-pill.cancelled,
-  .status-pill.returned {
-    background: var(--red-bg);
-    color: var(--red);
-  }
-
-  .status-pill.cancelled::before,
-  .status-pill.returned::before {
-    background: var(--red);
-  }
-
-  /* ── Top products list ──────────────────────────────────────── */
+  /* ── Ranked lists ───────────────────────────────────────────── */
   .product-rank-item {
     display: flex;
     align-items: center;
@@ -434,26 +452,25 @@
     border-radius: 6px;
   }
 
-  /* ── Section label ──────────────────────────────────────────── */
-  .section-label {
-    font-size: 16px;
-    font-weight: 650;
-    color: var(--text-primary);
-    margin-bottom: 14px;
+  .empty-note {
+    font-size: 13px;
+    color: var(--text-hint);
+    margin: 0;
   }
 
-  /* ── Chart wrapper ──────────────────────────────────────────── */
   .chart-wrap {
     position: relative;
-    height: 220px;
+    height: 280px;
+  }
+
+  @media (max-width: 1100px) {
+    .main-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 768px) {
     .content-area {
-      padding: 16px;
-    }
-
-    .revenue-banner {
       padding: 16px;
     }
 
@@ -462,6 +479,12 @@
     }
   }
 </style>
+
+@php
+    $statusPill = ['new' => 'pending', 'contacted' => 'processing', 'closed' => 'delivered'];
+    $statusColor = ['new' => '#916a00', 'contacted' => '#0069d9', 'closed' => '#007a5e'];
+    $maxSource = max(1, collect($stats)->max('total'));
+@endphp
 
 <div class="main-section">
   @include('admin.header')
@@ -478,13 +501,260 @@
         <div class="dash-date-badge">
           <i class="fa fa-calendar-alt" style="color:var(--text-hint)"></i>
           {{ now()->format('jS M, Y') }}
-          <i class="fa fa-chevron-down" style="font-size:10px;color:var(--text-hint)"></i>
         </div>
       </div>
 
+      <!-- KPI row 1: leads -->
+      <div class="kpi-grid">
+
+        <div class="kpi-card">
+          <div class="kpi-icon purple"><i class="fa fa-inbox"></i></div>
+          <div class="kpi-label">Total Leads</div>
+          <div class="kpi-value">{{ number_format($leads['total']) }}</div>
+          <span class="kpi-badge {{ $leads['change'] >= 0 ? 'up' : 'down' }}">
+            <i class="fa fa-arrow-{{ $leads['change'] >= 0 ? 'up' : 'down' }}"></i>
+            {{ abs($leads['change']) }}%
+          </span>
+          <span class="kpi-sub">{{ $leads['week'] }} in last 7 days</span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon amber"><i class="fa fa-bell"></i></div>
+          <div class="kpi-label">New / Unattended</div>
+          <div class="kpi-value">{{ number_format($statusCounts['new']) }}</div>
+          <span class="kpi-badge {{ $statusCounts['new'] > 0 ? 'warn' : 'up' }}">
+            {{ $statusCounts['new'] > 0 ? 'Needs follow-up' : 'All caught up' }}
+          </span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon blue"><i class="fa fa-calendar-day"></i></div>
+          <div class="kpi-label">Received Today</div>
+          <div class="kpi-value">{{ number_format($leads['today']) }}</div>
+          <span class="kpi-badge info">Enquiries + applications</span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon green"><i class="fa fa-circle-check"></i></div>
+          <div class="kpi-label">Mobile Verified</div>
+          <div class="kpi-value">{{ $verifiedRate }}%</div>
+          <span class="kpi-badge up">{{ $verifiedCount }} of {{ $verifiedTotal }}</span>
+          <span class="kpi-sub">contact + package</span>
+        </div>
+
+      </div>
+
+      <!-- KPI row 2: content -->
+      <div class="kpi-grid">
+
+        <div class="kpi-card">
+          <div class="kpi-icon amber"><i class="fa fa-briefcase"></i></div>
+          <div class="kpi-label">Job Applications</div>
+          <div class="kpi-value">{{ number_format($stats['applications']['total']) }}</div>
+          <span class="kpi-badge info">{{ $stats['applications']['week'] }} this week</span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon purple"><i class="fa fa-user-tie"></i></div>
+          <div class="kpi-label">Open Positions</div>
+          <div class="kpi-value">{{ number_format($content['careers']) }}</div>
+          <span class="kpi-badge info">Active careers</span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon blue"><i class="fa fa-newspaper"></i></div>
+          <div class="kpi-label">Published Blogs</div>
+          <div class="kpi-value">{{ number_format($content['blogs']) }}</div>
+          <span class="kpi-badge info">Live on site</span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon green"><i class="fa fa-circle-question"></i></div>
+          <div class="kpi-label">Active FAQs</div>
+          <div class="kpi-value">{{ number_format($content['faqs']) }}</div>
+          <span class="kpi-badge info">{{ $content['pages'] }} dynamic pages</span>
+        </div>
+
+      </div>
+
+      <!-- Main grid -->
+      <div class="main-grid">
+
+        <!-- LEFT -->
+        <div class="stack">
+
+          <div class="cardx">
+            <div class="cardx-head">
+              <h5>Last 14 Days</h5>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="trendChart"></canvas>
+            </div>
+          </div>
+
+          <div class="cardx">
+            <div class="cardx-head">
+              <h5>Latest Activity</h5>
+              <a href="{{ route('admin.enquiries.index') }}">All enquiries →</a>
+            </div>
+
+            @if ($recent->isEmpty())
+              <p class="empty-note">Nothing has come in yet.</p>
+            @else
+              <div style="overflow-x:auto">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Type</th>
+                      <th>Name</th>
+                      <th>Status</th>
+                      <th>Received</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($recent as $item)
+                      <tr>
+                        <td><span class="type-tag">{{ $item['type'] }}</span></td>
+                        <td>
+                          {{ $item['name'] }}
+                          @if ($item['verified'] === true)
+                            <i class="fa fa-circle-check vdot yes" title="Mobile verified"></i>
+                          @elseif ($item['verified'] === false)
+                            <i class="fa fa-circle-exclamation vdot no" title="Mobile not verified"></i>
+                          @endif
+                          <span class="sub">{{ $item['detail'] }}</span>
+                        </td>
+                        <td>
+                          @if ($item['status'])
+                            <span class="status-pill {{ $statusPill[$item['status']] ?? 'pending' }}">{{ $item['status'] }}</span>
+                          @else
+                            —
+                          @endif
+                        </td>
+                        <td style="white-space:nowrap">
+                          {{ $item['at']->diffForHumans() }}
+                          <span class="sub">{{ $item['at']->format('d M, h:i A') }}</span>
+                        </td>
+                        <td><a href="{{ $item['url'] }}" class="view-link">View</a></td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            @endif
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="stack">
+
+          <div class="cardx">
+            <h5>Enquiry Status</h5>
+            @foreach (['new' => 'New', 'contacted' => 'Contacted', 'closed' => 'Closed'] as $key => $label)
+              @php $pct = $statusTotal > 0 ? round(($statusCounts[$key] / $statusTotal) * 100) : 0; @endphp
+              <div class="progress-row">
+                <div class="progress-label">
+                  <span>{{ $label }}</span>
+                  <span>{{ $statusCounts[$key] }} ({{ $pct }}%)</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width:{{ $pct }}%;background:{{ $statusColor[$key] }}"></div>
+                </div>
+              </div>
+            @endforeach
+          </div>
+
+          <div class="cardx">
+            <h5>Leads By Source</h5>
+            @foreach ($sources as $key => $source)
+              <div class="progress-row">
+                <div class="progress-label">
+                  <span>{{ $source['label'] }}</span>
+                  <span>{{ number_format($stats[$key]['total']) }}</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar"
+                    style="width:{{ round(($stats[$key]['total'] / $maxSource) * 100) }}%;background:{{ $source['color'] }}">
+                  </div>
+                </div>
+              </div>
+            @endforeach
+          </div>
+
+          <div class="cardx">
+            <h5>Top Services Requested</h5>
+            @forelse ($topServices as $i => $row)
+              <div class="product-rank-item">
+                <div class="rank">{{ $i + 1 }}</div>
+                <div class="name">{{ $row->service }}</div>
+                <div class="qty">{{ $row->total }}</div>
+              </div>
+            @empty
+              <p class="empty-note">No contact enquiries yet.</p>
+            @endforelse
+          </div>
+
+          <div class="cardx">
+            <h5>Top Packages</h5>
+            @forelse ($topPackages as $i => $row)
+              <div class="product-rank-item">
+                <div class="rank">{{ $i + 1 }}</div>
+                <div class="name">{{ $row->label }}</div>
+                <div class="qty">{{ $row->total }}</div>
+              </div>
+            @empty
+              <p class="empty-note">No package enquiries yet.</p>
+            @endforelse
+          </div>
+
+        </div>
+
+      </div>
 
     </div><!-- /content-area -->
   </div><!-- /container-fluid -->
 </div><!-- /main-section -->
 
 @include('admin.footer')
+
+<script>
+  (function () {
+    const chart = @json($chart);
+    const el = document.getElementById('trendChart');
+    if (!el || typeof Chart === 'undefined') return;
+
+    new Chart(el, {
+      type: 'line',
+      data: {
+        labels: chart.labels,
+        datasets: chart.datasets.map(function (d) {
+          return {
+            label: d.label,
+            data: d.data,
+            borderColor: d.color,
+            backgroundColor: d.color,
+            borderWidth: 2,
+            tension: 0.35,
+            pointRadius: 2,
+            pointHoverRadius: 4,
+            fill: false
+          };
+        })
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8 } }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { beginAtZero: true, ticks: { precision: 0 } }
+        }
+      }
+    });
+  })();
+</script>

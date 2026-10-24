@@ -46,11 +46,15 @@ class SmtpSetting extends Model
     ];
 
     /**
-     * Always return a singleton row (id = 1).
+     * Always return the single settings row.
+     *
+     * Takes the first row whatever its id is. firstOrCreate(['id' => 1]) cannot work:
+     * id is not mass assignable, so whenever the existing row's id is not 1 a brand
+     * new row would be created on every call instead of updating the existing one.
      */
     public static function getInstance(): self
     {
-        return static::firstOrCreate(['id' => 1]);
+        return static::query()->orderBy('id')->first() ?? static::create([]);
     }
 
     /**

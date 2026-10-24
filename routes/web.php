@@ -21,7 +21,8 @@ use App\Http\Controllers\Admin\{
     KnowledgeBaseCategoryController,
     KnowledgeBaseEnquiryController,
     SmsSettingsController,
-    SmsTemplateController
+    SmsTemplateController,
+    PackageEnquiryController
 
 };
 
@@ -29,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SitemapController;
-
+use App\Http\Controllers\OtpController;
 
 Route::middleware('maintenance.mode')->group(function () {
 
@@ -86,6 +87,13 @@ Route::middleware('maintenance.mode')->group(function () {
         Route::post('/package-enquiry', 'packageEnquiryStore')->name('package-enquiry.store')->middleware('throttle:5,1');
     });
 
+
+    Route::middleware('throttle:10,1')->group(function () {
+        Route::post('/otp/verify', [OtpController::class, 'verify'])->name('otp.verify');
+        Route::post('/otp/resend', [OtpController::class, 'resend'])->name('otp.resend');
+        Route::post('/otp/skip', [OtpController::class, 'skip'])->name('otp.skip');
+    });
+
 });
 
 
@@ -119,6 +127,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('career-applications/{application}/resume', [CareerApplicationController::class, 'resume'])->name('career-applications.resume');
         Route::resource('career-applications', CareerApplicationController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['career-applications' => 'application']);
 
+        Route::resource('package-enquiries', PackageEnquiryController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['package-enquiries' => 'packageEnquiry']);
+
         Route::get('page-heroes', [PageHeroController::class, 'index'])->name('page-heroes.index');
         Route::get('page-heroes/{pageKey}/edit', [PageHeroController::class, 'edit'])->name('page-heroes.edit');
         Route::put('page-heroes/{pageKey}', [PageHeroController::class, 'update'])->name('page-heroes.update');
@@ -150,16 +160,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/settings/general', [AdminSettingController::class, 'generalSettingStore'])->name('settings.general.store');
         Route::post('admin-setting/google-setting', [AdminSettingController::class, 'googleSettingStore'])->name('admin-setting.google-setting');
 
-         Route::post('/settings/sms', [SmsSettingsController::class, 'update'])->name('settings.sms.update');
+        Route::post('/settings/sms', [SmsSettingsController::class, 'update'])->name('settings.sms.update');
         Route::post('/settings/sms/test', [SmsSettingsController::class, 'test'])->name('settings.sms.test');
 
-          Route::get('/settings/templates', [SmsTemplateController::class, 'index'])->name('settings.templates.index');
+        Route::get('/settings/templates', [SmsTemplateController::class, 'index'])->name('settings.templates.index');
         Route::post('/settings/templates/send-test', [SmsTemplateController::class, 'test'])->name('settings.templates.test');
         Route::post('/settings/templates/{eventKey}', [SmsTemplateController::class, 'update'])->name('settings.templates.update');
 
         Route::post('settings/email-templates/test', [EmailTemplateController::class, 'sendTest'])->name('settings.email-templates.test');
         Route::post('settings/email-templates/{eventKey}', [EmailTemplateController::class, 'save'])->name('settings.email-templates.save');
-        
+
         Route::get('/security/system-logs', [SystemLogController::class, 'index'])->name('security.system-logs');
 
 

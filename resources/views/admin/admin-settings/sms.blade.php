@@ -108,7 +108,7 @@
                             <div style="position:relative">
                                 <input type="password" id="msg91AuthKey" name="msg91_auth_key"
                                     class="field-input monospace @error('msg91_auth_key') is-invalid @enderror"
-                                    placeholder="{{ $settings?->msg91_auth_key ? '(saved — leave blank to keep)' : '••••••••••••••••••••••••••••' }}">
+                                    placeholder="{{ $settings?->msg91_auth_key ? $settings?->msg91_auth_key : '••••••••••••••••••••••••••••' }}">
                                 <button type="button" onclick="togglePass('msg91AuthKey', this)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text-hint)"><i class="fa fa-eye"></i></button>
                             </div>
                             @error('msg91_auth_key')

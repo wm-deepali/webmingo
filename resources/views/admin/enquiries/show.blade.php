@@ -5,6 +5,40 @@
     @include('admin.header')
     @include('admin.partials.inbox-styles')
 
+    <style>
+        /* Mobile OTP verification badge */
+        .mv-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 8px;
+            padding: 1px 8px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.6;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .mv-pill i {
+            font-size: 10px;
+        }
+
+        .mv-pill.yes {
+            background: #e3f1ec;
+            color: #007a5e;
+            border-color: #9fcfc3;
+        }
+
+        .mv-pill.no {
+            background: #fff5cc;
+            color: #916a00;
+            border-color: #e8d080;
+        }
+    </style>
+
     <div class="app-content content container-fluid">
         <div class="edit-page">
 
@@ -50,14 +84,18 @@
                 <!-- LEFT -->
                 <div>
                     <div class="section-card">
-                        <div class="section-card-header"><h5>Message</h5></div>
+                        <div class="section-card-header">
+                            <h5>Message</h5>
+                        </div>
                         <div class="section-card-body">
                             <div class="inbox-message">{{ $enquiry->message }}</div>
                         </div>
                     </div>
 
                     <div class="section-card">
-                        <div class="section-card-header"><h5>Contact Details</h5></div>
+                        <div class="section-card-header">
+                            <h5>Contact Details</h5>
+                        </div>
                         <div class="section-card-body">
                             <dl class="inbox-kv">
                                 <dt>Name</dt>
@@ -68,10 +106,11 @@
 
                                 <dt>Phone</dt>
                                 <dd>
-                                    @if ($enquiry->phone)
-                                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', $enquiry->phone) }}">{{ $enquiry->phone }}</a>
+                                    <a href="tel:{{ preg_replace('/[^0-9+]/', '', $enquiry->phone) }}">{{ $enquiry->phone }}</a>
+                                    @if ($enquiry->mobile_verified)
+                                        <span class="mv-pill yes"><i class="fa fa-circle-check"></i> Verified</span>
                                     @else
-                                        —
+                                        <span class="mv-pill no"><i class="fa fa-circle-exclamation"></i> Not verified</span>
                                     @endif
                                 </dd>
 
@@ -90,6 +129,21 @@
                                 <dt>Received</dt>
                                 <dd>{{ $enquiry->created_at->format('d M Y, h:i A') }}</dd>
 
+                                 <dt>Verified</dt>
+                                <dd>
+                                    @if ($enquiry->mobile_verified)
+                                        Yes
+                                        @if ($enquiry->mobile_verified_at)
+                                            <div style="font-size:12px;color:var(--text-hint)">
+                                                {{ \Illuminate\Support\Carbon::parse($enquiry->mobile_verified_at)->format('d M Y, h:i A') }}
+                                            </div>
+                                        @endif
+                                    @else
+                                        No
+                                        <div style="font-size:12px;color:var(--text-hint)">Mobile OTP was not completed</div>
+                                    @endif
+                                </dd>
+                                
                                 <dt>IP address</dt>
                                 <dd>{{ $enquiry->ip_address ?: '—' }}</dd>
                             </dl>
@@ -100,7 +154,9 @@
                 <!-- RIGHT -->
                 <div>
                     <div class="section-card">
-                        <div class="section-card-header"><h5>Status</h5></div>
+                        <div class="section-card-header">
+                            <h5>Status</h5>
+                        </div>
                         <div class="section-card-body">
                             <p style="margin:0 0 14px">
                                 <span class="pill pill-{{ $enquiry->status }}">{{ $enquiry->status }}</span>
@@ -113,17 +169,21 @@
                                     <label class="field-label">Change status</label>
                                     <select name="status" class="field-select">
                                         @foreach (['new' => 'New', 'contacted' => 'Contacted', 'closed' => 'Closed'] as $key => $label)
-                                            <option value="{{ $key }}" {{ $enquiry->status === $key ? 'selected' : '' }}>{{ $label }}</option>
+                                            <option value="{{ $key }}" {{ $enquiry->status === $key ? 'selected' : '' }}>
+                                                {{ $label }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                <button type="submit" class="btn-primary-dash"><i class="fa fa-save"></i> Update Status</button>
+                                <button type="submit" class="btn-primary-dash"><i class="fa fa-save"></i> Update
+                                    Status</button>
                             </form>
                         </div>
                     </div>
 
                     <div class="section-card">
-                        <div class="section-card-header"><h5>Danger Zone</h5></div>
+                        <div class="section-card-header">
+                            <h5>Danger Zone</h5>
+                        </div>
                         <div class="section-card-body">
                             <p style="margin:0 0 12px;font-size:12.5px;color:var(--text-hint)">
                                 Deleting removes this enquiry permanently.
@@ -133,7 +193,7 @@
                             </button>
 
                             <form id="deleteForm" method="POST" style="display:none"
-                                  action="{{ route('admin.enquiries.destroy', $enquiry) }}">
+                                action="{{ route('admin.enquiries.destroy', $enquiry) }}">
                                 @csrf
                                 @method('DELETE')
                             </form>
@@ -159,18 +219,18 @@
 @include('admin.footer')
 
 <script>
-function deleteEnquiry() {
-    Swal.fire({
-        title: 'Delete Enquiry?',
-        text: 'This action cannot be undone.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Yes, Delete'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.getElementById('deleteForm').submit();
-        }
-    });
-}
+    function deleteEnquiry() {
+        Swal.fire({
+            title: 'Delete Enquiry?',
+            text: 'This action cannot be undone.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes, Delete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('deleteForm').submit();
+            }
+        });
+    }
 </script>

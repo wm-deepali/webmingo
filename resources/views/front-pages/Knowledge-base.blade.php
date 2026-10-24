@@ -135,6 +135,12 @@
                 method="post">
                 @csrf
 
+                {{-- Honeypot: hidden from people, bots fill it --}}
+                <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                  <label for="kb_hp_check">Leave this field empty</label>
+                  <input type="text" id="kb_hp_check" name="hp_check" tabindex="-1" autocomplete="new-password" />
+                </div>
+
                 <div class="field">
                   <input type="text" name="name" placeholder="Your Name" required />
                 </div>
@@ -144,7 +150,8 @@
                 </div>
 
                 <div class="field">
-                  <input type="tel" name="phone" placeholder="Your Phone Number" />
+                  <input type="tel" name="phone" placeholder="Your Mobile Number" inputmode="numeric"
+                    autocomplete="tel" required />
                 </div>
 
                 <div class="field">
@@ -188,7 +195,7 @@
               </form>
 
               <span class="kb-form__note">
-                No obligation. Just a conversation about your requirements.
+                No obligation. We'll send a one-time code to verify your mobile number.
               </span>
             </div>
           </aside>
@@ -224,6 +231,9 @@
       </div>
     </div>
   </main>
+
+  {{-- OTP step (verify / resend / skip) --}}
+  @include('partials.otp-modal')
 
 @endsection
 
@@ -296,7 +306,7 @@
     });
 
     /* ==========================================================
-   CONSULTATION FORM (vanilla fetch)
+   CONSULTATION FORM (vanilla fetch + OTP step)
   ========================================================== */
 
     (function () {
@@ -313,6 +323,12 @@
         msg.textContent = text;
       }
 
+      // Called after the OTP step ends (verified or skipped)
+      function done(text) {
+        form.reset();
+        showMessage(text || "Thank you! Our team will contact you shortly.", true);
+      }
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -320,28 +336,36 @@
         btn.textContent = "Sending...";
         msg.style.display = "none";
 
+        var fd = new FormData(form);
+        fd.append("otp_ui", "1"); // tells the server this page can show the OTP step
+
         fetch(form.action, {
           method: "POST",
           headers: {
             "X-Requested-With": "XMLHttpRequest",
             "Accept": "application/json",
           },
-          body: new FormData(form),
+          body: fd,
         })
           .then(function (res) {
-            return res.json().then(function (data) {
+            return res.json().catch(function () { return {}; }).then(function (data) {
               return { status: res.status, data: data };
             });
           })
           .then(function (result) {
             if (result.status === 200 && result.data.success) {
-              form.reset();
-              showMessage(result.data.message, true);
+              if (result.data.requires_otp) {
+                OtpFlow.open(result.data, { onVerified: done, onSkipped: done });
+              } else {
+                done(result.data.message);
+              }
             } else if (result.status === 422 && result.data.errors) {
               var first = Object.values(result.data.errors)[0][0];
               showMessage(first, false);
             } else if (result.status === 429) {
               showMessage("Too many attempts. Please try again in a minute.", false);
+            } else if (result.status === 419) {
+              showMessage("Your session expired. Please refresh the page and try again.", false);
             } else {
               showMessage("Something went wrong. Please try again.", false);
             }

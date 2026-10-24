@@ -1,3 +1,8 @@
+{{-- Destination: resources/views/admin/footer.blade.php --}}
+@php
+    $siteName = $general->site_name ?: config('app.name');
+@endphp
+
 <style>
 /* ══════════════════════════════════════
    GLOBAL PAGE & CONTENT AREA STYLES
@@ -50,13 +55,11 @@ body {
 <div class="admin-footer-bar">
     <div class="footer-left">
         <i class="fa-solid fa-shield-halved" style="color:#303d89;font-size:11px"></i>
-        &copy; {{ date('Y') }} <strong>Web Mingo E-Commerce Admin</strong> — All rights reserved
+        &copy; {{ date('Y') }} <strong>{{ $siteName }}</strong> — All rights reserved
     </div>
     <div class="footer-right">
         Crafted with <span class="footer-heart"><i class="fa-solid fa-heart"></i></span> by
-        <a href="#" target="_blank">Webmingo</a>
-        &nbsp;·&nbsp;
-        <span style="color:#babec3">v1.0.0</span>
+        <a href="https://webmingo.com" target="_blank" rel="noopener">Webmingo</a>
     </div>
 </div>
 
@@ -78,6 +81,14 @@ body {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    // Keep the user dropdown open when clicking inside it
+    // (moved here from top-header, because jQuery loads in this file)
+    $('.dropdown-menu.keep-open').on('click', function (e) {
+        e.stopPropagation();
+    });
+
+    $('body').attr('tabindex', '0');
 </script>
 
 </body>

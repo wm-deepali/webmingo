@@ -92,10 +92,9 @@ class AdminSettingController extends Controller
         $validated['admin_customer_detail'] = $request->has('admin_customer_detail');
         $validated['admin_candidate_detail'] = $request->has('admin_candidate_detail');
 
-        SmtpSetting::updateOrCreate(
-            ['id' => 1],
-            $validated
-        );
+        // Update the existing row (updateOrCreate(['id' => 1]) would insert a new row
+        // whenever the saved row's id is not 1, because id is not mass assignable)
+        SmtpSetting::getInstance()->update($validated);
 
         return back()->with(
             'success',

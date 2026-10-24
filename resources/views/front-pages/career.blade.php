@@ -168,6 +168,10 @@
 
           <!-- RIGHT: Sticky Apply Form -->
           <aside class="career-apply" id="career-apply">
+            {{-- Shown by JS after submit (success / error) --}}
+            <div id="careerFormStatus" role="status" aria-live="polite"></div>
+
+            {{-- No-JS fallback message --}}
             @if (session('success'))
               <div role="status"
                 style="background:#ecfdf3;border:1px solid #abefc6;color:#067647;padding:12px 16px;border-radius:10px;margin-bottom:18px;font-size:14px;">
@@ -175,8 +179,8 @@
               </div>
             @endif
 
-            <form class="career-form" action="{{ route('career.apply') }}" method="POST" enctype="multipart/form-data"
-              onsubmit="var b=this.querySelector('button[type=submit]'); if(b){b.disabled=true;}">
+            <form class="career-form" id="careerForm" action="{{ route('career.apply') }}" method="POST"
+              enctype="multipart/form-data">
               @csrf
 
               {{-- Honeypot: hidden from people, bots fill it --}}
@@ -241,9 +245,11 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="phone">Phone <sup>*</sup></label>
-                    <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
-                      placeholder="Enter your phone number" required />
+                    <label for="phone">Mobile Number <sup>*</sup></label>
+                    <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" inputmode="numeric"
+                      autocomplete="tel" placeholder="10-digit mobile number" required />
+                    <small style="color:#667085;display:block;margin-top:4px;">We'll send a one-time code to verify your
+                      number.</small>
                     @error('phone')<small
                     style="color:#d92d20;display:block;margin-top:4px;">{{ $message }}</small>@enderror
                   </div>
@@ -346,4 +352,8 @@
       </div>
     </section>
   </main>
+
+  {{-- OTP step (verify / resend / skip) + AJAX submit for the apply form --}}
+  @include('partials.otp-modal')
+  @include('partials.career-form-script')
 @endsection

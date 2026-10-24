@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Providers;
-use App\Models\SeoPage;
+
 use App\Models\DynamicPage;
-use Illuminate\Support\Facades\View;
+use App\Models\SeoPage;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,21 +22,24 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot()
+    public function boot(): void
     {
         View::composer('*', function ($view) {
-            $name = Route::currentRouteName();
-            $general = \App\Models\Setting::first();
-            $view->with(
-                [
+            // Built once per request, then reused for every view / partial
+            static $shared = null;
+
+            if ($shared === null) {
+                $name = Route::currentRouteName();
+
+                $shared = [
                     'seo' => $name ? SeoPage::forKey($name) : null,
-                    'general' => $general,
-                    'footerPages'=> DynamicPage::active()->orderBy('id')->get(),
-                ]
-            );
+                    // new Setting() avoids "property on null" errors if the row doesn't exist yet
+                    'general' => Setting::first() ?? new Setting(),
+                    'footerPages' => DynamicPage::active()->orderBy('id')->get(),
+                ];
+            }
+
+            $view->with($shared);
         });
-
-
-
     }
 }

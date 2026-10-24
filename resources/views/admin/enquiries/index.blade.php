@@ -5,6 +5,40 @@
     @include('admin.header')
     @include('admin.partials.inbox-styles')
 
+    <style>
+        /* Mobile OTP verification badge */
+        .mv-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 6px;
+            padding: 1px 8px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.6;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .mv-pill i {
+            font-size: 10px;
+        }
+
+        .mv-pill.yes {
+            background: #e3f1ec;
+            color: #007a5e;
+            border-color: #9fcfc3;
+        }
+
+        .mv-pill.no {
+            background: #fff5cc;
+            color: #916a00;
+            border-color: #e8d080;
+        }
+    </style>
+
     <div class="app-content content container-fluid">
         <div class="list-page">
 
@@ -27,12 +61,12 @@
             <!-- Status tabs -->
             <div class="filter-tabs">
                 <a class="filter-tab {{ request('status') ? '' : 'active' }}"
-                   href="{{ route('admin.enquiries.index', request()->except('status', 'page')) }}">
+                    href="{{ route('admin.enquiries.index', request()->except('status', 'page')) }}">
                     All <b>{{ $counts->sum() }}</b>
                 </a>
                 @foreach (['new' => 'New', 'contacted' => 'Contacted', 'closed' => 'Closed'] as $key => $label)
                     <a class="filter-tab {{ request('status') === $key ? 'active' : '' }}"
-                       href="{{ route('admin.enquiries.index', array_merge(request()->except('page'), ['status' => $key])) }}">
+                        href="{{ route('admin.enquiries.index', array_merge(request()->except('page'), ['status' => $key])) }}">
                         {{ $label }} <b>{{ $counts[$key] ?? 0 }}</b>
                     </a>
                 @endforeach
@@ -47,11 +81,13 @@
                         <input type="hidden" name="status" value="{{ request('status') }}">
                     @endif
                     <input type="text" name="q" value="{{ request('q') }}" class="field-input"
-                           placeholder="Search name, email, phone, message">
+                        placeholder="Search name, email, phone, message">
                     <select name="service" class="field-select">
                         <option value="">All services</option>
                         @foreach ($services as $service)
-                            <option value="{{ $service }}" {{ request('service') === $service ? 'selected' : '' }}>{{ $service }}</option>
+                            <option value="{{ $service }}" {{ request('service') === $service ? 'selected' : '' }}>
+                                {{ $service }}
+                            </option>
                         @endforeach
                     </select>
                     <button type="submit" class="btn-primary-dash"><i class="fa fa-search"></i> Filter</button>
@@ -83,9 +119,18 @@
                                     <td>
                                         <div class="row-title">{{ $enquiry->full_name }}</div>
                                         <div class="row-sub">{{ $enquiry->email }}</div>
-                                        @if ($enquiry->phone)
-                                            <div class="row-sub">{{ $enquiry->phone }}</div>
-                                        @endif
+                                        <div class="row-sub">
+                                            {{ $enquiry->phone }}
+                                            @if ($enquiry->mobile_verified)
+                                                <span class="mv-pill yes" title="Mobile number verified with OTP">
+                                                    <i class="fa fa-circle-check"></i> Verified
+                                                </span>
+                                            @else
+                                                <span class="mv-pill no" title="Mobile number was not verified">
+                                                    <i class="fa fa-circle-exclamation"></i> Not verified
+                                                </span>
+                                            @endif
+                                        </div>
                                         @if ($enquiry->company)
                                             <div class="row-sub">{{ $enquiry->company }}</div>
                                         @endif
@@ -99,7 +144,8 @@
                                         @endif
                                     </td>
 
-                                    <td class="inbox-snippet">{{ \Illuminate\Support\Str::limit($enquiry->message, 90) }}</td>
+                                    <td class="inbox-snippet">{{ \Illuminate\Support\Str::limit($enquiry->message, 90) }}
+                                    </td>
 
                                     <td style="white-space:nowrap">
                                         {{ $enquiry->created_at->format('d M Y') }}
@@ -110,17 +156,17 @@
 
                                     <td>
                                         <div style="display:flex;gap:6px">
-                                            <a href="{{ route('admin.enquiries.show', $enquiry) }}"
-                                               class="action-btn view" title="View">
+                                            <a href="{{ route('admin.enquiries.show', $enquiry) }}" class="action-btn view"
+                                                title="View">
                                                 <i class="fa fa-eye"></i>
                                             </a>
                                             <button type="button" class="action-btn danger" title="Delete"
-                                                    onclick="deleteEnquiry({{ $enquiry->id }})">
+                                                onclick="deleteEnquiry({{ $enquiry->id }})">
                                                 <i class="fa fa-trash"></i>
                                             </button>
 
                                             <form id="del{{ $enquiry->id }}" method="POST" style="display:none"
-                                                  action="{{ route('admin.enquiries.destroy', $enquiry) }}">
+                                                action="{{ route('admin.enquiries.destroy', $enquiry) }}">
                                                 @csrf
                                                 @method('DELETE')
                                             </form>
@@ -161,18 +207,18 @@
 @include('admin.footer')
 
 <script>
-function deleteEnquiry(id) {
-    Swal.fire({
-        title: 'Delete Enquiry?',
-        text: 'This action cannot be undone.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Yes, Delete'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.getElementById('del' + id).submit();
-        }
-    });
-}
+    function deleteEnquiry(id) {
+        Swal.fire({
+            title: 'Delete Enquiry?',
+            text: 'This action cannot be undone.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes, Delete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('del' + id).submit();
+            }
+        });
+    }
 </script>

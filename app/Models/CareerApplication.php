@@ -22,6 +22,9 @@ class CareerApplication extends Model
         'cover_letter',
         'status',
         'ip_address',
+        'mobile_verified',
+        'mobile_verified_at',
+        'admin_notified_at'
     ];
 
     public function career()
