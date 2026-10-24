@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\State;
 use App\Models\City;
 use App\Models\Setting;
+use App\Models\SmsSetting;
 use App\Models\SmtpSetting;
 use Illuminate\Http\Request;
 use App\Models\GoogleSetting;
@@ -20,6 +21,7 @@ class AdminSettingController extends Controller
         $general = Setting::first();
         $states = State::all();
         $google_setting = GoogleSetting::current();
+        $settings = SmsSetting::first();
         $activeTab = $request->tab ?? 'general';
 
         return view(
@@ -29,6 +31,7 @@ class AdminSettingController extends Controller
                 'general',
                 'states',
                 'google_setting',
+                'settings',
                 'activeTab'
             )
         );
@@ -43,30 +46,51 @@ class AdminSettingController extends Controller
 
     public function smtpSettingStore(Request $request)
     {
+        $existing = SmtpSetting::first();
+
+        // CC fields accept one or more emails separated by comma / semicolon
+        $ccRule = function (string $attribute, $value, \Closure $fail) {
+            foreach (preg_split('/[,;]+/', (string) $value) as $email) {
+                $email = trim($email);
+
+                if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $fail("'{$email}' is not a valid email address in the CC field.");
+                }
+            }
+        };
+
         $validated = $request->validate([
             'smtp_host' => 'required|string|max:255',
             'smtp_port' => 'required|integer',
             'smtp_username' => 'required|string|max:255',
-            'smtp_password' => 'required|string',
+            // Password is only required the first time; blank later keeps the saved one
+            'smtp_password' => [$existing?->smtp_password ? 'nullable' : 'required', 'string'],
             'smtp_encryption' => 'required|in:tls,ssl,none',
             'from_name' => 'nullable|string|max:255',
             'from_email' => 'nullable|email|max:255',
             'reply_to_name' => 'nullable|string|max:255',
             'reply_to_email' => 'nullable|email|max:255',
+
+            // Admin recipients
+            'enquiry_admin_to' => 'required|email|max:255',
+            'enquiry_admin_cc' => ['nullable', 'string', 'max:500', $ccRule],
+            'career_admin_to' => 'required|email|max:255',
+            'career_admin_cc' => ['nullable', 'string', 'max:500', $ccRule],
+        ], [
+            'enquiry_admin_to.required' => 'Enquiry admin email (To) is required.',
+            'career_admin_to.required' => 'Career admin email (To) is required.',
         ]);
 
-        $validated['order_confirmation']
-            = $request->has('order_confirmation');
-        $validated['order_shipped']
-            = $request->has('order_shipped');
-        $validated['order_delivered']
-            = $request->has('order_delivered');
-        $validated['password_reset']
-            = $request->has('password_reset');
-        $validated['new_order_alert']
-            = $request->has('new_order_alert');
-        $validated['low_stock_alert']
-            = $request->has('low_stock_alert');
+        // Keep the existing password when the field was left blank
+        if (empty($validated['smtp_password'])) {
+            unset($validated['smtp_password']);
+        }
+
+        // Email event toggles
+        $validated['customer_thank_you'] = $request->has('customer_thank_you');
+        $validated['candidate_thank_you'] = $request->has('candidate_thank_you');
+        $validated['admin_customer_detail'] = $request->has('admin_customer_detail');
+        $validated['admin_candidate_detail'] = $request->has('admin_candidate_detail');
 
         SmtpSetting::updateOrCreate(
             ['id' => 1],

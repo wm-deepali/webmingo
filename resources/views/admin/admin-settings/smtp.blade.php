@@ -6,15 +6,30 @@
         <span class="settings-sidenav-label">Sections</span>
         <a href="#smtp-config" class="active"><i class="fa-solid fa-server"></i> SMTP Config</a>
         <a href="#smtp-sender"><i class="fa-solid fa-user"></i> Sender Details</a>
+        <a href="#smtp-admin"><i class="fa-solid fa-user-shield"></i> Admin Recipients</a>
         <a href="#smtp-templates"><i class="fa-solid fa-envelope-open-text"></i> Email Events</a>
     </div>
 
     <div class="settings-content">
 
+        @if ($errors->any())
+            <div class="info-banner" style="background:#fff0f0;border-color:#f5c6cb;margin-bottom:20px">
+                <i class="fa-solid fa-circle-xmark" style="color:#dc3545"></i>
+                <div>
+                    <strong>Please fix the following errors:</strong>
+                    <ul style="margin:6px 0 0;padding-left:18px">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
+
         <div class="info-banner blue">
             <i class="fa-solid fa-circle-info"></i>
-            <div>Configure your SMTP credentials to send order confirmations, OTPs, and notification emails through your
-                own mail server.</div>
+            <div>Configure your SMTP credentials to send thank-you emails to customers and candidates, and detail emails
+                to the admin, through your own mail server.</div>
         </div>
 
         <!-- SMTP Config -->
@@ -50,7 +65,8 @@
                     <label class="field-label">SMTP Password <span class="req">*</span></label>
                     <div class="input-wrap">
                         <input type="password" name="smtp_password" class="field-input" id="smtpPass"
-                            value="{{ old('smtp_password', $smtp->smtp_password ?? '') }}">
+                            autocomplete="new-password"
+                            placeholder="{{ !empty($smtp?->smtp_password) ? '(saved — leave blank to keep)' : '' }}">
                         <button type="button" onclick="togglePass('smtpPass', this)"
                             style="border:1px solid var(--border);border-left:none;border-radius:0 var(--radius-sm) var(--radius-sm) 0;background:var(--bg);padding:0 12px;cursor:pointer;color:var(--text-hint);flex-shrink:0"><i
                                 class="fa fa-eye"></i></button>
@@ -72,7 +88,7 @@
         <!-- Sender Details -->
         <div class="settings-section" id="smtp-sender">
             <div class="settings-section-title"><i class="fa-solid fa-user"></i> Sender Details</div>
-            <p class="settings-section-desc">The name and address your customers see in their inbox.</p>
+            <p class="settings-section-desc">The default name and address people see in their inbox. Each email template can override these.</p>
 
             <div class="form-grid">
                 <div class="field-group">
@@ -100,62 +116,92 @@
 
         <hr class="section-divider">
 
+        <!-- Admin Recipients -->
+        <div class="settings-section" id="smtp-admin">
+            <div class="settings-section-title"><i class="fa-solid fa-user-shield"></i> Admin Recipients</div>
+            <p class="settings-section-desc">Where the Customer Detail and Candidate Detail emails are delivered. Both
+                emails always show whether the mobile number is verified.</p>
+
+            <div class="form-grid">
+                <div class="field-group">
+                    <label class="field-label">Enquiry Email — To <span class="req">*</span></label>
+                    <input type="email" name="enquiry_admin_to" class="field-input"
+                        placeholder="business@webmingo.com"
+                        value="{{ old('enquiry_admin_to', $smtp->enquiry_admin_to ?? '') }}">
+                    <span class="field-hint">Business / Service enquiry details come here.</span>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Enquiry Email — CC</label>
+                    <input type="text" name="enquiry_admin_cc" class="field-input"
+                        placeholder="webmingo@gmail.com"
+                        value="{{ old('enquiry_admin_cc', $smtp->enquiry_admin_cc ?? '') }}">
+                    <span class="field-hint">Separate multiple addresses with a comma.</span>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Career Email — To <span class="req">*</span></label>
+                    <input type="email" name="career_admin_to" class="field-input"
+                        placeholder="hr@webmingo.com"
+                        value="{{ old('career_admin_to', $smtp->career_admin_to ?? '') }}">
+                    <span class="field-hint">Candidate details with resume attachment come here.</span>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Career Email — CC</label>
+                    <input type="text" name="career_admin_cc" class="field-input"
+                        placeholder="hr.webmingo@gmail.com"
+                        value="{{ old('career_admin_cc', $smtp->career_admin_cc ?? '') }}">
+                    <span class="field-hint">Separate multiple addresses with a comma.</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
         <!-- Email Events -->
         <div class="settings-section" id="smtp-templates">
             <div class="settings-section-title"><i class="fa-solid fa-envelope-open-text"></i> Email Notification Events
             </div>
-            <p class="settings-section-desc">Choose which events trigger an email to the customer or admin.</p>
+            <p class="settings-section-desc">Choose which events trigger an email. Thank-you emails also need their
+                template enabled in Message Templates, and go out only after the mobile number is OTP verified.</p>
 
             <div class="toggle-row">
                 <div>
-                    <div class="toggle-info-label">Order Confirmation</div>
-                    <div class="toggle-info-sub">Email customer when order is placed successfully.</div>
+                    <div class="toggle-info-label">Thank You Email to Customer</div>
+                    <div class="toggle-info-sub">After a Business / Service enquiry, only if the mobile number is verified.</div>
                 </div>
                 <label class="toggle-switch"><input type="checkbox"
-       name="order_confirmation"
+       name="customer_thank_you"
        value="1"
-       {{ old('order_confirmation', $smtp->order_confirmation ?? 1) ? 'checked' : '' }}><span class="toggle-track"></span></label>
+       {{ old('customer_thank_you', $smtp->customer_thank_you ?? 1) ? 'checked' : '' }}><span class="toggle-track"></span></label>
             </div>
             <div class="toggle-row">
                 <div>
-                    <div class="toggle-info-label">Order Shipped</div>
-                    <div class="toggle-info-sub">Send tracking details when order is dispatched.</div>
+                    <div class="toggle-info-label">Thank You Email to Candidate</div>
+                    <div class="toggle-info-sub">After a Career form submission, only if the mobile number is verified.</div>
                 </div>
                 <label class="toggle-switch"><input type="checkbox"
-       name="order_shipped"
+       name="candidate_thank_you"
        value="1"
-       {{ old('order_shipped', $smtp->order_shipped ?? 1) ? 'checked' : '' }}><span class="toggle-track"></span></label>
+       {{ old('candidate_thank_you', $smtp->candidate_thank_you ?? 1) ? 'checked' : '' }}><span class="toggle-track"></span></label>
             </div>
             <div class="toggle-row">
                 <div>
-                    <div class="toggle-info-label">Order Delivered</div>
-                    <div class="toggle-info-sub">Notify customer on delivery confirmation.</div>
+                    <div class="toggle-info-label">Customer Detail Email to Admin</div>
+                    <div class="toggle-info-sub">On every enquiry, whether verified or not. Shows Mobile Verified Yes/No.</div>
                 </div>
                 <label class="toggle-switch"><input type="checkbox"
-       name="order_delivered"
+       name="admin_customer_detail"
        value="1"
-       {{ old('order_delivered', $smtp->order_delivered ?? 1) ? 'checked' : '' }}><span class="toggle-track"></span></label>
-            </div>
-           
-            <div class="toggle-row">
-                <div>
-                    <div class="toggle-info-label">New Order Alert (Admin)</div>
-                    <div class="toggle-info-sub">Notify admin email on every new order.</div>
-                </div>
-                <label class="toggle-switch"><input type="checkbox"
-       name="new_order_alert"
-       value="1"
-       {{ old('new_order_alert', $smtp->new_order_alert ?? 1) ? 'checked' : '' }}><span class="toggle-track"></span></label>
+       {{ old('admin_customer_detail', $smtp->admin_customer_detail ?? 1) ? 'checked' : '' }}><span class="toggle-track"></span></label>
             </div>
             <div class="toggle-row">
                 <div>
-                    <div class="toggle-info-label">Low Stock Alert (Admin)</div>
-                    <div class="toggle-info-sub">Notify admin when stock falls below threshold.</div>
+                    <div class="toggle-info-label">Candidate Detail Email to Admin</div>
+                    <div class="toggle-info-sub">On every application with the resume attached. Shows Mobile Verified Yes/No.</div>
                 </div>
                 <label class="toggle-switch"><input type="checkbox"
-       name="low_stock_alert"
+       name="admin_candidate_detail"
        value="1"
-       {{ old('low_stock_alert', $smtp->low_stock_alert ?? 0) ? 'checked' : '' }}><span class="toggle-track"></span></label>
+       {{ old('admin_candidate_detail', $smtp->admin_candidate_detail ?? 1) ? 'checked' : '' }}><span class="toggle-track"></span></label>
             </div>
         </div>
 
@@ -163,7 +209,7 @@
 </div>
 
 <div class="action-bar">
-    <button class="btn-secondary-dash">Discard Changes</button>
+    <button type="button" class="btn-secondary-dash" onclick="window.location.reload()">Discard Changes</button>
     <button class="btn-primary-dash" type="submit">
         <i class="fa fa-save"></i> Save SMTP Settings
     </button>

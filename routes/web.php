@@ -19,7 +19,10 @@ use App\Http\Controllers\Admin\{
     PageHeroController,
     KnowledgeBaseArticleController,
     KnowledgeBaseCategoryController,
-    KnowledgeBaseEnquiryController
+    KnowledgeBaseEnquiryController,
+    SmsSettingsController,
+    SmsTemplateController
+
 };
 
 use Illuminate\Support\Facades\Route;
@@ -147,11 +150,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/settings/general', [AdminSettingController::class, 'generalSettingStore'])->name('settings.general.store');
         Route::post('admin-setting/google-setting', [AdminSettingController::class, 'googleSettingStore'])->name('admin-setting.google-setting');
 
-        Route::get('/security/system-logs', [SystemLogController::class, 'index'])->name('security.system-logs');
+         Route::post('/settings/sms', [SmsSettingsController::class, 'update'])->name('settings.sms.update');
+        Route::post('/settings/sms/test', [SmsSettingsController::class, 'test'])->name('settings.sms.test');
 
-        Route::get('/settings/email-templates', [EmailTemplateController::class, 'index'])->name('settings.email-templates.index');
+          Route::get('/settings/templates', [SmsTemplateController::class, 'index'])->name('settings.templates.index');
+        Route::post('/settings/templates/send-test', [SmsTemplateController::class, 'test'])->name('settings.templates.test');
+        Route::post('/settings/templates/{eventKey}', [SmsTemplateController::class, 'update'])->name('settings.templates.update');
+
         Route::post('settings/email-templates/test', [EmailTemplateController::class, 'sendTest'])->name('settings.email-templates.test');
         Route::post('settings/email-templates/{eventKey}', [EmailTemplateController::class, 'save'])->name('settings.email-templates.save');
+        
+        Route::get('/security/system-logs', [SystemLogController::class, 'index'])->name('security.system-logs');
 
 
         Route::prefix('notifications')->name('notifications.')->group(function () {

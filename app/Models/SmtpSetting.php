@@ -7,38 +7,42 @@ use Illuminate\Database\Eloquent\Model;
 class SmtpSetting extends Model
 {
     protected $fillable = [
+        // SMTP connection
         'smtp_host',
         'smtp_port',
         'smtp_username',
         'smtp_password',
         'smtp_encryption',
+
+        // Sender / Reply-to
         'from_name',
         'from_email',
         'reply_to_name',
         'reply_to_email',
-        'order_confirmation',
-        'order_shipped',
-        'order_delivered',
-        'order_cancelled',      // add
-        'payment_received',     // add
-        'coupon',               // add
-        'welcome',              // add
-        'password_reset',
-        'new_order_alert',
-        'low_stock_alert',
+
+        // Admin recipients — Business / Service enquiry
+        'enquiry_admin_to',
+        'enquiry_admin_cc',
+
+        // Admin recipients — Career applications
+        'career_admin_to',
+        'career_admin_cc',
+
+        // Email event toggles
+        'customer_thank_you',
+        'candidate_thank_you',
+        'admin_customer_detail',
+        'admin_candidate_detail',
     ];
 
     protected $casts = [
-        'order_confirmation' => 'boolean',
-        'order_shipped' => 'boolean',
-        'order_delivered' => 'boolean',
-        'order_cancelled' => 'boolean',  // add
-        'payment_received' => 'boolean',  // add
-        'coupon' => 'boolean',  // add
-        'welcome' => 'boolean',  // add
-        'password_reset' => 'boolean',
-        'new_order_alert' => 'boolean',
-        'low_stock_alert' => 'boolean',
+        // Secret — stored encrypted (needs APP_KEY)
+        'smtp_password' => 'encrypted',
+
+        'customer_thank_you' => 'boolean',
+        'candidate_thank_you' => 'boolean',
+        'admin_customer_detail' => 'boolean',
+        'admin_candidate_detail' => 'boolean',
     ];
 
     /**
@@ -47,5 +51,41 @@ class SmtpSetting extends Model
     public static function getInstance(): self
     {
         return static::firstOrCreate(['id' => 1]);
+    }
+
+    /**
+     * Is an email event toggled on here?
+     * The matching EmailTemplate must also be enabled for customer/candidate
+     * thank-you mails (see EmailTemplate::active()).
+     *
+     * Events: customer_thank_you, candidate_thank_you,
+     *         admin_customer_detail, admin_candidate_detail
+     */
+    public function shouldSend(string $event): bool
+    {
+        return (bool) ($this->{$event} ?? false);
+    }
+
+    /**
+     * Valid cc addresses as an array (comma or semicolon separated in DB).
+     */
+    public function enquiryCcList(): array
+    {
+        return self::splitEmails($this->enquiry_admin_cc);
+    }
+
+    public function careerCcList(): array
+    {
+        return self::splitEmails($this->career_admin_cc);
+    }
+
+    protected static function splitEmails(?string $value): array
+    {
+        $parts = preg_split('/[,;]+/', (string) $value) ?: [];
+
+        return array_values(array_filter(
+            array_map('trim', $parts),
+            fn ($email) => filter_var($email, FILTER_VALIDATE_EMAIL)
+        ));
     }
 }
