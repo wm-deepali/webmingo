@@ -48,18 +48,17 @@
         </li>
 
         {{-- CONTENT MANAGEMENT --}}
-        <li
-            class="{{ request()->routeIs(
-                'admin.page-heroes.*',
-                'admin.faqs.*',
-                'admin.blogs.*',
-                'admin.kb-categories.*',
-                'admin.kb-articles.*',
-                'admin.careers.*',
-                'admin.pages.*',
-            )
-                ? 'active'
-                : '' }}">
+        <li class="{{ request()->routeIs(
+    'admin.page-heroes.*',
+    'admin.faqs.*',
+    'admin.blogs.*',
+    'admin.kb-categories.*',
+    'admin.kb-articles.*',
+    'admin.careers.*',
+    'admin.pages.*',
+)
+    ? 'active'
+    : '' }}">
             <a href="#"><i class="fa-solid fa-file-lines"></i> Content Management</a>
             <ul>
                 <li class="{{ request()->routeIs('admin.page-heroes.*') ? 'active' : '' }}">
@@ -77,9 +76,6 @@
                 <li class="{{ request()->routeIs('admin.kb-articles.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.kb-articles.index') }}">Knowledge Base Articles</a>
                 </li>
-                <li class="{{ request()->routeIs('admin.careers.*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.careers.index') }}">Career Openings</a>
-                </li>
                 <li class="{{ request()->routeIs('admin.pages.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.pages.index') }}">Dynamic Pages</a>
                 </li>
@@ -87,15 +83,13 @@
         </li>
 
         {{-- ENQUIRIES & APPLICATIONS --}}
-        <li
-            class="{{ request()->routeIs(
-                'admin.enquiries.*',
-                'admin.package-enquiries.*',
-                'admin.kb-enquiries.*',
-                'admin.career-applications.*',
-            )
-                ? 'active'
-                : '' }}">
+        <li class="{{ request()->routeIs(
+    'admin.enquiries.*',
+    'admin.package-enquiries.*',
+    'admin.kb-enquiries.*',
+)
+    ? 'active'
+    : '' }}">
             <a href="#"><i class="fa-solid fa-inbox"></i> Enquiries & Applications</a>
             <ul>
                 <li class="{{ request()->routeIs('admin.enquiries.*') ? 'active' : '' }}">
@@ -107,8 +101,38 @@
                 <li class="{{ request()->routeIs('admin.kb-enquiries.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.kb-enquiries.index') }}">Knowledge Base Enquiries</a>
                 </li>
+            </ul>
+        </li>
+
+        {{-- LEAD CRM --}}
+        <li class="{{ request()->routeIs('admin.leads.*') ? 'active' : '' }}">
+            <a href="#"><i class="fa-solid fa-bullseye"></i> Lead CRM</a>
+            <ul>
+                <li class="{{ request()->routeIs('admin.leads.index', 'admin.leads.show') ? 'active' : '' }}">
+                    <a href="{{ route('admin.leads.index') }}">Lead Enquiry</a>
+                </li>
+                <li class="{{ request()->routeIs('admin.leads.invalid') ? 'active' : '' }}">
+                    <a href="{{ route('admin.leads.invalid') }}">Invalid Leads</a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- RECRUITMENT CRM --}}
+        <li
+            class="{{ request()->routeIs('admin.career-applications.*', 'admin.recruitment.*', 'admin.careers.*') ? 'active' : '' }}">
+            <a href="#"><i class="fa-solid fa-user-tie"></i> Recruitment CRM</a>
+            <ul>
+                <li class="{{ request()->routeIs('admin.careers.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.careers.index') }}">Job Openings</a>
+                </li>
                 <li class="{{ request()->routeIs('admin.career-applications.*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.career-applications.index') }}">Job Applications</a>
+                    <a href="{{ route('admin.career-applications.index') }}">Candidates</a>
+                </li>
+                <li class="{{ request()->is('admin/recruitment/masters/stages') ? 'active' : '' }}">
+                    <a href="{{ route('admin.recruitment.masters', 'stages') }}">Candidate Stages</a>
+                </li>
+                <li class="{{ request()->is('admin/recruitment/masters/reasons') ? 'active' : '' }}">
+                    <a href="{{ route('admin.recruitment.masters', 'reasons') }}">Shortlist / Reject Reasons</a>
                 </li>
             </ul>
         </li>
@@ -124,16 +148,15 @@
         </li>
 
         {{-- SETTINGS --}}
-        <li
-            class="{{ request()->routeIs(
-                'admin.admin-setting.*',
-                'admin.settings.*',
-                'admin.notifications.*',
-                'admin.security.*',
-                'admin.redirect-settings.*',
-            )
-                ? 'active'
-                : '' }}">
+        <li class="{{ request()->routeIs(
+    'admin.admin-setting.*',
+    'admin.settings.*',
+    'admin.notifications.*',
+    'admin.security.*',
+    'admin.redirect-settings.*',
+)
+    ? 'active'
+    : '' }}">
             <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
             <ul>
                 <li class="{{ $onSettingsPage && $settingsTab === 'general' ? 'active' : '' }}">
@@ -148,9 +171,9 @@
                 <li class="{{ request()->routeIs('admin.settings.templates.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.settings.templates.index') }}">Template Settings</a>
                 </li>
-                <li class="{{ $onSettingsPage && $settingsTab === 'tracking' ? 'active' : '' }}">
+                <!-- <li class="{{ $onSettingsPage && $settingsTab === 'tracking' ? 'active' : '' }}">
                     <a href="{{ route('admin.admin-setting.index', ['tab' => 'tracking']) }}">Tracking & Pixels</a>
-                </li>
+                </li> -->
                 <li class="{{ request()->routeIs('admin.notifications.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.notifications.index') }}">Notification Centre</a>
                 </li>

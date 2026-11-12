@@ -16,6 +16,11 @@ class CareerController extends Controller
         return view('admin.careers.index', compact('careers'));
     }
 
+    public function show(Career $career)
+    {
+        return view('admin.careers.show', compact('career'));
+    }
+
     public function create()
     {
         return view('admin.careers.create');
@@ -67,27 +72,27 @@ class CareerController extends Controller
         ]);
 
         $data = $request->validate([
-            'title'             => 'required|string|max:255',
-            'slug'              => 'nullable|string|max:255|unique:careers,slug' . ($career ? ',' . $career->id : ''),
-            'department'        => 'required|string|max:100',
-            'type'              => 'required|in:Job,Internship',
-            'employment_type'   => 'required|in:Full-time,Part-time,Contract',
-            'work_mode'         => 'nullable|in:Onsite,Remote,Hybrid',
-            'location'          => 'nullable|string|max:150',
-            'experience'        => 'nullable|string|max:100',
-            'salary'            => 'nullable|string|max:100',
+            'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:careers,slug' . ($career ? ',' . $career->id : ''),
+            'department' => 'required|string|max:100',
+            'type' => 'required|in:Job,Internship',
+            'employment_type' => 'required|in:Full-time,Part-time,Contract',
+            'work_mode' => 'nullable|in:Onsite,Remote,Hybrid',
+            'location' => 'nullable|string|max:150',
+            'experience' => 'nullable|string|max:100',
+            'salary' => 'nullable|string|max:100',
             'short_description' => 'nullable|string|max:500',
-            'description'       => 'nullable|string',
-            'responsibilities'  => 'nullable|string',
-            'requirements'      => 'nullable|string',
-            'nice_to_have'      => 'nullable|string',
-            'meta_title'        => 'nullable|string|max:255',
-            'meta_description'  => 'nullable|string|max:500',
-            'sort_order'        => 'nullable|integer|min:0',
+            'description' => 'nullable|string',
+            'responsibilities' => 'nullable|string',
+            'requirements' => 'nullable|string',
+            'nice_to_have' => 'nullable|string',
+            'meta_title' => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:500',
+            'sort_order' => 'nullable|integer|min:0',
         ]);
 
         // Unchecked checkboxes are not submitted, so read them explicitly.
-        $data['status']     = $request->boolean('status');
+        $data['status'] = $request->boolean('status');
         $data['sort_order'] = $data['sort_order'] ?? 0;
 
         return $data;

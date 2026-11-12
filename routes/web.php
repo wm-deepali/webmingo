@@ -1,29 +1,30 @@
 <?php
 
 use App\Http\Controllers\Admin\{
-    AdminSettingController,
+    FaqController,
+    SeoController,
     BlogController,
+    LeadController,
+    CareerController,
+    LogoutController,
+    RedirectController,
+    PageHeroController,
+    SystemLogController,
     DashboardController,
     DynamicPageController,
-    FaqController,
-    LogoutController,
-    ProfileSettingController,
-    SeoController,
-    EmailTemplateController,
-    NotificationController,
-    SystemLogController,
-    RedirectController,
-    CareerController,
-    ContactEnquiryController,
-    CareerApplicationController,
-    PageHeroController,
-    KnowledgeBaseArticleController,
-    KnowledgeBaseCategoryController,
-    KnowledgeBaseEnquiryController,
     SmsSettingsController,
     SmsTemplateController,
-    PackageEnquiryController
-
+    NotificationController,
+    AdminSettingController,
+    EmailTemplateController,
+    ProfileSettingController,
+    PackageEnquiryController,
+    ContactEnquiryController,
+    RecruitmentMasterController,
+    CareerApplicationController,
+    KnowledgeBaseEnquiryController,
+    KnowledgeBaseArticleController,
+    KnowledgeBaseCategoryController,
 };
 
 use Illuminate\Support\Facades\Route;
@@ -118,16 +119,49 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('blogs', BlogController::class)->names('blogs');
 
-        Route::resource('careers', CareerController::class)->except(['show']);
+        Route::resource('careers', CareerController::class);
 
         // Inbox: website enquiries + job applications
         Route::resource('enquiries', ContactEnquiryController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['enquiries' => 'enquiry']);
         Route::resource('kb-enquiries', KnowledgeBaseEnquiryController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['kb-enquiries' => 'enquiry']);
 
+        // Recruitment CRM
+        Route::get('career-applications/export', [CareerApplicationController::class, 'export'])->name('career-applications.export');
         Route::get('career-applications/{application}/resume', [CareerApplicationController::class, 'resume'])->name('career-applications.resume');
-        Route::resource('career-applications', CareerApplicationController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['career-applications' => 'application']);
+        Route::post('career-applications/{application}/stage', [CareerApplicationController::class, 'stage'])->name('career-applications.stage');
+        Route::post('career-applications/{application}/shift', [CareerApplicationController::class, 'shift'])->name('career-applications.shift');
+        Route::resource('career-applications', CareerApplicationController::class)
+            ->only(['index', 'create', 'store', 'show', 'edit', 'update', 'destroy'])
+            ->parameters(['career-applications' => 'application']);
+
+        Route::prefix('recruitment/masters')->group(function () {
+            Route::get('{type}', [RecruitmentMasterController::class, 'index'])->whereIn('type', ['stages', 'reasons'])->name('recruitment.masters');
+            Route::post('{type}', [RecruitmentMasterController::class, 'store'])->name('recruitment.masters.store');
+            Route::put('{type}/{id}', [RecruitmentMasterController::class, 'update'])->name('recruitment.masters.update');
+            Route::delete('{type}/{id}', [RecruitmentMasterController::class, 'destroy'])->name('recruitment.masters.destroy');
+        });
+
 
         Route::resource('package-enquiries', PackageEnquiryController::class)->only(['index', 'show', 'update', 'destroy'])->parameters(['package-enquiries' => 'packageEnquiry']);
+
+
+        // Lead CRM
+        Route::prefix('leads')->name('leads.')->controller(LeadController::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('invalid', 'invalid')->name('invalid');
+            Route::get('export', 'export')->name('export');
+            Route::get('states', 'states')->name('states');
+            Route::get('cities', 'cities')->name('cities');
+            Route::post('/', 'store')->name('store');
+            Route::post('bulk-delete', 'bulkDestroy')->name('bulk-delete');
+            Route::post('convert/{type}/{id}', 'convert')->whereIn('type', ['contact', 'kb', 'package'])->name('convert');
+            Route::get('{lead}', 'show')->name('show');
+            Route::get('{lead}/data', 'data')->name('data');
+            Route::put('{lead}', 'update')->name('update');
+            Route::get('{lead}/notes', 'notes')->name('notes');
+            Route::post('{lead}/notes', 'addNote')->name('notes.store');
+            Route::delete('{lead}', 'destroy')->name('destroy');
+        });
 
         Route::get('page-heroes', [PageHeroController::class, 'index'])->name('page-heroes.index');
         Route::get('page-heroes/{pageKey}/edit', [PageHeroController::class, 'edit'])->name('page-heroes.edit');

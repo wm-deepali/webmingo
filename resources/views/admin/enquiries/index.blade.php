@@ -106,7 +106,7 @@
                                 <th>Message</th>
                                 <th style="width:130px">Received</th>
                                 <th style="width:110px">Status</th>
-                                <th style="width:90px">Actions</th>
+                                <th style="width:130px">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -156,6 +156,22 @@
 
                                     <td>
                                         <div style="display:flex;gap:6px">
+                                            @if ($enquiry->lead)
+                                                <a href="{{ route('admin.leads.show', $enquiry->lead) }}"
+                                                    class="action-btn view"
+                                                    title="Already a lead ({{ $enquiry->lead->lead_code }})">
+                                                    <i class="fa fa-circle-check" style="color:#007a5e"></i>
+                                                </a>
+                                            @else
+                                                <form method="POST"
+                                                    action="{{ route('admin.leads.convert', ['contact', $enquiry->id]) }}"
+                                                    style="display:inline">
+                                                    @csrf
+                                                    <button type="submit" class="action-btn view" title="Convert to Lead">
+                                                        <i class="fa fa-user-plus"></i>
+                                                    </button>
+                                                </form>
+                                            @endif
                                             <a href="{{ route('admin.enquiries.show', $enquiry) }}" class="action-btn view"
                                                 title="View">
                                                 <i class="fa fa-eye"></i>

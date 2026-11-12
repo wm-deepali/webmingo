@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\ConvertsToLead;
 use Illuminate\Database\Eloquent\Model;
 
 class KnowledgeBaseEnquiry extends Model
 {
+    use ConvertsToLead;
+
     public const NEEDS = [
         'website' => 'Website',
         'ecommerce' => 'E-Commerce',

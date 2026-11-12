@@ -355,5 +355,5 @@
 
   {{-- OTP step (verify / resend / skip) + AJAX submit for the apply form --}}
   @include('partials.otp-modal')
-  @include('partials.career-form-script')
+  @include('partials.career-otp-form')
 @endsection

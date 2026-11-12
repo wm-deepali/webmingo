@@ -74,12 +74,16 @@
 
                                     <td>
                                         <div style="display:flex;gap:6px">
-                                            <a href="{{ route('admin.careers.edit', $career->id) }}"
-                                               class="action-btn edit" title="Edit">
+                                            <a href="{{ route('admin.careers.show', $career->id) }}" class="action-btn view"
+                                                title="View">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a href="{{ route('admin.careers.edit', $career->id) }}" class="action-btn edit"
+                                                title="Edit">
                                                 <i class="fa fa-pencil"></i>
                                             </a>
                                             <button class="action-btn danger" title="Delete"
-                                                    onclick="deleteCareer({{ $career->id }})">
+                                                onclick="deleteCareer({{ $career->id }})">
                                                 <i class="fa fa-trash"></i>
                                             </button>
                                         </div>
@@ -121,29 +125,29 @@
 @include('admin.footer')
 
 <script>
-function deleteCareer(id) {
-    Swal.fire({
-        title: 'Delete Career?',
-        text: 'This action cannot be undone.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Yes, Delete'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $.ajax({
-                url: "{{ url('admin/careers') }}/" + id,
-                type: "DELETE",
-                data: { _token: "{{ csrf_token() }}" },
-                success: function (res) {
-                    Swal.fire('Deleted!', res.message, 'success');
-                    $("#row" + id).fadeOut(400, function () { $(this).remove(); });
-                },
-                error: function () {
-                    Swal.fire('Error!', 'Something went wrong. Please try again.', 'error');
-                }
-            });
-        }
-    });
-}
+    function deleteCareer(id) {
+        Swal.fire({
+            title: 'Delete Career?',
+            text: 'This action cannot be undone.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes, Delete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "{{ url('admin/careers') }}/" + id,
+                    type: "DELETE",
+                    data: { _token: "{{ csrf_token() }}" },
+                    success: function (res) {
+                        Swal.fire('Deleted!', res.message, 'success');
+                        $("#row" + id).fadeOut(400, function () { $(this).remove(); });
+                    },
+                    error: function () {
+                        Swal.fire('Error!', 'Something went wrong. Please try again.', 'error');
+                    }
+                });
+            }
+        });
+    }
 </script>

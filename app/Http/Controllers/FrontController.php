@@ -8,17 +8,19 @@ use App\Models\Career;
 use App\Models\Setting;
 use App\Models\DynamicPage;
 use Illuminate\Http\Request;
-use App\Models\ContactEnquiry;
+use App\Models\CandidateStage;
 use App\Models\PackageEnquiry;
+use App\Models\ContactEnquiry;
 use Illuminate\Validation\Rule;
-use App\Models\CareerApplication;
-use App\Models\KnowledgeBaseEnquiry;
-use App\Models\KnowledgeBaseCategory;
-use App\Services\Enquiry\EnquiryNotifier;
 use App\Services\Otp\OtpService;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\CareerApplication;
 use Illuminate\Http\JsonResponse;
+use App\Models\KnowledgeBaseEnquiry;
 use Illuminate\Support\Facades\Route;
+use App\Models\KnowledgeBaseCategory;
+use Illuminate\Database\Eloquent\Model;
+use App\Services\Enquiry\EnquiryNotifier;
+use App\Services\Recruitment\DuplicateChecker;
 
 class FrontController extends Controller
 {
@@ -220,21 +222,37 @@ class FrontController extends Controller
             $career = Career::active()->where('title', $position)->first();
         }
 
+        $phone = OtpService::normaliseMobile($data['phone']);
+        $resume = $request->file('resume');
+        $resumeHash = hash_file('sha256', $resume->getRealPath());
+
+        // Same candidate already in the system? (email / mobile / identical CV)
+        // The application is still saved, but flagged so admin sees a "Duplicate" badge.
+        $existing = DuplicateChecker::find($data['email'], $phone, $resumeHash);
+
         $application = CareerApplication::create([
             'career_id' => $career?->id,
             'position' => $position,
             'apply_type' => $data['apply_type'] ?: 'Job',
             'name' => $data['name'],
-            'email' => $data['email'],
-            'phone' => OtpService::normaliseMobile($data['phone']),
+            'email' => strtolower(trim($data['email'])),
+            'phone' => $phone,
             'location' => $data['location'] ?? null,
             'experience' => $data['experience'] ?? null,
             'notice_period' => $data['notice_period'] ?? null,
             'portfolio' => $data['portfolio'] ?? null,
             'linkedin' => $data['linkedin'] ?? null,
-            'resume_path' => $request->file('resume')->store('career-resumes'), // private disk, not public
+            'resume_path' => $resume->store('career-resumes'), // private disk, not public
             'cover_letter' => $data['cover_letter'] ?? null,
             'ip_address' => $request->ip(),
+
+            // Recruitment CRM
+            'stage_id' => CandidateStage::defaultId(),
+            'source' => 'website',
+            'candidate_interested' => 'pending',
+            'resume_hash' => $resumeHash,
+            'duplicate_of_id' => $existing?->id,
+            'stage_changed_at' => now(),
         ]);
 
         if ($response = $this->startOtp($request, $application, $application->phone, $otp)) {

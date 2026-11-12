@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\ConvertsToLead;
 use Illuminate\Database\Eloquent\Model;
 
 class ContactEnquiry extends Model
 {
+    use ConvertsToLead;
+
     protected $fillable = [
         'full_name',
         'email',

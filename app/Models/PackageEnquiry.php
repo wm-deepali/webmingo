@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\ConvertsToLead;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class PackageEnquiry extends Model
 {
+    use ConvertsToLead;
+
     public const STATUSES = [
         'new' => 'New',
         'contacted' => 'Contacted',
