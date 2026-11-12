@@ -138,7 +138,7 @@ class LeadController extends Controller
 
     public function show(Lead $lead)
     {
-        $lead->load(['notes', 'source']);
+        $lead->load(['notes', 'source', 'activities.user']);
 
         return view('admin.leads.show', [
             'lead' => $lead,
@@ -210,6 +210,8 @@ class LeadController extends Controller
                 'created_by' => auth()->id(),
             ]);
 
+        $lead->logActivity('created', null, 'New Lead', 'Added manually (' . LeadOptions::SUB_SOURCES[$data['sub_source']] . ')');
+
         return response()->json(['success' => true, 'message' => 'Lead added', 'id' => $lead->id]);
     }
 
@@ -224,7 +226,18 @@ class LeadController extends Controller
             $data['not_converted_reason'] = null;
         }
 
+        $oldStatus = $lead->status;
+        $oldType = $lead->lead_type;
+
         $lead->update($data);
+
+        if ($oldStatus !== $lead->status) {
+            $lead->logActivity('status', $oldStatus, $lead->status,
+                $lead->status === 'Not Converted' ? $lead->not_converted_reason : null);
+        }
+        if ($oldType !== $lead->lead_type) {
+            $lead->logActivity('lead_type', $oldType, $lead->lead_type);
+        }
 
         return response()->json(['success' => true, 'message' => 'Saved']);
     }
@@ -253,6 +266,7 @@ class LeadController extends Controller
         ], ['note.required' => 'Note text is required']);
 
         $lead->notes()->create($data + ['user_id' => auth()->id()]);
+        $lead->logActivity('note', null, $data['next_followup_date'] ?? null, $data['note']);
 
         return response()->json(['success' => true, 'notes' => $this->notesJson($lead)]);
     }

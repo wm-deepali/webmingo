@@ -213,22 +213,9 @@
                     </div>
 
                     <div class="section-card">
-                        <div class="section-card-header"><h5>Activity</h5></div>
+                        <div class="section-card-header"><h5>Timeline</h5></div>
                         <div class="section-card-body">
-                            @forelse ($application->logs as $log)
-                                <div class="log-item">
-                                    @switch($log->type)
-                                        @case('stage') Stage: <b>{{ $log->from_value ?: '—' }}</b> → <b>{{ $log->to_value }}</b> @break
-                                        @case('shift') Opening: <b>{{ $log->from_value ?: '—' }}</b> → <b>{{ $log->to_value }}</b> @break
-                                        @case('created') Candidate added @break
-                                        @default Details updated
-                                    @endswitch
-                                    @if ($log->note)<div style="color:#667085">{{ $log->note }}</div>@endif
-                                    <small>{{ $log->created_at->format('d M Y, h:i A') }}</small>
-                                </div>
-                            @empty
-                                <p style="margin:0;color:var(--text-hint);font-size:13px">No activity yet.</p>
-                            @endforelse
+                            @include('admin.partials.timeline', ['items' => $application->logs->load('user')->map->toTimeline()])
                         </div>
                     </div>
 

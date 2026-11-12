@@ -22,6 +22,23 @@ class Lead extends Model
         return $this->hasMany(LeadNote::class)->latest('id');
     }
 
+    public function activities()
+    {
+        return $this->hasMany(LeadActivity::class)->latest('id');
+    }
+
+    /** Timeline entry (who did what, when). */
+    public function logActivity(string $type, ?string $from = null, ?string $to = null, ?string $note = null): void
+    {
+        $this->activities()->create([
+            'user_id' => auth()->id(),
+            'type' => $type,
+            'from_value' => $from,
+            'to_value' => $to,
+            'note' => $note,
+        ]);
+    }
+
     /** The enquiry (contact / knowledge base / package) this lead came from, if any. */
     public function source()
     {

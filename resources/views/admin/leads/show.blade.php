@@ -95,16 +95,9 @@
                     </div>
 
                     <div class="section-card">
-                        <div class="section-card-header"><h5>Notes &amp; Followups</h5></div>
+                        <div class="section-card-header"><h5>Timeline</h5></div>
                         <div class="section-card-body">
-                            @forelse ($lead->notes as $n)
-                                <div class="lv-note">
-                                    {!! nl2br(e($n->note)) !!}
-                                    <small>{{ $n->created_at->format('d M Y, h:i A') }}@if ($n->next_followup_date) · Next followup: {{ $n->next_followup_date->format('d M Y') }}@endif</small>
-                                </div>
-                            @empty
-                                <p style="margin:0;color:#98a2b3;font-size:13px">No notes yet. Add notes from the lead list.</p>
-                            @endforelse
+                            @include('admin.partials.timeline', ['items' => $lead->activities->map->toTimeline()])
                         </div>
                     </div>
                 </div>

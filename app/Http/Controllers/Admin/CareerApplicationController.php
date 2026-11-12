@@ -229,10 +229,11 @@ class CareerApplicationController extends Controller
         }
 
         $application->update($attrs);
-        $application->load('stage');
+        $application->load('stage', 'reason');
 
         if ($stageChanged) {
-            $this->log($application, 'stage', $oldStage, $application->stage?->title, $data['reason_remarks'] ?? null);
+            $note = trim(($application->reason?->title ?? '') . ' ' . ($data['reason_remarks'] ?? ''));
+            $this->log($application, 'stage', $oldStage, $application->stage?->title, $note ?: null);
         }
         if ($oldPosition !== $position) {
             $this->log($application, 'shift', $oldPosition, $position);

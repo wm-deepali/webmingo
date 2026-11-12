@@ -21,12 +21,16 @@ class LeadConverter
             default => throw new \InvalidArgumentException('Unsupported enquiry type.'),
         };
 
-        return $e->lead()->create($data + [
+        $lead = $e->lead()->create($data + [
             'status' => 'New Lead',
             'country_code' => '91',
             'mobile_verified' => (bool) $e->mobile_verified,
             'created_by' => auth()->id(),
         ]);
+
+        $lead->logActivity('created', null, 'New Lead', 'Converted from ' . $data['lead_source'] . ' #' . $e->id);
+
+        return $lead;
     }
 
     private static function fromContact(ContactEnquiry $e): array
